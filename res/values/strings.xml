@@ -22,74 +22,76 @@
 
 <resources>
 
-    <string name="app_name">Report Malaysia Taxi</string>
-    <string name="date_prompt">Date</string>
-    <string name="time_prompt">Time</string>
-    <string name="default_date">01/01/1970</string>
-    <string name="default_time">12:00AM</string>
-    <string name="location">Location:</string>
-    <string name="registration">Registration Number of Taxi:</string>
-    <string name="offence">Nature of Offence:</string>
-    
-    <string name="location_hint">Enter location of incident, including city</string>
-    <string name="registration_hint">Enter car plate number, e.g. HWA9999</string>
-    <string name="other_hint">Enter additional details to include in complaint (optional)</string>
-    
-    <string name="complaint_email_malay">Aduan Teksi</string>
-    <string name="complaint_malay">ADUAN LPKP</string>
-    <string name="complaint_hashtag">#ADUANLPKP</string>
-    <string name="location_malay">Lokasi</string>
-    <string name="registration_malay">Nombor teksi Pendaftaran</string>
-    <string name="offence_malay">Kesalahan</string>
-    
-    <string name="email_intro_malay">
-        Pihak Berkuasa yang berkenan,\n\n
-Tujuan saya menulis email ini adalah kerana sesuatu kejadian berlaku yang tidak menyenang hati.
-Perkara tersebut adalah dicatat seperti dibawah. 
-        Sila ambil tindakan yang sepatutnya terhadap aduan saya.\n\n
-        Sekian. 
-    </string>
-    
+	<string name="app_name">Report Malaysia Taxi</string>
+	<string name="date_prompt">Date</string>
+	<string name="time_prompt">Time</string>
+	<string name="default_date">01/01/1970</string>
+	<string name="default_time">12:00AM</string>
+	<string name="location">Location:</string>
+	<string name="registration">Registration Number of Taxi:</string>
+	<string name="offence">Nature of Offence:</string>
+
+	<string name="location_hint">Enter location of incident, including city</string>
+	<string name="registration_hint">Enter car plate number, e.g. HWA9999</string>
+	<string name="other_hint">Enter additional details to include in complaint (optional)</string>
+
+	<string name="complaint_email_malay">Aduan Teksi</string>
+	<string name="complaint_malay">ADUAN LPKP</string>
+	<string name="complaint_hashtag">#ADUANLPKP</string>
+	<string name="location_malay">Lokasi</string>
+	<string name="registration_malay">Nombor teksi Pendaftaran</string>
+	<string name="offence_malay">Kesalahan</string>
+
+	<string name="email_intro_malay">
+		Pihak Berkuasa yang berkenan,\n\n
+
+		Tujuan saya menulis email ini adalah kerana sesuatu kejadian berlaku yang tidak menyenang hati.
+		Perkara tersebut adalah dicatat seperti dibawah.
+		Sila ambil tindakan yang sepatutnya terhadap aduan saya.\n\n
+
+		Sekian.
+	</string>
+
 	<string-array name="offence_array">
-        <item>Refused to use meter</item>
+		<item>Refused to use meter</item>
 		<item>Refused to take passenger</item>
 		<item>Refused to give change</item>
 		<item>Offered illegal services</item>
 		<item>Harrassment</item>
 		<item>Smoking in Taxi</item>
 		<item>Other</item>
-    </string-array>
-    <string-array name="offence_malay_array">
-        <item>Enggan menggunakan meter</item>
+	</string-array>
+	<string-array name="offence_malay_array">
+		<item>Enggan menggunakan meter</item>
 		<item>Enggan mengambil penumpang</item>
 		<item>Enggan memberi baki tumpang</item>
 		<item>Menawarkan perkhidmatan yang menyalahi undang-undang</item>
 		<item>Gangguan</item>
 		<item>Merokok dalam teksi</item>
 		<item>Other</item>
-    </string-array>
-    
-    <string name="other">Other Comments:</string>
-    <string name="sms">SMS</string>
-    <string name="tweet">Tweet</string>
-    <string name="email">Email</string>
-    <string name="submit">Submit</string>
-    <string name="cancel">Clear</string>
-    <string name="other_send">Other</string>
-    <string name="call">Call</string>
-    
+	</string-array>
+
+	<string name="other">Other Comments:</string>
+	<string name="sms">SMS</string>
+	<string name="tweet">Tweet</string>
+	<string name="email">Email</string>
+	<string name="submit">Submit</string>
+	<string name="cancel">Clear</string>
+	<string name="other_send">Other</string>
+	<string name="call">Call</string>
+
 	<string name="sms_number">15888</string>
 	<string name="email_address">aduan@lpkp.gov.my; info@jpj.gov.my; klangvalley.transit@gmail.com; </string>
 	<string name="traffic_police_email_address">rmp@rmp.gov.my;</string>
-    <string name="twitter_address">\@transitmy</string>
-    
-   	<string-array name="tel_number_names">
+	<string name="twitter_address">\@transitmy</string>
+
+	<string-array name="tel_number_names">
 		<item>LPKP: Licensing of Commercial Vehicles</item>
 		<item>JPJ: Road Transport Department</item>
-    </string-array>
-       	<string-array name="tel_numbers">
+	</string-array>
+	<string-array name="tel_numbers">
 		<item>1800889600</item>
 		<item>0388884244</item>
-    </string-array>
-    
+	</string-array>
 </resources>
+
