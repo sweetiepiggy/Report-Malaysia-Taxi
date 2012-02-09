@@ -1,4 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2012 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+
+    This file is part of Report Malaysia Taxi.
+
+    Report Malaysia Taxi is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 3 of the License, or
+    (at your option) any later version.
+
+    Report Malaysia Taxi is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Report Malaysia Taxi ; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+-->
+
 <resources>
-    
+
+	<string name="app_name">Aduan Teksi</string>
+	<string name="date_prompt">tarikh</string>
+	<string name="time_prompt">masa</string>
+	<string name="default_date">01/01/1970</string>
+	<string name="default_time">12:00AM</string>
+	<string name="location">Lokasi</string>
+	<string name="registration">Nombor Teksi Pendaftaran</string>
+	<string name="offence">Kesalahan</string>
+
+	<string name="location_hint">Masukkan lokasi kejadian</string>
+	<string name="registration_hint">Masuk nombor plat kereta, cth HWA9999</string>
+	<string name="other_hint">Masukkan butiran tambahan dalam aduan (pilihan)</string>
+
+	<string-array name="offence_array">
+		<item>Enggan menggunakan meter</item>
+		<item>Enggan mengambil penumpang</item>
+		<item>Enggan memberi baki tumpang</item>
+		<item>Tawar benda yg menyalahi undang2</item>
+		<item>Gangguan</item>
+		<item>Merokok dalam teksi</item>
+		<item>Lain-lain</item>
+	</string-array>
+
+	<string name="other">Komen Lain</string>
+	<string name="sms">sms</string>
+	<string name="tweet">tweet</string>
+	<string name="email">e-mel</string>
+	<string name="submit">hantar</string>
+	<string name="cancel">batal</string>
+	<string name="other_send">lain-lain</string>
+	<string name="call">panggil</string>
+	
+	<string name="missing_reg">masukkan nombor pendaftaran</string>
+	<string name="missing_other">masukkan komen lain</string>
+	<string name="select_checkbox">mark check box</string>
+	
+	<string name="send_other">Menghantar lain-lain</string>
+	<string name="send_tweet">Menghantar tweet</string>
+	<string name="send_email">Hantar e-mel</string>
+	<string name="place_call">Hubungi</string>
+
+	<string-array name="tel_number_names">
+		<item>LPKP: Lembaga Pelesenan Kenderaan Perdagangan</item>
+		<item>JPJ: Jabatan Pengangkutan Jalan</item>
+		<item>NCCC: Pusat Khidmat Aduan Pengguna Nasional</item>
+	</string-array>
 </resources>
+
+

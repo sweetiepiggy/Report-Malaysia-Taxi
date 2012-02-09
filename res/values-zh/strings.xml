@@ -35,16 +35,6 @@
 	<string name="registration_hint">输入车牌号码，例如HWA9999</string>
 	<string name="other_hint">输入其他详细信息，包括投诉</string>
 
-	<string name="email_intro_malay">
-		Pihak Berkuasa yang berkenan,\n\n
-
-		Tujuan saya menulis email ini adalah kerana sesuatu kejadian berlaku yang tidak menyenang hati.
-		Perkara tersebut adalah dicatat seperti dibawah.
-		Sila ambil tindakan yang sepatutnya terhadap aduan saya.\n\n
-
-		Sekian.
-	</string>
-
 	<string-array name="offence_array">
 		<item>拒绝使用计程表</item>
 		<item>拒绝乘载乘客</item>
@@ -57,35 +47,25 @@
 
 	<string name="other">其他意见</string>
 	<string name="sms">短信</string>
-	<string name="tweet">鸣叫</string>
+	<string name="tweet">啁啾 </string>
 	<string name="email">电子邮件</string>
 	<string name="submit">提交</string>
 	<string name="cancel">删除</string>
 	<string name="other_send">其他</string>
 	<string name="call">呼叫</string>
 	
-	<string name="missing_reg">输入车牌号码</string>
-	<string name="missing_other">输入其他详细信息，包括投诉</string>
-	<string name="select_checkbox">select a checkbox</string>
+	<string name="missing_reg">输入的士登记号码</string>
+	<string name="missing_other">输入其他意见</string>
+	<string name="select_checkbox">请选择输送方法</string>
 	
 	<string name="send_other">其他</string>
-	<string name="send_tweet">鸣叫</string>
+	<string name="send_tweet">啁啾 </string>
 	<string name="send_email">电子邮件</string>
-	
-	<string name="sms_number">15888</string>
-	<string name="email_address">aduan@lpkp.gov.my; info@jpj.gov.my; klangvalley.transit@gmail.com; nccc@nccc.org.my; </string>
-	<string name="traffic_police_email_address">rmp@rmp.gov.my; </string>
-	<string name="twitter_address">\@transitmy</string>
+	<string name="place_call">Place Call</string>
 
 	<string-array name="tel_number_names">
 		<item>LPKP: 商用车辆管辖部门</item>
 		<item>JPJ: 交通部</item>
 		<item>NCCC: 全国消费者投诉中心</item>
 	</string-array>
-	<string-array name="tel_numbers">
-		<item>1800889600</item>
-		<item>0388884244</item>
-		<item>0378779000</item>
-	</string-array>
 </resources>
-

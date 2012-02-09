@@ -39,7 +39,7 @@
 	<string name="complaint_malay">ADUAN LPKP</string>
 	<string name="complaint_hashtag">#ADUANLPKP</string>
 	<string name="location_malay">Lokasi</string>
-	<string name="registration_malay">Nombor teksi Pendaftaran</string>
+	<string name="registration_malay">Nombor Teksi Pendaftaran</string>
 	<string name="offence_malay">Kesalahan</string>
 
 	<string name="email_intro_malay">
@@ -87,11 +87,12 @@
 	<string name="send_other">Send other</string>
 	<string name="send_tweet">Send tweet</string>
 	<string name="send_email">Send email</string>
+	<string name="place_call">Place Call</string>
 
 	<string name="sms_number">15888</string>
 	<string name="email_address">aduan@lpkp.gov.my; info@jpj.gov.my; klangvalley.transit@gmail.com; nccc@nccc.org.my; </string>
 	<string name="traffic_police_email_address">rmp@rmp.gov.my; </string>
-	<string name="twitter_address">\@transitmy</string>
+	<string name="twitter_address">\@transitmy @myAduan</string>
 
 	<string-array name="tel_number_names">
 		<item>LPKP: Licensing of Commercial Vehicles</item>
