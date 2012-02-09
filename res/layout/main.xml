@@ -55,6 +55,7 @@
 			android:id="@+id/registration_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:textStyle="bold"
 			android:text="@string/registration" />
 		<EditText
 			android:id="@+id/registration_entry"
@@ -68,6 +69,7 @@
 			android:id="@+id/location_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:textStyle="bold"
 			android:text="@string/location" />
 		<EditText
 			android:id="@+id/location_entry"
@@ -81,6 +83,7 @@
 			android:id="@+id/offence_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:textStyle="bold"
 			android:text="@string/offence" />
 		<Spinner
 			android:id="@+id/offence_spinner"
@@ -92,6 +95,7 @@
 			android:id="@+id/other_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:textStyle="bold"
 			android:text="@string/other" />
 
 		<EditText
