@@ -134,10 +134,10 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 
 			if (registration_entry.getText().toString().length() == 0) {
 				results_complete = false;
-				incomplete_msg = "Enter Registration Number";
+				incomplete_msg = getResources().getString(R.string.missing_reg);
 			} else if (mOffence.equals("Other") && other_entry.getText().toString().length() == 0) {
 				results_complete = false;
-				incomplete_msg = "Enter Other Comments";
+				incomplete_msg = getResources().getString(R.string.missing_other);
 			}
 
 			if (results_complete) {
@@ -156,7 +156,7 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 
 				if (!sms_checkbox.isChecked() && !email_checkbox.isChecked() &&
 						!tweet_checkbox.isChecked() && !other_checkbox.isChecked()) {
-					Toast.makeText(getApplicationContext(), "Select a Checkbox",
+					Toast.makeText(getApplicationContext(), getResources().getString(R.string.missing_other),
 							Toast.LENGTH_SHORT).show();
 				}
 
@@ -180,7 +180,7 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 						other_intent.putExtra(Intent.EXTRA_STREAM, uris);
 					}
 					other_intent.setType("text/plain");
-					startActivity(Intent.createChooser(other_intent, "Send other"));
+					startActivity(Intent.createChooser(other_intent, getResources().getString(R.string.send_other)));
 				}
 
 				if (tweet_checkbox.isChecked()) {
@@ -192,7 +192,7 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 								Uri.parse(mPhotoUris.get(mPhotoUris.size()-1)));
 					}
 					tweet_intent.setType("text/plain");
-					startActivity(Intent.createChooser(tweet_intent, "Send tweet"));
+					startActivity(Intent.createChooser(tweet_intent, getResources().getString(R.string.send_tweet)));
 				}
 				if (email_checkbox.isChecked()) {
 					String email_msg = format_email_msg(msg);
@@ -224,7 +224,7 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 						email_intent.putExtra(Intent.EXTRA_STREAM, uris);
 					}
 					email_intent.setType("text/plain");
-					startActivity(Intent.createChooser(email_intent, "Send email"));
+					startActivity(Intent.createChooser(email_intent, getResources().getString(R.string.send_email)));
 				}
 				if (sms_checkbox.isChecked()) {
 					String sms_msg = format_sms_msg(msg);

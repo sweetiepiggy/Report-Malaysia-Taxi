@@ -31,7 +31,7 @@
 	<string name="registration">Registration Number of Taxi</string>
 	<string name="offence">Nature of Offence</string>
 
-	<string name="location_hint">Enter location of incident, including city</string>
+	<string name="location_hint">Enter location of incident</string>
 	<string name="registration_hint">Enter car plate number, e.g. HWA9999</string>
 	<string name="other_hint">Enter additional details to include in complaint (optional)</string>
 
@@ -79,6 +79,14 @@
 	<string name="cancel">clear</string>
 	<string name="other_send">other</string>
 	<string name="call">call</string>
+	
+	<string name="missing_reg">enter registration number</string>
+	<string name="missing_other">enter other comments</string>
+	<string name="select_checkbox">select a checkbox</string>
+	
+	<string name="send_other">Send other</string>
+	<string name="send_tweet">Send tweet</string>
+	<string name="send_email">Send email</string>
 
 	<string name="sms_number">15888</string>
 	<string name="email_address">aduan@lpkp.gov.my; info@jpj.gov.my; klangvalley.transit@gmail.com; nccc@nccc.org.my; </string>
