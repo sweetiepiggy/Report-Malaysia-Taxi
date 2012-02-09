@@ -81,17 +81,19 @@
 	<string name="call">call</string>
 
 	<string name="sms_number">15888</string>
-	<string name="email_address">aduan@lpkp.gov.my; info@jpj.gov.my; klangvalley.transit@gmail.com; </string>
-	<string name="traffic_police_email_address">rmp@rmp.gov.my;</string>
+	<string name="email_address">aduan@lpkp.gov.my; info@jpj.gov.my; klangvalley.transit@gmail.com; nccc@nccc.org.my; </string>
+	<string name="traffic_police_email_address">rmp@rmp.gov.my; </string>
 	<string name="twitter_address">\@transitmy</string>
 
 	<string-array name="tel_number_names">
 		<item>LPKP: Licensing of Commercial Vehicles</item>
 		<item>JPJ: Road Transport Department</item>
+		<item>NCCC: National Consumer Complaints Centre</item>
 	</string-array>
 	<string-array name="tel_numbers">
 		<item>1800889600</item>
 		<item>0388884244</item>
+		<item>0378779000</item>
 	</string-array>
 </resources>
 
