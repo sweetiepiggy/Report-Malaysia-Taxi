@@ -35,6 +35,24 @@
 	<string name="registration_hint">输入车牌号码，例如HWA9999</string>
 	<string name="other_hint">输入其他详细信息，包括投诉</string>
 
+	<string name="complaint_email_malay">Aduan Teksi</string>
+	<string name="complaint_malay">ADUAN LPKP</string>
+	<string name="complaint_hashtag">#ADUANLPKP</string>
+	<string name="location_malay">Lokasi</string>
+	<string name="registration_malay">Nombor Teksi Pendaftaran</string>
+	<string name="offence_malay">Kesalahan</string>
+
+	<string name="email_intro_malay">
+		Pihak Berkuasa yang berkenan,\n\n
+
+		Tujuan saya menulis email ini adalah kerana sesuatu kejadian berlaku yang tidak menyenang hati.
+		Perkara tersebut adalah dicatat seperti dibawah.
+		Sila ambil tindakan yang sepatutnya terhadap aduan saya.\n\n
+
+		Sekian.
+	</string>
+	
+	
 	<string-array name="offence_array">
 		<item>拒绝使用计程表</item>
 		<item>拒绝乘载乘客</item>
@@ -43,6 +61,15 @@
 		<item>骚扰</item>
 		<item>在的士里吸烟</item>
 		<item>其他</item>
+	</string-array>
+	<string-array name="offence_malay_array">
+		<item>Enggan menggunakan meter</item>
+		<item>Enggan mengambil penumpang</item>
+		<item>Enggan memberi baki tumpang</item>
+		<item>Menawarkan perkhidmatan yang menyalahi undang-undang</item>
+		<item>Gangguan</item>
+		<item>Merokok dalam teksi</item>
+		<item>Other</item>
 	</string-array>
 
 	<string name="other">其他意见</string>
@@ -63,9 +90,19 @@
 	<string name="send_email">电子邮件</string>
 	<string name="place_call">Place Call</string>
 
+	<string name="sms_number">15888</string>
+	<string name="email_address">aduan@lpkp.gov.my; info@jpj.gov.my; klangvalley.transit@gmail.com; nccc@nccc.org.my; </string>
+	<string name="traffic_police_email_address">rmp@rmp.gov.my; </string>
+	<string name="twitter_address">\@transitmy @myAduan</string>
+
 	<string-array name="tel_number_names">
 		<item>LPKP: 商用车辆管辖部门</item>
 		<item>JPJ: 交通部</item>
 		<item>NCCC: 全国消费者投诉中心</item>
+	</string-array>
+	<string-array name="tel_numbers">
+		<item>1800889600</item>
+		<item>0388884244</item>
+		<item>0378779000</item>
 	</string-array>
 </resources>
