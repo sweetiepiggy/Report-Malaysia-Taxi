@@ -33,6 +33,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -62,6 +64,7 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 
 	static final int ACTIVITY_TAKE_PHOTO = 0;
 	static final int ACTIVITY_RECORD_SOUND = 1;
+	static final int ACTIVITY_UPDATE_SETTINGS = 2;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -405,18 +408,23 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 
-		if (resultCode != -1) {
-			return;
-		}
-
 		switch (requestCode) {
 		case ACTIVITY_TAKE_PHOTO:
-			mPhotoUris.add(data.getDataString());
-			((TextView)findViewById(R.id.camera_label)).setText(Integer.toString(mPhotoUris.size()));
+			if (resultCode == RESULT_OK) {
+				mPhotoUris.add(data.getDataString());
+				((TextView)findViewById(R.id.camera_label)).setText(Integer.toString(mPhotoUris.size()));
+			}
 			break;
 		case ACTIVITY_RECORD_SOUND:
-			mRecordingUris.add(data.getDataString());
-			((TextView)findViewById(R.id.recorder_label)).setText(Integer.toString(mRecordingUris.size()));
+			if (resultCode == RESULT_OK) {
+				mRecordingUris.add(data.getDataString());
+				((TextView)findViewById(R.id.recorder_label)).setText(Integer.toString(mRecordingUris.size()));
+			}
+			break;
+		case ACTIVITY_UPDATE_SETTINGS:
+			Intent refresh = new Intent(this, ReportMalaysiaTaxiActivity.class);
+			startActivity(refresh);
+			finish();
 			break;
 		}
 	}
@@ -432,20 +440,24 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 		}
 	}
 
-	/*
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.options_menu, menu);
 		return true;
-	}*/
+	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle item selection
 		switch (item.getItemId()) {
+		case R.id.about:
+			Intent about_intent = new Intent(getApplicationContext(), AboutActivity.class);
+			startActivity(about_intent);
+			return true;
 		case R.id.settings:
-	//                newGame();
+			Intent settings_intent = new Intent(getApplicationContext(), SettingsActivity.class);
+			startActivityForResult(settings_intent, ACTIVITY_UPDATE_SETTINGS);
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);

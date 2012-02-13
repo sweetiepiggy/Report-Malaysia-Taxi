@@ -31,6 +31,10 @@
 	<string name="registration">Nombor Teksi Pendaftaran</string>
 	<string name="offence">Kesalahan</string>
 
+    <string name="settings">Tetapan</string>
+    <string name="about">Maklumat</string>
+    <string name="language">Bahasa</string>
+	
 	<string name="location_hint">Masukkan lokasi kejadian</string>
 	<string name="registration_hint">Masuk nombor plat kereta, cth HWA9999</string>
 	<string name="other_hint">Masukkan butiran tambahan dalam aduan (pilihan)</string>
@@ -88,7 +92,31 @@
 	<string name="send_tweet">Menghantar tweet</string>
 	<string name="send_email">Hantar e-mel</string>
 	<string name="place_call">Hubungi</string>
-
+	
+	<string-array name="languages">
+		<item>English</item>
+		<item>中文</item>
+		<item>Bahasa Melayu</item>
+	</string-array>
+	<string-array name="language_codes">
+	    <item>en</item>
+	    <item>zh</item>
+	    <item>ms</item>
+	</string-array>
+	<string name="gpl">
+Copyright (C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
+Report Malaysia Taxi is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 3 of the License, or
+    (at your option) any later version.\n\n
+Report Malaysia Taxi is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.\n\n
+You should have received a copy of the GNU General Public License
+    along with Report Malaysia Taxi; if not, see http://www.gnu.org/licenses/.  
+    </string>
+	
 	<string name="sms_number">15888</string>
 	<string name="email_address">aduan@lpkp.gov.my; aduan@spad.gov.my; info@jpj.gov.my; klangvalley.transit@gmail.com; nccc@nccc.org.my; </string>
 	<string name="traffic_police_email_address">rmp@rmp.gov.my; </string>
