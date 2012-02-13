@@ -187,7 +187,7 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 				}
 
 				if (tweet_checkbox.isChecked()) {
-					String tweet_msg = format_tweet_msg(msg);
+					String tweet_msg = format_tweet_msg(date, time, loc, reg, mOffence, other);
 					Intent tweet_intent = new Intent(Intent.ACTION_SEND);
 					tweet_intent.putExtra(Intent.EXTRA_TEXT, tweet_msg);
 					if (!mPhotoUris.isEmpty()) {
@@ -336,9 +336,80 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 		return getResources().getString(R.string.complaint_malay) + msg;
 	}
 
-	private String format_tweet_msg(String msg) {
-		return getResources().getString(R.string.twitter_address) + " " +
-			getResources().getString(R.string.complaint_hashtag) + msg;
+	private String format_tweet_msg(String date, String time, String location,
+			String registration, String offence, String other) {
+		String msg = getResources().getString(R.string.twitter_address) + " " +
+				getResources().getString(R.string.complaint_hashtag);
+		
+		if (registration.length() != 0) {
+			msg += ' ' + registration;
+		}
+		
+		if (offence.equals("Other")) {
+			offence = "";
+		}
+		
+		/* don't cut down other fields if user description won't fit anyway */
+		String orig_other = other;		
+		if (msg.length() + other.length() + 1 > 140) {
+			other = "";
+		}
+		
+		int extra_length = 1;
+		if (location.length() != 0) {
+			extra_length += 1;
+		}
+		if (offence.length() != 0) {
+			extra_length += 2;
+		}
+		if (orig_other.length() != 0) {
+			extra_length += 2;
+		}
+		/* TODO: remove year from date */
+		if (date.length() != 0 &&
+				(msg.length() + date.length() + location.length() +
+						offence.length() + other.length() + extra_length < 140)) {
+			msg += ' ' + date;
+			if (time.length() != 0 &&
+					(msg.length() + time.length() + location.length() +
+							offence.length() + other.length() + extra_length < 140)) {
+				msg += ' ' + time;
+			}
+		}
+
+		boolean need_comma = false;
+		extra_length = 1;
+		if (offence.length() != 0) {
+			extra_length += 2;
+		}
+		if (orig_other.length() != 0) {
+			extra_length += 2;
+		}
+		if (location.length() != 0 &&
+				(msg.length() + location.length() +
+						offence.length() + other.length() + 1 < 140)) {
+				msg += " " + location;
+				need_comma = true;
+		}
+		
+		extra_length = need_comma ? 2 : 1;
+		if (offence.length() != 0 &&
+				(msg.length() + other.length() + extra_length < 140)) {
+				if (need_comma) {
+					msg += ',';
+				}
+				msg += " " + offence;
+				need_comma = true;
+		}
+		
+		if (orig_other.length() != 0) {
+			if (need_comma) {
+				msg += ',';
+			}
+			msg += ' ' + orig_other;
+		}
+		
+		return msg;
 	}
 
 	private void update_date_label(int year, int month, int day) {
