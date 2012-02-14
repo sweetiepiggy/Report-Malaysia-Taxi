@@ -29,6 +29,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -44,6 +45,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -56,6 +58,9 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 	private int mHour;
 	private int mMinute;
 	private String mOffence;
+	
+	private boolean[] mSelected = new boolean[] {true, true, false, false, false};
+	
 	private ArrayList<String> mPhotoUris = new ArrayList<String>();
 	private ArrayList<String> mRecordingUris = new ArrayList<String>();
 
@@ -185,6 +190,72 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 					other_intent.setType("text/plain");
 					startActivity(Intent.createChooser(other_intent, getResources().getString(R.string.send_other)));
 				}
+				
+				if (email_checkbox.isChecked()) {
+					String[] items = getResources().getStringArray(R.array.email_choices);
+					final String f_msg = msg;
+					final String f_reg = reg;
+
+					AlertDialog.Builder builder = new AlertDialog.Builder(ReportMalaysiaTaxiActivity.this);
+					builder.setTitle(getResources().getString(R.string.who_email));
+					builder.setMultiChoiceItems(items, mSelected, new DialogInterface.OnMultiChoiceClickListener() {
+						public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+							mSelected[which] = isChecked;
+						}
+					});
+					builder.setPositiveButton("Done", new OnClickListener() {
+						@Override public void onClick(DialogInterface dialog, int which) {
+							String email_msg = format_email_msg(f_msg);
+							String action = (mPhotoUris.size() + mRecordingUris.size() > 1) ?
+									Intent.ACTION_SEND_MULTIPLE : Intent.ACTION_SEND;
+							Intent email_intent = new Intent(action);
+
+							String email_addresses = "";
+							if (mSelected[0]) {
+								email_addresses += getResources().getString(R.string.gov_email);
+							}
+							if (mSelected[1]) {
+								email_addresses += getResources().getString(R.string.consumer_email);
+							}
+							if (mSelected[2]) {
+								email_addresses += getResources().getString(R.string.ministers_email);
+							}
+							if (mSelected[3]) {
+								email_addresses += getResources().getString(R.string.media_email);
+							}
+							if (mSelected[4]) {
+								email_addresses += getResources().getString(R.string.traffic_police_email);
+							}
+
+							email_intent.putExtra(Intent.EXTRA_EMAIL, new String[] {
+									email_addresses} );
+							email_intent.putExtra(Intent.EXTRA_SUBJECT,
+									getResources().getString(R.string.complaint_email_malay) + ' ' + f_reg);
+							email_intent.putExtra(Intent.EXTRA_TEXT, email_msg);
+
+							ArrayList<Uri> uris = new ArrayList<Uri>();
+							Iterator<String> itr = mPhotoUris.iterator();
+							while (itr.hasNext()) {
+								uris.add(Uri.parse(itr.next()));
+							}
+							itr = mRecordingUris.iterator();
+							while (itr.hasNext()) {
+								uris.add(Uri.parse(itr.next()));
+							}
+							if (uris.size() != 0) {
+								email_intent.putExtra(Intent.EXTRA_STREAM, uris);
+							}
+							email_intent.setType("text/plain");
+							startActivity(Intent.createChooser(email_intent, getResources().getString(R.string.send_email)));
+						}
+					});
+					AlertDialog alert = builder.create();
+					ListView list = alert.getListView();
+					list.setItemChecked(0, true);
+					list.setItemChecked(1, true);
+					alert.show();
+						
+				}
 
 				if (tweet_checkbox.isChecked()) {
 					String tweet_msg = format_tweet_msg(date, time, loc, reg, mOffence, other);
@@ -197,39 +268,7 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 					tweet_intent.setType("text/plain");
 					startActivity(Intent.createChooser(tweet_intent, getResources().getString(R.string.send_tweet)));
 				}
-				if (email_checkbox.isChecked()) {
-					String email_msg = format_email_msg(msg);
-					String action = (mPhotoUris.size() + mRecordingUris.size() > 1) ?
-							Intent.ACTION_SEND_MULTIPLE : Intent.ACTION_SEND;
-					Intent email_intent = new Intent(action);
 
-					String email_addresses = getResources().getString(R.string.email_address);
-					if (mOffence.equals("Gangguan") ||
-						mOffence.equals("Menawarkan perkhidmatan yang menyalahi undang-undang")) {
-						email_addresses += getResources().getString(R.string.traffic_police_email_address);
-					}
-
-					email_intent.putExtra(Intent.EXTRA_EMAIL, new String[] {
-							email_addresses} );
-					email_intent.putExtra(Intent.EXTRA_SUBJECT,
-							getResources().getString(R.string.complaint_email_malay) + ' ' + reg);
-					email_intent.putExtra(Intent.EXTRA_TEXT, email_msg);
-
-					ArrayList<Uri> uris = new ArrayList<Uri>();
-					Iterator<String> itr = mPhotoUris.iterator();
-					while (itr.hasNext()) {
-						uris.add(Uri.parse(itr.next()));
-					}
-					itr = mRecordingUris.iterator();
-					while (itr.hasNext()) {
-						uris.add(Uri.parse(itr.next()));
-					}
-					if (uris.size() != 0) {
-						email_intent.putExtra(Intent.EXTRA_STREAM, uris);
-					}
-					email_intent.setType("text/plain");
-					startActivity(Intent.createChooser(email_intent, getResources().getString(R.string.send_email)));
-				}
 				if (sms_checkbox.isChecked()) {
 					String sms_msg = format_sms_msg(msg);
 					Intent sms_intent = new Intent(Intent.ACTION_VIEW);

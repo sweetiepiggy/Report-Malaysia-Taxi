@@ -65,6 +65,16 @@
 	<string name="send_email">Send email</string>
 	<string name="place_call">Place Call</string>
 	
+	<string name="who_email">Select Who to Email</string>
+	<string name="Done">Done</string>
+	<string-array name="email_choices">
+	    <item>Government Departments</item>
+	    <item>Consumer Complaints Groups</item>
+	    <item>Government Ministers</item>
+	    <item>News Media</item>
+	    <item>Traffic Police</item>
+	</string-array>
+	
 	<string-array name="tel_number_names">
 		<item>LPKP: Licensing of Commercial Vehicles</item>
 		<item>JPJ: Road Transport Department</item>

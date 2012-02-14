@@ -61,8 +61,15 @@
 	</string-array>
     
 	<string name="sms_number">15888</string>
-	<string name="email_address">aduan@lpkp.gov.my; aduan@spad.gov.my; info@jpj.gov.my; klangvalley.transit@gmail.com; nccc@nccc.org.my; </string>
-	<string name="traffic_police_email_address">rmp@rmp.gov.my; </string>
+	
+	<string name="gov_email">aduan@lpkp.gov.my; aduan@spad.gov.my; aduantrafik@jpj.gov.my; eaduan.kpdnkk.gov.my; </string>
+	<string name="consumer_email">klangvalley.transit@gmail.com; nccc@nccc.org.my; </string>
+	<string name="ministers_email">menteri@mot.gov.my; rnc@kwp.gov.my; najib@1malaysia.com.my; </string>
+	<string name="media_email">editor@thestar.com.my; metro@thestar.com.my; mmnews@mmail.com.my; syedn@nst.com.my;
+	    letters@nst.com.my; streets@nst.com.my; letters@thesundaily.com, editor@malaysiakini.com.my;
+	    editor@themalaysianinsider.com; </string>
+	<string name="traffic_police_email">rmp@rmp.gov.my; </string>	 
+	
 	<string name="twitter_address">\@transitmy @myAduan</string>
 
 	<string-array name="tel_numbers">

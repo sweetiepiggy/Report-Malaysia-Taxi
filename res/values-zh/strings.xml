@@ -65,6 +65,16 @@
 	<string name="send_email">电子邮件</string>
 	<string name="place_call">致电</string>
 	
+	<string name="who_email">Select Who to Email</string>
+	<string name="Done">Done</string>
+	<string-array name="email_choices">
+	    <item>Government Departments</item>
+	    <item>Consumer Complaints Groups</item>
+	    <item>Government Ministers</item>
+	    <item>News Media</item>
+	    <item>Traffic Police</item>
+	</string-array>
+	
 	<string-array name="tel_number_names">
 		<item>LPKP: 商用车辆管辖部门</item>
 		<item>JPJ: 交通部</item>
