@@ -211,7 +211,8 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 
 					email_intent.putExtra(Intent.EXTRA_EMAIL, new String[] {
 							email_addresses} );
-					email_intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.complaint_email_malay));
+					email_intent.putExtra(Intent.EXTRA_SUBJECT,
+							getResources().getString(R.string.complaint_email_malay) + ' ' + reg);
 					email_intent.putExtra(Intent.EXTRA_TEXT, email_msg);
 
 					ArrayList<Uri> uris = new ArrayList<Uri>();
@@ -365,7 +366,7 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 		if (orig_other.length() != 0) {
 			extra_length += 2;
 		}
-		/* TODO: remove year from date */
+
 		if (date.length() != 0 &&
 				(msg.length() + date.length() + location.length() +
 						offence.length() + other.length() + extra_length < 140)) {
