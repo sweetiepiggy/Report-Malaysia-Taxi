@@ -70,19 +70,18 @@
 		<item>JPJ: Jabatan Pengangkutan Jalan</item>
 		<item>NCCC: Pusat Khidmat Aduan Pengguna Nasional</item>
 	</string-array>
-	
-	<string name="gpl">
+
+    <string name="gpl">
 Copyright (C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
-Report Malaysia Taxi is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 3 of the License, or
-    (at your option) any later version.\n\n
-Report Malaysia Taxi is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.\n\n
-You should have received a copy of the GNU General Public License
-    along with Report Malaysia Taxi; if not, see http://www.gnu.org/licenses/.  
+Aduan Teksi adalah perisian bebas; anda boleh memaparkan dan / atau mengubah suai
+	di bawah terma GNU Lesen Awam Am yang diterbitkan oleh Perisian Yayasan Percuma;
+	samada 3 versi Lesen, atau (atas pilihan anda) mana-mana versi selepas ini.\n\n
+Tujuan Aduan Teksi diterbit adalah untuk manfaat pengguna. Walaubagaimanapun, ia
+	adalah produk yang tanpa sebarang waranti, tanpa jaminan terhadap sebarang
+	perdaganagan atau kegunaaan untuk tujuan tertentu. Sila merujuk GNU Lesen Awam
+	Am untuk maklumat lanjut.\n\n
+Anda akan menerima satu salinan GNU Lesen Awam Am bersama dengan Aduan Teksi;
+	jika tidak, sila lihat http://www.gnu.org/licenses/.
     </string>
 </resources>
 
