@@ -25,8 +25,6 @@
 	<string name="app_name">Aduan Teksi</string>
 	<string name="date_prompt">tarikh</string>
 	<string name="time_prompt">masa</string>
-	<string name="default_date">01/01/1970</string>
-	<string name="default_time">12:00AM</string>
 	<string name="location">Lokasi</string>
 	<string name="registration">Nombor Teksi Pendaftaran</string>
 	<string name="offence">Kesalahan</string>
@@ -38,23 +36,6 @@
 	<string name="location_hint">Masukkan lokasi kejadian</string>
 	<string name="registration_hint">Masuk nombor plat kereta, cth HWA9999</string>
 	<string name="other_hint">Masukkan butiran tambahan dalam aduan (pilihan)</string>
-
-	<string name="complaint_email_malay">Aduan Teksi</string>
-	<string name="complaint_malay">ADUAN LPKP</string>
-	<string name="complaint_hashtag">#ADUANTEKSI</string>
-	<string name="location_malay">Lokasi</string>
-	<string name="registration_malay">Nombor Teksi Pendaftaran</string>
-	<string name="offence_malay">Kesalahan</string>
-
-	<string name="email_intro_malay">
-		Pihak Berkuasa yang berkenan,\n\n
-
-		Tujuan saya menulis email ini adalah kerana sesuatu kejadian berlaku yang tidak menyenang hati.
-		Perkara tersebut adalah dicatat seperti dibawah.
-		Sila ambil tindakan yang sepatutnya terhadap aduan saya.\n\n
-
-		Sekian.
-	</string>
 	
 	<string-array name="offence_array">
 		<item>Enggan menggunakan meter</item>
@@ -64,15 +45,6 @@
 		<item>Gangguan</item>
 		<item>Merokok dalam teksi</item>
 		<item>Lain-lain</item>
-	</string-array>
-	<string-array name="offence_malay_array">
-		<item>Enggan menggunakan meter</item>
-		<item>Enggan mengambil penumpang</item>
-		<item>Enggan memberi baki tumpang</item>
-		<item>Menawarkan perkhidmatan yang menyalahi undang-undang</item>
-		<item>Gangguan</item>
-		<item>Merokok dalam teksi</item>
-		<item>Other</item>
 	</string-array>
 
 	<string name="other">Komen Lain</string>
@@ -92,17 +64,13 @@
 	<string name="send_tweet">Menghantar tweet</string>
 	<string name="send_email">Hantar e-mel</string>
 	<string name="place_call">Hubungi</string>
+
+	<string-array name="tel_number_names">
+		<item>LPKP: Lembaga Pelesenan Kenderaan Perdagangan</item>
+		<item>JPJ: Jabatan Pengangkutan Jalan</item>
+		<item>NCCC: Pusat Khidmat Aduan Pengguna Nasional</item>
+	</string-array>
 	
-	<string-array name="languages">
-		<item>English</item>
-		<item>中文</item>
-		<item>Bahasa Melayu</item>
-	</string-array>
-	<string-array name="language_codes">
-	    <item>en</item>
-	    <item>zh</item>
-	    <item>ms</item>
-	</string-array>
 	<string name="gpl">
 Copyright (C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
 Report Malaysia Taxi is free software; you can redistribute it and/or modify
@@ -116,22 +84,6 @@ Report Malaysia Taxi is distributed in the hope that it will be useful,
 You should have received a copy of the GNU General Public License
     along with Report Malaysia Taxi; if not, see http://www.gnu.org/licenses/.  
     </string>
-	
-	<string name="sms_number">15888</string>
-	<string name="email_address">aduan@lpkp.gov.my; aduan@spad.gov.my; info@jpj.gov.my; klangvalley.transit@gmail.com; nccc@nccc.org.my; </string>
-	<string name="traffic_police_email_address">rmp@rmp.gov.my; </string>
-	<string name="twitter_address">\@transitmy @myAduan</string>
-
-	<string-array name="tel_number_names">
-		<item>LPKP: Lembaga Pelesenan Kenderaan Perdagangan</item>
-		<item>JPJ: Jabatan Pengangkutan Jalan</item>
-		<item>NCCC: Pusat Khidmat Aduan Pengguna Nasional</item>
-	</string-array>
-	<string-array name="tel_numbers">
-		<item>1800889600</item>
-		<item>0388884244</item>
-		<item>0378779000</item>
-	</string-array>
 </resources>
 
 
