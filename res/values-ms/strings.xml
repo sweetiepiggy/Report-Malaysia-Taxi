@@ -65,14 +65,14 @@
 	<string name="send_email">Hantar e-mel</string>
 	<string name="place_call">Hubungi</string>
 	
-	<string name="who_email">Select Who to Email</string>
-	<string name="Done">Done</string>
+	<string name="who_email">Pilih Talian Untuk Menghantar E-mel</string>
+	<string name="done">Selesai</string>
 	<string-array name="email_choices">
-	    <item>Government Departments</item>
-	    <item>Consumer Complaints Groups</item>
-	    <item>Government Ministers</item>
-	    <item>News Media</item>
-	    <item>Traffic Police</item>
+	    <item>Jabatan Kerajaan</item>
+	    <item>Pengguna Agensi</item>
+	    <item>Kerajaan Menteri</item>
+	    <item>Berita Media</item>
+	    <item>Trafik Polis</item>
 	</string-array>
 
 	<string-array name="tel_number_names">

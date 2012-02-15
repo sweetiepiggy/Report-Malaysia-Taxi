@@ -65,14 +65,14 @@
 	<string name="send_email">电子邮件</string>
 	<string name="place_call">致电</string>
 	
-	<string name="who_email">Select Who to Email</string>
-	<string name="Done">Done</string>
+	<string name="who_email">选择谁电子邮件</string>
+	<string name="done">完成</string>
 	<string-array name="email_choices">
-	    <item>Government Departments</item>
-	    <item>Consumer Complaints Groups</item>
-	    <item>Government Ministers</item>
-	    <item>News Media</item>
-	    <item>Traffic Police</item>
+	    <item>政府部门</item>
+	    <item>消费者权益保护机构</item>
+	    <item>政府部长</item>
+	    <item>新闻媒体</item>
+	    <item>交通警</item>
 	</string-array>
 	
 	<string-array name="tel_number_names">

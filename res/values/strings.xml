@@ -66,10 +66,10 @@
 	<string name="place_call">Place Call</string>
 	
 	<string name="who_email">Select Who to Email</string>
-	<string name="Done">Done</string>
+	<string name="done">Done</string>
 	<string-array name="email_choices">
 	    <item>Government Departments</item>
-	    <item>Consumer Complaints Groups</item>
+	    <item>Consumer Agencies</item>
 	    <item>Government Ministers</item>
 	    <item>News Media</item>
 	    <item>Traffic Police</item>
