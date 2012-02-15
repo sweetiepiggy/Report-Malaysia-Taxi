@@ -34,9 +34,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -99,6 +101,18 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 	update_date_label(mYear, mMonth, mDay);
 	update_time_label(mHour, mMinute);
 
+	EditText registration_entry = (EditText)findViewById(R.id.registration_entry);
+    registration_entry.setInputType(InputType.TYPE_NULL);
+
+    registration_entry.setOnTouchListener(new View.OnTouchListener() {
+        public boolean onTouch(View v, MotionEvent event) {
+        	EditText registration_entry = (EditText)findViewById(R.id.registration_entry);
+        	registration_entry.setInputType(InputType.TYPE_CLASS_TEXT);
+        	registration_entry.onTouchEvent(event);
+        	return true;
+        } 
+    });	
+	
 	Spinner offence_spinner = (Spinner) findViewById(R.id.offence_spinner);
 	ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
 		this, R.array.offence_array, android.R.layout.simple_spinner_item);
@@ -203,7 +217,7 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 							mSelected[which] = isChecked;
 						}
 					});
-					builder.setPositiveButton("Done", new OnClickListener() {
+					builder.setPositiveButton(getResources().getString(R.string.done), new OnClickListener() {
 						@Override public void onClick(DialogInterface dialog, int which) {
 							String email_msg = format_email_msg(f_msg);
 							String action = (mPhotoUris.size() + mRecordingUris.size() > 1) ?
