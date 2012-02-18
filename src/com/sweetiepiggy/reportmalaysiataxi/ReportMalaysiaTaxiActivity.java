@@ -375,6 +375,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				startActivity(Intent.createChooser(email_intent, getResources().getString(R.string.send_email)));
 			}
 		});
+
+		/* TODO: pressing neutral button should not close dialog */
 		builder.setNeutralButton(getResources().getString(R.string.details), new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
