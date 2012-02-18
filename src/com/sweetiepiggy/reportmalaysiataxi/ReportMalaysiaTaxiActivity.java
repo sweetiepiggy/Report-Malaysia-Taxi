@@ -31,6 +31,7 @@ import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -81,8 +82,25 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		init();
+//		final MyDataObject data = (MyDataObject) getLastNonConfigurationInstance();
+//		if (data == null) {
+			init();
+//		}
 	}
+
+//	@Override
+//	public Object onRetainNonConfigurationInstance()
+//	{
+//		final MyDataObject data = collectMyLoadedData();
+//		return data;
+//	}
+
+//	@Override
+//	public void onConfigurationChanged(Configuration new_config)
+//	{
+//		super.onConfigurationChanged(new_config);
+//		((TextView)findViewById(R.id.registration_label)).setText(getResources().getString(R.string.registration));
+//	}
 
 	private void init()
 	{
