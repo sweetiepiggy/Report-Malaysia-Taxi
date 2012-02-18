@@ -60,6 +60,7 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 	private int mHour;
 	private int mMinute;
 	private String mOffence;
+	private String mOffenceMalay;
 
 	private boolean[] mSelected = new boolean[] {true, true, false, false, false};
 
@@ -79,39 +80,19 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
-		Button date_button = (Button)findViewById(R.id.date_button);
-		date_button.setOnClickListener(new View.OnClickListener() {
-		public void onClick(View v) {
-			showDialog(DATE_DIALOG_ID);
-		}
-	});
-	Button time_button = (Button)findViewById(R.id.time_button);
-	time_button.setOnClickListener(new View.OnClickListener() {
-		public void onClick(View v) {
-			showDialog(TIME_DIALOG_ID);
-		}
-	});
+		create_date_time_buttons();
 
-	final Calendar c = Calendar.getInstance();
-	mYear = c.get(Calendar.YEAR);
-	mMonth = c.get(Calendar.MONTH);
-	mDay = c.get(Calendar.DAY_OF_MONTH);
-	mHour = c.get(Calendar.HOUR_OF_DAY);
-	mMinute = c.get(Calendar.MINUTE);
-	update_date_label(mYear, mMonth, mDay);
-	update_time_label(mHour, mMinute);
+		EditText registration_entry = (EditText)findViewById(R.id.registration_entry);
+		registration_entry.setInputType(InputType.TYPE_NULL);
 
-	EditText registration_entry = (EditText)findViewById(R.id.registration_entry);
-	registration_entry.setInputType(InputType.TYPE_NULL);
-
-	registration_entry.setOnTouchListener(new View.OnTouchListener() {
-		public boolean onTouch(View v, MotionEvent event) {
-			EditText registration_entry = (EditText)findViewById(R.id.registration_entry);
-			registration_entry.setInputType(InputType.TYPE_CLASS_TEXT);
-			registration_entry.onTouchEvent(event);
-			return true;
-		}
-	});
+		registration_entry.setOnTouchListener(new View.OnTouchListener() {
+			public boolean onTouch(View v, MotionEvent event) {
+				EditText registration_entry = (EditText)findViewById(R.id.registration_entry);
+				registration_entry.setInputType(InputType.TYPE_CLASS_TEXT);
+				registration_entry.onTouchEvent(event);
+				return true;
+			}
+		});
 
 	Spinner offence_spinner = (Spinner) findViewById(R.id.offence_spinner);
 	ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -157,7 +138,7 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 			if (registration_entry.getText().toString().length() == 0) {
 				results_complete = false;
 				incomplete_msg = getResources().getString(R.string.missing_reg);
-			} else if (mOffence.equals("Other") && other_entry.getText().toString().length() == 0) {
+			} else if (mOffenceMalay.equals("Other") && other_entry.getText().toString().length() == 0) {
 				results_complete = false;
 				incomplete_msg = getResources().getString(R.string.missing_other);
 			}
@@ -169,7 +150,7 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 				String reg = registration_entry.getText().toString();
 				String other = other_entry.getText().toString();
 
-				String msg = format_msg(date, time, loc, reg, mOffence, other);
+				String msg = format_msg(date, time, loc, reg, mOffenceMalay, other);
 
 				CheckBox sms_checkbox = ((CheckBox)findViewById(R.id.sms_checkbox));
 				CheckBox email_checkbox = ((CheckBox)findViewById(R.id.email_checkbox));
@@ -350,6 +331,30 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 			}
 		});
 
+	}
+
+	private void create_date_time_buttons() {
+		Button date_button = (Button)findViewById(R.id.date_button);
+		date_button.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				showDialog(DATE_DIALOG_ID);
+			}
+		});
+		Button time_button = (Button)findViewById(R.id.time_button);
+		time_button.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				showDialog(TIME_DIALOG_ID);
+			}
+		});
+
+		final Calendar c = Calendar.getInstance();
+		mYear = c.get(Calendar.YEAR);
+		mMonth = c.get(Calendar.MONTH);
+		mDay = c.get(Calendar.DAY_OF_MONTH);
+		mHour = c.get(Calendar.HOUR_OF_DAY);
+		mMinute = c.get(Calendar.MINUTE);
+		update_date_label(mYear, mMonth, mDay);
+		update_time_label(mHour, mMinute);
 	}
 
 	private String format_msg(String date, String time, String location,
@@ -556,7 +561,8 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 	public class OffenceOnItemSelectedListener implements OnItemSelectedListener {
 		public void onItemSelected(AdapterView<?> parent, View view, int pos,
 				long id) {
-			mOffence = getResources().getStringArray(R.array.offence_malay_array)[pos];
+			mOffence = getResources().getStringArray(R.array.offence_array)[pos];
+			mOffenceMalay = getResources().getStringArray(R.array.offence_malay_array)[pos];
 		}
 
 		public void onNothingSelected(AdapterView<?> parent) {
