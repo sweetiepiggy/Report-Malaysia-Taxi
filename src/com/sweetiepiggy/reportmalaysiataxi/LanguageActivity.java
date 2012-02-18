@@ -32,35 +32,30 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class LanguageActivity extends ListActivity {
-	
-	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-	    super.onCreate(savedInstanceState);
-        
-        setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
-        		getResources().getStringArray(R.array.languages)));
+		super.onCreate(savedInstanceState);
 
-        ListView lv = getListView();
+		setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
+					getResources().getStringArray(R.array.languages)));
 
-        lv.setOnItemClickListener(new OnItemClickListener() {
-          public void onItemClick(AdapterView<?> parent, View view,
-        		  int pos, long id) {
-        	  
-        	  String language_code = getResources().getStringArray(R.array.language_codes)[pos];
-//        	  if (pos == 0) {
-//        	  } else {
-        		  Locale locale = new Locale(language_code);
-        		  Locale.setDefault(locale);
-        		  Configuration config = new Configuration();
-        		  config.locale = locale;
-        		  getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-//        	  }
-        	  setResult(RESULT_OK, null);
-        	  finish();
-          }
-        });
+		ListView lv = getListView();
+
+		lv.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, View view,
+					int pos, long id) {
+				String language_code = getResources().getStringArray(R.array.language_codes)[pos];
+				Locale locale = new Locale(language_code);
+				Locale.setDefault(locale);
+				Configuration config = new Configuration();
+				config.locale = locale;
+				getBaseContext().getResources().updateConfiguration(config,
+					getBaseContext().getResources().getDisplayMetrics());
+				setResult(RESULT_OK, null);
+				finish();
+			}
+		});
 
 	}
-
 }
+

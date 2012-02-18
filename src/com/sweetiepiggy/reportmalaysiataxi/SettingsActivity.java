@@ -32,17 +32,14 @@ import android.widget.TextView;
 public class SettingsActivity extends ListActivity {
 
 	static final int ACTIVITY_SET_LANGUAGE = 0;
-	
+
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-	    super.onCreate(savedInstanceState);
-        
-	    init();
-        
-
+		super.onCreate(savedInstanceState);
+		init();
 	}
-	
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
@@ -53,26 +50,26 @@ public class SettingsActivity extends ListActivity {
 			break;
 		}
 	}
-	
-	private void init() {
-	    String[] settings = new String[] {
-	    		getResources().getString(R.string.language)
-	    };
-        setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, settings));
-        
-        ListView lv = getListView();
-        lv.refreshDrawableState();
-        
-        lv.setOnItemClickListener(new OnItemClickListener() {
-          public void onItemClick(AdapterView<?> parent, View view,
-              int position, long id) {
-        	  CharSequence item = ((TextView) view).getText();
-        	  if (item.equals(getResources().getString(R.string.language))) {
-      			Intent language_intent = new Intent(getApplicationContext(), LanguageActivity.class);
-    			startActivityForResult(language_intent, ACTIVITY_SET_LANGUAGE);
-        	  }
-          }
-        });
-	}
 
+	private void init() {
+		String[] settings = new String[] {
+			getResources().getString(R.string.language)
+		};
+		setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, settings));
+
+		ListView lv = getListView();
+		lv.refreshDrawableState();
+
+		lv.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				CharSequence item = ((TextView) view).getText();
+				if (item.equals(getResources().getString(R.string.language))) {
+					Intent language_intent = new Intent(getApplicationContext(), LanguageActivity.class);
+					startActivityForResult(language_intent, ACTIVITY_SET_LANGUAGE);
+				}
+			}
+		});
+	}
 }
+

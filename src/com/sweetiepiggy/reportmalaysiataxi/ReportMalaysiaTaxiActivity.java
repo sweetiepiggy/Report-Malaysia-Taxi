@@ -60,9 +60,9 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 	private int mHour;
 	private int mMinute;
 	private String mOffence;
-	
+
 	private boolean[] mSelected = new boolean[] {true, true, false, false, false};
-	
+
 	private ArrayList<String> mPhotoUris = new ArrayList<String>();
 	private ArrayList<String> mRecordingUris = new ArrayList<String>();
 
@@ -102,17 +102,17 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 	update_time_label(mHour, mMinute);
 
 	EditText registration_entry = (EditText)findViewById(R.id.registration_entry);
-    registration_entry.setInputType(InputType.TYPE_NULL);
+	registration_entry.setInputType(InputType.TYPE_NULL);
 
-    registration_entry.setOnTouchListener(new View.OnTouchListener() {
-        public boolean onTouch(View v, MotionEvent event) {
-        	EditText registration_entry = (EditText)findViewById(R.id.registration_entry);
-        	registration_entry.setInputType(InputType.TYPE_CLASS_TEXT);
-        	registration_entry.onTouchEvent(event);
-        	return true;
-        } 
-    });	
-	
+	registration_entry.setOnTouchListener(new View.OnTouchListener() {
+		public boolean onTouch(View v, MotionEvent event) {
+			EditText registration_entry = (EditText)findViewById(R.id.registration_entry);
+			registration_entry.setInputType(InputType.TYPE_CLASS_TEXT);
+			registration_entry.onTouchEvent(event);
+			return true;
+		}
+	});
+
 	Spinner offence_spinner = (Spinner) findViewById(R.id.offence_spinner);
 	ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
 		this, R.array.offence_array, android.R.layout.simple_spinner_item);
@@ -204,7 +204,7 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 					other_intent.setType("text/plain");
 					startActivity(Intent.createChooser(other_intent, getResources().getString(R.string.send_other)));
 				}
-				
+
 				if (email_checkbox.isChecked()) {
 					String[] items = getResources().getStringArray(R.array.email_choices);
 					final String f_msg = msg;
@@ -268,7 +268,6 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 					list.setItemChecked(0, true);
 					list.setItemChecked(1, true);
 					alert.show();
-						
 				}
 
 				if (tweet_checkbox.isChecked()) {
@@ -394,21 +393,21 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 			String registration, String offence, String other) {
 		String msg = getResources().getString(R.string.twitter_address) + " " +
 				getResources().getString(R.string.complaint_hashtag);
-		
+
 		if (registration.length() != 0) {
 			msg += ' ' + registration;
 		}
-		
+
 		if (offence.equals("Other")) {
 			offence = "";
 		}
-		
+
 		/* don't cut down other fields if user description won't fit anyway */
-		String orig_other = other;		
+		String orig_other = other;
 		if (msg.length() + other.length() + 1 > 140) {
 			other = "";
 		}
-		
+
 		int extra_length = 1;
 		if (location.length() != 0) {
 			extra_length += 1;
@@ -445,7 +444,7 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 				msg += " " + location;
 				need_comma = true;
 		}
-		
+
 		extra_length = need_comma ? 2 : 1;
 		if (offence.length() != 0 &&
 				(msg.length() + other.length() + extra_length < 140)) {
@@ -455,14 +454,14 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 				msg += " " + offence;
 				need_comma = true;
 		}
-		
+
 		if (orig_other.length() != 0) {
 			if (need_comma) {
 				msg += ',';
 			}
 			msg += ' ' + orig_other;
 		}
-		
+
 		return msg;
 	}
 
@@ -565,7 +564,7 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 		}
 	}
 
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
