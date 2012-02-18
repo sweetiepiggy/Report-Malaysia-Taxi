@@ -80,260 +80,17 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
-		create_date_time_buttons();
-
-		EditText registration_entry = (EditText)findViewById(R.id.registration_entry);
-		registration_entry.setInputType(InputType.TYPE_NULL);
-
-		registration_entry.setOnTouchListener(new View.OnTouchListener() {
-			public boolean onTouch(View v, MotionEvent event) {
-				EditText registration_entry = (EditText)findViewById(R.id.registration_entry);
-				registration_entry.setInputType(InputType.TYPE_CLASS_TEXT);
-				registration_entry.onTouchEvent(event);
-				return true;
-			}
-		});
-
-	Spinner offence_spinner = (Spinner) findViewById(R.id.offence_spinner);
-	ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-		this, R.array.offence_array, android.R.layout.simple_spinner_item);
-	adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-	offence_spinner.setAdapter(adapter);
-	offence_spinner.setOnItemSelectedListener(new OffenceOnItemSelectedListener());
-
-	Button camera_button = (Button)findViewById(R.id.camera_button);
-	camera_button.setOnClickListener(new View.OnClickListener() {
-		@Override
-		public void onClick(View v) {
-			Intent photo_intent = new Intent (MediaStore.ACTION_IMAGE_CAPTURE);
-			startActivityForResult(photo_intent, ACTIVITY_TAKE_PHOTO);
-		}
-	});
-	Button recorder_button = (Button)findViewById(R.id.recorder_button);
-	recorder_button.setOnClickListener(new View.OnClickListener() {
-		@Override
-		public void onClick(View v) {
-			Intent recorder_intent = new Intent (MediaStore.Audio.Media.RECORD_SOUND_ACTION);
-			startActivityForResult(recorder_intent, ACTIVITY_RECORD_SOUND);
-		}
-	});
-
-	((CheckBox)findViewById(R.id.sms_checkbox)).setChecked(true);
-	((CheckBox)findViewById(R.id.email_checkbox)).setChecked(true);
-	((CheckBox)findViewById(R.id.tweet_checkbox)).setChecked(true);
-
-	Button submit_button = (Button)findViewById(R.id.submit_button);
-
-	submit_button.setOnClickListener(new View.OnClickListener() {
-		public void onClick(View v) {
-			TextView date_label = (TextView)findViewById(R.id.date_label);
-			TextView time_label = (TextView)findViewById(R.id.time_label);
-			EditText location_entry = (EditText)findViewById(R.id.location_entry);
-			EditText registration_entry = (EditText)findViewById(R.id.registration_entry);
-			EditText other_entry = (EditText)findViewById(R.id.other_entry);
-
-			boolean results_complete = true;
-			String incomplete_msg = "";
-
-			if (registration_entry.getText().toString().length() == 0) {
-				results_complete = false;
-				incomplete_msg = getResources().getString(R.string.missing_reg);
-			} else if (mOffenceMalay.equals("Other") && other_entry.getText().toString().length() == 0) {
-				results_complete = false;
-				incomplete_msg = getResources().getString(R.string.missing_other);
-			}
-
-			if (results_complete) {
-				String date = date_label.getText().toString();
-				String time = time_label.getText().toString();
-				String loc = location_entry.getText().toString();
-				String reg = registration_entry.getText().toString();
-				String other = other_entry.getText().toString();
-
-				String msg = format_msg(date, time, loc, reg, mOffenceMalay, other);
-
-				CheckBox sms_checkbox = ((CheckBox)findViewById(R.id.sms_checkbox));
-				CheckBox email_checkbox = ((CheckBox)findViewById(R.id.email_checkbox));
-				CheckBox tweet_checkbox = ((CheckBox)findViewById(R.id.tweet_checkbox));
-				CheckBox other_checkbox = ((CheckBox)findViewById(R.id.other_checkbox));
-
-				if (!sms_checkbox.isChecked() && !email_checkbox.isChecked() &&
-						!tweet_checkbox.isChecked() && !other_checkbox.isChecked()) {
-					Toast.makeText(getApplicationContext(), getResources().getString(R.string.missing_other),
-							Toast.LENGTH_SHORT).show();
-				}
-
-				if (other_checkbox.isChecked()) {
-					String action = (mPhotoUris.size() + mRecordingUris.size() > 1) ?
-							Intent.ACTION_SEND_MULTIPLE : Intent.ACTION_SEND;
-					Intent other_intent = new Intent(action);
-					other_intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.complaint_malay));
-					other_intent.putExtra(Intent.EXTRA_TEXT, msg);
-
-					ArrayList<Uri> uris = new ArrayList<Uri>();
-					Iterator<String> itr = mPhotoUris.iterator();
-					while (itr.hasNext()) {
-						uris.add(Uri.parse(itr.next()));
-					}
-					itr = mRecordingUris.iterator();
-					while (itr.hasNext()) {
-						uris.add(Uri.parse(itr.next()));
-					}
-					if (uris.size() != 0) {
-						other_intent.putExtra(Intent.EXTRA_STREAM, uris);
-					}
-					other_intent.setType("text/plain");
-					startActivity(Intent.createChooser(other_intent, getResources().getString(R.string.send_other)));
-				}
-
-				if (email_checkbox.isChecked()) {
-					String[] items = getResources().getStringArray(R.array.email_choices);
-					final String f_msg = msg;
-					final String f_reg = reg;
-
-					AlertDialog.Builder builder = new AlertDialog.Builder(ReportMalaysiaTaxiActivity.this);
-					builder.setTitle(getResources().getString(R.string.who_email));
-					builder.setMultiChoiceItems(items, mSelected, new DialogInterface.OnMultiChoiceClickListener() {
-						public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-							mSelected[which] = isChecked;
-						}
-					});
-					builder.setPositiveButton(getResources().getString(R.string.done), new OnClickListener() {
-						@Override public void onClick(DialogInterface dialog, int which) {
-							String email_msg = format_email_msg(f_msg);
-							String action = (mPhotoUris.size() + mRecordingUris.size() > 1) ?
-									Intent.ACTION_SEND_MULTIPLE : Intent.ACTION_SEND;
-							Intent email_intent = new Intent(action);
-
-							String email_addresses = "";
-							if (mSelected[0]) {
-								email_addresses += getResources().getString(R.string.gov_email);
-							}
-							if (mSelected[1]) {
-								email_addresses += getResources().getString(R.string.consumer_email);
-							}
-							if (mSelected[2]) {
-								email_addresses += getResources().getString(R.string.ministers_email);
-							}
-							if (mSelected[3]) {
-								email_addresses += getResources().getString(R.string.media_email);
-							}
-							if (mSelected[4]) {
-								email_addresses += getResources().getString(R.string.traffic_police_email);
-							}
-
-							email_intent.putExtra(Intent.EXTRA_EMAIL, new String[] {
-									email_addresses} );
-							email_intent.putExtra(Intent.EXTRA_SUBJECT,
-									getResources().getString(R.string.complaint_email_malay) + ' ' + f_reg);
-							email_intent.putExtra(Intent.EXTRA_TEXT, email_msg);
-
-							ArrayList<Uri> uris = new ArrayList<Uri>();
-							Iterator<String> itr = mPhotoUris.iterator();
-							while (itr.hasNext()) {
-								uris.add(Uri.parse(itr.next()));
-							}
-							itr = mRecordingUris.iterator();
-							while (itr.hasNext()) {
-								uris.add(Uri.parse(itr.next()));
-							}
-							if (uris.size() != 0) {
-								email_intent.putExtra(Intent.EXTRA_STREAM, uris);
-							}
-							email_intent.setType("text/plain");
-							startActivity(Intent.createChooser(email_intent, getResources().getString(R.string.send_email)));
-						}
-					});
-					AlertDialog alert = builder.create();
-					ListView list = alert.getListView();
-					list.setItemChecked(0, true);
-					list.setItemChecked(1, true);
-					alert.show();
-				}
-
-				if (tweet_checkbox.isChecked()) {
-					String tweet_msg = format_tweet_msg(date, time, loc, reg, mOffence, other);
-					Intent tweet_intent = new Intent(Intent.ACTION_SEND);
-					tweet_intent.putExtra(Intent.EXTRA_TEXT, tweet_msg);
-					if (!mPhotoUris.isEmpty()) {
-						tweet_intent.putExtra(Intent.EXTRA_STREAM,
-								Uri.parse(mPhotoUris.get(mPhotoUris.size()-1)));
-					}
-					tweet_intent.setType("text/plain");
-					startActivity(Intent.createChooser(tweet_intent, getResources().getString(R.string.send_tweet)));
-				}
-
-				if (sms_checkbox.isChecked()) {
-					String sms_msg = format_sms_msg(msg);
-					Intent sms_intent = new Intent(Intent.ACTION_VIEW);
-
-					sms_intent.putExtra("address",
-							getResources().getString(R.string.sms_number));
-					sms_intent.putExtra("sms_body", sms_msg);
-					sms_intent.setType("vnd.android-dir/mms-sms");
-					startActivity(sms_intent);
-				}
-
-			} else {
-				Toast.makeText(getApplicationContext(), incomplete_msg,
-						Toast.LENGTH_SHORT).show();
-			}
-		}
-	});
-
-	Button cancel_button = (Button)findViewById(R.id.cancel_button);
-
-	cancel_button.setOnClickListener(new View.OnClickListener() {
-		public void onClick(View v) {
-			final Calendar c = Calendar.getInstance();
-			mYear = c.get(Calendar.YEAR);
-			mMonth = c.get(Calendar.MONTH);
-			mDay = c.get(Calendar.DAY_OF_MONTH);
-			mHour = c.get(Calendar.HOUR_OF_DAY);
-			mMinute = c.get(Calendar.MINUTE);
-			update_date_label(mYear, mMonth, mDay);
-			update_time_label(mHour, mMinute);
-
-			mPhotoUris.clear();
-			mRecordingUris.clear();
-
-			((EditText)findViewById(R.id.location_entry)).setText("");
-			((EditText)findViewById(R.id.registration_entry)).setText("");
-			((EditText)findViewById(R.id.other_entry)).setText("");
-			((CheckBox)findViewById(R.id.sms_checkbox)).setChecked(true);
-			((CheckBox)findViewById(R.id.email_checkbox)).setChecked(true);
-			((CheckBox)findViewById(R.id.tweet_checkbox)).setChecked(true);
-			((CheckBox)findViewById(R.id.other_checkbox)).setChecked(false);
-			((TextView)findViewById(R.id.camera_label)).setText("");
-			((TextView)findViewById(R.id.recorder_label)).setText("");
-		}
-	});
-
-
-	Button call_button = (Button)findViewById(R.id.call_button);
-	call_button.setOnClickListener(new View.OnClickListener() {
-		public void onClick(View v) {
-			String[] items = getResources().getStringArray(R.array.tel_number_names);
-
-			AlertDialog.Builder builder = new AlertDialog.Builder(ReportMalaysiaTaxiActivity.this);
-			builder.setTitle("Place Call");
-			builder.setItems(items, new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog, int item) {
-					String tel_number = getResources().getStringArray(R.array.tel_numbers)[item];
-					Intent call_intent = new Intent(Intent.ACTION_DIAL);
-					call_intent.setData(Uri.parse("tel:" + tel_number));
-					startActivity(call_intent);
-				}
-			});
-			AlertDialog alert = builder.create();
-			alert.show();
-
-			}
-		});
-
+		init_date_time_buttons();
+		init_reg_entry();
+		init_offence_spinner();
+		init_camera_recorder_buttons();
+		init_checkboxes();
+		init_submit_button();
+		init_cancel_button();
+		init_call_button();
 	}
 
-	private void create_date_time_buttons() {
+	private void init_date_time_buttons() {
 		Button date_button = (Button)findViewById(R.id.date_button);
 		date_button.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
@@ -355,6 +112,266 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 		mMinute = c.get(Calendar.MINUTE);
 		update_date_label(mYear, mMonth, mDay);
 		update_time_label(mHour, mMinute);
+	}
+
+	private void init_reg_entry() {
+		EditText registration_entry = (EditText)findViewById(R.id.registration_entry);
+		registration_entry.setInputType(InputType.TYPE_NULL);
+
+		registration_entry.setOnTouchListener(new View.OnTouchListener() {
+			public boolean onTouch(View v, MotionEvent event) {
+				EditText registration_entry = (EditText)findViewById(R.id.registration_entry);
+				registration_entry.setInputType(InputType.TYPE_CLASS_TEXT);
+				registration_entry.onTouchEvent(event);
+				return true;
+			}
+		});
+	}
+
+	private void init_offence_spinner() {
+		Spinner offence_spinner = (Spinner) findViewById(R.id.offence_spinner);
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+			this, R.array.offence_array, android.R.layout.simple_spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		offence_spinner.setAdapter(adapter);
+		offence_spinner.setOnItemSelectedListener(new OffenceOnItemSelectedListener());
+	}
+
+	private void init_camera_recorder_buttons() {
+		Button camera_button = (Button)findViewById(R.id.camera_button);
+		camera_button.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent photo_intent = new Intent (MediaStore.ACTION_IMAGE_CAPTURE);
+				startActivityForResult(photo_intent, ACTIVITY_TAKE_PHOTO);
+			}
+		});
+		Button recorder_button = (Button)findViewById(R.id.recorder_button);
+		recorder_button.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent recorder_intent = new Intent (MediaStore.Audio.Media.RECORD_SOUND_ACTION);
+				startActivityForResult(recorder_intent, ACTIVITY_RECORD_SOUND);
+			}
+		});
+	}
+
+	private void init_checkboxes() {
+		((CheckBox)findViewById(R.id.sms_checkbox)).setChecked(true);
+		((CheckBox)findViewById(R.id.email_checkbox)).setChecked(true);
+		((CheckBox)findViewById(R.id.tweet_checkbox)).setChecked(true);
+	}
+
+	private void init_submit_button() {
+		Button submit_button = (Button)findViewById(R.id.submit_button);
+		submit_button.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				TextView date_label = (TextView)findViewById(R.id.date_label);
+				TextView time_label = (TextView)findViewById(R.id.time_label);
+				EditText location_entry = (EditText)findViewById(R.id.location_entry);
+				EditText registration_entry = (EditText)findViewById(R.id.registration_entry);
+				EditText other_entry = (EditText)findViewById(R.id.other_entry);
+
+				boolean results_complete = true;
+				String incomplete_msg = "";
+
+				if (registration_entry.getText().toString().length() == 0) {
+					results_complete = false;
+					incomplete_msg = getResources().getString(R.string.missing_reg);
+				} else if (mOffenceMalay.equals("Other") && other_entry.getText().toString().length() == 0) {
+					results_complete = false;
+					incomplete_msg = getResources().getString(R.string.missing_other);
+				}
+
+				if (results_complete) {
+					String date = date_label.getText().toString();
+					String time = time_label.getText().toString();
+					String loc = location_entry.getText().toString();
+					String reg = registration_entry.getText().toString();
+					String other = other_entry.getText().toString();
+
+					String msg = format_msg(date, time, loc, reg, mOffenceMalay, other);
+
+					CheckBox sms_checkbox = ((CheckBox)findViewById(R.id.sms_checkbox));
+					CheckBox email_checkbox = ((CheckBox)findViewById(R.id.email_checkbox));
+					CheckBox tweet_checkbox = ((CheckBox)findViewById(R.id.tweet_checkbox));
+					CheckBox other_checkbox = ((CheckBox)findViewById(R.id.other_checkbox));
+
+					if (!sms_checkbox.isChecked() && !email_checkbox.isChecked() &&
+							!tweet_checkbox.isChecked() && !other_checkbox.isChecked()) {
+						Toast.makeText(getApplicationContext(), getResources().getString(R.string.missing_other),
+								Toast.LENGTH_SHORT).show();
+					}
+
+					if (other_checkbox.isChecked()) {
+						String action = (mPhotoUris.size() + mRecordingUris.size() > 1) ?
+								Intent.ACTION_SEND_MULTIPLE : Intent.ACTION_SEND;
+						Intent other_intent = new Intent(action);
+						other_intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.complaint_malay));
+						other_intent.putExtra(Intent.EXTRA_TEXT, msg);
+
+						ArrayList<Uri> uris = new ArrayList<Uri>();
+						Iterator<String> itr = mPhotoUris.iterator();
+						while (itr.hasNext()) {
+							uris.add(Uri.parse(itr.next()));
+						}
+						itr = mRecordingUris.iterator();
+						while (itr.hasNext()) {
+							uris.add(Uri.parse(itr.next()));
+						}
+						if (uris.size() != 0) {
+							other_intent.putExtra(Intent.EXTRA_STREAM, uris);
+						}
+						other_intent.setType("text/plain");
+						startActivity(Intent.createChooser(other_intent, getResources().getString(R.string.send_other)));
+					}
+
+					if (email_checkbox.isChecked()) {
+						String[] items = getResources().getStringArray(R.array.email_choices);
+						final String f_msg = msg;
+						final String f_reg = reg;
+
+						AlertDialog.Builder builder = new AlertDialog.Builder(ReportMalaysiaTaxiActivity.this);
+						builder.setTitle(getResources().getString(R.string.who_email));
+						builder.setMultiChoiceItems(items, mSelected, new DialogInterface.OnMultiChoiceClickListener() {
+							public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+								mSelected[which] = isChecked;
+							}
+						});
+						builder.setPositiveButton(getResources().getString(R.string.done), new OnClickListener() {
+							@Override public void onClick(DialogInterface dialog, int which) {
+								String email_msg = format_email_msg(f_msg);
+								String action = (mPhotoUris.size() + mRecordingUris.size() > 1) ?
+										Intent.ACTION_SEND_MULTIPLE : Intent.ACTION_SEND;
+								Intent email_intent = new Intent(action);
+
+								String email_addresses = "";
+								if (mSelected[0]) {
+									email_addresses += getResources().getString(R.string.gov_email);
+								}
+								if (mSelected[1]) {
+									email_addresses += getResources().getString(R.string.consumer_email);
+								}
+								if (mSelected[2]) {
+									email_addresses += getResources().getString(R.string.ministers_email);
+								}
+								if (mSelected[3]) {
+									email_addresses += getResources().getString(R.string.media_email);
+								}
+								if (mSelected[4]) {
+									email_addresses += getResources().getString(R.string.traffic_police_email);
+								}
+
+								email_intent.putExtra(Intent.EXTRA_EMAIL, new String[] {
+										email_addresses} );
+								email_intent.putExtra(Intent.EXTRA_SUBJECT,
+										getResources().getString(R.string.complaint_email_malay) + ' ' + f_reg);
+								email_intent.putExtra(Intent.EXTRA_TEXT, email_msg);
+
+								ArrayList<Uri> uris = new ArrayList<Uri>();
+								Iterator<String> itr = mPhotoUris.iterator();
+								while (itr.hasNext()) {
+									uris.add(Uri.parse(itr.next()));
+								}
+								itr = mRecordingUris.iterator();
+								while (itr.hasNext()) {
+									uris.add(Uri.parse(itr.next()));
+								}
+								if (uris.size() != 0) {
+									email_intent.putExtra(Intent.EXTRA_STREAM, uris);
+								}
+								email_intent.setType("text/plain");
+								startActivity(Intent.createChooser(email_intent, getResources().getString(R.string.send_email)));
+							}
+						});
+						AlertDialog alert = builder.create();
+						ListView list = alert.getListView();
+						list.setItemChecked(0, true);
+						list.setItemChecked(1, true);
+						alert.show();
+					}
+
+					if (tweet_checkbox.isChecked()) {
+						String tweet_msg = format_tweet_msg(date, time, loc, reg, mOffence, other);
+						Intent tweet_intent = new Intent(Intent.ACTION_SEND);
+						tweet_intent.putExtra(Intent.EXTRA_TEXT, tweet_msg);
+						if (!mPhotoUris.isEmpty()) {
+							tweet_intent.putExtra(Intent.EXTRA_STREAM,
+									Uri.parse(mPhotoUris.get(mPhotoUris.size()-1)));
+						}
+						tweet_intent.setType("text/plain");
+						startActivity(Intent.createChooser(tweet_intent, getResources().getString(R.string.send_tweet)));
+					}
+
+					if (sms_checkbox.isChecked()) {
+						String sms_msg = format_sms_msg(msg);
+						Intent sms_intent = new Intent(Intent.ACTION_VIEW);
+
+						sms_intent.putExtra("address",
+								getResources().getString(R.string.sms_number));
+						sms_intent.putExtra("sms_body", sms_msg);
+						sms_intent.setType("vnd.android-dir/mms-sms");
+						startActivity(sms_intent);
+					}
+
+				} else {
+					Toast.makeText(getApplicationContext(), incomplete_msg,
+							Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
+	}
+
+	private void init_cancel_button() {
+		Button cancel_button = (Button)findViewById(R.id.cancel_button);
+		cancel_button.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				final Calendar c = Calendar.getInstance();
+				mYear = c.get(Calendar.YEAR);
+				mMonth = c.get(Calendar.MONTH);
+				mDay = c.get(Calendar.DAY_OF_MONTH);
+				mHour = c.get(Calendar.HOUR_OF_DAY);
+				mMinute = c.get(Calendar.MINUTE);
+				update_date_label(mYear, mMonth, mDay);
+				update_time_label(mHour, mMinute);
+
+				mPhotoUris.clear();
+				mRecordingUris.clear();
+
+				((EditText)findViewById(R.id.location_entry)).setText("");
+				((EditText)findViewById(R.id.registration_entry)).setText("");
+				((EditText)findViewById(R.id.other_entry)).setText("");
+				((CheckBox)findViewById(R.id.sms_checkbox)).setChecked(true);
+				((CheckBox)findViewById(R.id.email_checkbox)).setChecked(true);
+				((CheckBox)findViewById(R.id.tweet_checkbox)).setChecked(true);
+				((CheckBox)findViewById(R.id.other_checkbox)).setChecked(false);
+				((TextView)findViewById(R.id.camera_label)).setText("");
+				((TextView)findViewById(R.id.recorder_label)).setText("");
+			}
+		});
+	}
+
+	private void init_call_button() {
+		Button call_button = (Button)findViewById(R.id.call_button);
+		call_button.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				String[] items = getResources().getStringArray(R.array.tel_number_names);
+
+				AlertDialog.Builder builder = new AlertDialog.Builder(ReportMalaysiaTaxiActivity.this);
+				builder.setTitle("Place Call");
+				builder.setItems(items, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int item) {
+						String tel_number = getResources().getStringArray(R.array.tel_numbers)[item];
+						Intent call_intent = new Intent(Intent.ACTION_DIAL);
+						call_intent.setData(Uri.parse("tel:" + tel_number));
+						startActivity(call_intent);
+					}
+				});
+				AlertDialog alert = builder.create();
+				alert.show();
+
+				}
+			});
 	}
 
 	private String format_msg(String date, String time, String location,
