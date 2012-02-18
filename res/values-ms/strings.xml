@@ -29,7 +29,7 @@
 	<string name="registration">Nombor Teksi Pendaftaran</string>
 	<string name="offence">Kesalahan</string>
 
-    <string name="settings">Tetapan</string>
+    <string name="settings">Pilihan</string>
     <string name="about">Maklumat</string>
     <string name="language">Bahasa</string>
 	
@@ -67,6 +67,7 @@
 	
 	<string name="who_email">Pilih Talian Untuk Menghantar E-mel</string>
 	<string name="done">Selesai</string>
+	<string name="details">Butir-butir</string>
 	<string-array name="email_choices">
 	    <item>Jabatan Kerajaan</item>
 	    <item>Pengguna Agensi</item>
@@ -80,7 +81,14 @@
 		<item>JPJ: Jabatan Pengangkutan Jalan</item>
 		<item>NCCC: Pusat Khidmat Aduan Pengguna Nasional</item>
 	</string-array>
-
+	
+	<string name="email_details">
+Government Departments: \n
+Consumer Groups: \n
+Government Ministers: \n
+News Media: \n
+Traffic Police: \n
+	</string>
     <string name="gpl">
 Copyright (C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
 Aduan Teksi adalah perisian bebas; anda boleh memaparkan dan / atau mengubah suai

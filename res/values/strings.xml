@@ -30,7 +30,7 @@
 	<string name="offence">Nature of Offence</string>
 
     <string name="language">Language</string>
-	<string name="settings">Settings</string>
+	<string name="settings">Preferences</string>
 	<string name="about">About</string>
 	
 	<string name="location_hint">Enter location of incident</string>
@@ -67,6 +67,7 @@
 	
 	<string name="who_email">Select Who to Email</string>
 	<string name="done">Done</string>
+	<string name="details">Details</string>
 	<string-array name="email_choices">
 	    <item>Government Departments</item>
 	    <item>Consumer Groups</item>
@@ -81,6 +82,13 @@
 		<item>NCCC: National Consumer Complaints Centre</item>
 	</string-array>
 	
+	<string name="email_details">
+Government Departments: LPKP, SPAD, JPJ, KPDNKK\n\n
+Consumer Groups: TRANSIT, NCCC\n\n
+Government Ministers: Minister of Transport, Prime Minister\n\n
+News Media: The Star, Star Metro, Malay Mail, New Straits Times, New Straits Times Streets, The Sun, Malaysia Kini, The Malaysian Insider\n\n
+Traffic Police: rmp@rmp.gov.my
+	</string>
 	<string name="gpl">
 Copyright (C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
 Report Malaysia Taxi is free software; you can redistribute it and/or modify

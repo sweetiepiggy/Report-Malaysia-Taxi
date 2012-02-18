@@ -41,6 +41,7 @@
         <activity android:name="AboutActivity"></activity>
         <activity android:name="SettingsActivity"></activity>
         <activity android:name="LanguageActivity"></activity>
+        <activity android:name="EmailDetailsActivity"></activity>
     </application>
 
 </manifest>

@@ -29,7 +29,7 @@
 	<string name="registration">的士登记号码</string>
 	<string name="offence">犯罪性质</string>
 
-	<string name="settings">设置</string>
+	<string name="settings">选择</string>
     <string name="about">关于</string>
     <string name="language">语言</string>
 	
@@ -67,6 +67,7 @@
 	
 	<string name="who_email">选择谁电子邮件</string>
 	<string name="done">完成</string>
+	<string name="details">详情</string>
 	<string-array name="email_choices">
 	    <item>政府部门</item>
 	    <item>消费者权益保护机构</item>
@@ -80,6 +81,14 @@
 		<item>JPJ: 交通部</item>
 		<item>NCCC: 全国消费者投诉中心</item>
 	</string-array>
+	
+	<string name="email_details">
+Government Departments: \n
+Consumer Groups: \n
+Government Ministers: \n
+News Media: \n
+Traffic Police: \n
+	</string>
 	
 	<string name="gpl">
 版權所有(C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n

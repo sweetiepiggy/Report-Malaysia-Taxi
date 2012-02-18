@@ -375,10 +375,19 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				startActivity(Intent.createChooser(email_intent, getResources().getString(R.string.send_email)));
 			}
 		});
+		builder.setNeutralButton(getResources().getString(R.string.details), new OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				Intent email_details_intent = new Intent(getApplicationContext(), EmailDetailsActivity.class);
+				startActivity(email_details_intent);
+			}
+		});
 		AlertDialog alert = builder.create();
 		ListView list = alert.getListView();
-		list.setItemChecked(0, true);
-		list.setItemChecked(1, true);
+		for (int i=0; i < 5; ++i) {
+			list.setItemChecked(i, mSelected[i]);
+		}
+
 		alert.show();
 	}
 
