@@ -69,7 +69,7 @@
 	<string name="done">Done</string>
 	<string-array name="email_choices">
 	    <item>Government Departments</item>
-	    <item>Consumer Agencies</item>
+	    <item>Consumer Groups</item>
 	    <item>Government Ministers</item>
 	    <item>News Media</item>
 	    <item>Traffic Police</item>
