@@ -21,14 +21,14 @@
 <resources>
 	<string name="default_date">01/01/1970</string>
 	<string name="default_time">12:00AM</string>
-    
-    <string name="complaint_email_malay">Aduan Teksi</string>
+
+	<string name="complaint_email_malay">Aduan Teksi</string>
 	<string name="complaint_malay">ADUAN LPKP</string>
 	<string name="complaint_hashtag">#AduanTeksi</string>
 	<string name="location_malay">Lokasi</string>
 	<string name="registration_malay">Nombor Teksi Pendaftaran</string>
 	<string name="offence_malay">Kesalahan</string>
-	
+
 	<string name="email_intro_malay">
 		Pihak Berkuasa yang berkenan,\n\n
 
@@ -38,7 +38,7 @@
 
 		Sekian.
 	</string>
-	
+
 	<string-array name="offence_malay_array">
 		<item>Enggan menggunakan meter</item>
 		<item>Enggan mengambil penumpang</item>
@@ -48,28 +48,30 @@
 		<item>Merokok dalam teksi</item>
 		<item>Other</item>
 	</string-array>
-	
-		<string-array name="languages">
-		<item>English</item>
-		<item>中文</item>
-		<item>Bahasa Melayu</item>
+
+	<string-array name="languages">
+	<item>English</item>
+	<item>中文</item>
+	<item>Bahasa Melayu</item>
 	</string-array>
 	<string-array name="language_codes">
-	    <item>en</item>
-	    <item>zh</item>
-	    <item>ms</item>
+		<item>en</item>
+		<item>zh</item>
+		<item>ms</item>
 	</string-array>
-    
+
 	<string name="sms_number">15888</string>
-	
-	<string name="gov_email">aduan@lpkp.gov.my; aduan@spad.gov.my; aduantrafik@jpj.gov.my; eaduan.kpdnkk.gov.my; </string>
-	<string name="consumer_email">klangvalley.transit@gmail.com; nccc@nccc.org.my; </string>
-	<string name="ministers_email">menteri@mot.gov.my; najib@1malaysia.com.my; </string>
-	<string name="media_email">editor@thestar.com.my; metro@thestar.com.my; mmnews@mmail.com.my; syedn@nst.com.my;
-	    letters@nst.com.my; streets@nst.com.my; letters@thesundaily.com, editor@malaysiakini.com.my;
-	    editor@themalaysianinsider.com; </string>
-	<string name="traffic_police_email">rmp@rmp.gov.my; </string>	 
-	
+	<string-array name="email_addresses">
+		<item>aduan@lpkp.gov.my; aduan@spad.gov.my; aduantrafik@jpj.gov.my; eaduan.kpdnkk.gov.my; </item>
+		<item>klangvalley.transit@gmail.com; nccc@nccc.org.my; </item>
+		<item>menteri@mot.gov.my; najib@1malaysia.com.my; </item>
+		<item>editor@thestar.com.my; metro@thestar.com.my; mmnews@mmail.com.my;
+			syedn@nst.com.my; letters@nst.com.my; streets@nst.com.my;
+			letters@thesundaily.com, editor@malaysiakini.com.my;
+			editor@themalaysianinsider.com; </item>
+		<item>rmp@rmp.gov.my; </item>
+	</string-array>
+
 	<string name="twitter_address">\@transitmy @myAduan</string>
 
 	<string-array name="tel_numbers">

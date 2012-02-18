@@ -58,7 +58,7 @@
 			android:textStyle="bold"
 			android:text="@string/registration" />
 		<EditText
-			android:id="@+id/registration_entry"
+			android:id="@+id/reg_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:hint="@string/registration_hint"
