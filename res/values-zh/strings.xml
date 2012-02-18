@@ -70,25 +70,25 @@
 	<string name="details">详情</string>
 	<string-array name="email_choices">
 	    <item>政府部门</item>
-	    <item>消费者权益保护机构</item>
+	    <item>消费群体</item>
 	    <item>政府部长</item>
 	    <item>新闻媒体</item>
 	    <item>交通警</item>
 	</string-array>
+	
+	<string name="email_details">
+政府部门: LPKP, SPAD, JPJ, KPDNKK\n\n
+消费群体: TRANSIT, NCCC\n\n
+政府部长: 交通部长, P首相\n\n
+新闻媒体: The Star, Star Metro, Malay Mail, New Straits Times, New Straits Times Streets, The Sun, Malaysia Kini, The Malaysian Insider\n\n
+交通警: rmp@rmp.gov.my
+	</string>
 	
 	<string-array name="tel_number_names">
 		<item>LPKP: 商用车辆管辖部门</item>
 		<item>JPJ: 交通部</item>
 		<item>NCCC: 全国消费者投诉中心</item>
 	</string-array>
-	
-	<string name="email_details">
-Government Departments: \n
-Consumer Groups: \n
-Government Ministers: \n
-News Media: \n
-Traffic Police: \n
-	</string>
 	
 	<string name="gpl">
 版權所有(C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n

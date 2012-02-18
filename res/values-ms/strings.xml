@@ -70,25 +70,26 @@
 	<string name="details">Butir-butir</string>
 	<string-array name="email_choices">
 	    <item>Jabatan Kerajaan</item>
-	    <item>Pengguna Agensi</item>
+	    <item>Pengguna Kumpulan</item>
 	    <item>Kerajaan Menteri</item>
 	    <item>Berita Media</item>
 	    <item>Trafik Polis</item>
 	</string-array>
 
+	<string name="email_details">
+Jabatan Kerajaan: LPKP, SPAD, JPJ, KPDNKK\n\n
+Pengguna Kumpulan: TRANSIT, NCCC\n\n
+Kerajaan Menteri: Menteri Pengangkutan, Perdana Menteri\n\n
+Berita Media: The Star, Star Metro, Malay Mail, New Straits Times, New Straits Times Streets, The Sun, Malaysia Kini, The Malaysian Insider\n\n
+Trafik Polis: rmp@rmp.gov.my
+	</string>
+	
 	<string-array name="tel_number_names">
 		<item>LPKP: Lembaga Pelesenan Kenderaan Perdagangan</item>
 		<item>JPJ: Jabatan Pengangkutan Jalan</item>
 		<item>NCCC: Pusat Khidmat Aduan Pengguna Nasional</item>
 	</string-array>
 	
-	<string name="email_details">
-Government Departments: \n
-Consumer Groups: \n
-Government Ministers: \n
-News Media: \n
-Traffic Police: \n
-	</string>
     <string name="gpl">
 Copyright (C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
 Aduan Teksi adalah perisian bebas; anda boleh memaparkan dan / atau mengubah suai
