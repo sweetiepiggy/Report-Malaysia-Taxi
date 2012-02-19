@@ -21,6 +21,7 @@ package com.sweetiepiggy.reportmalaysiataxi;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Iterator;
 
 import android.app.Activity;
@@ -35,6 +36,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.InputType;
+import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -263,8 +265,10 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 	private void submit()
 	{
-		String date = ((TextView) findViewById(R.id.date_label)).getText().toString();
-		String time = ((TextView) findViewById(R.id.time_label)).getText().toString();
+		String date = String.format("%02d", mDay) +
+			'/' + String.format("%02d", mMonth+1) +
+			'/' + mYear;
+		String time = format_time(mHour, mMinute);
 		String loc = ((EditText) findViewById(R.id.location_entry)).getText().toString();
 		String reg = ((EditText) findViewById(R.id.reg_entry)).getText().toString();
 		String other = ((EditText) findViewById(R.id.other_entry)).getText().toString();
@@ -540,18 +544,19 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	private void update_date_label(int year, int month, int day)
 	{
 		TextView date_label = (TextView)findViewById(R.id.date_label);
-		date_label.setText(new StringBuilder()
-				.append(String.format("%02d", day))
-				.append('/')
-				.append(String.format("%02d", month+1))
-				.append('/')
-				.append(year)
-		);
+		String date = DateFormat.getMediumDateFormat(getApplicationContext()).format(new Date(year - 1900, month, day));
+		date_label.setText(date);
 	}
 
 	private void update_time_label(int hour, int minute)
 	{
 		TextView time_label = (TextView)findViewById(R.id.time_label);
+		String time = DateFormat.getTimeFormat(getApplicationContext()).format(new Date(0, 0, 0, hour, minute, 0));
+		time_label.setText(time);
+	}
+
+	private String format_time(int hour, int minute)
+	{
 		String am_pm = hour > 11 ? "PM" : "AM";
 		if (hour > 12) {
 			hour -= 12;
@@ -559,12 +564,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		if (hour == 0) {
 			hour = 12;
 		}
-		time_label.setText(new StringBuilder()
-				.append(hour)
-				.append(':')
-				.append(String.format("%02d", minute))
-				.append(am_pm)
-		);
+		return String.format("%d", hour) + ':' + String.format("%02d", minute) + am_pm;
 	}
 
 	@Override
