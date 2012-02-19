@@ -32,6 +32,8 @@
     <string name="language">Language</string>
 	<string name="settings">Preferences</string>
 	<string name="about">About</string>
+	<string name="resources">Resources</string>
+	<string name="fare_rate">Fare Rate</string>
 	
 	<string name="location_hint">Enter location of incident</string>
 	<string name="registration_hint">Enter car plate number, e.g. HWA9999</string>
@@ -63,7 +65,10 @@
 	<string name="send_other">Send other</string>
 	<string name="send_tweet">Send tweet</string>
 	<string name="send_email">Send email</string>
-	<string name="place_call">Place Call</string>
+	<string name="place_call">Place call</string>
+	
+	<string name="lk_jb_kt_m">Kuala Lumpur, Johor Baru, Kuala Terengganu, Melaka</string>
+	<string name="penang">Penang</string>
 	
 	<string name="who_email">Select Who to Email</string>
 	<string name="done">Done</string>
@@ -89,6 +94,38 @@ Traffic Police: rmp@rmp.gov.my
 		<item>JPJ: Road Transport Department</item>
 		<item>NCCC: National Consumer Complaints Centre</item>
 	</string-array>
+	
+	<string name="penang_fare_rate">
+	RM4 for first km\n
+	10 cents for each additional 115 meters\n
+	OR\n
+	RM4 for first 3 minutes\n
+	10 cents for each additional 21 seconds\n\n
+	
+	Additional Charges:\n
+	50% surcharge between midnight and 6:00AM\n
+	RM2 for telephone bookings\n
+	RM1 for 3rd adult passenger (max 4) and/or baggage stored in boot\n
+	Actual road toll charges\n\n
+	
+	See http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf
+	</string>
+
+	<string name="kl_fare_rate">
+	RM3 for first km\n
+	10 cents for each additional 115 meters\n
+	OR\n
+	RM3 for first 3 minutes\n
+	10 cents for each additional 21 seconds\n\n
+	
+	Additional Charges:\n
+	50% surcharge between midnight and 6:00AM\n
+	RM2 for telephone bookings\n
+	RM1 for 3rd adult passenger (max 4) and/or baggage stored in boot\n
+	Actual road toll charges\n\n
+	
+	See http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf
+	</string>
 	
 	<string name="gpl">
 Copyright (C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n

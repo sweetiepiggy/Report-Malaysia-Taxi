@@ -656,9 +656,9 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
 		switch (item.getItemId()) {
-		case R.id.about:
-			Intent about_intent = new Intent(getApplicationContext(), AboutActivity.class);
-			startActivity(about_intent);
+		case R.id.resources:
+			Intent resources_intent = new Intent(getApplicationContext(), ResourcesActivity.class);
+			startActivity(resources_intent);
 			return true;
 		case R.id.settings:
 			Intent settings_intent = new Intent(getApplicationContext(), SettingsActivity.class);

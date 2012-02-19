@@ -29,9 +29,11 @@
 	<string name="registration">Nombor Teksi Pendaftaran</string>
 	<string name="offence">Kesalahan</string>
 
-    <string name="settings">Pilihan</string>
     <string name="about">Maklumat</string>
     <string name="language">Bahasa</string>
+    <string name="settings">Pilihan</string>
+	<string name="resources">Sumber</string>
+	<string name="fare_rate">Kadar Tambang</string>
 	
 	<string name="location_hint">Masukkan lokasi kejadian</string>
 	<string name="registration_hint">Masuk nombor plat kereta, cth HWA9999</string>
@@ -64,7 +66,10 @@
 	<string name="send_tweet">Menghantar tweet</string>
 	<string name="send_email">Hantar e-mel</string>
 	<string name="place_call">Hubungi</string>
-	
+
+	<string name="lk_jb_kt_m">Kuala Lumpur, Johor Baru, Kuala Terengganu, Melaka</string>
+	<string name="penang">Pulau Pinang</string>
+
 	<string name="who_email">Pilih Talian Untuk Menghantar E-mel</string>
 	<string name="done">Selesai</string>
 	<string name="details">Butir-butir</string>
@@ -89,7 +94,39 @@ Trafik Polis: rmp@rmp.gov.my
 		<item>JPJ: Jabatan Pengangkutan Jalan</item>
 		<item>NCCC: Pusat Khidmat Aduan Pengguna Nasional</item>
 	</string-array>
+
+	<string name="penang_fare_rate">
+	RM4 for first km\n
+	10 cents for each additional 115 meters\n
+	OR\n
+	RM4 for first 3 minutes\n
+	10 cents for each additional 21 seconds\n\n
 	
+	Additional Charges:\n
+	50% surcharge between midnight and 6:00AM\n
+	RM2 for telephone bookings\n
+	RM1 for 3rd adult passenger (max 4) and/or baggage stored in boot\n
+	Actual road toll charges\n\n
+	
+	See http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf
+	</string>
+
+	<string name="kl_fare_rate">
+	RM3 for first km\n
+	10 cents for each additional 115 meters\n
+	OR\n
+	RM3 for first 3 minutes\n
+	10 cents for each additional 21 seconds\n\n
+	
+	Additional Charges:\n
+	50% surcharge between midnight and 6:00AM\n
+	RM2 for telephone bookings\n
+	RM1 for 3rd adult passenger (max 4) and/or baggage stored in boot\n
+	Actual road toll charges\n\n
+	
+	See http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf
+	</string>
+
     <string name="gpl">
 Copyright (C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
 Aduan Teksi adalah perisian bebas; anda boleh memaparkan dan / atau mengubah suai

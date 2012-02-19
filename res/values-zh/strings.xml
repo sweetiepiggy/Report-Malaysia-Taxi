@@ -32,6 +32,8 @@
 	<string name="settings">选择</string>
     <string name="about">关于</string>
     <string name="language">语言</string>
+	<string name="resources">资源</string>
+	<string name="fare_rate">加价率</string>
 	
 	<string name="location_hint">输入事件发生的地点</string>
 	<string name="registration_hint">输入车牌号码，例如HWA9999</string>
@@ -64,7 +66,10 @@
 	<string name="send_tweet">啁啾 </string>
 	<string name="send_email">电子邮件</string>
 	<string name="place_call">致电</string>
-	
+
+	<string name="lk_jb_kt_m">吉隆坡， Johor Baru， 瓜拉登嘉楼， Melaka</string>
+	<string name="penang">槟城</string>
+
 	<string name="who_email">选择谁电子邮件</string>
 	<string name="done">完成</string>
 	<string name="details">详情</string>
@@ -77,11 +82,11 @@
 	</string-array>
 	
 	<string name="email_details">
-政府部门: LPKP, SPAD, JPJ, KPDNKK\n\n
-消费群体: TRANSIT, NCCC\n\n
-政府部长: 交通部长, P首相\n\n
-新闻媒体: The Star, Star Metro, Malay Mail, New Straits Times, New Straits Times Streets, The Sun, Malaysia Kini, The Malaysian Insider\n\n
-交通警: rmp@rmp.gov.my
+政府部门： LPKP, SPAD, JPJ, KPDNKK\n\n
+消费群体： TRANSIT, NCCC\n\n
+政府部长： 交通部长, P首相\n\n
+新闻媒体： The Star, Star Metro, Malay Mail, New Straits Times, New Straits Times Streets, The Sun, Malaysia Kini, The Malaysian Insider\n\n
+交通警： rmp@rmp.gov.my
 	</string>
 	
 	<string-array name="tel_number_names">
@@ -89,6 +94,38 @@
 		<item>JPJ: 交通部</item>
 		<item>NCCC: 全国消费者投诉中心</item>
 	</string-array>
+
+	<string name="penang_fare_rate">
+	RM4 for first km\n
+	10 cents for each additional 115 meters\n
+	OR\n
+	RM4 for first 3 minutes\n
+	10 cents for each additional 21 seconds\n\n
+	
+	Additional Charges:\n
+	50% surcharge between midnight and 6:00AM\n
+	RM2 for telephone bookings\n
+	RM1 for 3rd adult passenger (max 4) and/or baggage stored in boot\n
+	Actual road toll charges\n\n
+	
+	See http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf
+	</string>
+
+	<string name="kl_fare_rate">
+	RM3 for first km\n
+	10 cents for each additional 115 meters\n
+	OR\n
+	RM3 for first 3 minutes\n
+	10 cents for each additional 21 seconds\n\n
+	
+	Additional Charges:\n
+	50% surcharge between midnight and 6:00AM\n
+	RM2 for telephone bookings\n
+	RM1 for 3rd adult passenger (max 4) and/or baggage stored in boot\n
+	Actual road toll charges\n\n
+	
+	See http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf
+	</string>
 	
 	<string name="gpl">
 版權所有(C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n

@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<!--
+/*
     Copyright (C) 2012 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
 
     This file is part of Report Malaysia Taxi.
@@ -16,17 +14,21 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Report Malaysia Taxi ; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
--->
+    along with Report Malaysia Taxi; if not, see <http://www.gnu.org/licenses/>.
+*/
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-	<item android:id="@+id/resources"
-        android:icon="@android:drawable/ic_dialog_info"
-        android:title="@string/resources"
-	    />
-	<item android:id="@+id/settings"
-        android:icon="@android:drawable/ic_menu_preferences"
-        android:title="@string/settings"/>
+package com.sweetiepiggy.reportmalaysiataxi;
 
-</menu>
+import android.app.Activity;
+import android.os.Bundle;
+
+public class KLFareRateActivity extends Activity {
+
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.kl_fare_rate);
+	}
+
+}

@@ -42,6 +42,10 @@
         <activity android:name="SettingsActivity"></activity>
         <activity android:name="LanguageActivity"></activity>
         <activity android:name="EmailDetailsActivity"></activity>
+        <activity android:name="ResourcesActivity"></activity>
+        <activity android:name="FareRateActivity"></activity>
+        <activity android:name="PenangFareRateActivity"></activity>
+        <activity android:name="KLFareRateActivity"></activity>
     </application>
 
 </manifest>

@@ -29,50 +29,35 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class SettingsActivity extends ListActivity {
-
-	static final int ACTIVITY_SET_LANGUAGE = 0;
-
-	/** Called when the activity is first created. */
+public class FareRateActivity extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		init();
-	}
 
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		super.onActivityResult(requestCode, resultCode, data);
-
-		switch (requestCode) {
-		case ACTIVITY_SET_LANGUAGE:
-			init();
-			break;
-		}
-	}
-
-	private void init() {
-		String[] settings = new String[] {
-			getResources().getString(R.string.language),
-			getResources().getString(R.string.about)
+		String[] resources = new String[] {
+			getResources().getString(R.string.lk_jb_kt_m),
+			getResources().getString(R.string.penang),
 		};
-		setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, settings));
+		setListAdapter(new ArrayAdapter<String>(this,
+					android.R.layout.simple_list_item_1,
+					resources));
 
 		ListView lv = getListView();
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
+					int pos, long id) {
 				CharSequence item = ((TextView) view).getText();
-				if (item.equals(getResources().getString(R.string.language))) {
-					Intent language_intent = new Intent(getApplicationContext(), LanguageActivity.class);
-					startActivityForResult(language_intent, ACTIVITY_SET_LANGUAGE);
-				} else if (item.equals(getResources().getString(R.string.about))) {
-					Intent about_intent = new Intent(getApplicationContext(), AboutActivity.class);
-					startActivity(about_intent);
+				if (item.equals(getResources().getString(R.string.penang))) {
+					Intent penang_fare_rate_intent = new Intent(getApplicationContext(), PenangFareRateActivity.class);
+					startActivity(penang_fare_rate_intent);
+				} else if (item.equals(getResources().getString(R.string.lk_jb_kt_m))) {
+					Intent kl_fare_rate_intent = new Intent(getApplicationContext(), KLFareRateActivity.class);
+					startActivity(kl_fare_rate_intent);
 				}
 			}
 		});
+
 	}
 }
 
