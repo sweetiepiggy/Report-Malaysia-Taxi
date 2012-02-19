@@ -343,7 +343,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		builder.setPositiveButton(getResources().getString(R.string.done), new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				String email_msg = format_email_msg(f_msg);
+				String email_msg = format_email(f_msg);
 				String action = (mPhotoUris.size() + mRecordingUris.size() > 1) ?
 						Intent.ACTION_SEND_MULTIPLE : Intent.ACTION_SEND;
 				Intent email_intent = new Intent(action);
@@ -400,7 +400,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	private void send_tweet(String date, String time, String loc,
 			String reg, String other)
 	{
-		String tweet_msg = format_tweet_msg(date, time, loc, reg, mOffence, other);
+		String tweet_msg = format_tweet(date, time, loc, reg, mOffence, other);
 		Intent tweet_intent = new Intent(Intent.ACTION_SEND);
 		tweet_intent.putExtra(Intent.EXTRA_TEXT, tweet_msg);
 		if (!mPhotoUris.isEmpty()) {
@@ -414,7 +414,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 	private void send_sms(String msg)
 	{
-		String sms_msg = format_sms_msg(msg);
+		String sms_msg = format_sms(msg);
 		Intent sms_intent = new Intent(Intent.ACTION_VIEW);
 
 		sms_intent.putExtra("address",
@@ -425,7 +425,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	}
 
 	private String format_msg(String date, String time, String location,
-			String registration, String offence, String other)
+			String reg, String offence, String other)
 	{
 		String message = "";
 		if (date.length() != 0) {
@@ -435,8 +435,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			}
 		}
 
-		if (registration.length() != 0) {
-				message += '\n' + getResources().getString(R.string.registration_malay) + ": " + registration;
+		if (reg.length() != 0) {
+				message += '\n' + getResources().getString(R.string.registration_malay) + ": " + reg;
 		}
 		if (location.length() != 0) {
 				message += '\n' + getResources().getString(R.string.location_malay) + ": " + location;
@@ -454,25 +454,21 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		return message;
 	}
 
-	private String format_email_msg(String msg)
+	private String format_email(String msg)
 	{
 		return getResources().getString(R.string.email_intro_malay) + "\n" + msg;
 	}
 
-	private String format_sms_msg(String msg)
+	private String format_sms(String msg)
 	{
 		return getResources().getString(R.string.complaint_malay) + msg;
 	}
 
-	private String format_tweet_msg(String date, String time, String location,
-			String registration, String offence, String other)
+	private String format_tweet(String date, String time, String location,
+			String reg, String offence, String other)
 	{
 		String msg = getResources().getString(R.string.twitter_address) + " " +
 				getResources().getString(R.string.complaint_hashtag);
-
-		if (registration.length() != 0) {
-			msg += ' ' + registration;
-		}
 
 		if (offence.equals("Other")) {
 			offence = "";
@@ -480,7 +476,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 		/* don't cut down other fields if user description won't fit anyway */
 		String orig_other = other;
-		if (msg.length() + other.length() + 1 > 140) {
+		if (msg.length() + reg.length() + other.length() + 1 > 140) {
 			other = "";
 		}
 
@@ -494,16 +490,23 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		if (orig_other.length() != 0) {
 			extra_length += 2;
 		}
+		if (reg.length() != 0) {
+			extra_length += 1;
+		}
 
 		if (date.length() != 0 &&
-				(msg.length() + date.length() + location.length() +
+				(msg.length() + reg.length() + date.length() + location.length() +
 						offence.length() + other.length() + extra_length < 140)) {
 			msg += ' ' + date;
 			if (time.length() != 0 &&
-					(msg.length() + time.length() + location.length() +
+					(msg.length() + reg.length() + time.length() + location.length() +
 							offence.length() + other.length() + extra_length < 140)) {
 				msg += ' ' + time;
 			}
+		}
+
+		if (reg.length() != 0) {
+			msg += ' ' + reg;
 		}
 
 		boolean need_comma = false;
