@@ -72,7 +72,7 @@
 		<item>rmp@rmp.gov.my; </item>
 	</string-array>
 
-	<string name="twitter_address">\@transitmy @myAduan</string>
+	<string name="twitter_address">\@aduanSPAD @transitmy @myAduan</string>
 
 	<string-array name="tel_numbers">
 		<item>1800889600</item>
