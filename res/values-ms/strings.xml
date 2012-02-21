@@ -32,7 +32,7 @@
     <string name="about">Maklumat</string>
     <string name="language">Bahasa</string>
     <string name="settings">Pilihan</string>
-	<string name="resources">Sumber</string>
+	<string name="resources">Sumber Maklumat</string>
 	<string name="fare_rate">Kadar Tambang</string>
 	
 	<string name="location_hint">Masukkan lokasi kejadian</string>
@@ -49,7 +49,7 @@
 		<item>Lain-lain</item>
 	</string-array>
 
-	<string name="other">Komen Lain</string>
+	<string name="other">Maklumat Lanjut</string>
 	<string name="sms">sms</string>
 	<string name="tweet">tweet</string>
 	<string name="email">e-mel</string>
@@ -69,6 +69,10 @@
 
 	<string name="lk_jb_kt_m">Kuala Lumpur, Johor Baru, Kuala Terengganu, Melaka</string>
 	<string name="penang">Pulau Pinang</string>
+
+	<string name="km">km</string>
+	<string name="minutes">minit</string>
+	<string name="fare">fare</string>
 
 	<string name="who_email">Pilih Talian Untuk Menghantar E-mel</string>
 	<string name="done">Selesai</string>
@@ -96,35 +100,37 @@ Trafik Polis: rmp@rmp.gov.my
 	</string-array>
 
 	<string name="penang_fare_rate">
-	RM4 for first km\n
-	10 cents for each additional 115 meters\n
-	OR\n
-	RM4 for first 3 minutes\n
-	10 cents for each additional 21 seconds\n\n
+	Jarak\n
+	RM4 / 1 km pertama\n
+	10 sen/115 m berikutnya\n
+	Masa\n
+	RM4 / 3 minit pertama\n
+	10 sen/21 saat berikutnya\n\n
 	
-	Additional Charges:\n
-	50% surcharge between midnight and 6:00AM\n
-	RM2 for telephone bookings\n
-	RM1 for 3rd adult passenger (max 4) and/or baggage stored in boot\n
-	Actual road toll charges\n\n
+	Bayaran Tambahan\n
+	Caj tambahan 50% daripada harga tampang antara\n
+	RM2 untuk tempahan dengan telefon\n
+	RM1 untuk penumpang dewasa ke-3 (maksimum 4) dan / atau bagasi yang disimpan di dalam but\n
+	Caj tol dikenakan megikut harga sebenar\n\n
 	
-	See http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf
+	http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf
 	</string>
 
 	<string name="kl_fare_rate">
-	RM3 for first km\n
-	10 cents for each additional 115 meters\n
-	OR\n
-	RM3 for first 3 minutes\n
-	10 cents for each additional 21 seconds\n\n
+	Jarak\n
+	RM3 / 1 km pertama\n
+	10 sen/115 m berikutnya\n
+	Masa\n
+	RM3 / 3 minit pertama\n
+	10 sen/21 saat berikutnya\n\n
 	
-	Additional Charges:\n
-	50% surcharge between midnight and 6:00AM\n
-	RM2 for telephone bookings\n
-	RM1 for 3rd adult passenger (max 4) and/or baggage stored in boot\n
-	Actual road toll charges\n\n
+	Bayaran Tambahan\n
+	Caj tambahan 50% daripada harga tampang antara\n
+	RM2 untuk tempahan dengan telefon\n
+	RM1 untuk penumpang dewasa ke-3 (maksimum 4) dan / atau bagasi yang disimpan di dalam but\n
+	Caj tol dikenakan megikut harga sebenar\n\n
 	
-	See http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf
+	http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf
 	</string>
 
     <string name="gpl">

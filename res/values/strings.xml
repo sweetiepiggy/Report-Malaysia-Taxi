@@ -49,7 +49,7 @@
 		<item>Other</item>
 	</string-array>
 
-	<string name="other">Other Comments</string>
+	<string name="other">Details</string>
 	<string name="sms">sms</string>
 	<string name="tweet">tweet</string>
 	<string name="email">email</string>
@@ -69,6 +69,10 @@
 	
 	<string name="lk_jb_kt_m">Kuala Lumpur, Johor Baru, Kuala Terengganu, Melaka</string>
 	<string name="penang">Penang</string>
+	
+	<string name="km">km</string>
+	<string name="minutes">minutes</string>
+	<string name="fare">fare</string>
 	
 	<string name="who_email">Select Who to Email</string>
 	<string name="done">Done</string>
@@ -108,7 +112,7 @@ Traffic Police: rmp@rmp.gov.my
 	RM1 for 3rd adult passenger (max 4) and/or baggage stored in boot\n
 	Actual road toll charges\n\n
 	
-	See http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf
+	http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf
 	</string>
 
 	<string name="kl_fare_rate">
