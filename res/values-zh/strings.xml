@@ -107,31 +107,33 @@
 	马币四零吉/首三分钟\n
 	马币十仙/接着每 二十一分钟\n\n
 	
+	http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf
+	</string>
+	
+	<!--
 	附加费\n
 	附加费50％的价格放在\n
 	令吉为通过电话预订\n
 	马币为第三位成人乘客（最多4个）和/或存储在引导行李\n
-	通行费收费按照实际价格\n\n
+	通行费收费按照实际价格\n\n-->
 	
-	http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf
-	</string>
 
 	<string name="kl_fare_rate">
 	距离\n
-	RM4 / 1公里第一\n
-	10 美分/115米未来\n
+	马币三零吉/第一公里\n
+	马币十仙/接着每一百一十五米\n
 	时间\n
-	RM4 / 3 时间第一\n
-	10 美分/21 时间未来\n\n
-	
-	附加费\n
-	附加费50％的价格放在\n
-	令吉为通过电话预订\n
-	马币为第三位成人乘客（最多4个）和/或存储在引导行李\n
-	通行费收费按照实际价格\n\n
+	马币三零吉/首三分钟\n
+	马币十仙/接着每 二十一分钟\n\n
 	
 	http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf
 	</string>
+	<!--附加费\n
+	附加费50％的价格放在\n
+	令吉为通过电话预订\n
+	马币为第三位成人乘客（最多4个）和/或存储在引导行李\n
+	通行费收费按照实际价格\n\n-->
+	
 	
 	<string name="gpl">
 版權所有(C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
