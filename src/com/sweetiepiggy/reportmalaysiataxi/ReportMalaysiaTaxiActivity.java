@@ -346,8 +346,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				String email_msg = format_email(f_msg);
-				String action = (mPhotoUris.size() + mRecordingUris.size() > 1) ?
-						Intent.ACTION_SEND_MULTIPLE : Intent.ACTION_SEND;
+				String action = Intent.ACTION_SEND_MULTIPLE;
 				Intent email_intent = new Intent(action);
 
 				String[] all_email_addresses = getResources().getStringArray(R.array.email_addresses);
