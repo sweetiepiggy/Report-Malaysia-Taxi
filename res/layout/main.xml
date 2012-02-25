@@ -117,7 +117,20 @@
 				android:id="@+id/camera_label"
 				android:text="" />
 			<Button
+				android:id="@+id/vidcam_button"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="@android:color/transparent"
+				android:drawableLeft="@android:drawable/ic_menu_camera"/>
+			<TextView
+				android:id="@+id/video_label"
+				android:text="" />
+			<Button
 				android:id="@+id/recorder_button"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
 				android:background="@android:color/transparent"
 				android:drawableLeft="@android:drawable/ic_btn_speak_now"/>
 			<TextView
