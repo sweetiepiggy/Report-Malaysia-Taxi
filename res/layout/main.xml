@@ -151,44 +151,42 @@
 				android:layout_height="wrap_content"
 				android:text="" />
 		</LinearLayout>
-		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			android:orientation="horizontal"
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
 			android:stretchColumns="1">
-			<CheckBox
-				android:id="@+id/sms_checkbox"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:drawableLeft="@android:drawable/sym_action_chat"
-				android:text="@string/sms" />
+			<TableRow>
+				<CheckBox
+					android:id="@+id/sms_checkbox"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:drawableLeft="@android:drawable/sym_action_chat"
+					android:text="@string/sms" />
 
-			<CheckBox
-				android:id="@+id/email_checkbox"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:drawableLeft="@android:drawable/ic_dialog_email"
-				android:text="@string/email" />
-		</LinearLayout>
-		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			android:orientation="horizontal"
-			android:layout_width="fill_parent"
-			android:layout_height="fill_parent"
-			android:stretchColumns="1">
-			<CheckBox
-				android:id="@+id/tweet_checkbox"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:drawableLeft="@drawable/twitter"
-				android:text="@string/tweet" />
+				<CheckBox
+					android:id="@+id/email_checkbox"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:drawableLeft="@android:drawable/ic_dialog_email"
+					android:text="@string/email" />
+			</TableRow>
+			<TableRow>
+				<CheckBox
+					android:id="@+id/tweet_checkbox"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:drawableLeft="@drawable/twitter"
+					android:text="@string/tweet" />
 
-			<CheckBox
-				android:id="@+id/other_checkbox"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:drawableLeft="@android:drawable/ic_menu_share"
-				android:text="@string/other_send" />
-		</LinearLayout>
+				<CheckBox
+					android:id="@+id/other_checkbox"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:drawableLeft="@android:drawable/ic_menu_share"
+					android:text="@string/other_send" />
+			</TableRow>
+		</TableLayout>
 
 
 		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
