@@ -23,11 +23,14 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 >
-	<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
 		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:stretchColumns="1">
-		<TableRow>
+		android:layout_height="fill_parent">
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent">
 			<Button
 				android:id="@+id/date_button"
 				android:layout_width="wrap_content"
@@ -37,7 +40,6 @@
 				android:id="@+id/date_label"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_weight="1"
 				android:text="@string/default_date" />
 			<Button
 				android:id="@+id/time_button"
@@ -46,10 +48,10 @@
 				android:text="@string/time_prompt"/>
 			<TextView
 				android:id="@+id/time_label"
-				android:layout_width="fill_parent"
+				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/default_time" />
-		</TableRow>
+		</LinearLayout>
 
 		<TextView
 			android:id="@+id/registration_label"
@@ -105,7 +107,15 @@
 			android:hint="@string/other_hint"
 			android:background="@android:drawable/editbox_background" />
 
-		<TableRow>
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent">
+			<TextView
+				android:id="@+id/camera_label"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="" />
 			<Button
 				android:id="@+id/camera_button"
 				android:layout_width="wrap_content"
@@ -114,55 +124,72 @@
 				android:background="@android:color/transparent"
 				android:drawableLeft="@android:drawable/ic_menu_camera"/>
 			<TextView
-				android:id="@+id/camera_label"
+				android:id="@+id/video_label"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="" />
+			<Button
+				android:id="@+id/vidcam_button"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="@android:color/transparent"
+				android:drawableLeft="@drawable/video_camera"/>
+			<TextView
+				android:id="@+id/recorder_label"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
 				android:text="" />
 			<Button
 				android:id="@+id/recorder_button"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
 				android:background="@android:color/transparent"
 				android:drawableLeft="@android:drawable/ic_btn_speak_now"/>
-			<TextView
-				android:id="@+id/recorder_label"
-				android:text="" />
-		</TableRow>
-		<TableRow>
-			<CheckBox
-				android:id="@+id/sms_checkbox"
-				android:layout_width="wrap_content"
-				android:layout_height="fill_parent"
-				android:layout_weight="1"
-				android:drawableLeft="@android:drawable/sym_action_chat"
-				android:drawablePadding="12sp"
-				android:text="@string/sms" />
-
-			<CheckBox
-				android:id="@+id/email_checkbox"
-				android:layout_width="fill_parent"
-				android:layout_height="fill_parent"
-				android:layout_weight="1"
-				android:drawableLeft="@android:drawable/ic_dialog_email"
-				android:drawablePadding="10sp"
-				android:text="@string/email" />
-		</TableRow>
-		<TableRow>
-		<CheckBox
-			android:id="@+id/tweet_checkbox"
+		</LinearLayout>
+		<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="horizontal"
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
-			android:layout_weight="1"
-			android:drawableLeft="@drawable/twitter"
-			android:text="@string/tweet" />
+			android:stretchColumns="1">
+			<TableRow>
+				<CheckBox
+					android:id="@+id/sms_checkbox"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:drawableLeft="@android:drawable/sym_action_chat"
+					android:text="@string/sms" />
 
-		<CheckBox
-			android:id="@+id/other_checkbox"
+				<CheckBox
+					android:id="@+id/email_checkbox"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:drawableLeft="@android:drawable/ic_dialog_email"
+					android:text="@string/email" />
+			</TableRow>
+			<TableRow>
+				<CheckBox
+					android:id="@+id/tweet_checkbox"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:drawableLeft="@drawable/twitter"
+					android:text="@string/tweet" />
+
+				<CheckBox
+					android:id="@+id/other_checkbox"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:drawableLeft="@android:drawable/ic_menu_share"
+					android:text="@string/other_send" />
+			</TableRow>
+		</TableLayout>
+
+
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="horizontal"
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent"
-			android:layout_weight="1"
-			android:drawableLeft="@android:drawable/ic_menu_share"
-			android:text="@string/other_send" />
-
-		</TableRow>
-
-		<TableRow>
+			android:layout_height="fill_parent">
 			<Button
 				android:id="@+id/submit_button"
 				android:layout_width="wrap_content"
@@ -176,16 +203,14 @@
 				android:layout_height="wrap_content"
 				android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
 				android:text="@string/cancel" />
-		</TableRow>
+		</LinearLayout>
 
-		<TableRow>
-			<Button
-				android:id="@+id/call_button"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:drawableBottom="@android:drawable/sym_action_call"
-				android:text="@string/call" />
-		</TableRow>
-	</TableLayout>
+		<Button
+			android:id="@+id/call_button"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_weight="1"
+			android:drawableBottom="@android:drawable/sym_action_call"
+			android:text="@string/call" />
+	</LinearLayout>
 </ScrollView>
