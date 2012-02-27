@@ -26,13 +26,11 @@
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 		android:orientation="vertical"
 		android:layout_width="fill_parent"
-		android:layout_height="fill_parent"
-		android:stretchColumns="1">
+		android:layout_height="fill_parent">
 		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			android:orientation="horizontal"
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent"
-			android:stretchColumns="1">
+			android:layout_height="fill_parent">
 			<Button
 				android:id="@+id/date_button"
 				android:layout_width="wrap_content"
@@ -112,22 +110,14 @@
 		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			android:orientation="horizontal"
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent"
-			android:stretchColumns="1">
-			<Button
-				android:id="@+id/camera_button"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:background="@android:color/transparent"
-				android:drawableLeft="@android:drawable/ic_menu_camera"/>
+			android:layout_height="fill_parent">
 			<TextView
 				android:id="@+id/camera_label"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="" />
 			<Button
-				android:id="@+id/vidcam_button"
+				android:id="@+id/camera_button"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
@@ -139,17 +129,24 @@
 				android:layout_height="wrap_content"
 				android:text="" />
 			<Button
+				android:id="@+id/vidcam_button"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="@android:color/transparent"
+				android:drawableLeft="@drawable/video_camera"/>
+			<TextView
+				android:id="@+id/recorder_label"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="" />
+			<Button
 				android:id="@+id/recorder_button"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
 				android:background="@android:color/transparent"
 				android:drawableLeft="@android:drawable/ic_btn_speak_now"/>
-			<TextView
-				android:id="@+id/recorder_label"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="" />
 		</LinearLayout>
 		<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			android:orientation="horizontal"
@@ -192,8 +189,7 @@
 		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			android:orientation="horizontal"
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent"
-			android:stretchColumns="1">
+			android:layout_height="fill_parent">
 			<Button
 				android:id="@+id/submit_button"
 				android:layout_width="wrap_content"
