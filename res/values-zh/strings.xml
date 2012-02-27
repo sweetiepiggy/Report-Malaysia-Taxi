@@ -56,14 +56,14 @@
 	<string name="email">电子邮件</string>
 	<string name="submit">提交</string>
 	<string name="cancel">删除</string>
-	<string name="other_send">其他</string>
+	<string name="youtube">优酷</string>
 	<string name="call">呼叫</string>
 	
 	<string name="missing_reg">输入的士登记号码</string>
 	<string name="missing_other">输入其他意见</string>
 	<string name="select_checkbox">请选择输送方法</string>
 	
-	<string name="send_other">其他</string>
+	<string name="send_youtube">上载至优酷</string>
 	<string name="send_tweet">啁啾 </string>
 	<string name="send_email">电子邮件</string>
 	<string name="place_call">致电</string>

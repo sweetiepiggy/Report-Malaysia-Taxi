@@ -56,14 +56,14 @@
 	<string name="email">e-mel</string>
 	<string name="submit">hantar</string>
 	<string name="cancel">batal</string>
-	<string name="other_send">lain-lain</string>
+	<string name="youtube">youtube</string>
 	<string name="call">panggil</string>
 	
 	<string name="missing_reg">masukkan nombor pendaftaran</string>
 	<string name="missing_other">masukkan komen lain</string>
 	<string name="select_checkbox">mark check box</string>
 	
-	<string name="send_other">Menghantar lain-lain</string>
+	<string name="send_youtube">Upload ke YouTube</string>
 	<string name="send_tweet">Menghantar tweet</string>
 	<string name="send_email">Hantar e-mel</string>
 	<string name="place_call">Hubungi</string>
