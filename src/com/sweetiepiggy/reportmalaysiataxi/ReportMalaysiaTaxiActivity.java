@@ -183,7 +183,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		((CheckBox) findViewById(R.id.sms_checkbox)).setChecked(true);
 		((CheckBox) findViewById(R.id.email_checkbox)).setChecked(true);
 		((CheckBox) findViewById(R.id.tweet_checkbox)).setChecked(true);
-		((CheckBox) findViewById(R.id.other_checkbox)).setChecked(false);
+		((CheckBox) findViewById(R.id.youtube_checkbox)).setChecked(false);
 
 		((EditText)findViewById(R.id.location_entry)).setText("");
 		((EditText)findViewById(R.id.reg_entry)).setText("");
@@ -290,9 +290,9 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		boolean sms_checked = ((CheckBox) findViewById(R.id.sms_checkbox)).isChecked();
 		boolean email_checked = ((CheckBox) findViewById(R.id.email_checkbox)).isChecked();
 		boolean tweet_checked = ((CheckBox) findViewById(R.id.tweet_checkbox)).isChecked();
-		boolean other_checked = ((CheckBox) findViewById(R.id.other_checkbox)).isChecked();
+		boolean youtube_checked = ((CheckBox) findViewById(R.id.youtube_checkbox)).isChecked();
 
-		if (!sms_checked && !email_checked && !tweet_checked && !other_checked) {
+		if (!sms_checked && !email_checked && !tweet_checked && !youtube_checked) {
 			Toast.makeText(getApplicationContext(),
 					getResources().getString(R.string.missing_other),
 					Toast.LENGTH_SHORT).show();
@@ -300,8 +300,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 		String msg = format_msg(date, time, loc, reg, mOffenceMalay, other);
 
-		if (other_checked) {
-			send_other(msg);
+		if (youtube_checked) {
+			send_youtube(msg);
 		}
 
 		if (email_checked) {
@@ -317,32 +317,15 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		}
 	}
 
-	private void send_other(String msg)
+	private void send_youtube(String msg)
 	{
-		String action = (mPhotoUris.size() + mRecordingUris.size() + mVideoUris.size() > 1) ?
-				Intent.ACTION_SEND_MULTIPLE : Intent.ACTION_SEND;
-		Intent other_intent = new Intent(action);
-		other_intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.complaint_malay));
-		other_intent.putExtra(Intent.EXTRA_TEXT, msg);
-
-		ArrayList<Uri> uris = new ArrayList<Uri>();
-		Iterator<Uri> itr = mPhotoUris.iterator();
-		while (itr.hasNext()) {
-			uris.add(itr.next());
-		}
-		itr = mRecordingUris.iterator();
-		while (itr.hasNext()) {
-			uris.add(itr.next());
-		}
-		itr = mVideoUris.iterator();
-		while (itr.hasNext()) {
-			uris.add(itr.next());
-		}
-		if (uris.size() != 0) {
-			other_intent.putExtra(Intent.EXTRA_STREAM, uris);
-		}
-		other_intent.setType("text/plain");
-		startActivity(Intent.createChooser(other_intent, getResources().getString(R.string.send_other)));
+		String action = Intent.ACTION_SEND_MULTIPLE;
+		Intent youtube_intent = new Intent(action);
+		youtube_intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.complaint_malay));
+		youtube_intent.putExtra(Intent.EXTRA_TEXT, msg);
+		youtube_intent.putExtra(Intent.EXTRA_STREAM, mVideoUris);
+		youtube_intent.setType("video/*");
+		startActivity(Intent.createChooser(youtube_intent, getResources().getString(R.string.send_other)));
 	}
 
 	private void send_email(String msg, String reg)

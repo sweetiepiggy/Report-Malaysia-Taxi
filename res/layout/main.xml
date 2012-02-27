@@ -177,10 +177,10 @@
 					android:text="@string/tweet" />
 
 				<CheckBox
-					android:id="@+id/other_checkbox"
+					android:id="@+id/youtube_checkbox"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:drawableLeft="@android:drawable/ic_menu_share"
+					android:drawableLeft="@drawable/youtube"
 					android:text="@string/other_send" />
 			</TableRow>
 		</TableLayout>
