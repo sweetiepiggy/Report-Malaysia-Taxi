@@ -325,7 +325,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		youtube_intent.putExtra(Intent.EXTRA_TEXT, msg);
 		youtube_intent.putExtra(Intent.EXTRA_STREAM, mVideoUris);
 		youtube_intent.setType("video/*");
-		startActivity(Intent.createChooser(youtube_intent, getResources().getString(R.string.send_other)));
+		startActivity(Intent.createChooser(youtube_intent, getResources().getString(R.string.send_youtube)));
 	}
 
 	private void send_email(String msg, String reg)
@@ -625,6 +625,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			if (resultCode == RESULT_OK) {
 				mVideoUris.add(data.getData());
 				((TextView)findViewById(R.id.video_label)).setText(Integer.toString(mVideoUris.size()));
+				((CheckBox) findViewById(R.id.youtube_checkbox)).setChecked(true);
 			}
 			break;
 		case ACTIVITY_RECORD_SOUND:
