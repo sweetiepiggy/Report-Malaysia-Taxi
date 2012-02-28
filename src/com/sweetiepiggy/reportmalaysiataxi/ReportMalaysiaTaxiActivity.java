@@ -22,7 +22,6 @@ package com.sweetiepiggy.reportmalaysiataxi;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Iterator;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -185,12 +184,12 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		((CheckBox) findViewById(R.id.tweet_checkbox)).setChecked(true);
 		((CheckBox) findViewById(R.id.youtube_checkbox)).setChecked(false);
 
-		((EditText)findViewById(R.id.location_entry)).setText("");
-		((EditText)findViewById(R.id.reg_entry)).setText("");
-		((EditText)findViewById(R.id.other_entry)).setText("");
-		((TextView)findViewById(R.id.camera_label)).setText("");
-		((TextView)findViewById(R.id.recorder_label)).setText("");
-		((TextView)findViewById(R.id.video_label)).setText("");
+		((EditText) findViewById(R.id.location_entry)).setText("");
+		((EditText) findViewById(R.id.reg_entry)).setText("");
+		((EditText) findViewById(R.id.other_entry)).setText("");
+		((TextView) findViewById(R.id.camera_label)).setText("");
+		((TextView) findViewById(R.id.recorder_label)).setText("");
+		((TextView) findViewById(R.id.video_label)).setText("");
 	}
 
 	private void init_submit_button()
@@ -319,12 +318,20 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 	private void send_youtube(String msg)
 	{
-		String action = Intent.ACTION_SEND_MULTIPLE;
+		String action = mVideoUris.size() > 1 ?
+			Intent.ACTION_SEND_MULTIPLE : Intent.ACTION_SEND;
 		Intent youtube_intent = new Intent(action);
 		youtube_intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.complaint_malay));
 		youtube_intent.putExtra(Intent.EXTRA_TEXT, msg);
-		youtube_intent.putExtra(Intent.EXTRA_STREAM, mVideoUris);
 		youtube_intent.setType("video/*");
+
+		if (mVideoUris.size() == 1) {
+			youtube_intent.putExtra(Intent.EXTRA_STREAM,
+					mVideoUris.get(mVideoUris.size()-1));
+		} else if (mVideoUris.size() > 1) {
+			youtube_intent.putExtra(Intent.EXTRA_STREAM, mVideoUris);
+		}
+
 		startActivity(Intent.createChooser(youtube_intent, getResources().getString(R.string.send_youtube)));
 	}
 
@@ -345,8 +352,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				String email_msg = format_email(f_msg);
-				String action = Intent.ACTION_SEND_MULTIPLE;
-				Intent email_intent = new Intent(action);
 
 				String[] all_email_addresses = getResources().getStringArray(R.array.email_addresses);
 				String email_addresses = "";
@@ -357,29 +362,37 @@ public class ReportMalaysiaTaxiActivity extends Activity
 					}
 				}
 
+				ArrayList<Uri> uris = new ArrayList<Uri>();
+				uris.addAll(mPhotoUris);
+				uris.addAll(mRecordingUris);
+				uris.addAll(mVideoUris);
+
+				String action = uris.size() > 1 ?
+					Intent.ACTION_SEND_MULTIPLE : Intent.ACTION_SEND;
+
+				Intent email_intent = new Intent(action);
 				email_intent.putExtra(Intent.EXTRA_EMAIL, new String[] {
 						email_addresses} );
 				email_intent.putExtra(Intent.EXTRA_SUBJECT,
 						getResources().getString(R.string.complaint_email_malay) + ' ' + f_reg);
 				email_intent.putExtra(Intent.EXTRA_TEXT, email_msg);
 
-				ArrayList<Uri> uris = new ArrayList<Uri>();
-				Iterator<Uri> itr = mPhotoUris.iterator();
-				while (itr.hasNext()) {
-					uris.add(itr.next());
-				}
-				itr = mRecordingUris.iterator();
-				while (itr.hasNext()) {
-					uris.add(itr.next());
-				}
-				itr = mVideoUris.iterator();
-				while (itr.hasNext()) {
-					uris.add(itr.next());
-				}
-				if (uris.size() != 0) {
+				if (uris.size() == 1) {
+					email_intent.putExtra(Intent.EXTRA_STREAM,
+							uris.get(uris.size()-1));
+				} else if (uris.size() > 1) {
 					email_intent.putExtra(Intent.EXTRA_STREAM, uris);
 				}
-				email_intent.setType("text/plain");
+
+				if (uris.size() == 0) {
+					email_intent.setType("text/plain");
+				} else if (mVideoUris.size() > 0) {
+					email_intent.setType("video/*");
+				} else if (mPhotoUris.size() > 0) {
+					email_intent.setType("image/*");
+				} else if (mRecordingUris.size() > 0) {
+					email_intent.setType("audio/*");
+				}
 				startActivity(Intent.createChooser(email_intent, getResources().getString(R.string.send_email)));
 			}
 		});
@@ -410,8 +423,11 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		if (!mPhotoUris.isEmpty()) {
 			tweet_intent.putExtra(Intent.EXTRA_STREAM,
 					mPhotoUris.get(mPhotoUris.size()-1));
+			tweet_intent.setType("image/*");
+		} else {
+			tweet_intent.setType("text/plain");
 		}
-		tweet_intent.setType("text/plain");
+
 		startActivity(Intent.createChooser(tweet_intent,
 					getResources().getString(R.string.send_tweet)));
 	}
@@ -424,6 +440,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		sms_intent.putExtra("address",
 				getResources().getString(R.string.sms_number));
 		sms_intent.putExtra("sms_body", sms_msg);
+		/* TODO: attach files to mms */
 		sms_intent.setType("vnd.android-dir/mms-sms");
 		startActivity(sms_intent);
 	}
