@@ -31,6 +31,7 @@ import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -56,19 +57,7 @@ import android.widget.Toast;
 
 public class ReportMalaysiaTaxiActivity extends Activity
 {
-	private int mYear;
-	private int mMonth;
-	private int mDay;
-	private int mHour;
-	private int mMinute;
-	private String mOffence;
-	private String mOffenceMalay;
-
-	private boolean[] mSelected;
-
-	private ArrayList<Uri> mPhotoUris = new ArrayList<Uri>();
-	private ArrayList<Uri> mRecordingUris = new ArrayList<Uri>();
-	private ArrayList<Uri> mVideoUris = new ArrayList<Uri>();
+	private DataWrapper mData;
 
 	static final int DATE_DIALOG_ID = 0;
 	static final int TIME_DIALOG_ID = 1;
@@ -84,7 +73,18 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		mData = (DataWrapper) getLastNonConfigurationInstance();
+		if (mData == null) {
+			mData = new DataWrapper();
+			init_vars(mData);
+		}
 		init();
+	}
+
+	@Override
+	public Object onRetainNonConfigurationInstance()
+	{
+		return mData;
 	}
 
 	private void init()
@@ -96,10 +96,9 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		init_submit_button();
 		init_cancel_button();
 		init_call_button();
-		init_vars();
 		init_entries();
-		update_date_label(mYear, mMonth, mDay);
-		update_time_label(mHour, mMinute);
+		update_date_label(mData.year, mData.month, mData.day);
+		update_time_label(mData.hour, mData.minute);
 	}
 
 	private void init_date_time_buttons()
@@ -205,7 +204,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 					incomplete_msg = getResources().getString(R.string.missing_reg);
 
 				/* TODO: don't hardcode "Other" */
-				} else if (mOffenceMalay.equals("Other") &&
+				} else if (mData.offenceMalay.equals("Other") &&
 						((EditText) findViewById(R.id.other_entry)).getText().toString().length() == 0) {
 					results_complete = false;
 					incomplete_msg = getResources().getString(R.string.missing_other);
@@ -227,10 +226,10 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		cancel_button.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				init_date_time_buttons();
-				init_vars();
+				init_vars(mData);
 				init_entries();
-				update_date_label(mYear, mMonth, mDay);
-				update_time_label(mHour, mMinute);
+				update_date_label(mData.year, mData.month, mData.day);
+				update_time_label(mData.hour, mData.minute);
 			}
 		});
 	}
@@ -258,30 +257,30 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		});
 	}
 
-	private void init_vars()
+	private void init_vars(DataWrapper data)
 	{
-		mPhotoUris.clear();
-		mRecordingUris.clear();
-		mVideoUris.clear();
-
 		final Calendar c = Calendar.getInstance();
-		mYear = c.get(Calendar.YEAR);
-		mMonth = c.get(Calendar.MONTH);
-		mDay = c.get(Calendar.DAY_OF_MONTH);
-		mHour = c.get(Calendar.HOUR_OF_DAY);
-		mMinute = c.get(Calendar.MINUTE);
+		data.year = c.get(Calendar.YEAR);
+		data.month = c.get(Calendar.MONTH);
+		data.day = c.get(Calendar.DAY_OF_MONTH);
+		data.hour = c.get(Calendar.HOUR_OF_DAY);
+		data.minute = c.get(Calendar.MINUTE);
 
-		mOffence = "";
-		mOffenceMalay = "";
-		mSelected = new boolean[] {true, true, false, false, false};
+		data.offence = "";
+		data.offenceMalay = "";
+		data.selected = new boolean[] {true, true, false, false, false};
+
+		data.photoUris = new ArrayList<Uri>();
+		data.recordingUris = new ArrayList<Uri>();
+		data.videoUris = new ArrayList<Uri>();
 	}
 
 	private void submit()
 	{
-		String date = String.format("%02d", mDay) +
-			'/' + String.format("%02d", mMonth+1) +
-			'/' + mYear;
-		String time = format_time(mHour, mMinute);
+		String date = String.format("%02d", mData.day) +
+			'/' + String.format("%02d", mData.month+1) +
+			'/' + mData.year;
+		String time = format_time(mData.hour, mData.minute);
 		String loc = ((EditText) findViewById(R.id.location_entry)).getText().toString();
 		String reg = ((EditText) findViewById(R.id.reg_entry)).getText().toString();
 		String other = ((EditText) findViewById(R.id.other_entry)).getText().toString();
@@ -297,7 +296,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 					Toast.LENGTH_SHORT).show();
 		}
 
-		String msg = format_msg(date, time, loc, reg, mOffenceMalay, other);
+		String msg = format_msg(date, time, loc, reg, mData.offenceMalay, other);
 
 		if (youtube_checked) {
 			send_youtube(msg);
@@ -318,18 +317,18 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 	private void send_youtube(String msg)
 	{
-		String action = mVideoUris.size() > 1 ?
+		String action = mData.videoUris.size() > 1 ?
 			Intent.ACTION_SEND_MULTIPLE : Intent.ACTION_SEND;
 		Intent youtube_intent = new Intent(action);
 		youtube_intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.complaint_malay));
 		youtube_intent.putExtra(Intent.EXTRA_TEXT, msg);
 		youtube_intent.setType("video/*");
 
-		if (mVideoUris.size() == 1) {
+		if (mData.videoUris.size() == 1) {
 			youtube_intent.putExtra(Intent.EXTRA_STREAM,
-					mVideoUris.get(mVideoUris.size()-1));
-		} else if (mVideoUris.size() > 1) {
-			youtube_intent.putExtra(Intent.EXTRA_STREAM, mVideoUris);
+					mData.videoUris.get(mData.videoUris.size()-1));
+		} else if (mData.videoUris.size() > 1) {
+			youtube_intent.putExtra(Intent.EXTRA_STREAM, mData.videoUris);
 		}
 
 		startActivity(Intent.createChooser(youtube_intent, getResources().getString(R.string.send_youtube)));
@@ -343,9 +342,9 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		AlertDialog.Builder builder = new AlertDialog.Builder(ReportMalaysiaTaxiActivity.this);
 		builder.setTitle(getResources().getString(R.string.who_email));
 		builder.setMultiChoiceItems(getResources().getStringArray(R.array.email_choices),
-				mSelected, new DialogInterface.OnMultiChoiceClickListener() {
+				mData.selected, new DialogInterface.OnMultiChoiceClickListener() {
 			public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-				mSelected[which] = isChecked;
+				mData.selected[which] = isChecked;
 			}
 		});
 		builder.setPositiveButton(getResources().getString(R.string.done), new OnClickListener() {
@@ -357,15 +356,15 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				String email_addresses = "";
 
 				for (int i=0; i < 5; ++i) {
-					if (mSelected[i]) {
+					if (mData.selected[i]) {
 						email_addresses += all_email_addresses[i];
 					}
 				}
 
 				ArrayList<Uri> uris = new ArrayList<Uri>();
-				uris.addAll(mPhotoUris);
-				uris.addAll(mRecordingUris);
-				uris.addAll(mVideoUris);
+				uris.addAll(mData.photoUris);
+				uris.addAll(mData.recordingUris);
+				uris.addAll(mData.videoUris);
 
 				String action = uris.size() > 1 ?
 					Intent.ACTION_SEND_MULTIPLE : Intent.ACTION_SEND;
@@ -386,11 +385,11 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 				if (uris.size() == 0) {
 					email_intent.setType("text/plain");
-				} else if (mVideoUris.size() > 0) {
+				} else if (mData.videoUris.size() > 0) {
 					email_intent.setType("video/*");
-				} else if (mPhotoUris.size() > 0) {
+				} else if (mData.photoUris.size() > 0) {
 					email_intent.setType("image/*");
-				} else if (mRecordingUris.size() > 0) {
+				} else if (mData.recordingUris.size() > 0) {
 					email_intent.setType("audio/*");
 				}
 				startActivity(Intent.createChooser(email_intent, getResources().getString(R.string.send_email)));
@@ -408,7 +407,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		AlertDialog alert = builder.create();
 		ListView list = alert.getListView();
 		for (int i=0; i < 5; ++i) {
-			list.setItemChecked(i, mSelected[i]);
+			list.setItemChecked(i, mData.selected[i]);
 		}
 
 		alert.show();
@@ -417,12 +416,12 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	private void send_tweet(String date, String time, String loc,
 			String reg, String other)
 	{
-		String tweet_msg = format_tweet(date, time, loc, reg, mOffence, other);
+		String tweet_msg = format_tweet(date, time, loc, reg, mData.offence, other);
 		Intent tweet_intent = new Intent(Intent.ACTION_SEND);
 		tweet_intent.putExtra(Intent.EXTRA_TEXT, tweet_msg);
-		if (!mPhotoUris.isEmpty()) {
+		if (!mData.photoUris.isEmpty()) {
 			tweet_intent.putExtra(Intent.EXTRA_STREAM,
-					mPhotoUris.get(mPhotoUris.size()-1));
+					mData.photoUris.get(mData.photoUris.size()-1));
 			tweet_intent.setType("image/*");
 		} else {
 			tweet_intent.setType("text/plain");
@@ -598,10 +597,10 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			new DatePickerDialog.OnDateSetListener() {
 				public void onDateSet(DatePicker view, int year,
 						int monthOfYear, int dayOfMonth) {
-					mYear = year;
-					mMonth = monthOfYear;
-					mDay = dayOfMonth;
-					update_date_label(mYear, mMonth, mDay);
+					mData.year = year;
+					mData.month = monthOfYear;
+					mData.day = dayOfMonth;
+					update_date_label(mData.year, mData.month, mData.day);
 				}
 		};
 
@@ -609,19 +608,19 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			new TimePickerDialog.OnTimeSetListener() {
 				public void onTimeSet(TimePicker view,
 						int hourOfDay, int minute) {
-					mHour = hourOfDay;
-					mMinute = minute;
-					update_time_label(mHour, mMinute);
+					mData.hour = hourOfDay;
+					mData.minute = minute;
+					update_time_label(mData.hour, mData.minute);
 				}
 		};
 
 		switch (id) {
 		case DATE_DIALOG_ID:
-			return new DatePickerDialog(this, mDateSetListener, mYear,
-					mMonth, mDay);
+			return new DatePickerDialog(this, mDateSetListener, mData.year,
+					mData.month, mData.day);
 		case TIME_DIALOG_ID:
-			return new TimePickerDialog(this, mTimeSetListener, mHour,
-					mMinute, false);
+			return new TimePickerDialog(this, mTimeSetListener, mData.hour,
+					mData.minute, false);
 		}
 		return null;
 	}
@@ -634,21 +633,21 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		switch (requestCode) {
 		case ACTIVITY_TAKE_PHOTO:
 			if (resultCode == RESULT_OK) {
-				mPhotoUris.add(data.getData());
-				((TextView)findViewById(R.id.camera_label)).setText(Integer.toString(mPhotoUris.size()));
+				mData.photoUris.add(data.getData());
+				((TextView)findViewById(R.id.camera_label)).setText(Integer.toString(mData.photoUris.size()));
 			}
 			break;
 		case ACTIVITY_TAKE_VIDEO:
 			if (resultCode == RESULT_OK) {
-				mVideoUris.add(data.getData());
-				((TextView)findViewById(R.id.video_label)).setText(Integer.toString(mVideoUris.size()));
+				mData.videoUris.add(data.getData());
+				((TextView)findViewById(R.id.video_label)).setText(Integer.toString(mData.videoUris.size()));
 				((CheckBox) findViewById(R.id.youtube_checkbox)).setChecked(true);
 			}
 			break;
 		case ACTIVITY_RECORD_SOUND:
 			if (resultCode == RESULT_OK) {
-				mRecordingUris.add(data.getData());
-				((TextView)findViewById(R.id.recorder_label)).setText(Integer.toString(mRecordingUris.size()));
+				mData.recordingUris.add(data.getData());
+				((TextView)findViewById(R.id.recorder_label)).setText(Integer.toString(mData.recordingUris.size()));
 			}
 			break;
 		case ACTIVITY_UPDATE_SETTINGS:
@@ -663,8 +662,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	{
 		public void onItemSelected(AdapterView<?> parent, View view, int pos,
 				long id) {
-			mOffence = getResources().getStringArray(R.array.offence_array)[pos];
-			mOffenceMalay = getResources().getStringArray(R.array.offence_malay_array)[pos];
+			mData.offence = getResources().getStringArray(R.array.offence_array)[pos];
+			mData.offenceMalay = getResources().getStringArray(R.array.offence_malay_array)[pos];
 		}
 
 		public void onNothingSelected(AdapterView<?> parent) {
