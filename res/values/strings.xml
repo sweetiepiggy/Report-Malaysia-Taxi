@@ -70,6 +70,7 @@
 	
 	<string name="lk_jb_kt_m">Kuala Lumpur, Johor Baru, Kuala Terengganu, Melaka</string>
 	<string name="penang">Penang</string>
+	<string name="airports">Airports</string>
 	
 	<string name="km">km</string>
 	<string name="minutes">minutes</string>
@@ -131,6 +132,10 @@ Traffic Police: rmp@rmp.gov.my
 	RM3 for telephone bookings\n
 	RM1 for 3rd adult passenger (max 4) and/or baggage stored in boot\n
 	Actual road toll charges
+	</string>
+	
+	<string name="airports_fare_rate">
+	Taxis at airports operate on a pre-paid coupon system.
 	</string>
 	
 	<string name="gpl">

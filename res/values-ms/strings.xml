@@ -70,6 +70,7 @@
 
 	<string name="lk_jb_kt_m">Kuala Lumpur, Johor Baru, Kuala Terengganu, Melaka</string>
 	<string name="penang">Pulau Pinang</string>
+	<string name="airports">Lapangan Terbang</string>
 
 	<string name="km">km</string>
 	<string name="minutes">minit</string>
@@ -135,6 +136,10 @@ Trafik Polis: rmp@rmp.gov.my
 	Caj tol dikenakan megikut harga sebenar
 	</string>
 
+	<string name="airports_fare_rate">
+	Taxis at airports operate on a pre-paid coupon system.
+	</string>
+	
     <string name="gpl">
 Copyright (C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
 Aduan Teksi adalah perisian bebas; anda boleh memaparkan dan / atau mengubah suai

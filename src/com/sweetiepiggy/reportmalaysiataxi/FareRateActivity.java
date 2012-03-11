@@ -37,6 +37,7 @@ public class FareRateActivity extends ListActivity {
 		String[] resources = new String[] {
 			getResources().getString(R.string.lk_jb_kt_m),
 			getResources().getString(R.string.penang),
+			getResources().getString(R.string.airports),
 		};
 		setListAdapter(new ArrayAdapter<String>(this,
 					android.R.layout.simple_list_item_1,
@@ -49,11 +50,22 @@ public class FareRateActivity extends ListActivity {
 					int pos, long id) {
 				CharSequence item = ((TextView) view).getText();
 				if (item.equals(getResources().getString(R.string.penang))) {
-					Intent penang_fare_rate_intent = new Intent(getApplicationContext(), PenangFareRateActivity.class);
+					Intent penang_fare_rate_intent =
+						new Intent(getApplicationContext(),
+							PenangFareRateActivity.class);
 					startActivity(penang_fare_rate_intent);
+
 				} else if (item.equals(getResources().getString(R.string.lk_jb_kt_m))) {
-					Intent kl_fare_rate_intent = new Intent(getApplicationContext(), KLFareRateActivity.class);
+					Intent kl_fare_rate_intent =
+						new Intent(getApplicationContext(),
+							KLFareRateActivity.class);
 					startActivity(kl_fare_rate_intent);
+
+				} else if (item.equals(getResources().getString(R.string.airports))) {
+					Intent airports_fare_rate_intent =
+						new Intent(getApplicationContext(),
+							AirportsFareRateActivity.class);
+					startActivity(airports_fare_rate_intent);
 				}
 			}
 		});
