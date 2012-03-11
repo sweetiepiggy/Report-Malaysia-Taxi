@@ -46,7 +46,10 @@ public class SettingsActivity extends ListActivity {
 
 		switch (requestCode) {
 		case ACTIVITY_SET_LANGUAGE:
-			init();
+			if (resultCode != RESULT_CANCELED) {
+				setResult(resultCode, getIntent());
+				finish();
+			}
 			break;
 		}
 	}

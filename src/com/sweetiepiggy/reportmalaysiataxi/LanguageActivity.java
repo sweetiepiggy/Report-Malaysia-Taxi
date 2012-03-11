@@ -50,7 +50,15 @@ public class LanguageActivity extends ListActivity {
 				config.locale = locale;
 				getBaseContext().getResources().updateConfiguration(config,
 					getBaseContext().getResources().getDisplayMetrics());
-				setResult(RESULT_OK, null);
+
+				/* TODO: there should be a way to restore to phone's default language */
+				if (language_code.equals("en")) {
+					setResult(DataWrapper.RESULT_SET_ENGLISH, null);
+				} else if (language_code.equals("zh")) {
+					setResult(DataWrapper.RESULT_SET_CHINESE, null);
+				} else if (language_code.equals("ms")) {
+					setResult(DataWrapper.RESULT_SET_MALAY, null);
+				}
 				finish();
 			}
 		});
