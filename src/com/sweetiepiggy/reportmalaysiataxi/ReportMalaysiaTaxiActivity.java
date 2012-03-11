@@ -77,6 +77,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		if (mData == null) {
 			mData = new DataWrapper();
 			init_vars(mData);
+			init_entries();
 		}
 		init();
 	}
@@ -96,7 +97,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		init_submit_button();
 		init_cancel_button();
 		init_call_button();
-		init_entries();
 		update_date_label(mData.year, mData.month, mData.day);
 		update_time_label(mData.hour, mData.minute);
 	}
@@ -156,6 +156,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				startActivityForResult(photo_intent, ACTIVITY_TAKE_PHOTO);
 			}
 		});
+		String photo_size = mData.photoUris.size() > 0 ? Integer.toString(mData.photoUris.size()) : "";
+		((TextView)findViewById(R.id.camera_label)).setText(photo_size);
 
 		Button vidcam_button = (Button) findViewById(R.id.vidcam_button);
 		vidcam_button.setOnClickListener(new View.OnClickListener() {
@@ -165,6 +167,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				startActivityForResult(video_intent, ACTIVITY_TAKE_VIDEO);
 			}
 		});
+		String video_size = mData.videoUris.size() > 0 ? Integer.toString(mData.videoUris.size()) : "";
+		((TextView)findViewById(R.id.video_label)).setText(video_size);
 
 		Button recorder_button = (Button) findViewById(R.id.recorder_button);
 		recorder_button.setOnClickListener(new View.OnClickListener() {
@@ -174,6 +178,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				startActivityForResult(recorder_intent, ACTIVITY_RECORD_SOUND);
 			}
 		});
+		String recording_size = mData.recordingUris.size() > 0 ? Integer.toString(mData.recordingUris.size()) : "";
+		((TextView)findViewById(R.id.recorder_label)).setText(recording_size);
 	}
 
 	private void init_entries()
