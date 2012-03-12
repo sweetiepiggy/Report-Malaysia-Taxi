@@ -34,6 +34,7 @@
 	<string name="about">About</string>
 	<string name="resources">Resources</string>
 	<string name="fare_rate">Fare Rate</string>
+	<string name="contacts">Contact Info</string>
 	
 	<string name="location_hint">Enter location of incident</string>
 	<string name="registration_hint">Enter car plate number, e.g. HWA9999</string>
@@ -75,6 +76,21 @@
 	<string name="km">km</string>
 	<string name="minutes">minutes</string>
 	<string name="fare">fare</string>
+	
+	<string name="spad">SPAD: Land Transport Commission</string>
+	<string name="lpkp">LPKP: Commercial Vehicle Licensing Board</string>
+	<string name="jpj">JPJ: Road Transport Department</string>
+	<string name="kpdnkk">KPDNKK: Ministry of Domestic Trade, Cooperative and Consumerism</string>
+	<string name="motour">Ministry of Tourism</string>
+	<string name="pcb">Public Complaints Bureau</string>
+	<string name="pemudah">Entrepreneur and Cooperatives Development Ministry</string>
+	<string name="ttpm">Tribunal for Consumer Claims</string>
+	<string name="transit">TRANSIT</string>
+	<string name="nccc">National Consumer Complaints Centre</string>
+	<string name="mo_transport">Minister of Transport</string>
+	<string name="mo_tourism">Minister of Tourism</string>
+	<string name="prime_minister">Prime Minister</string>
+	
 	
 	<string name="who_email">Select Who to Email</string>
 	<string name="done">Done</string>

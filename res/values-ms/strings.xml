@@ -34,6 +34,7 @@
     <string name="settings">Pilihan</string>
 	<string name="resources">Sumber Maklumat</string>
 	<string name="fare_rate">Kadar Tambang</string>
+	<string name="contacts">Contact Info</string>
 	
 	<string name="location_hint">Masukkan lokasi kejadian</string>
 	<string name="registration_hint">Masuk nombor plat kereta, cth HWA9999</string>
@@ -75,6 +76,20 @@
 	<string name="km">km</string>
 	<string name="minutes">minit</string>
 	<string name="fare">fare</string>
+
+	<string name="spad">SPAD: Land Transport Commission</string>
+	<string name="lpkp">LPKP: Commercial Vehicle Licensing Board</string>
+	<string name="jpj">JPJ: Road Transport Department</string>
+	<string name="kpdnkk">KPDNKK: Ministry of Domestic Trade, Cooperative and Consumerism</string>
+	<string name="motour">Ministry of Tourism</string>
+	<string name="pcb">Public Complaints Bureau</string>
+	<string name="pemudah">Entrepreneur and Cooperatives Development Ministry</string>
+	<string name="ttpm">Tribunal for Consumer Claims</string>
+	<string name="transit">TRANSIT</string>
+	<string name="nccc">National Consumer Complaints Centre</string>
+	<string name="mo_transport">Minister of Transport</string>
+	<string name="mo_tourism">Minister of Tourism</string>
+	<string name="prime_minister">Prime Minister</string>
 
 	<string name="who_email">Pilih Talian Untuk Menghantar E-mel</string>
 	<string name="done">Selesai</string>

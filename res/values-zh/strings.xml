@@ -34,6 +34,7 @@
     <string name="language">语言</string>
 	<string name="resources">资源</string>
 	<string name="fare_rate">价率</string>
+	<string name="contacts">Contact Info</string>
 	
 	<string name="location_hint">输入事件发生的地点</string>
 	<string name="registration_hint">输入车牌号码，例如HWA9999</string>
@@ -76,6 +77,20 @@
 	<string name="minutes">分钟</string>
 	<string name="fare">车价</string>
 
+	<string name="spad">SPAD: Land Transport Commission</string>
+	<string name="lpkp">LPKP: Commercial Vehicle Licensing Board</string>
+	<string name="jpj">JPJ: Road Transport Department</string>
+	<string name="kpdnkk">KPDNKK: Ministry of Domestic Trade, Cooperative and Consumerism</string>
+	<string name="motour">Ministry of Tourism</string>
+	<string name="pcb">Public Complaints Bureau</string>
+	<string name="pemudah">Entrepreneur and Cooperatives Development Ministry</string>
+	<string name="ttpm">Tribunal for Consumer Claims</string>
+	<string name="transit">TRANSIT</string>
+	<string name="nccc">National Consumer Complaints Centre</string>
+	<string name="mo_transport">Minister of Transport</string>
+	<string name="mo_tourism">Minister of Tourism</string>
+	<string name="prime_minister">Prime Minister</string>
+	
 	<string name="who_email">选择谁电子邮件</string>
 	<string name="done">完成</string>
 	<string name="details">详情</string>

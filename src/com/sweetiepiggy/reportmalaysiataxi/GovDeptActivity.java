@@ -29,18 +29,24 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class ResourcesActivity extends ListActivity {
+public class GovDeptActivity extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		String[] resources = new String[] {
-			getResources().getString(R.string.fare_rate),
-			getResources().getString(R.string.contacts),
+		String[] gov_depts = new String[] {
+			getResources().getString(R.string.spad),
+			getResources().getString(R.string.lpkp),
+			getResources().getString(R.string.jpj),
+			getResources().getString(R.string.kpdnkk),
+			getResources().getString(R.string.motour),
+			getResources().getString(R.string.pcb),
+			getResources().getString(R.string.pemudah),
+			getResources().getString(R.string.ttpm),
 		};
 		setListAdapter(new ArrayAdapter<String>(this,
 					android.R.layout.simple_list_item_1,
-					resources));
+					gov_depts));
 
 		ListView lv = getListView();
 
@@ -48,17 +54,18 @@ public class ResourcesActivity extends ListActivity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int pos, long id) {
 				CharSequence item = ((TextView) view).getText();
-				if (item.equals(getResources().getString(R.string.fare_rate))) {
-					Intent fare_rate_intent = new Intent(getApplicationContext(), FareRateActivity.class);
-					startActivity(fare_rate_intent);
-
-				} else if (item.equals(getResources().getString(R.string.contacts))) {
-					Intent contacts_intent = new Intent(getApplicationContext(), ContactsActivity.class);
-					startActivity(contacts_intent);
-				}
+//				if (item.equals(getResources().getString(R.string.fare_rate))) {
+//					Intent fare_rate_intent = new Intent(getApplicationContext(), FareRateActivity.class);
+//					startActivity(fare_rate_intent);
+//
+//				} else if (item.equals(getResources().getString(R.string.contacts))) {
+//					Intent contacts_intent = new Intent(getApplicationContext(), ContactsActivity.class);
+//					startActivity(contacts_intent);
+//				}
 			}
 		});
 
 	}
 }
+
 
