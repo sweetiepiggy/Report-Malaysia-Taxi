@@ -70,6 +70,7 @@
 
 	<string name="lk_jb_kt_m">吉隆坡， 柔佛， 瓜拉登嘉楼， 马六甲</string>
 	<string name="penang">槟城</string>
+	<string name="airports">机场</string>
 
 	<string name="km">公里</string>
 	<string name="minutes">分钟</string>
@@ -133,6 +134,10 @@
 	另加马币三零吉如果是电话预约\n
 	第三位乘客另加收费马币一零吉（最多四位乘客）以及马币一零吉收费若储存行李在后车箱。\n
 	通行费将依据真实价格收费
+	</string>
+	
+	<string name="airports_fare_rate">
+	在机场的出租车是以预付费的票据系统运作。
 	</string>
 	
 	<string name="gpl">
