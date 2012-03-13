@@ -116,6 +116,21 @@ Trafik Polis: rmp@rmp.gov.my
 		<item>NCCC: Pusat Khidmat Aduan Pengguna Nasional</item>
 	</string-array>
 
+	<string name="spad_contact">
+	    SPAD\n
+	    Land Transport Commission\n
+	    aduan@spad.gov.my\n
+	    www.spad.gov.my\n
+	</string>
+	<string name="lpkp_contact">
+	    LPKP\n
+	    Commercial Vehicle Licensing Board\n
+	    SMS ADUAN LPKP to 15888\n
+	    1-800-88-96-00\n
+	    aduan@lpkp.gov.my\n
+	    www.lpkp.gov.my\n
+	</string>
+	
 	<string name="penang_fare_rate">
 	Jarak\n
 	RM4 / 1 km pertama\n

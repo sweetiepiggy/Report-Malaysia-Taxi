@@ -91,7 +91,6 @@
 	<string name="mo_tourism">Minister of Tourism</string>
 	<string name="prime_minister">Prime Minister</string>
 	
-	
 	<string name="who_email">Select Who to Email</string>
 	<string name="done">Done</string>
 	<string name="details">Details</string>
@@ -112,10 +111,25 @@ Traffic Police: rmp@rmp.gov.my
 	</string>
 	
 	<string-array name="tel_number_names">
-		<item>LPKP: Licensing of Commercial Vehicles</item>
+		<item>LPKP: Commercial Vehicle Licensing Board</item>
 		<item>JPJ: Road Transport Department</item>
 		<item>NCCC: National Consumer Complaints Centre</item>
 	</string-array>
+	
+	<string name="spad_contact">
+	    SPAD\n
+	    Land Transport Commission\n
+	    aduan@spad.gov.my\n
+	    www.spad.gov.my\n
+	</string>
+	<string name="lpkp_contact">
+	    LPKP\n
+	    Commercial Vehicle Licensing Board\n
+	    SMS ADUAN LPKP to 15888\n
+	    1-800-88-96-00\n
+	    aduan@lpkp.gov.my\n
+	    www.lpkp.gov.my\n
+	</string>
 	
 	<string name="penang_fare_rate">
 	RM4 for first km\n

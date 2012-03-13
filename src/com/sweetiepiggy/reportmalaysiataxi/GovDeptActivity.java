@@ -54,14 +54,19 @@ public class GovDeptActivity extends ListActivity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int pos, long id) {
 				CharSequence item = ((TextView) view).getText();
-//				if (item.equals(getResources().getString(R.string.fare_rate))) {
-//					Intent fare_rate_intent = new Intent(getApplicationContext(), FareRateActivity.class);
-//					startActivity(fare_rate_intent);
-//
-//				} else if (item.equals(getResources().getString(R.string.contacts))) {
-//					Intent contacts_intent = new Intent(getApplicationContext(), ContactsActivity.class);
-//					startActivity(contacts_intent);
-//				}
+				/* TODO: combine all contact activities into one ContactActivity and pass the contact info to it */
+				if (item.equals(getResources().getString(R.string.spad))) {
+					Intent spad_intent = new Intent(getApplicationContext(), SPADActivity.class);
+					startActivity(spad_intent);
+
+				} else if (item.equals(getResources().getString(R.string.lpkp))) {
+					Intent lpkp_intent = new Intent(getApplicationContext(), LPKPActivity.class);
+					startActivity(lpkp_intent);
+
+//				} else if (item.equals(getResources().getString(R.string.jpj))) {
+//					Intent lpkp_intent = new Intent(getApplicationContext(), JPJActivity.class);
+//					startActivity(jpj_intent);
+				}
 			}
 		});
 

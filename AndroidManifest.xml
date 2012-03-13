@@ -51,6 +51,8 @@
         <activity android:name="GovDeptActivity"></activity>
         <activity android:name="ConsumerGroupActivity"></activity>
         <activity android:name="GovMinisterActivity"></activity>
+        <activity android:name="SPADActivity"></activity>
+        <activity android:name="LPKPActivity"></activity>
     </application>
 
 </manifest>
