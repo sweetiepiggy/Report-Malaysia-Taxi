@@ -543,12 +543,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		if (date.length() == 0 || build_tweet(map, date, time,
 					loc, reg, offence, other).length() >
 				MAX_TWEET_LENGTH) {
-			date = shorten_date(date);
-			if (build_tweet(map, date, time, loc, reg, offence,
-						other).length() >
-					MAX_TWEET_LENGTH) {
-				map.put("date", false);
-			}
+			map.put("date", false);
 		}
 
 		map.put("time", true);
