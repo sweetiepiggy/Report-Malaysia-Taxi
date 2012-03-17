@@ -19,27 +19,24 @@
 
 package com.sweetiepiggy.reportmalaysiataxi;
 
-import android.app.Activity;
-import android.content.pm.PackageManager;
-import android.os.Bundle;
-import android.widget.TextView;
+import java.util.ArrayList;
 
-public class AboutActivity extends Activity {
+import android.net.Uri;
 
-	/** Called when the activity is first created. */
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.about);
-		String version_name;
+public class DataWrapper
+{
+	public int year;
+	public int month;
+	public int day;
+	public int hour;
+	public int minute;
+	public String offence;
+	public String offenceMalay;
 
-		try {
-			version_name = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
-		} catch (PackageManager.NameNotFoundException e) {
-			version_name = "";
-		}
-		((TextView) findViewById(R.id.app_name)).setText(getResources().getString(R.string.app_name) +
-			" v" + version_name + "\n");
-	}
+	public boolean[] selected;
 
+	public ArrayList<Uri> photoUris;
+	public ArrayList<Uri> recordingUris;
+	public ArrayList<Uri> videoUris;
 }
+

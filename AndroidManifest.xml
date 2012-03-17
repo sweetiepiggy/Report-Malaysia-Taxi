@@ -21,8 +21,8 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sweetiepiggy.reportmalaysiataxi"
-    android:versionCode="14"
-    android:versionName="1.0.13" >
+    android:versionCode="15"
+    android:versionName="1.0.14-dev" >
 
     <uses-sdk android:minSdkVersion="7" />
     
@@ -46,6 +46,7 @@
         <activity android:name="FareRateActivity"></activity>
         <activity android:name="PenangFareRateActivity"></activity>
         <activity android:name="KLFareRateActivity"></activity>
+        <activity android:name="AirportsFareRateActivity"></activity>
     </application>
 
 </manifest>

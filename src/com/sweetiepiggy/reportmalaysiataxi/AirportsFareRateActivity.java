@@ -20,26 +20,15 @@
 package com.sweetiepiggy.reportmalaysiataxi;
 
 import android.app.Activity;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.widget.TextView;
 
-public class AboutActivity extends Activity {
+public class AirportsFareRateActivity extends Activity {
 
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.about);
-		String version_name;
-
-		try {
-			version_name = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
-		} catch (PackageManager.NameNotFoundException e) {
-			version_name = "";
-		}
-		((TextView) findViewById(R.id.app_name)).setText(getResources().getString(R.string.app_name) +
-			" v" + version_name + "\n");
+		setContentView(R.layout.airports_fare_rate);
 	}
 
 }

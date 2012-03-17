@@ -70,6 +70,7 @@
 	
 	<string name="lk_jb_kt_m">Kuala Lumpur, Johor Baru, Kuala Terengganu, Melaka</string>
 	<string name="penang">Penang</string>
+	<string name="airports">Airports</string>
 	
 	<string name="km">km</string>
 	<string name="minutes">minutes</string>
@@ -107,13 +108,13 @@ Traffic Police: rmp@rmp.gov.my
 	RM4 for first 3 minutes\n
 	10 cents for each additional 21 seconds\n\n
 	
+	http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf\n\n
+	
 	Additional Charges:\n
 	50% surcharge between midnight and 6:00AM\n
-	RM2 for telephone bookings\n
+	RM3 for telephone bookings\n
 	RM1 for 3rd adult passenger (max 4) and/or baggage stored in boot\n
-	Actual road toll charges\n\n
-	
-	http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf
+	Actual road toll charges
 	</string>
 
 	<string name="kl_fare_rate">
@@ -123,13 +124,18 @@ Traffic Police: rmp@rmp.gov.my
 	RM3 for first 3 minutes\n
 	10 cents for each additional 21 seconds\n\n
 	
-	Additional Charges:\n
-	50% surcharge between midnight and 6:00AM\n
-	RM2 for telephone bookings\n
-	RM1 for 3rd adult passenger (max 4) and/or baggage stored in boot\n
-	Actual road toll charges\n\n
+	http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf\n\n
 	
-	See http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf
+	Additional Charges:\n
+	Double rate for executive taxi\n
+	50% surcharge between midnight and 6:00AM\n
+	RM3 for telephone bookings\n
+	RM1 for 3rd adult passenger (max 4) and/or baggage stored in boot\n
+	Actual road toll charges
+	</string>
+	
+	<string name="airports_fare_rate">
+	Taxis at airports operate on a pre-paid coupon system.
 	</string>
 	
 	<string name="gpl">

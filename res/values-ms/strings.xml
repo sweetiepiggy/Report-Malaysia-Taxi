@@ -70,6 +70,7 @@
 
 	<string name="lk_jb_kt_m">Kuala Lumpur, Johor Baru, Kuala Terengganu, Melaka</string>
 	<string name="penang">Pulau Pinang</string>
+	<string name="airports">Lapangan Terbang</string>
 
 	<string name="km">km</string>
 	<string name="minutes">minit</string>
@@ -108,13 +109,13 @@ Trafik Polis: rmp@rmp.gov.my
 	RM4 / 3 minit pertama\n
 	10 sen/21 saat berikutnya\n\n
 	
+	http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf\n\n
+	
 	Bayaran Tambahan\n
 	Caj tambahan 50% daripada harga tampang antara\n
-	RM2 untuk tempahan dengan telefon\n
+	RM3 untuk tempahan dengan telefon\n
 	RM1 untuk penumpang dewasa ke-3 (maksimum 4) dan / atau bagasi yang disimpan di dalam but\n
-	Caj tol dikenakan megikut harga sebenar\n\n
-	
-	http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf
+	Caj tol dikenakan megikut harga sebenar
 	</string>
 
 	<string name="kl_fare_rate">
@@ -125,15 +126,20 @@ Trafik Polis: rmp@rmp.gov.my
 	RM3 / 3 minit pertama\n
 	10 sen/21 saat berikutnya\n\n
 	
-	Bayaran Tambahan\n
-	Caj tambahan 50% daripada harga tampang antara\n
-	RM2 untuk tempahan dengan telefon\n
-	RM1 untuk penumpang dewasa ke-3 (maksimum 4) dan / atau bagasi yang disimpan di dalam but\n
-	Caj tol dikenakan megikut harga sebenar\n\n
+	http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf\n\n
 	
-	http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf
+	Bayaran Tambahan\n
+	Dua kali ganda untuk teksi eksekutif\n
+	Caj tambahan 50% daripada harga tampang antara\n
+	RM3 untuk tempahan dengan telefon\n
+	RM1 untuk penumpang dewasa ke-3 (maksimum 4) dan / atau bagasi yang disimpan di dalam but\n
+	Caj tol dikenakan megikut harga sebenar
 	</string>
 
+	<string name="airports_fare_rate">
+	Teksi bearada di lapangan terbang beroperasi dengan sistem kupon pra-bayar.
+	</string>
+	
     <string name="gpl">
 Copyright (C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
 Aduan Teksi adalah perisian bebas; anda boleh memaparkan dan / atau mengubah suai
