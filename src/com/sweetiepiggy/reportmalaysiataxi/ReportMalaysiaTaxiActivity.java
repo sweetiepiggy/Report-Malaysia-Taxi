@@ -22,6 +22,7 @@ package com.sweetiepiggy.reportmalaysiataxi;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -31,7 +32,6 @@ import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -66,6 +66,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	static final int ACTIVITY_RECORD_SOUND = 1;
 	static final int ACTIVITY_UPDATE_SETTINGS = 2;
 	static final int ACTIVITY_TAKE_VIDEO = 3;
+
+	static final int MAX_TWEET_LENGTH = 140;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -490,84 +492,169 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		return getResources().getString(R.string.complaint_malay) + msg;
 	}
 
-	private String format_tweet(String date, String time, String location,
+	private String format_tweet(String date, String time, String loc,
 			String reg, String offence, String other)
 	{
-		String msg = getResources().getString(R.string.twitter_address) + " " +
-				getResources().getString(R.string.complaint_hashtag);
+		/** map to keep track of which info should be printed and
+			which should be dropped to keep tweet under 140 characters */
+		HashMap<String, Boolean> map = new HashMap<String, Boolean>();
+		map.put("twitter_address1", true);
+		map.put("twitter_address2", false);
+		map.put("twitter_address3", false);
+		map.put("complaint_hashtag", true);
+		map.put("date", false);
+		map.put("time", false);
+		map.put("reg", reg.length() != 0);
+		map.put("loc", false);
+		map.put("offence", false);
 
-		if (offence.equals("Other")) {
-			offence = "";
-		}
-
-		/* don't cut down other fields if user description won't fit anyway */
-		String orig_other = other;
-		if (msg.length() + reg.length() + other.length() + 1 > 140) {
-			other = "";
-		}
-
-		int extra_length = 1;
-		if (location.length() != 0) {
-			extra_length += 1;
-		}
-		if (offence.length() != 0) {
-			extra_length += 2;
-		}
-		if (orig_other.length() != 0) {
-			extra_length += 2;
-		}
-		if (reg.length() != 0) {
-			extra_length += 1;
+		map.put("other", true);
+		if (other.length() == 0 || build_tweet(map, date, time,
+					loc, reg, offence, other).length() >
+				MAX_TWEET_LENGTH) {
+			map.put("other", false);
 		}
 
-		if (date.length() != 0 &&
-				(msg.length() + reg.length() + date.length() + location.length() +
-						offence.length() + other.length() + extra_length < 140)) {
-			msg += ' ' + date;
-			if (time.length() != 0 &&
-					(msg.length() + reg.length() + time.length() + location.length() +
-							offence.length() + other.length() + extra_length < 140)) {
-				msg += ' ' + time;
+		map.put("offence", true);
+		/* TODO: don't hard code Other */
+		if (offence.length() == 0 || offence.equals("Other") ||
+				build_tweet(map, date, time, loc, reg,
+					offence, other).length() >
+				MAX_TWEET_LENGTH) {
+			map.put("offence", false);
+		}
+
+		map.put("loc", true);
+		if (loc.length() == 0 || build_tweet(map, date, time,
+					loc, reg, offence, other).length() >
+				MAX_TWEET_LENGTH) {
+			map.put("loc", false);
+		}
+
+		map.put("twitter_address2", true);
+		if (getResources().getString(R.string.twitter_address2).length() == 0 ||
+				build_tweet(map, date, time, loc, reg,
+					offence, other).length() >
+				MAX_TWEET_LENGTH) {
+			map.put("twitter_address2", false);
+		}
+
+		map.put("date", true);
+		if (date.length() == 0 || build_tweet(map, date, time,
+					loc, reg, offence, other).length() >
+				MAX_TWEET_LENGTH) {
+			date = shorten_date(date);
+			if (build_tweet(map, date, time, loc, reg, offence,
+						other).length() >
+					MAX_TWEET_LENGTH) {
+				map.put("date", false);
 			}
 		}
 
-		if (reg.length() != 0) {
-			msg += ' ' + reg;
+		map.put("time", true);
+		if (time.length() == 0 || build_tweet(map, date, time,
+					loc, reg, offence, other).length() >
+				MAX_TWEET_LENGTH) {
+			map.put("time", false);
 		}
 
-		boolean need_comma = false;
-		extra_length = 1;
-		if (offence.length() != 0) {
-			extra_length += 2;
-		}
-		if (orig_other.length() != 0) {
-			extra_length += 2;
-		}
-		if (location.length() != 0 &&
-				(msg.length() + location.length() +
-						offence.length() + other.length() + 1 < 140)) {
-				msg += " " + location;
-				need_comma = true;
+		map.put("twitter_address3", true);
+		if (getResources().getString(R.string.twitter_address3).length() == 0 ||
+				build_tweet(map, date, time, loc, reg,
+					offence, other).length() >
+				MAX_TWEET_LENGTH) {
+			map.put("twitter_address3", false);
 		}
 
-		extra_length = need_comma ? 2 : 1;
-		if (offence.length() != 0 &&
-				(msg.length() + other.length() + extra_length < 140)) {
-				if (need_comma) {
-					msg += ',';
-				}
-				msg += " " + offence;
-				need_comma = true;
+		/* always include additional details, but wait until here to
+			set true to avoid cutting down other fields if user
+			description won't fit anyway */
+		if (other.length() != 0) {
+			map.put("other", true);
 		}
 
-		if (orig_other.length() != 0) {
-			if (need_comma) {
-				msg += ',';
+		return build_tweet(map, date, time, loc, reg, offence, other);
+	}
+
+	private String build_tweet(HashMap<String, Boolean> map, String date,
+			String time, String loc, String reg, String offence, String other)
+	{
+		String res = "";
+
+		if (map.get("twitter_address1")) {
+			res += getResources().getString(R.string.twitter_address1);
+		}
+
+		if (map.get("twitter_address2")) {
+			if (res.length() != 0) {
+				res += ' ';
 			}
-			msg += ' ' + orig_other;
+			res += getResources().getString(R.string.twitter_address2);
 		}
 
-		return msg;
+		if (map.get("twitter_address3")) {
+			if (res.length() != 0) {
+				res += ' ';
+			}
+			res += getResources().getString(R.string.twitter_address3);
+		}
+
+		if (map.get("complaint_hashtag")) {
+			if (res.length() != 0) {
+				res += ' ';
+			}
+			res += getResources().getString(R.string.complaint_hashtag);
+		}
+
+		if (map.get("date")) {
+			if (res.length() != 0) {
+				res += ' ';
+			}
+			res += date;
+		}
+
+		if (map.get("time")) {
+			if (res.length() != 0) {
+				res += ' ';
+			}
+			res += time;
+		}
+
+		if (map.get("reg")) {
+			if (res.length() != 0) {
+				res += ' ';
+			}
+			res += reg;
+		}
+
+		if (map.get("loc")) {
+			if (res.length() != 0) {
+				res += ' ';
+			}
+			res += loc;
+		}
+
+		if (map.get("offence")) {
+			if (map.get("loc")) {
+				res += ',';
+			}
+			if (res.length() != 0) {
+				res += ' ';
+			}
+			res += offence.toLowerCase();
+		}
+
+		if (map.get("other")) {
+			if (map.get("loc") || map.get("offence")) {
+				res += ',';
+			}
+			if (res.length() != 0) {
+				res += ' ';
+			}
+			res += other;
+		}
+
+		return res;
 	}
 
 	private void update_date_label(int year, int month, int day)

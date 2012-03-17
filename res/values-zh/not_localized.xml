@@ -24,7 +24,7 @@
 
 	<string name="complaint_email_malay">Aduan Teksi</string>
 	<string name="complaint_malay">ADUAN LPKP</string>
-	<string name="complaint_hashtag">#AduanTeksi</string>
+	<string name="complaint_hashtag">#aduanteksi</string>
 	<string name="location_malay">Lokasi</string>
 	<string name="registration_malay">Nombor Teksi Pendaftaran</string>
 	<string name="offence_malay">Kesalahan</string>
@@ -73,7 +73,9 @@
 		<item>rmp@rmp.gov.my; </item>
 	</string-array>
 
-	<string name="twitter_address">\@aduanSPAD @transitmy @myAduan</string>
+	<string name="twitter_address1">\@aduanSPAD</string>
+	<string name="twitter_address2">\@transitmy</string>
+	<string name="twitter_address3">\@myAduan</string>
 
 	<string-array name="tel_numbers">
 		<item>1800889600</item>
