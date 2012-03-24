@@ -47,6 +47,9 @@
         <activity android:name="PenangFareRateActivity"></activity>
         <activity android:name="KLFareRateActivity"></activity>
         <activity android:name="AirportsFareRateActivity"></activity>
+        <activity android:name="FareCalcActivity"></activity>
+        <activity android:name="KLFareCalcActivity"></activity>
+        <activity android:name="PenangFareCalcActivity"></activity>
     </application>
 
 </manifest>
