@@ -22,44 +22,10 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent">
 
-    <!-- 
-	<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:stretchColumns="1">-->
 			<TextView
 				android:id="@+id/penang_fare_rate"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/penang_fare_rate" />
-			<!--<TextView
-				android:id="@+id/km_label"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/km" />
-			<EditText
-				android:id="@+id/km_edittext"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:inputType="number" />
-			<TextView
-				android:id="@+id/minutes_label"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/minutes" />
-			<EditText
-				android:id="@+id/minutes_edittext"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:inputType="number" />
-			<TextView
-				android:id="@+id/fare_label"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/fare" />
-			<TextView
-				android:id="@+id/fare_result_label"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content" />
-	</TableLayout>-->
+
 </ScrollView>

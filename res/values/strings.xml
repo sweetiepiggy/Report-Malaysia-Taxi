@@ -75,17 +75,17 @@
 	
 	<string name="km">km</string>
 	<string name="minutes">minutes</string>
-	<string name="fare">fare (RM)</string>
+	<string name="fare">Fare (RM)</string>
 	
-	<string name="distance">distance (km)</string>
-	<string name="time">time (min)</string>
+	<string name="distance">Distance (km)</string>
+	<string name="time">Time (minutes)</string>
 	<string name="executive">executive taxi</string>
 	<string name="midnight">midnight charge (12AM to 6AM)</string>
-	<string name="passengers">number of passengers</string>
+	<string name="passengers">Number of Passengers</string>
 	<string name="telbooking">telephone booking</string>
-	<string name="distance_hint">enter distance in km</string>
-	<string name="passengers_hint">enter number of passengers</string>
-	<string name="time_hint">enter time in minutes</string>
+	<string name="distance_hint">Enter distance in km</string>
+	<string name="passengers_hint">Enter number of passengers</string>
+	<string name="time_hint">Enter time in minutes</string>
 	
 	<string name="who_email">Select Who to Email</string>
 	<string name="done">Done</string>

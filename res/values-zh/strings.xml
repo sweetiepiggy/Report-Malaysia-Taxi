@@ -34,7 +34,7 @@
     <string name="language">语言</string>
 	<string name="resources">资源</string>
 	<string name="fare_rate">价率</string>
-	<string name="fare_calc">Fare Calculator</string>
+	<string name="fare_calc">票价计算器</string>
 	
 	<string name="location_hint">输入事件发生的地点</string>
 	<string name="registration_hint">输入车牌号码，例如HWA9999</string>
@@ -75,17 +75,17 @@
 
 	<string name="km">公里</string>
 	<string name="minutes">分钟</string>
-	<string name="fare">车价</string>
+	<string name="fare">车价(马币)</string>
 	
-	<string name="distance">distance</string>
-	<string name="time">time</string>
-	<string name="executive">executive taxi</string>
-	<string name="midnight">midnight</string>
-	<string name="passengers">number of passengers</string>
-	<string name="telbooking">telephone booking</string>
-	<string name="distance_hint">enter distance in km</string>
-	<string name="passengers_hint">enter number of passengers</string>
-	<string name="time_hint">enter time in minutes</string>
+	<string name="distance">距离(公里)</string>
+	<string name="time">时间(分钟)</string>
+	<string name="executive">名贵出租车</string>
+	<string name="midnight">午夜(十二点至凌晨六点)</string>
+	<string name="passengers">乘客人数</string>
+	<string name="telbooking">电话预约</string>
+	<string name="distance_hint">输入公里的距离</string>
+	<string name="passengers_hint">输入旅客人数</string>
+	<string name="time_hint">输入分钟的时间</string>
 
 	<string name="who_email">选择谁电子邮件</string>
 	<string name="done">完成</string>
