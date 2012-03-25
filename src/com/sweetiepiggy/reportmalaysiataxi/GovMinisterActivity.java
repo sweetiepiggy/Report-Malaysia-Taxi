@@ -49,18 +49,18 @@ public class GovMinisterActivity extends ListActivity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int pos, long id) {
 				CharSequence item = ((TextView) view).getText();
-//				if (item.equals(getResources().getString(R.string.mo_transport))) {
-//					Intent mo_transport_intent = new Intent(getApplicationContext(), MoTransportActivity.class);
-//					startActivity(mo_transport_intent);
-//
-//				} else if (item.equals(getResources().getString(R.string.mo_tourism))) {
-//					Intent mo_tourism_intent = new Intent(getApplicationContext(), MoTourismActivity.class);
-//					startActivity(mo_tourism_intent);
+				if (item.equals(getResources().getString(R.string.mo_transport))) {
+					Intent intent = new Intent(getApplicationContext(), MoTransportActivity.class);
+					startActivity(intent);
 
-//				} else if (item.equals(getResources().getString(R.string.prime_minister))) {
-//					Intent pm_intent = new Intent(getApplicationContext(), PrimeMinisterActivity.class);
-//					startActivity(pm_intent);
-//				}
+				} else if (item.equals(getResources().getString(R.string.mo_tourism))) {
+					Intent intent = new Intent(getApplicationContext(), MoTourismActivity.class);
+					startActivity(intent);
+
+				} else if (item.equals(getResources().getString(R.string.prime_minister))) {
+					Intent intent = new Intent(getApplicationContext(), PrimeMinisterActivity.class);
+					startActivity(intent);
+				}
 			}
 		});
 

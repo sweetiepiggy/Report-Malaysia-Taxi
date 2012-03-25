@@ -48,14 +48,14 @@ public class ConsumerGroupActivity extends ListActivity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int pos, long id) {
 				CharSequence item = ((TextView) view).getText();
-//				if (item.equals(getResources().getString(R.string.transit))) {
-//					Intent transit_intent = new Intent(getApplicationContext(), TransitActivity.class);
-//					startActivity(transit_intent);
-//
-//				} else if (item.equals(getResources().getString(R.string.nccc))) {
-//					Intent nccc_intent = new Intent(getApplicationContext(), NCCCActivity.class);
-//					startActivity(nccc_intent);
-//				}
+				if (item.equals(getResources().getString(R.string.transit))) {
+					Intent intent = new Intent(getApplicationContext(), TransitActivity.class);
+					startActivity(intent);
+
+				} else if (item.equals(getResources().getString(R.string.nccc))) {
+					Intent intent = new Intent(getApplicationContext(), NCCCActivity.class);
+					startActivity(intent);
+				}
 			}
 		});
 

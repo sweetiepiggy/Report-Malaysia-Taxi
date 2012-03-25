@@ -78,18 +78,18 @@
 	<string name="fare">车价</string>
 
 	<string name="spad">SPAD: Land Transport Commission</string>
-	<string name="lpkp">LPKP: Commercial Vehicle Licensing Board</string>
-	<string name="jpj">JPJ: Road Transport Department</string>
+	<string name="lpkp">LPKP: 商用车辆管辖部门</string>
+	<string name="jpj">JPJ: 交通部</string>
 	<string name="kpdnkk">KPDNKK: Ministry of Domestic Trade, Cooperative and Consumerism</string>
 	<string name="motour">Ministry of Tourism</string>
 	<string name="pcb">Public Complaints Bureau</string>
 	<string name="pemudah">Entrepreneur and Cooperatives Development Ministry</string>
 	<string name="ttpm">Tribunal for Consumer Claims</string>
 	<string name="transit">TRANSIT</string>
-	<string name="nccc">National Consumer Complaints Centre</string>
-	<string name="mo_transport">Minister of Transport</string>
-	<string name="mo_tourism">Minister of Tourism</string>
-	<string name="prime_minister">Prime Minister</string>
+	<string name="nccc">全国消费者投诉中心</string>
+	<string name="mo_transport">交通部长</string>
+	<string name="mo_tourism">旅游部长</string>
+	<string name="prime_minister">首相</string>
 	
 	<string name="who_email">选择谁电子邮件</string>
 	<string name="done">完成</string>
@@ -120,15 +120,112 @@
 	    SPAD\n
 	    Land Transport Commission\n
 	    aduan@spad.gov.my\n
-	    www.spad.gov.my\n
+	    http://www.spad.gov.my\n
+	    http://twitter.com/aduanSPAD\n
 	</string>
 	<string name="lpkp_contact">
 	    LPKP\n
-	    Commercial Vehicle Licensing Board\n
+		 商用车辆管辖部门\n
 	    SMS ADUAN LPKP to 15888\n
 	    1-800-88-96-00\n
 	    aduan@lpkp.gov.my\n
-	    www.lpkp.gov.my\n
+	    http://www.lpkp.gov.my\n
+	</string>
+	<string name="jpj_contact">
+	    JPJ\n
+		交通部\n
+	    0388884244\n
+	    aduantrafik@jpj.gov.my\n
+	    http://portal.jpj.gov.my\n
+	</string>
+	<string name="kpdnkk_contact">
+	    KPDNKK\n
+	    Ministry of Domestic Trade, Cooperative and Consumerism\n
+	    e-aduan@kpdnkk.gov.my\n
+	    http://eaduan.kpdnkk.gov.my\n
+	</string>
+	<string name="motour_contact">
+	    Ministry of Tourism\n
+	    03 8891 7000\n
+	    info@motour.gov.my\n
+	    http://www.motour.gov.my\n
+	    http://www.motour.gov.my/en/contact-us/feedback/public-complaints.html\n
+	</string>
+	<string name="pcb_contact">
+	    Public Complaints Bureau\n
+	    03 8872 5777\n
+	    http://www.pcb.gov.my\n
+	    http://apps1.pcb.gov.my/eApps/bpaia/ducmpl/AduCmplPublic/add.do?aplCode=en\n
+	</string>
+	<string name="pemudah_contact">
+	    Entrepreneur and Cooperatives Development Ministry\n
+	    03 6200 0185\n
+	    bahria@miti.gov.my\n
+	    http://www.pemudah.gov.my\n
+	    http://www.pemudah.gov.my/web/guest/hubungi\n
+	</string>
+	<string name="ttpm_contact">
+	    Tribunal for Consumer Claims Malaysia\n
+	    1 800 88 9811 or 03 8882 5822\n
+	    http://ttpm.kpdnkk.gov.my\n
+	</string>
+	<string name="transit_contact">
+	    TRANSIT\n
+	    A group of concerned citizens for the improvement of mass transit\n
+	    klangvalley.transit@gmail.com\n
+	    http://transitmy.org\n
+	    http://twitter.com/transitmy\n
+	</string>
+	<string name="nccc_contact">
+	    NCCC\n
+		全国消费者投诉中心\n
+	    03 7877 9000\n
+	    nccc@nccc.org.my
+	    http://www.nccc.org.my\n
+	    http://www.nccc.org.my/v2/index.php/e-aduan\n
+	    http://twitter.com/myaduan\n
+	</string>
+	<string name="motransport_contact">
+		江作汉\n
+		交通部长\n
+	    menteri@mot.gov.my\n
+	    http://twitter.com/kongchoha\n
+	</string>
+	<string name="motourism_contact">
+		黄燕燕\n
+		旅游部长\n
+	    yenyenng@motour.gov.my\n
+	    http://twitter.com/DrYenYen\n
+	</string>
+	<string name="prime_minister_contact">
+	    Dato Sri Haji Mohammad Najib bin Tun Haji Abdul Razak\n
+		首相\n
+	    najib@1malaysia.com.my\n
+	    http://twitter.com/NajibRazak\n
+	</string>
+	<string name="traffic_police_contact">
+		交通警\n
+	    rmp@rmp.gov.my\n
+	    http://www.rmp.gov.my\n
+	</string>
+	<string name="news_media_contact">
+		The Star\n
+		editor@thestar.com.my\n\n
+		Star Metro\n
+		metro@thestar.com.my\n\n
+		Malay Mail\n
+		mmnews@mmail.com.my\n\n
+		New Straits Times\n
+		syedn@nst.com.my\n
+		letters@nst.com.my\n\n
+		New Straits Times Streets\n
+		streets@nst.com.my\n\n
+		The Sun\n
+		letters@thesundaily.com\n\n
+		Malaysia Kini\n
+		editor@malaysiakini.com.my\n\n
+		The Malaysian Insider\n
+		editor@themalaysianinsider.com\n\n
 	</string>
 	
 	<string name="penang_fare_rate">

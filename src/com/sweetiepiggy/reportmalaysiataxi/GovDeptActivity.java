@@ -56,16 +56,36 @@ public class GovDeptActivity extends ListActivity {
 				CharSequence item = ((TextView) view).getText();
 				/* TODO: combine all contact activities into one ContactActivity and pass the contact info to it */
 				if (item.equals(getResources().getString(R.string.spad))) {
-					Intent spad_intent = new Intent(getApplicationContext(), SPADActivity.class);
-					startActivity(spad_intent);
+					Intent intent = new Intent(getApplicationContext(), SPADActivity.class);
+					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.lpkp))) {
-					Intent lpkp_intent = new Intent(getApplicationContext(), LPKPActivity.class);
-					startActivity(lpkp_intent);
+					Intent intent = new Intent(getApplicationContext(), LPKPActivity.class);
+					startActivity(intent);
 
-//				} else if (item.equals(getResources().getString(R.string.jpj))) {
-//					Intent lpkp_intent = new Intent(getApplicationContext(), JPJActivity.class);
-//					startActivity(jpj_intent);
+				} else if (item.equals(getResources().getString(R.string.jpj))) {
+					Intent intent = new Intent(getApplicationContext(), JPJActivity.class);
+					startActivity(intent);
+
+				} else if (item.equals(getResources().getString(R.string.kpdnkk))) {
+					Intent intent = new Intent(getApplicationContext(), KPDNKKActivity.class);
+					startActivity(intent);
+
+				} else if (item.equals(getResources().getString(R.string.motour))) {
+					Intent intent = new Intent(getApplicationContext(), MoTourActivity.class);
+					startActivity(intent);
+
+				} else if (item.equals(getResources().getString(R.string.pcb))) {
+					Intent intent = new Intent(getApplicationContext(), PCBActivity.class);
+					startActivity(intent);
+
+				} else if (item.equals(getResources().getString(R.string.pemudah))) {
+					Intent intent = new Intent(getApplicationContext(), PemudahActivity.class);
+					startActivity(intent);
+
+				} else if (item.equals(getResources().getString(R.string.ttpm))) {
+					Intent intent = new Intent(getApplicationContext(), TTPMActivity.class);
+					startActivity(intent);
 				}
 			}
 		});

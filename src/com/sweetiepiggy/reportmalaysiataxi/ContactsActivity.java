@@ -50,24 +50,24 @@ public class ContactsActivity extends ListActivity {
 				/* TODO: don't hard code email_choices order */
 				/* TODO: combine all below activities into one activity and pass the appropriate info to it */
 				if (item.equals(email_choices[0])) {
-					Intent gov_dept_intent = new Intent(getApplicationContext(), GovDeptActivity.class);
-					startActivity(gov_dept_intent);
+					Intent intent = new Intent(getApplicationContext(), GovDeptActivity.class);
+					startActivity(intent);
 
 				} else if (item.equals(email_choices[1])) {
-					Intent consumer_grp_intent = new Intent(getApplicationContext(), ConsumerGroupActivity.class);
-					startActivity(consumer_grp_intent);
+					Intent intent = new Intent(getApplicationContext(), ConsumerGroupActivity.class);
+					startActivity(intent);
 
 				} else if (item.equals(email_choices[2])) {
-					Intent gov_minister_intent = new Intent(getApplicationContext(), GovMinisterActivity.class);
-					startActivity(gov_minister_intent);
+					Intent intent = new Intent(getApplicationContext(), GovMinisterActivity.class);
+					startActivity(intent);
 
-//				} else if (item.equals(email_choices[3])) {
-//					Intent news_media_intent = new Intent(getApplicationContext(), NewsMediaActivity.class);
-//					startActivity(news_media_intent);
-//
-//				} else if (item.equals(email_choices[4])) {
-//					Intent traffic_police_intent = new Intent(getApplicationContext(), TrafficPoliceActivity.class);
-//					startActivity(traffic_police_intent);
+				} else if (item.equals(email_choices[3])) {
+					Intent intent = new Intent(getApplicationContext(), NewsMediaActivity.class);
+					startActivity(intent);
+
+				} else if (item.equals(email_choices[4])) {
+					Intent intent = new Intent(getApplicationContext(), TrafficPoliceActivity.class);
+					startActivity(intent);
 				}
 			}
 		});

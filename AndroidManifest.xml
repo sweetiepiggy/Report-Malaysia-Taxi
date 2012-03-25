@@ -53,6 +53,19 @@
         <activity android:name="GovMinisterActivity"></activity>
         <activity android:name="SPADActivity"></activity>
         <activity android:name="LPKPActivity"></activity>
+        <activity android:name="JPJActivity"></activity>
+        <activity android:name="KPDNKKActivity"></activity>
+        <activity android:name="MoTourActivity"></activity>
+        <activity android:name="PCBActivity"></activity>
+        <activity android:name="PemudahActivity"></activity>
+        <activity android:name="TTPMActivity"></activity>
+        <activity android:name="TransitActivity"></activity>
+        <activity android:name="NCCCActivity"></activity>
+        <activity android:name="MoTransportActivity"></activity>
+        <activity android:name="MoTourismActivity"></activity>
+        <activity android:name="PrimeMinisterActivity"></activity>
+        <activity android:name="TrafficPoliceActivity"></activity>
+        <activity android:name="NewsMediaActivity"></activity>
     </application>
 
 </manifest>
