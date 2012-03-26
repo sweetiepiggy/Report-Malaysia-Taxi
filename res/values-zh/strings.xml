@@ -35,11 +35,12 @@
 	<string name="resources">资源</string>
 	<string name="fare_rate">价率</string>
 	<string name="fare_calc">票价计算器</string>
-	
+	<string name="contacts">联系信息</string>
+
 	<string name="location_hint">输入事件发生的地点</string>
 	<string name="registration_hint">输入车牌号码，例如HWA9999</string>
 	<string name="other_hint">输入其他详细信息，包括投诉</string>
-	
+
 	<string-array name="offence_array">
 		<item>拒绝使用计程表</item>
 		<item>拒绝乘载乘客</item>
@@ -76,7 +77,7 @@
 	<string name="km">公里</string>
 	<string name="minutes">分钟</string>
 	<string name="fare">车价(马币)</string>
-	
+
 	<string name="distance">距离(公里)</string>
 	<string name="time">时间(分钟)</string>
 	<string name="executive">名贵出租车</string>
@@ -86,6 +87,20 @@
 	<string name="distance_hint">输入公里的距离</string>
 	<string name="passengers_hint">输入旅客人数</string>
 	<string name="time_hint">输入分钟的时间</string>
+
+	<string name="spad">SPAD: 陆路运输部门</string>
+	<string name="lpkp">LPKP: 商用车辆管辖部门</string>
+	<string name="jpj">JPJ: 交通部</string>
+	<string name="kpdnkk">KPDNKK: 国内贸易，合作社和消费部</string>
+	<string name="motour">旅游部</string>
+	<string name="pcb">公共投诉局</string>
+	<string name="pemudah">企业家和合作社发展部</string>
+	<string name="ttpm">消费者投诉部门</string>
+	<string name="transit">TRANSIT</string>
+	<string name="nccc">全国消费者投诉中心</string>
+	<string name="mo_transport">交通部长</string>
+	<string name="mo_tourism">旅游部长</string>
+	<string name="prime_minister">首相</string>
 
 	<string name="who_email">选择谁电子邮件</string>
 	<string name="done">完成</string>
@@ -111,6 +126,118 @@
 		<item>JPJ: 交通部</item>
 		<item>NCCC: 全国消费者投诉中心</item>
 	</string-array>
+
+	<string name="spad_contact">
+		SPAD\n
+		陆路运输部门\n
+		aduan@spad.gov.my\n
+		http://www.spad.gov.my\n
+		http://twitter.com/aduanSPAD\n
+	</string>
+	<string name="lpkp_contact">
+		LPKP\n
+		商用车辆管辖部门\n
+		SMS ADUAN LPKP to 15888\n
+		1-800-88-96-00\n
+		aduan@lpkp.gov.my\n
+		http://www.lpkp.gov.my\n
+	</string>
+	<string name="jpj_contact">
+		JPJ\n
+		交通部\n
+		0388884244\n
+		aduantrafik@jpj.gov.my\n
+		http://portal.jpj.gov.my\n
+	</string>
+	<string name="kpdnkk_contact">
+		KPDNKK\n
+		国内贸易，合作社和消费部\n
+		e-aduan@kpdnkk.gov.my\n
+		http://eaduan.kpdnkk.gov.my\n
+	</string>
+	<string name="motour_contact">
+		旅游部\n
+		03 8891 7000\n
+		info@motour.gov.my\n
+		http://www.motour.gov.my\n
+		http://www.motour.gov.my/en/contact-us/feedback/public-complaints.html\n
+	</string>
+	<string name="pcb_contact">
+		公共投诉局\n
+		03 8872 5777\n
+		http://www.pcb.gov.my\n
+		http://apps1.pcb.gov.my/eApps/bpaia/ducmpl/AduCmplPublic/add.do?aplCode=en\n
+	</string>
+	<string name="pemudah_contact">
+		企业家和合作社发展部\n
+		03 6200 0185\n
+		bahria@miti.gov.my\n
+		http://www.pemudah.gov.my\n
+		http://www.pemudah.gov.my/web/guest/hubungi\n
+	</string>
+	<string name="ttpm_contact">
+		消费者投诉部门\n
+		1 800 88 9811 or 03 8882 5822\n
+		http://ttpm.kpdnkk.gov.my\n
+	</string>
+	<string name="transit_contact">
+		TRANSIT\n
+		消费者自愿团体\n
+		klangvalley.transit@gmail.com\n
+		http://transitmy.org\n
+		http://twitter.com/transitmy\n
+	</string>
+	<string name="nccc_contact">
+		NCCC\n
+		全国消费者投诉中心\n
+		03 7877 9000\n
+		nccc@nccc.org.my
+		http://www.nccc.org.my\n
+		http://www.nccc.org.my/v2/index.php/e-aduan\n
+		http://twitter.com/myaduan\n
+	</string>
+	<string name="motransport_contact">
+		江作汉\n
+		交通部长\n
+		menteri@mot.gov.my\n
+		http://twitter.com/kongchoha\n
+	</string>
+	<string name="motourism_contact">
+		黄燕燕\n
+		旅游部长\n
+		yenyenng@motour.gov.my\n
+		http://twitter.com/DrYenYen\n
+	</string>
+	<string name="prime_minister_contact">
+		Dato Sri Haji Mohammad Najib bin Tun Haji Abdul Razak\n
+		首相\n
+		najib@1malaysia.com.my\n
+		http://twitter.com/NajibRazak\n
+	</string>
+	<string name="traffic_police_contact">
+		交通警\n
+		rmp@rmp.gov.my\n
+		http://www.rmp.gov.my\n
+	</string>
+	<string name="news_media_contact">
+		The Star\n
+		editor@thestar.com.my\n\n
+		Star Metro\n
+		metro@thestar.com.my\n\n
+		Malay Mail\n
+		mmnews@mmail.com.my\n\n
+		New Straits Times\n
+		syedn@nst.com.my\n
+		letters@nst.com.my\n\n
+		New Straits Times Streets\n
+		streets@nst.com.my\n\n
+		The Sun\n
+		letters@thesundaily.com\n\n
+		Malaysia Kini\n
+		editor@malaysiakini.com.my\n\n
+		The Malaysian Insider\n
+		editor@themalaysianinsider.com\n\n
+	</string>
 
 	<string name="penang_fare_rate">
 	距离\n

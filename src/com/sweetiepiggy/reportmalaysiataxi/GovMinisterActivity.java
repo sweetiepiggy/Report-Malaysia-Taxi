@@ -29,19 +29,19 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class ResourcesActivity extends ListActivity {
+public class GovMinisterActivity extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		String[] resources = new String[] {
-			getResources().getString(R.string.fare_rate),
-			getResources().getString(R.string.fare_calc),
-			getResources().getString(R.string.contacts),
+		String[] gov_ministers = new String[] {
+			getResources().getString(R.string.mo_transport),
+			getResources().getString(R.string.mo_tourism),
+			getResources().getString(R.string.prime_minister),
 		};
 		setListAdapter(new ArrayAdapter<String>(this,
 					android.R.layout.simple_list_item_1,
-					resources));
+					gov_ministers));
 
 		ListView lv = getListView();
 
@@ -49,20 +49,23 @@ public class ResourcesActivity extends ListActivity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int pos, long id) {
 				CharSequence item = ((TextView) view).getText();
-				if (item.equals(getResources().getString(R.string.fare_rate))) {
-					Intent fare_rate_intent = new Intent(getApplicationContext(), FareRateActivity.class);
-					startActivity(fare_rate_intent);
-				} else if (item.equals(getResources().getString(R.string.fare_calc))) {
-					Intent fare_calc_intent = new Intent(getApplicationContext(), FareCalcActivity.class);
-					startActivity(fare_calc_intent);
+				if (item.equals(getResources().getString(R.string.mo_transport))) {
+					Intent intent = new Intent(getApplicationContext(), MoTransportActivity.class);
+					startActivity(intent);
 
-				} else if (item.equals(getResources().getString(R.string.contacts))) {
-					Intent contacts_intent = new Intent(getApplicationContext(), ContactsActivity.class);
-					startActivity(contacts_intent);
+				} else if (item.equals(getResources().getString(R.string.mo_tourism))) {
+					Intent intent = new Intent(getApplicationContext(), MoTourismActivity.class);
+					startActivity(intent);
+
+				} else if (item.equals(getResources().getString(R.string.prime_minister))) {
+					Intent intent = new Intent(getApplicationContext(), PrimeMinisterActivity.class);
+					startActivity(intent);
 				}
 			}
 		});
 
 	}
 }
+
+
 

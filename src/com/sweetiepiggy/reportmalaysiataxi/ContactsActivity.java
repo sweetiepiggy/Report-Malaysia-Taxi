@@ -29,36 +29,45 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class ResourcesActivity extends ListActivity {
+public class ContactsActivity extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		String[] resources = new String[] {
-			getResources().getString(R.string.fare_rate),
-			getResources().getString(R.string.fare_calc),
-			getResources().getString(R.string.contacts),
-		};
 		setListAdapter(new ArrayAdapter<String>(this,
 					android.R.layout.simple_list_item_1,
-					resources));
+					getResources().getStringArray(R.array.email_choices)));
 
 		ListView lv = getListView();
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int pos, long id) {
-				CharSequence item = ((TextView) view).getText();
-				if (item.equals(getResources().getString(R.string.fare_rate))) {
-					Intent fare_rate_intent = new Intent(getApplicationContext(), FareRateActivity.class);
-					startActivity(fare_rate_intent);
-				} else if (item.equals(getResources().getString(R.string.fare_calc))) {
-					Intent fare_calc_intent = new Intent(getApplicationContext(), FareCalcActivity.class);
-					startActivity(fare_calc_intent);
+				String[] email_choices = getResources().getStringArray(R.array.email_choices);
 
-				} else if (item.equals(getResources().getString(R.string.contacts))) {
-					Intent contacts_intent = new Intent(getApplicationContext(), ContactsActivity.class);
-					startActivity(contacts_intent);
+				CharSequence item = ((TextView) view).getText();
+
+				/* TODO: don't hard code email_choices order */
+				/* TODO: combine all below activities into one activity and pass the appropriate info to it */
+				if (item.equals(email_choices[0])) {
+					Intent intent = new Intent(getApplicationContext(), GovDeptActivity.class);
+					startActivity(intent);
+
+				} else if (item.equals(email_choices[1])) {
+					Intent intent = new Intent(getApplicationContext(), ConsumerGroupActivity.class);
+					startActivity(intent);
+
+				} else if (item.equals(email_choices[2])) {
+					Intent intent = new Intent(getApplicationContext(), GovMinisterActivity.class);
+					startActivity(intent);
+
+				} else if (item.equals(email_choices[3])) {
+					Intent intent = new Intent(getApplicationContext(), NewsMediaActivity.class);
+					startActivity(intent);
+
+				} else if (item.equals(email_choices[4])) {
+					Intent intent = new Intent(getApplicationContext(), TrafficPoliceActivity.class);
+					startActivity(intent);
 				}
 			}
 		});
