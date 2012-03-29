@@ -21,6 +21,7 @@ package com.sweetiepiggy.reportmalaysiataxi;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class MoTourismActivity extends Activity {
 
@@ -28,7 +29,8 @@ public class MoTourismActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.motourism_contact);
+		setContentView(R.layout.textview_layout);
+		((TextView) findViewById(R.id.text)).setText(getResources().getString(R.string.motourism_contact));
 	}
 
 }

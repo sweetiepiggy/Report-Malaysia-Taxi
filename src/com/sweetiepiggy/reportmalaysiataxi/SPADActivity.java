@@ -21,6 +21,7 @@ package com.sweetiepiggy.reportmalaysiataxi;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class SPADActivity extends Activity {
 
@@ -28,7 +29,8 @@ public class SPADActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.spad_contact);
+		setContentView(R.layout.textview_layout);
+		((TextView) findViewById(R.id.text)).setText(getResources().getString(R.string.spad_contact));
 	}
 
 }

@@ -21,6 +21,7 @@ package com.sweetiepiggy.reportmalaysiataxi;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class LPKPActivity extends Activity {
 
@@ -28,7 +29,8 @@ public class LPKPActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.lpkp_contact);
+		setContentView(R.layout.textview_layout);
+		((TextView) findViewById(R.id.text)).setText(getResources().getString(R.string.lpkp_contact));
 	}
 
 }

@@ -23,9 +23,8 @@
 	android:layout_height="fill_parent">
 
 			<TextView
-				android:id="@+id/airports_fare_rate"
+				android:id="@+id/text"
 				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/airports_fare_rate" />
+				android:layout_height="wrap_content" />
     
 </ScrollView>
