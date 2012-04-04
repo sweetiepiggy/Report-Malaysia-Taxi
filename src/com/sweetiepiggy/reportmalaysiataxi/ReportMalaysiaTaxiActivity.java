@@ -580,20 +580,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			res += getResources().getString(R.string.twitter_address1);
 		}
 
-		if (map.get("twitter_address2")) {
-			if (res.length() != 0) {
-				res += ' ';
-			}
-			res += getResources().getString(R.string.twitter_address2);
-		}
-
-		if (map.get("twitter_address3")) {
-			if (res.length() != 0) {
-				res += ' ';
-			}
-			res += getResources().getString(R.string.twitter_address3);
-		}
-
 		if (map.get("complaint_hashtag")) {
 			if (res.length() != 0) {
 				res += ' ';
@@ -647,6 +633,20 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				res += ' ';
 			}
 			res += other;
+		}
+
+		if (map.get("twitter_address2")) {
+			if (res.length() != 0) {
+				res += ' ';
+			}
+			res += getResources().getString(R.string.twitter_address2);
+		}
+
+		if (map.get("twitter_address3")) {
+			if (res.length() != 0) {
+				res += ' ';
+			}
+			res += getResources().getString(R.string.twitter_address3);
 		}
 
 		return res;
