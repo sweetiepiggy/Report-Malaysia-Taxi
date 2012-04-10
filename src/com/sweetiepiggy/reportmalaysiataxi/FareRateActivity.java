@@ -49,23 +49,27 @@ public class FareRateActivity extends ListActivity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int pos, long id) {
 				CharSequence item = ((TextView) view).getText();
+				/* TODO: refactor duplicate code */
 				if (item.equals(getResources().getString(R.string.penang))) {
-					Intent penang_fare_rate_intent =
-						new Intent(getApplicationContext(),
-							PenangFareRateActivity.class);
-					startActivity(penang_fare_rate_intent);
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.penang_fare_rate));
+					intent.putExtras(b);
+					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.lk_jb_kt_m))) {
-					Intent kl_fare_rate_intent =
-						new Intent(getApplicationContext(),
-							KLFareRateActivity.class);
-					startActivity(kl_fare_rate_intent);
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.kl_fare_rate));
+					intent.putExtras(b);
+					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.airports))) {
-					Intent airports_fare_rate_intent =
-						new Intent(getApplicationContext(),
-							AirportsFareRateActivity.class);
-					startActivity(airports_fare_rate_intent);
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.airports_fare_rate));
+					intent.putExtras(b);
+					startActivity(intent);
 				}
 			}
 		});

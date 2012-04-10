@@ -49,11 +49,17 @@ public class ConsumerGroupActivity extends ListActivity {
 					int pos, long id) {
 				CharSequence item = ((TextView) view).getText();
 				if (item.equals(getResources().getString(R.string.transit))) {
-					Intent intent = new Intent(getApplicationContext(), TransitActivity.class);
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.transit_contact));
+					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.nccc))) {
-					Intent intent = new Intent(getApplicationContext(), NCCCActivity.class);
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.nccc_contact));
+					intent.putExtras(b);
 					startActivity(intent);
 				}
 			}

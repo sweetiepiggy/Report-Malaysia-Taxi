@@ -408,8 +408,11 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		builder.setNeutralButton(getResources().getString(R.string.details), new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				Intent email_details_intent = new Intent(getApplicationContext(), EmailDetailsActivity.class);
-				startActivity(email_details_intent);
+				Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+				Bundle b = new Bundle();
+				b.putString("text", getResources().getString(R.string.email_details));
+				intent.putExtras(b);
+				startActivity(intent);
 			}
 		});
 		AlertDialog alert = builder.create();

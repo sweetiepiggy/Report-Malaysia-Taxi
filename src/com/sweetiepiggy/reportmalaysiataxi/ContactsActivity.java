@@ -62,11 +62,17 @@ public class ContactsActivity extends ListActivity {
 					startActivity(intent);
 
 				} else if (item.equals(email_choices[3])) {
-					Intent intent = new Intent(getApplicationContext(), NewsMediaActivity.class);
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.news_media_contact));
+					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(email_choices[4])) {
-					Intent intent = new Intent(getApplicationContext(), TrafficPoliceActivity.class);
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.traffic_police_contact));
+					intent.putExtras(b);
 					startActivity(intent);
 				}
 			}

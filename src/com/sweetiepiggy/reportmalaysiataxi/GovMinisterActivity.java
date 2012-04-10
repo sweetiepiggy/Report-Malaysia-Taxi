@@ -50,15 +50,24 @@ public class GovMinisterActivity extends ListActivity {
 					int pos, long id) {
 				CharSequence item = ((TextView) view).getText();
 				if (item.equals(getResources().getString(R.string.mo_transport))) {
-					Intent intent = new Intent(getApplicationContext(), MoTransportActivity.class);
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.motransport_contact));
+					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.mo_tourism))) {
-					Intent intent = new Intent(getApplicationContext(), MoTourismActivity.class);
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.motourism_contact));
+					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.prime_minister))) {
-					Intent intent = new Intent(getApplicationContext(), PrimeMinisterActivity.class);
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.prime_minister_contact));
+					intent.putExtras(b);
 					startActivity(intent);
 				}
 			}

@@ -41,12 +41,8 @@
         <activity android:name="AboutActivity"></activity>
         <activity android:name="SettingsActivity"></activity>
         <activity android:name="LanguageActivity"></activity>
-        <activity android:name="EmailDetailsActivity"></activity>
         <activity android:name="ResourcesActivity"></activity>
         <activity android:name="FareRateActivity"></activity>
-        <activity android:name="PenangFareRateActivity"></activity>
-        <activity android:name="KLFareRateActivity"></activity>
-        <activity android:name="AirportsFareRateActivity"></activity>
         <activity android:name="FareCalcActivity"></activity>
         <activity android:name="KLFareCalcActivity"></activity>
         <activity android:name="PenangFareCalcActivity"></activity>
@@ -54,21 +50,7 @@
         <activity android:name="GovDeptActivity"></activity>
         <activity android:name="ConsumerGroupActivity"></activity>
         <activity android:name="GovMinisterActivity"></activity>
-        <activity android:name="SPADActivity"></activity>
-        <activity android:name="LPKPActivity"></activity>
-        <activity android:name="JPJActivity"></activity>
-        <activity android:name="KPDNKKActivity"></activity>
-        <activity android:name="MoTourActivity"></activity>
-        <activity android:name="PCBActivity"></activity>
-        <activity android:name="PemudahActivity"></activity>
-        <activity android:name="TTPMActivity"></activity>
-        <activity android:name="TransitActivity"></activity>
-        <activity android:name="NCCCActivity"></activity>
-        <activity android:name="MoTransportActivity"></activity>
-        <activity android:name="MoTourismActivity"></activity>
-        <activity android:name="PrimeMinisterActivity"></activity>
-        <activity android:name="TrafficPoliceActivity"></activity>
-        <activity android:name="NewsMediaActivity"></activity>
+        <activity android:name="TextViewActivity"></activity>
     </application>
 
 </manifest>

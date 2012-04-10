@@ -54,37 +54,61 @@ public class GovDeptActivity extends ListActivity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int pos, long id) {
 				CharSequence item = ((TextView) view).getText();
-				/* TODO: combine all contact activities into one ContactActivity and pass the contact info to it */
+				/* TODO: refactor duplicate Intent and Bundle code */
 				if (item.equals(getResources().getString(R.string.spad))) {
-					Intent intent = new Intent(getApplicationContext(), SPADActivity.class);
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.spad_contact));
+					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.lpkp))) {
-					Intent intent = new Intent(getApplicationContext(), LPKPActivity.class);
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.lpkp_contact));
+					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.jpj))) {
-					Intent intent = new Intent(getApplicationContext(), JPJActivity.class);
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.jpj_contact));
+					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.kpdnkk))) {
-					Intent intent = new Intent(getApplicationContext(), KPDNKKActivity.class);
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.kpdnkk_contact));
+					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.motour))) {
-					Intent intent = new Intent(getApplicationContext(), MoTourActivity.class);
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.motour_contact));
+					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.pcb))) {
-					Intent intent = new Intent(getApplicationContext(), PCBActivity.class);
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.pcb_contact));
+					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.pemudah))) {
-					Intent intent = new Intent(getApplicationContext(), PemudahActivity.class);
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.pemudah_contact));
+					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.ttpm))) {
-					Intent intent = new Intent(getApplicationContext(), TTPMActivity.class);
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.ttpm_contact));
+					intent.putExtras(b);
 					startActivity(intent);
 				}
 			}
