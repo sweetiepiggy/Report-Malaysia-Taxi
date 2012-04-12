@@ -27,6 +27,12 @@
 		android:orientation="vertical"
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent">
+		<TextView
+			android:id="@+id/date_label"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:textStyle="bold"
+			android:text="@string/date_and_time" />
 		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			android:orientation="horizontal"
 			android:layout_width="fill_parent"
@@ -35,22 +41,13 @@
 				android:id="@+id/date_button"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="@string/date_prompt"/>
-			<TextView
-				android:id="@+id/date_label"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/default_date" />
+				android:layout_weight="1"
+				android:text="@string/default_date"/>
 			<Button
 				android:id="@+id/time_button"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="@string/time_prompt"/>
-			<TextView
-				android:id="@+id/time_label"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/default_time" />
+				android:text="@string/default_time"/>
 		</LinearLayout>
 
 		<TextView
@@ -110,7 +107,7 @@
 		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			android:orientation="horizontal"
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent">
+			android:layout_height="wrap_content">
 			<TextView
 				android:id="@+id/camera_label"
 				android:layout_width="wrap_content"
@@ -148,10 +145,10 @@
 				android:background="@android:color/transparent"
 				android:drawableLeft="@android:drawable/ic_btn_speak_now"/>
 		</LinearLayout>
+
 		<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			android:orientation="horizontal"
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent"
+			android:layout_height="wrap_content"
 			android:stretchColumns="1">
 			<TableRow>
 				<CheckBox
@@ -160,7 +157,6 @@
 					android:layout_height="wrap_content"
 					android:drawableLeft="@android:drawable/sym_action_chat"
 					android:text="@string/sms" />
-
 				<CheckBox
 					android:id="@+id/email_checkbox"
 					android:layout_width="wrap_content"
@@ -176,6 +172,7 @@
 					android:drawableLeft="@drawable/twitter"
 					android:text="@string/tweet" />
 
+				<!-- TODO: use different youtube logo if user theme has light background -->
 				<CheckBox
 					android:id="@+id/youtube_checkbox"
 					android:layout_width="wrap_content"
@@ -185,7 +182,6 @@
 			</TableRow>
 		</TableLayout>
 
-
 		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			android:orientation="horizontal"
 			android:layout_width="fill_parent"
@@ -193,7 +189,7 @@
 			<Button
 				android:id="@+id/submit_button"
 				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
+				android:layout_height="fill_parent"
 				android:layout_weight="2"
 				android:drawableLeft="@android:drawable/ic_menu_send"
 				android:text="@string/submit" />

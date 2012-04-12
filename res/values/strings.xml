@@ -23,8 +23,7 @@
 <resources>
 
 	<string name="app_name">Report Malaysia Taxi</string>
-	<string name="date_prompt">date</string>
-	<string name="time_prompt">time</string>
+	<string name="date_and_time">Date and Time of Incident</string>
 	<string name="location">Location</string>
 	<string name="registration">Registration Number of Taxi</string>
 	<string name="offence">Nature of Offence</string>
