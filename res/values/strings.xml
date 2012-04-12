@@ -58,7 +58,8 @@
 	<string name="email">email</string>
 	<string name="submit">submit</string>
 	<string name="cancel">clear</string>
-	<string name="youtube">youtube</string>
+	<!--<string name="youtube">youtube</string>-->
+	<string name="youtube"></string>
 	<string name="call">call</string>
 	
 	<string name="missing_reg">enter registration number</string>

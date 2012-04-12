@@ -58,7 +58,8 @@
 	<string name="email">e-mel</string>
 	<string name="submit">hantar</string>
 	<string name="cancel">batal</string>
-	<string name="youtube">youtube</string>
+	<!--<string name="youtube">youtube</string>-->
+	<string name="youtube"></string>
 	<string name="call">panggil</string>
 
 	<string name="missing_reg">masukkan nombor pendaftaran</string>
