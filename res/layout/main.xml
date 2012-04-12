@@ -145,8 +145,8 @@
 				android:background="@android:color/transparent"
 				android:drawableLeft="@android:drawable/ic_btn_speak_now"/>
 		</LinearLayout>
+
 		<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			android:orientation="horizontal"
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
 			android:stretchColumns="1">
@@ -157,7 +157,6 @@
 					android:layout_height="wrap_content"
 					android:drawableLeft="@android:drawable/sym_action_chat"
 					android:text="@string/sms" />
-
 				<CheckBox
 					android:id="@+id/email_checkbox"
 					android:layout_width="wrap_content"
@@ -181,7 +180,6 @@
 					android:text="@string/youtube" />
 			</TableRow>
 		</TableLayout>
-
 
 		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			android:orientation="horizontal"
