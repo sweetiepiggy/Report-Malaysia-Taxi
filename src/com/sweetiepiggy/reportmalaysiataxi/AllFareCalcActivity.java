@@ -28,7 +28,6 @@ import android.widget.EditText;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
-/* TODO: don't duplicate PenangFareCalcActivity */
 public class AllFareCalcActivity extends Activity {
 
 	/* TODO: define starting fare in a Constants class */
