@@ -690,16 +690,16 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 	private void update_date_label(int year, int month, int day)
 	{
-		TextView date_label = (TextView)findViewById(R.id.date_label);
+		Button date_button = (Button)findViewById(R.id.date_button);
 		String date = DateFormat.getMediumDateFormat(getApplicationContext()).format(new Date(year - 1900, month, day));
-		date_label.setText(date);
+		date_button.setText(date);
 	}
 
 	private void update_time_label(int hour, int minute)
 	{
-		TextView time_label = (TextView)findViewById(R.id.time_label);
+		Button time_button = (Button)findViewById(R.id.time_button);
 		String time = DateFormat.getTimeFormat(getApplicationContext()).format(new Date(0, 0, 0, hour, minute, 0));
-		time_label.setText(time);
+		time_button.setText(time);
 	}
 
 	private String format_time(int hour, int minute)

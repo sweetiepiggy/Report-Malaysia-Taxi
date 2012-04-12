@@ -23,8 +23,6 @@
 <resources>
 
 	<string name="app_name">Aduan Teksi</string>
-	<string name="date_prompt">tarikh</string>
-	<string name="time_prompt">masa</string>
 	<string name="location">Lokasi</string>
 	<string name="registration">Nombor Teksi Pendaftaran</string>
 	<string name="offence">Kesalahan</string>

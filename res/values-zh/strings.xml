@@ -23,8 +23,6 @@
 <resources>
 
 	<string name="app_name">举报马来西亚的士</string>
-	<string name="date_prompt">日期</string>
-	<string name="time_prompt">时间</string>
 	<string name="location">位置</string>
 	<string name="registration">的士登记号码</string>
 	<string name="offence">犯罪性质</string>
