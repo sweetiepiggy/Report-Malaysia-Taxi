@@ -172,6 +172,7 @@
 					android:drawableLeft="@drawable/twitter"
 					android:text="@string/tweet" />
 
+				<!-- TODO: use different youtube logo if user theme has light background -->
 				<CheckBox
 					android:id="@+id/youtube_checkbox"
 					android:layout_width="wrap_content"
