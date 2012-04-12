@@ -29,13 +29,21 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
 /* TODO: don't duplicate PenangFareCalcActivity */
-public class KLFareCalcActivity extends Activity {
+public class AllFareCalcActivity extends Activity {
+
+	/* TODO: define starting fare in a Constants class */
+	private int m_starting_fare = 3;
 
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.fare_calc);
+
+		Bundle b = getIntent().getExtras();
+		if (b != null && b.containsKey("starting_fare")) {
+			m_starting_fare = b.getInt("starting_fare");
+		}
 
 		EditText distance_entry = (EditText)findViewById(R.id.distance_entry);
 		distance_entry.addTextChangedListener(new TextWatcher() {
@@ -110,8 +118,10 @@ public class KLFareCalcActivity extends Activity {
 		boolean exec = ((CheckBox) findViewById(R.id.executive_checkbox)).isChecked();
 		boolean telbooking = ((CheckBox) findViewById(R.id.telbooking_checkbox)).isChecked();
 
-		double fare_by_dist = calc_fare_by_dist(km, passengers, midnight, exec, telbooking);
-		double fare_by_time = calc_fare_by_time(min, passengers, midnight, exec, telbooking);
+		double fare_by_dist = calc_fare_by_dist(m_starting_fare, km,
+				passengers, midnight, exec, telbooking);
+		double fare_by_time = calc_fare_by_time(m_starting_fare, min,
+				passengers, midnight, exec, telbooking);
 
 		double fare = fare_by_dist > fare_by_time ? fare_by_dist : fare_by_time;
 
@@ -119,10 +129,11 @@ public class KLFareCalcActivity extends Activity {
 		calc_fare_entry.setText(String.format("%.2f", fare));
 	}
 
-	private double calc_fare_by_dist(double km, int passengers, boolean midnight,
+	private double calc_fare_by_dist(int starting_fare, double km,
+			int passengers, boolean midnight,
 			boolean exec, boolean telbooking)
 	{
-		double fare = 3;
+		double fare = starting_fare;
 		km = km > 1 ? km - 1 : 0;
 		fare += (km / 0.115) * 0.1;
 		if (midnight) {
@@ -140,10 +151,11 @@ public class KLFareCalcActivity extends Activity {
 		return fare;
 	}
 
-	private double calc_fare_by_time(int min, int passengers, boolean midnight,
+	private double calc_fare_by_time(int starting_fare, int min,
+			int passengers, boolean midnight,
 			boolean exec, boolean telbooking)
 	{
-		double fare = 3;
+		double fare = starting_fare;
 		min = min > 3 ? min - 3 : 0;
 		fare += (min * 60 / 21. ) * 0.1;
 		if (midnight) {
@@ -162,3 +174,4 @@ public class KLFareCalcActivity extends Activity {
 	}
 
 }
+

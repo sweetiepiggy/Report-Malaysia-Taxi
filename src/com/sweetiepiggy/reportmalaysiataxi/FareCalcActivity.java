@@ -30,6 +30,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class FareCalcActivity extends ListActivity {
+	/* TODO: put starting fares in a Constants class */
+	private static final int KL_STARTING_FARE = 3;
+	private static final int PENANG_STARTING_FARE = 4;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -49,16 +53,22 @@ public class FareCalcActivity extends ListActivity {
 					int pos, long id) {
 				CharSequence item = ((TextView) view).getText();
 				if (item.equals(getResources().getString(R.string.penang))) {
-					Intent penang_fare_calc_intent =
+					Intent intent =
 						new Intent(getApplicationContext(),
-							PenangFareCalcActivity.class);
-					startActivity(penang_fare_calc_intent);
+							AllFareCalcActivity.class);
+					Bundle b = new Bundle();
+					b.putInt("starting_fare", PENANG_STARTING_FARE);
+					intent.putExtras(b);
+					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.lk_jb_kt_m))) {
-					Intent kl_fare_calc_intent =
+					Intent intent =
 						new Intent(getApplicationContext(),
-							KLFareCalcActivity.class);
-					startActivity(kl_fare_calc_intent);
+							AllFareCalcActivity.class);
+					Bundle b = new Bundle();
+					b.putInt("starting_fare", KL_STARTING_FARE);
+					intent.putExtras(b);
+					startActivity(intent);
 				}
 			}
 		});

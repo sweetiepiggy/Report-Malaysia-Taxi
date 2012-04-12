@@ -44,13 +44,12 @@
         <activity android:name="ResourcesActivity"></activity>
         <activity android:name="FareRateActivity"></activity>
         <activity android:name="FareCalcActivity"></activity>
-        <activity android:name="KLFareCalcActivity"></activity>
-        <activity android:name="PenangFareCalcActivity"></activity>
         <activity android:name="ContactsActivity"></activity>
         <activity android:name="GovDeptActivity"></activity>
         <activity android:name="ConsumerGroupActivity"></activity>
         <activity android:name="GovMinisterActivity"></activity>
         <activity android:name="TextViewActivity"></activity>
+        <activity android:name="AllFareCalcActivity"></activity>
     </application>
 
 </manifest>

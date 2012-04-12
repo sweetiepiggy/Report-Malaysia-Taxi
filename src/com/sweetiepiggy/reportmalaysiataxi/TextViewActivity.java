@@ -11,7 +11,9 @@ public class TextViewActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.textview_layout);
-		((TextView) findViewById(R.id.text)).setText(getIntent().getExtras().getString("text"));
+		Bundle b = getIntent().getExtras();
+		String text = (b == null) ? "" : b.getString("text");
+		((TextView) findViewById(R.id.text)).setText(text);
 	}
 
 }
