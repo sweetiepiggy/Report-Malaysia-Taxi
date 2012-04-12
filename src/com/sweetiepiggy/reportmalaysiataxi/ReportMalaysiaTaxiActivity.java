@@ -92,16 +92,16 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		return mData;
 	}
 
-//	@Override
-//	public void onConfigurationChanged(Configuration new_config)
-//	{
-//		super.onConfigurationChanged(new_config);
-//		init_lang();
-//	}
+	@Override
+	public void onConfigurationChanged(Configuration new_config)
+	{
+		super.onConfigurationChanged(new_config);
+		init_lang();
+	}
 
 	private void init()
 	{
-//		init_lang();
+		init_lang();
 		init_date_time_buttons();
 		init_reg_entry();
 		init_offence_spinner();
