@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -32,6 +33,7 @@ import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -90,8 +92,16 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		return mData;
 	}
 
+//	@Override
+//	public void onConfigurationChanged(Configuration new_config)
+//	{
+//		super.onConfigurationChanged(new_config);
+//		init_lang();
+//	}
+
 	private void init()
 	{
+//		init_lang();
 		init_date_time_buttons();
 		init_reg_entry();
 		init_offence_spinner();
@@ -101,6 +111,18 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		init_call_button();
 		update_date_label(mData.year, mData.month, mData.day);
 		update_time_label(mData.hour, mData.minute);
+	}
+
+	/* FIXME: retaining language configuration is not working */
+	private void init_lang()
+	{
+		if (mData.lang == DataWrapper.Lang_t.LANG_ENGLISH) {
+			change_lang("en");
+		} else if (mData.lang == DataWrapper.Lang_t.LANG_CHINESE) {
+			change_lang("zh");
+		} else if (mData.lang == DataWrapper.Lang_t.LANG_MALAY) {
+			change_lang("ms");
+		}
 	}
 
 	private void init_date_time_buttons()
@@ -281,6 +303,17 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		data.photoUris = new ArrayList<Uri>();
 		data.recordingUris = new ArrayList<Uri>();
 		data.videoUris = new ArrayList<Uri>();
+	}
+
+	private void change_lang(String lang_code)
+	{
+		Locale locale = new Locale(lang_code);
+		Locale.setDefault(locale);
+		Configuration config = new Configuration();
+		config.locale = locale;
+		getBaseContext().getResources().updateConfiguration(config,
+			getBaseContext().getResources().getDisplayMetrics());
+		refresh_activity();
 	}
 
 	private void submit()
@@ -742,11 +775,25 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			}
 			break;
 		case ACTIVITY_UPDATE_SETTINGS:
-			Intent refresh = new Intent(this, ReportMalaysiaTaxiActivity.class);
-			startActivity(refresh);
-			finish();
+			if (resultCode == DataWrapper.RESULT_SET_ENGLISH) {
+				mData.lang = DataWrapper.Lang_t.LANG_ENGLISH;
+				refresh_activity();
+			} else if (resultCode == DataWrapper.RESULT_SET_CHINESE) {
+				mData.lang = DataWrapper.Lang_t.LANG_CHINESE;
+				refresh_activity();
+			} else if (resultCode == DataWrapper.RESULT_SET_MALAY) {
+				mData.lang = DataWrapper.Lang_t.LANG_MALAY;
+				refresh_activity();
+			}
 			break;
 		}
+	}
+
+	public void refresh_activity()
+	{
+		Intent refresh = new Intent(this, ReportMalaysiaTaxiActivity.class);
+		startActivity(refresh);
+		finish();
 	}
 
 	public class OffenceOnItemSelectedListener implements OnItemSelectedListener
