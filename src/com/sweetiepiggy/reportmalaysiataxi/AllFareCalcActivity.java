@@ -134,7 +134,7 @@ public class AllFareCalcActivity extends Activity {
 	{
 		double fare = starting_fare;
 		km = km > 1 ? km - 1 : 0;
-		fare += (km / 0.115) * 0.1;
+		fare += ((int)(km / 0.115)) * 0.1;
 		if (midnight) {
 			fare *= 1.5;
 		}
@@ -156,7 +156,7 @@ public class AllFareCalcActivity extends Activity {
 	{
 		double fare = starting_fare;
 		min = min > 3 ? min - 3 : 0;
-		fare += (min * 60 / 21. ) * 0.1;
+		fare += ((int)(min * 60 / 21. )) * 0.1;
 		if (midnight) {
 			fare *= 1.5;
 		}
