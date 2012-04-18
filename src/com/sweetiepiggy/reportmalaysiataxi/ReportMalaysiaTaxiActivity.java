@@ -117,11 +117,11 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	/* FIXME: retaining language configuration is not working */
 	private void init_lang()
 	{
-		if (mData.lang == DataWrapper.Lang_t.LANG_ENGLISH) {
+		if (mData.lang == Constants.Lang_t.LANG_ENGLISH) {
 			change_lang("en");
-		} else if (mData.lang == DataWrapper.Lang_t.LANG_CHINESE) {
+		} else if (mData.lang == Constants.Lang_t.LANG_CHINESE) {
 			change_lang("zh");
-		} else if (mData.lang == DataWrapper.Lang_t.LANG_MALAY) {
+		} else if (mData.lang == Constants.Lang_t.LANG_MALAY) {
 			change_lang("ms");
 		}
 	}
@@ -276,7 +276,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				builder.setTitle(getResources().getString(R.string.place_call));
 				builder.setItems(tel_number_names, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int item) {
-						String tel_number = getResources().getStringArray(R.array.tel_numbers)[item];
+						String tel_number = Constants.TEL_NUMBERS[item];
 						Intent call_intent = new Intent(Intent.ACTION_DIAL);
 						call_intent.setData(Uri.parse("tel:" + tel_number));
 						startActivity(call_intent);
@@ -371,7 +371,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		String action = mData.videoUris.size() > 1 ?
 			Intent.ACTION_SEND_MULTIPLE : Intent.ACTION_SEND;
 		Intent youtube_intent = new Intent(action);
-		youtube_intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.complaint_malay));
+		youtube_intent.putExtra(Intent.EXTRA_SUBJECT, Constants.COMPLAINT_MALAY);
 		youtube_intent.putExtra(Intent.EXTRA_TEXT, msg);
 		youtube_intent.setType("video/*");
 
@@ -406,12 +406,11 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			public void onClick(DialogInterface dialog, int which) {
 				String email_msg = format_email(f_msg);
 
-				String[] all_email_addresses = getResources().getStringArray(R.array.email_addresses);
 				String email_addresses = "";
 
 				for (int i=0; i < 5; ++i) {
 					if (mData.selected[i]) {
-						email_addresses += all_email_addresses[i];
+						email_addresses += Constants.EMAIL_ADDRESSES[i];
 					}
 				}
 
@@ -427,7 +426,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				email_intent.putExtra(Intent.EXTRA_EMAIL, new String[] {
 						email_addresses} );
 				email_intent.putExtra(Intent.EXTRA_SUBJECT,
-						getResources().getString(R.string.complaint_email_malay) + ' ' + f_reg);
+						Constants.COMPLAINT_EMAIL_MALAY + ' ' + f_reg);
 				email_intent.putExtra(Intent.EXTRA_TEXT, email_msg);
 
 				if (uris.size() == 1) {
@@ -500,7 +499,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		Intent sms_intent = new Intent(Intent.ACTION_VIEW);
 
 		sms_intent.putExtra("address",
-				getResources().getString(R.string.sms_number));
+				Constants.SMS_NUMBER);
 		sms_intent.putExtra("sms_body", sms_msg);
 		/* TODO: attach files to mms */
 		sms_intent.setType("vnd.android-dir/mms-sms");
@@ -520,19 +519,19 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		}
 
 		if (reg.length() != 0) {
-				message += '\n' + getResources().getString(R.string.registration_malay) + ": " + reg;
+				message += '\n' + Constants.REGISTRATION_MALAY + ": " + reg;
 		}
 		if (location.length() != 0) {
-				message += '\n' + getResources().getString(R.string.location_malay) + ": " + location;
+				message += '\n' + Constants.LOCATION_MALAY + ": " + location;
 		}
 		if (offence.length() != 0 && !offence.equals("Other")) {
-				message += '\n' + getResources().getString(R.string.offence_malay) + ": " + offence;
+				message += '\n' + Constants.OFFENCE_MALAY + ": " + offence;
 		}
 		if (other.length() != 0) {
 			if (offence.length() != 0 && !offence.equals("Other")) {
 				message += '\n' + other;
 			} else {
-				message += '\n' + getResources().getString(R.string.offence_malay) + ": " + other;
+				message += '\n' + Constants.OFFENCE_MALAY + ": " + other;
 			}
 		}
 		return message;
@@ -540,12 +539,12 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 	private String format_email(String msg)
 	{
-		return getResources().getString(R.string.email_intro_malay) + "\n" + msg;
+		return Constants.EMAIL_INTRO_MALAY + "\n" + msg;
 	}
 
 	private String format_sms(String msg)
 	{
-		return getResources().getString(R.string.complaint_malay) + msg;
+		return Constants.COMPLAINT_MALAY + msg;
 	}
 
 	private String format_tweet(String date, String time, String loc,
@@ -588,8 +587,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		}
 
 		map.put("twitter_address2", true);
-		if (getResources().getString(R.string.twitter_address2).length() == 0 ||
-				build_tweet(map, date, time, loc, reg,
+		if (build_tweet(map, date, time, loc, reg,
 					offence, other).length() >
 				MAX_TWEET_LENGTH) {
 			map.put("twitter_address2", false);
@@ -610,8 +608,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		}
 
 		map.put("twitter_address3", true);
-		if (getResources().getString(R.string.twitter_address3).length() == 0 ||
-				build_tweet(map, date, time, loc, reg,
+		if (build_tweet(map, date, time, loc, reg,
 					offence, other).length() >
 				MAX_TWEET_LENGTH) {
 			map.put("twitter_address3", false);
@@ -633,14 +630,14 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		String res = "";
 
 		if (map.get("twitter_address1")) {
-			res += getResources().getString(R.string.twitter_address1);
+			res += Constants.TWITTER_ADDRESS1;
 		}
 
 		if (map.get("complaint_hashtag")) {
 			if (res.length() != 0) {
 				res += ' ';
 			}
-			res += getResources().getString(R.string.complaint_hashtag);
+			res += Constants.COMPLAINT_HASHTAG;
 		}
 
 		if (map.get("date")) {
@@ -695,14 +692,14 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			if (res.length() != 0) {
 				res += ' ';
 			}
-			res += getResources().getString(R.string.twitter_address2);
+			res += Constants.TWITTER_ADDRESS2;
 		}
 
 		if (map.get("twitter_address3")) {
 			if (res.length() != 0) {
 				res += ' ';
 			}
-			res += getResources().getString(R.string.twitter_address3);
+			res += Constants.TWITTER_ADDRESS3;
 		}
 
 		return res;
@@ -795,14 +792,14 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			}
 			break;
 		case ACTIVITY_UPDATE_SETTINGS:
-			if (resultCode == DataWrapper.RESULT_SET_ENGLISH) {
-				mData.lang = DataWrapper.Lang_t.LANG_ENGLISH;
+			if (resultCode == Constants.RESULT_SET_ENGLISH) {
+				mData.lang = Constants.Lang_t.LANG_ENGLISH;
 				refresh_activity();
-			} else if (resultCode == DataWrapper.RESULT_SET_CHINESE) {
-				mData.lang = DataWrapper.Lang_t.LANG_CHINESE;
+			} else if (resultCode == Constants.RESULT_SET_CHINESE) {
+				mData.lang = Constants.Lang_t.LANG_CHINESE;
 				refresh_activity();
-			} else if (resultCode == DataWrapper.RESULT_SET_MALAY) {
-				mData.lang = DataWrapper.Lang_t.LANG_MALAY;
+			} else if (resultCode == Constants.RESULT_SET_MALAY) {
+				mData.lang = Constants.Lang_t.LANG_MALAY;
 				refresh_activity();
 			}
 			break;
@@ -825,7 +822,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		public void onItemSelected(AdapterView<?> parent, View view, int pos,
 				long id) {
 			mData.offence = getResources().getStringArray(R.array.offence_array)[pos];
-			mData.offenceMalay = getResources().getStringArray(R.array.offence_malay_array)[pos];
+			mData.offenceMalay = Constants.OFFENCE_MALAY_ARRAY[pos];
 		}
 
 		public void onNothingSelected(AdapterView<?> parent) {

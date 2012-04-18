@@ -41,13 +41,11 @@
 				android:id="@+id/date_button"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:text="@string/default_date"/>
+				android:layout_weight="1"/>
 			<Button
 				android:id="@+id/time_button"
 				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/default_time"/>
+				android:layout_height="wrap_content"/>
 		</LinearLayout>
 
 		<TextView

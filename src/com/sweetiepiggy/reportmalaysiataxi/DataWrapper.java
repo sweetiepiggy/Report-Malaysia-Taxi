@@ -22,20 +22,11 @@ package com.sweetiepiggy.reportmalaysiataxi;
 import java.util.ArrayList;
 
 import android.net.Uri;
-import android.app.Activity;
+
+import com.sweetiepiggy.reportmalaysiataxi.Constants.Lang_t;
 
 public class DataWrapper
 {
-	/* TODO: RESULTs should be in a different class */
-	static final int RESULT_SET_ENGLISH = Activity.RESULT_FIRST_USER;
-	static final int RESULT_SET_CHINESE = Activity.RESULT_FIRST_USER + 1;
-	static final int RESULT_SET_MALAY = Activity.RESULT_FIRST_USER + 2;
-
-	/* TODO: Lang_t should be in a different class */
-	public enum Lang_t {
-		LANG_DEFAULT, LANG_ENGLISH, LANG_CHINESE, LANG_MALAY
-	}
-
 	public int year;
 	public int month;
 	public int day;
@@ -46,7 +37,7 @@ public class DataWrapper
 
 	public boolean[] selected;
 
-	public Lang_t lang = DataWrapper.Lang_t.LANG_DEFAULT;
+	public Lang_t lang = Constants.Lang_t.LANG_DEFAULT;
 
 	public ArrayList<Uri> photoUris;
 	public ArrayList<Uri> recordingUris;

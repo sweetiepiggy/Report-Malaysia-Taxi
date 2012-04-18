@@ -36,14 +36,14 @@ public class LanguageActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 
 		setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
-					getResources().getStringArray(R.array.languages)));
+					Constants.LANGUAGES));
 
 		ListView lv = getListView();
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int pos, long id) {
-				String language_code = getResources().getStringArray(R.array.language_codes)[pos];
+				String language_code = Constants.LANGUAGE_CODES[pos];
 				Locale locale = new Locale(language_code);
 				Locale.setDefault(locale);
 				Configuration config = new Configuration();
@@ -53,11 +53,11 @@ public class LanguageActivity extends ListActivity {
 
 				/* TODO: there should be a way to restore to phone's default language */
 				if (language_code.equals("en")) {
-					setResult(DataWrapper.RESULT_SET_ENGLISH, null);
+					setResult(Constants.RESULT_SET_ENGLISH, null);
 				} else if (language_code.equals("zh")) {
-					setResult(DataWrapper.RESULT_SET_CHINESE, null);
+					setResult(Constants.RESULT_SET_CHINESE, null);
 				} else if (language_code.equals("ms")) {
-					setResult(DataWrapper.RESULT_SET_MALAY, null);
+					setResult(Constants.RESULT_SET_MALAY, null);
 				}
 				finish();
 			}
