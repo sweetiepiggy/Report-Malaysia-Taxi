@@ -68,6 +68,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	static final int ACTIVITY_RECORD_SOUND = 1;
 	static final int ACTIVITY_UPDATE_SETTINGS = 2;
 	static final int ACTIVITY_TAKE_VIDEO = 3;
+	static final int ACTIVITY_SUBMIT = 4;
 
 	static final int MAX_TWEET_LENGTH = 140;
 
@@ -303,6 +304,11 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		data.photoUris = new ArrayList<Uri>();
 		data.recordingUris = new ArrayList<Uri>();
 		data.videoUris = new ArrayList<Uri>();
+
+		data.youtube_sent = false;
+		data.email_sent = false;
+		data.tweet_sent = false;
+		data.sms_sent = false;
 	}
 
 	private void change_lang(String lang_code)
@@ -331,7 +337,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		boolean tweet_checked = ((CheckBox) findViewById(R.id.tweet_checkbox)).isChecked();
 		boolean youtube_checked = ((CheckBox) findViewById(R.id.youtube_checkbox)).isChecked();
 
-		if (!sms_checked && !email_checked && !tweet_checked && !youtube_checked) {
+		if (!sms_checked && !email_checked && !tweet_checked &&
+				!youtube_checked) {
 			Toast.makeText(getApplicationContext(),
 					getResources().getString(R.string.missing_other),
 					Toast.LENGTH_SHORT).show();
@@ -339,20 +346,23 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 		String msg = format_msg(date, time, loc, reg, mData.offenceMalay, other);
 
-		if (youtube_checked) {
-			send_youtube(msg);
-		}
-
-		if (email_checked) {
-			send_email(msg, reg);
-		}
-
-		if (tweet_checked) {
-			send_tweet(date, time, loc, reg, other);
-		}
-
-		if (sms_checked) {
+		/* send one at a time, repeated call submit()
+			until all checked are sent */
+		if (sms_checked && !mData.sms_sent) {
 			send_sms(msg);
+		} else if (tweet_checked && !mData.tweet_sent) {
+			send_tweet(date, time, loc, reg, other);
+		} else if (email_checked && !mData.email_sent) {
+			send_email(msg, reg);
+		} else if (youtube_checked && !mData.youtube_sent) {
+			send_youtube(msg);
+
+		/* done sending */
+		} else {
+			mData.youtube_sent = false;
+			mData.email_sent = false;
+			mData.tweet_sent = false;
+			mData.sms_sent = false;
 		}
 	}
 
@@ -372,7 +382,10 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			youtube_intent.putExtra(Intent.EXTRA_STREAM, mData.videoUris);
 		}
 
-		startActivity(Intent.createChooser(youtube_intent, getResources().getString(R.string.send_youtube)));
+		mData.youtube_sent = true;
+		startActivityForResult(Intent.createChooser(youtube_intent,
+					getResources().getString(R.string.send_youtube)),
+				ACTIVITY_SUBMIT);
 	}
 
 	private void send_email(String msg, String reg)
@@ -433,7 +446,11 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				} else if (mData.recordingUris.size() > 0) {
 					email_intent.setType("audio/*");
 				}
-				startActivity(Intent.createChooser(email_intent, getResources().getString(R.string.send_email)));
+
+				mData.email_sent = true;
+				startActivityForResult(Intent.createChooser(email_intent,
+							getResources().getString(R.string.send_email)),
+						ACTIVITY_SUBMIT);
 			}
 		});
 
@@ -471,8 +488,10 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			tweet_intent.setType("text/plain");
 		}
 
-		startActivity(Intent.createChooser(tweet_intent,
-					getResources().getString(R.string.send_tweet)));
+		mData.tweet_sent = true;
+		startActivityForResult(Intent.createChooser(tweet_intent,
+					getResources().getString(R.string.send_tweet)),
+				ACTIVITY_SUBMIT);
 	}
 
 	private void send_sms(String msg)
@@ -485,7 +504,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		sms_intent.putExtra("sms_body", sms_msg);
 		/* TODO: attach files to mms */
 		sms_intent.setType("vnd.android-dir/mms-sms");
-		startActivity(sms_intent);
+		mData.sms_sent = true;
+		startActivityForResult(sms_intent, ACTIVITY_SUBMIT);
 	}
 
 	private String format_msg(String date, String time, String location,
@@ -785,6 +805,10 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				mData.lang = DataWrapper.Lang_t.LANG_MALAY;
 				refresh_activity();
 			}
+			break;
+		case ACTIVITY_SUBMIT:
+			/* repeatedly submit until all send_*() functions have been called */
+			submit();
 			break;
 		}
 	}
