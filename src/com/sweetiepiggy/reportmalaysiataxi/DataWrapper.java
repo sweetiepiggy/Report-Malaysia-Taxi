@@ -51,5 +51,10 @@ public class DataWrapper
 	public ArrayList<Uri> photoUris;
 	public ArrayList<Uri> recordingUris;
 	public ArrayList<Uri> videoUris;
+
+	public boolean youtube_sent;
+	public boolean email_sent;
+	public boolean tweet_sent;
+	public boolean sms_sent;
 }
 
