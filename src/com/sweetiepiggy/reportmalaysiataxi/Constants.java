@@ -42,7 +42,7 @@ public class Constants
 	static final String REGISTRATION_MALAY = "Nombor Teksi Pendaftaran";
 	static final String OFFENCE_MALAY = "Kesalahan";
 	static final String EMAIL_INTRO_MALAY = "Pihak Berkuasa yang berkenan,\n\n" +
-		"Tujuan saya menulis email ini adalah kerana sesuatu kejadian " +
+		"Tujuan saya menulis emel ini adalah kerana sesuatu kejadian " +
 		"berlaku yang tidak menyenang hati. Perkara tersebut adalah " +
 		"dicatat seperti dibawah. Sila ambil tindakan yang sepatutnya " +
 		"terhadap aduan saya.\n\n" +
