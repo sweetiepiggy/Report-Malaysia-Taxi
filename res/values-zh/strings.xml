@@ -97,6 +97,7 @@
 	<string name="ttpm">消费者投诉部门</string>
 	<string name="transit">TRANSIT</string>
 	<string name="nccc">全国消费者投诉中心</string>
+	<string name="spad_chairman">SPAD主席</string>
 	<string name="mo_transport">交通部长</string>
 	<string name="mo_tourism">旅游部长</string>
 	<string name="prime_minister">首相</string>
@@ -107,6 +108,13 @@
 	<string-array name="email_choices">
 	    <item>SPAD</item>
 	    <item>其它政府部门</item>
+	    <item>消费群体</item>
+	    <item>政府部长</item>
+	    <item>新闻媒体</item>
+	    <item>交通警</item>
+	</string-array>
+	<string-array name="contact_choices">
+	    <item>政府部门</item>
 	    <item>消费群体</item>
 	    <item>政府部长</item>
 	    <item>新闻媒体</item>
@@ -196,6 +204,11 @@ SPAD: 陆路运输部门\n\n
 		http://www.nccc.org.my\n
 		http://www.nccc.org.my/v2/index.php/e-aduan\n
 		http://twitter.com/myaduan\n
+	</string>
+	<string name="spad_chairman_contact">
+	    Syed Hamid Albar\n
+	    SPAD主席\n
+	    http://twitter.com/syedhamidalbar\n
 	</string>
 	<string name="motransport_contact">
 		江作汉\n

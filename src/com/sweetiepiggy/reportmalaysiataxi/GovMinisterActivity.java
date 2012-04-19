@@ -35,6 +35,7 @@ public class GovMinisterActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 
 		String[] gov_ministers = new String[] {
+			getResources().getString(R.string.spad_chairman),
 			getResources().getString(R.string.mo_transport),
 			getResources().getString(R.string.mo_tourism),
 			getResources().getString(R.string.prime_minister),
@@ -49,7 +50,13 @@ public class GovMinisterActivity extends ListActivity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int pos, long id) {
 				CharSequence item = ((TextView) view).getText();
-				if (item.equals(getResources().getString(R.string.mo_transport))) {
+				if (item.equals(getResources().getString(R.string.spad_chairman))) {
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.spad_chairman_contact));
+					intent.putExtras(b);
+					startActivity(intent);
+				} else if (item.equals(getResources().getString(R.string.mo_transport))) {
 					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
 					Bundle b = new Bundle();
 					b.putString("text", getResources().getString(R.string.motransport_contact));

@@ -98,6 +98,7 @@
 	<string name="ttpm">Tribunal for Consumer Claims</string>
 	<string name="transit">TRANSIT</string>
 	<string name="nccc">National Consumer Complaints Centre</string>
+	<string name="spad_chairman">Chairman of SPAD</string>
 	<string name="mo_transport">Minister of Transport</string>
 	<string name="mo_tourism">Minister of Tourism</string>
 	<string name="prime_minister">Prime Minister</string>
@@ -108,6 +109,13 @@
 	<string-array name="email_choices">
 	    <item>SPAD</item>
 	    <item>Other Government Departments</item>
+	    <item>Consumer Groups</item>
+	    <item>Government Ministers</item>
+	    <item>News Media</item>
+	    <item>Traffic Police</item>
+	</string-array>
+	<string-array name="contact_choices">
+	    <item>Government Departments</item>
 	    <item>Consumer Groups</item>
 	    <item>Government Ministers</item>
 	    <item>News Media</item>
@@ -198,6 +206,11 @@ Traffic Police: rmp@rmp.gov.my
 	    http://www.nccc.org.my\n
 	    http://www.nccc.org.my/v2/index.php/e-aduan\n
 	    http://twitter.com/myaduan\n
+	</string>
+	<string name="spad_chairman_contact">
+	    Syed Hamid Albar\n
+	    Chairman of SPAD\n
+	    http://twitter.com/syedhamidalbar\n
 	</string>
 	<string name="motransport_contact">
 	    YB Dato Seri Kong Cho Ha\n

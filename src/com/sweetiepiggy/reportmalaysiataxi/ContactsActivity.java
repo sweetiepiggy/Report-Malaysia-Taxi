@@ -36,39 +36,39 @@ public class ContactsActivity extends ListActivity {
 
 		setListAdapter(new ArrayAdapter<String>(this,
 					android.R.layout.simple_list_item_1,
-					getResources().getStringArray(R.array.email_choices)));
+					getResources().getStringArray(R.array.contact_choices)));
 
 		ListView lv = getListView();
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int pos, long id) {
-				String[] email_choices = getResources().getStringArray(R.array.email_choices);
+				String[] contact_choices = getResources().getStringArray(R.array.contact_choices);
 
 				CharSequence item = ((TextView) view).getText();
 
-				/* TODO: don't hard code email_choices order */
+				/* TODO: don't hard code contact_choices order */
 				/* TODO: combine all below activities into one activity and pass the appropriate info to it */
-				if (item.equals(email_choices[0])) {
+				if (item.equals(contact_choices[0])) {
 					Intent intent = new Intent(getApplicationContext(), GovDeptActivity.class);
 					startActivity(intent);
 
-				} else if (item.equals(email_choices[1])) {
+				} else if (item.equals(contact_choices[1])) {
 					Intent intent = new Intent(getApplicationContext(), ConsumerGroupActivity.class);
 					startActivity(intent);
 
-				} else if (item.equals(email_choices[2])) {
+				} else if (item.equals(contact_choices[2])) {
 					Intent intent = new Intent(getApplicationContext(), GovMinisterActivity.class);
 					startActivity(intent);
 
-				} else if (item.equals(email_choices[3])) {
+				} else if (item.equals(contact_choices[3])) {
 					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
 					Bundle b = new Bundle();
 					b.putString("text", getResources().getString(R.string.news_media_contact));
 					intent.putExtras(b);
 					startActivity(intent);
 
-				} else if (item.equals(email_choices[4])) {
+				} else if (item.equals(contact_choices[4])) {
 					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
 					Bundle b = new Bundle();
 					b.putString("text", getResources().getString(R.string.traffic_police_contact));
