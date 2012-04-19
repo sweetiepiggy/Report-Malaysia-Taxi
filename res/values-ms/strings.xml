@@ -106,7 +106,8 @@
 	<string name="done">Selesai</string>
 	<string name="details">Butir-butir</string>
 	<string-array name="email_choices">
-		<item>Jabatan Kerajaan</item>
+		<item>SPAD</item>
+		<item>Jabatan Kerajaan Lain</item>
 		<item>Pengguna Kumpulan</item>
 		<item>Kerajaan Menteri</item>
 		<item>Berita Media</item>
@@ -114,7 +115,8 @@
 	</string-array>
 
 	<string name="email_details">
-Jabatan Kerajaan: LPKP, SPAD, JPJ, KPDNKK\n\n
+SPAD: Suruhanjaya Pengangkutan Awam Darat\n\n
+Jabatan Kerajaan Lain: LPKP, JPJ, KPDNKK\n\n
 Pengguna Kumpulan: TRANSIT, NCCC\n\n
 Kerajaan Menteri: Menteri Pengangkutan, Menteri Pelancongan, Perdana Menteri\n\n
 Berita Media: The Star, Star Metro, Malay Mail, New Straits Times, New Straits Times Streets, The Sun, Malaysia Kini, The Malaysian Insider\n\n

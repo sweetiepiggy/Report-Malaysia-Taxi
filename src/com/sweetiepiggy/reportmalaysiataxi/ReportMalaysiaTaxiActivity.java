@@ -299,7 +299,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 		data.offence = "";
 		data.offenceMalay = "";
-		data.selected = new boolean[] {true, true, false, false, false};
+		data.selected = new boolean[] {true, true, true, false, false, false};
 
 		data.photoUris = new ArrayList<Uri>();
 		data.recordingUris = new ArrayList<Uri>();
@@ -408,7 +408,9 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 				String email_addresses = "";
 
-				for (int i=0; i < 5; ++i) {
+				/* TODO: selected and EMAIL_ADDRESSES need to be better linked,
+					possible problem if their lengths are not equal */
+				for (int i=0; i < mData.selected.length; ++i) {
 					if (mData.selected[i]) {
 						email_addresses += Constants.EMAIL_ADDRESSES[i];
 					}
@@ -466,7 +468,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		});
 		AlertDialog alert = builder.create();
 		ListView list = alert.getListView();
-		for (int i=0; i < 5; ++i) {
+		for (int i=0; i < mData.selected.length; ++i) {
 			list.setItemChecked(i, mData.selected[i]);
 		}
 

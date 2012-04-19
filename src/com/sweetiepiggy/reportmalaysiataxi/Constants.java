@@ -19,9 +19,6 @@
 
 package com.sweetiepiggy.reportmalaysiataxi;
 
-import java.util.ArrayList;
-
-import android.net.Uri;
 import android.app.Activity;
 
 public class Constants
@@ -71,8 +68,10 @@ public class Constants
 		"ms"
 	};
 
+	/* TODO: this is linked to email_choices, that should be made obvious somehow */
 	static final String[] EMAIL_ADDRESSES = {
-		"aduan@lpkp.gov.my; aduan@spad.gov.my; aduantrafik@jpj.gov.my; e-aduan@kpdnkk.gov.my; ",
+		"aduan@spad.gov.my; ",
+		"aduan@lpkp.gov.my; aduantrafik@jpj.gov.my; e-aduan@kpdnkk.gov.my; ",
 		"klangvalley.transit@gmail.com; nccc@nccc.org.my; ",
 		"menteri@mot.gov.my; yenyenng@motour.gov.my; najib@1malaysia.com.my; ",
 		"editor@thestar.com.my; metro@thestar.com.my; mmnews@mmail.com.my; syedn@nst.com.my; letters@nst.com.my; streets@nst.com.my; letters@thesundaily.com, editor@malaysiakini.com.my; editor@themalaysianinsider.com; ",
