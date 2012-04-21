@@ -28,7 +28,7 @@
 	<string name="registration">Registration Number of Taxi</string>
 	<string name="offence">Nature of Offence</string>
 
-    <string name="language">Language</string>
+	<string name="language">Language</string>
 	<string name="settings">Preferences</string>
 	<string name="about">About</string>
 	<string name="resources">Resources</string>
@@ -60,16 +60,16 @@
 	<!--<string name="youtube">youtube</string>-->
 	<string name="youtube"></string>
 	<string name="call">call</string>
-	
+
 	<string name="missing_reg">enter registration number</string>
 	<string name="missing_other">enter other comments</string>
 	<string name="select_checkbox">select a checkbox</string>
-	
+
 	<string name="send_youtube">Upload to YouTube</string>
 	<string name="send_tweet">Send tweet</string>
 	<string name="send_email">Send email</string>
 	<string name="place_call">Place call</string>
-	
+
 	<string name="lk_jb_kt_m">Kuala Lumpur, Johor Baru, Kuala Terengganu, Melaka</string>
 	<string name="penang">Penang</string>
 	<string name="airports">Airports</string>
@@ -107,21 +107,21 @@
 	<string name="done">Done</string>
 	<string name="details">Details</string>
 	<string-array name="email_choices">
-	    <item>SPAD</item>
-	    <item>Other Government Departments</item>
-	    <item>Consumer Groups</item>
-	    <item>Government Ministers</item>
-	    <item>News Media</item>
-	    <item>Traffic Police</item>
+		<item>SPAD</item>
+		<item>Other Government Departments</item>
+		<item>Consumer Groups</item>
+		<item>Government Ministers</item>
+		<item>News Media</item>
+		<item>Traffic Police</item>
 	</string-array>
 	<string-array name="contact_choices">
-	    <item>Government Departments</item>
-	    <item>Consumer Groups</item>
-	    <item>Government Ministers</item>
-	    <item>News Media</item>
-	    <item>Traffic Police</item>
+		<item>Government Departments</item>
+		<item>Consumer Groups</item>
+		<item>Government Ministers</item>
+		<item>News Media</item>
+		<item>Traffic Police</item>
 	</string-array>
-	
+
 	<string name="email_details">
 SPAD: Land Transport Commission\n\n
 Government Departments: LPKP, JPJ, KPDNKK\n\n
@@ -138,102 +138,102 @@ Traffic Police: rmp@rmp.gov.my
 	</string-array>
 
 	<string name="spad_contact">
-	    SPAD\n
-	    Land Transport Commission\n
-	    aduan@spad.gov.my\n
-	    http://www.spad.gov.my\n
-	    http://twitter.com/aduanSPAD\n
+		SPAD\n
+		Land Transport Commission\n
+		aduan@spad.gov.my\n
+		http://www.spad.gov.my\n
+		http://twitter.com/aduanSPAD\n
 	</string>
 	<string name="lpkp_contact">
-	    LPKP\n
-	    Commercial Vehicle Licensing Board\n
-	    SMS ADUAN LPKP to 15888\n
-	    1-800-88-96-00\n
-	    aduan@lpkp.gov.my\n
-	    http://www.lpkp.gov.my\n
+		LPKP\n
+		Commercial Vehicle Licensing Board\n
+		SMS ADUAN LPKP to 15888\n
+		1-800-88-96-00\n
+		aduan@lpkp.gov.my\n
+		http://www.lpkp.gov.my\n
 	</string>
 	<string name="jpj_contact">
-	    JPJ\n
-	    Road Transport Department\n
-	    03 8888 4244\n
-	    aduantrafik@jpj.gov.my\n
-	    http://portal.jpj.gov.my\n
+		JPJ\n
+		Road Transport Department\n
+		03 8888 4244\n
+		aduantrafik@jpj.gov.my\n
+		http://portal.jpj.gov.my\n
 	</string>
 	<string name="kpdnkk_contact">
-	    KPDNKK\n
-	    Ministry of Domestic Trade, Cooperative and Consumerism\n
-	    e-aduan@kpdnkk.gov.my\n
-	    http://eaduan.kpdnkk.gov.my\n
+		KPDNKK\n
+		Ministry of Domestic Trade, Cooperative and Consumerism\n
+		e-aduan@kpdnkk.gov.my\n
+		http://eaduan.kpdnkk.gov.my\n
 	</string>
 	<string name="motour_contact">
-	    Ministry of Tourism\n
-	    03 8891 7000\n
-	    info@motour.gov.my\n
-	    http://www.motour.gov.my\n
-	    http://www.motour.gov.my/en/contact-us/feedback/public-complaints.html\n
+		Ministry of Tourism\n
+		03 8891 7000\n
+		info@motour.gov.my\n
+		http://www.motour.gov.my\n
+		http://www.motour.gov.my/en/contact-us/feedback/public-complaints.html\n
 	</string>
 	<string name="pcb_contact">
-	    Public Complaints Bureau\n
-	    03 8872 5777\n
-	    http://www.pcb.gov.my\n
-	    http://apps1.pcb.gov.my/eApps/bpaia/ducmpl/AduCmplPublic/add.do?aplCode=en\n
+		Public Complaints Bureau\n
+		03 8872 5777\n
+		http://www.pcb.gov.my\n
+		http://apps1.pcb.gov.my/eApps/bpaia/ducmpl/AduCmplPublic/add.do?aplCode=en\n
 	</string>
 	<string name="pemudah_contact">
-	    PEMUDAH\n
-	    Entrepreneur and Cooperatives Development Ministry\n
-	    03 6200 0185\n
-	    bahria@miti.gov.my\n
-	    http://www.pemudah.gov.my\n
-	    http://www.pemudah.gov.my/web/guest/hubungi\n
+		PEMUDAH\n
+		Entrepreneur and Cooperatives Development Ministry\n
+		03 6200 0185\n
+		bahria@miti.gov.my\n
+		http://www.pemudah.gov.my\n
+		http://www.pemudah.gov.my/web/guest/hubungi\n
 	</string>
 	<string name="ttpm_contact">
-	    Tribunal for Consumer Claims Malaysia\n
-	    1 800 88 9811 or 03 8882 5822\n
-	    http://ttpm.kpdnkk.gov.my\n
+		Tribunal for Consumer Claims Malaysia\n
+		1 800 88 9811 or 03 8882 5822\n
+		http://ttpm.kpdnkk.gov.my\n
 	</string>
 	<string name="transit_contact">
-	    TRANSIT\n
-	    A group of concerned citizens for the improvement of mass transit\n
-	    klangvalley.transit@gmail.com\n
-	    http://transitmy.org\n
-	    http://twitter.com/transitmy\n
+		TRANSIT\n
+		A group of concerned citizens for the improvement of mass transit\n
+		klangvalley.transit@gmail.com\n
+		http://transitmy.org\n
+		http://twitter.com/transitmy\n
 	</string>
 	<string name="nccc_contact">
-	    NCCC\n
-	    National Consumer Complaints Centre\n
-	    03 7877 9000\n
-	    nccc@nccc.org.my
-	    http://www.nccc.org.my\n
-	    http://www.nccc.org.my/v2/index.php/e-aduan\n
-	    http://twitter.com/myaduan\n
+		NCCC\n
+		National Consumer Complaints Centre\n
+		03 7877 9000\n
+		nccc@nccc.org.my
+		http://www.nccc.org.my\n
+		http://www.nccc.org.my/v2/index.php/e-aduan\n
+		http://twitter.com/myaduan\n
 	</string>
 	<string name="spad_chairman_contact">
-	    Syed Hamid Albar\n
-	    Chairman of SPAD\n
-	    http://twitter.com/syedhamidalbar\n
+		Syed Hamid Albar\n
+		Chairman of SPAD\n
+		http://twitter.com/syedhamidalbar\n
 	</string>
 	<string name="motransport_contact">
-	    YB Dato Seri Kong Cho Ha\n
-	    Minister of Transport\n
-	    menteri@mot.gov.my\n
-	    http://twitter.com/kongchoha\n
+		YB Dato Seri Kong Cho Ha\n
+		Minister of Transport\n
+		menteri@mot.gov.my\n
+		http://twitter.com/kongchoha\n
 	</string>
 	<string name="motourism_contact">
-	    YB Dato Sri Dr. Ng Yen Yen\n
-	    Minister of Tourism\n
-	    yenyenng@motour.gov.my\n
-	    http://twitter.com/DrYenYen\n
+		YB Dato Sri Dr. Ng Yen Yen\n
+		Minister of Tourism\n
+		yenyenng@motour.gov.my\n
+		http://twitter.com/DrYenYen\n
 	</string>
 	<string name="prime_minister_contact">
-	    Dato Sri Haji Mohammad Najib bin Tun Haji Abdul Razak\n
-	    Prime Minister\n
-	    najib@1malaysia.com.my\n
-	    http://twitter.com/NajibRazak\n
+		Dato Sri Haji Mohammad Najib bin Tun Haji Abdul Razak\n
+		Prime Minister\n
+		najib@1malaysia.com.my\n
+		http://twitter.com/NajibRazak\n
 	</string>
 	<string name="traffic_police_contact">
-	    Traffic Police\n
-	    rmp@rmp.gov.my\n
-	    http://www.rmp.gov.my\n
+		Traffic Police\n
+		rmp@rmp.gov.my\n
+		http://www.rmp.gov.my\n
 	</string>
 	<string name="news_media_contact">
 		The Star\n
@@ -261,9 +261,9 @@ Traffic Police: rmp@rmp.gov.my
 	OR\n
 	RM4 for first 3 minutes\n
 	10 cents for each additional 21 seconds\n\n
-	
+
 	http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf\n\n
-	
+
 	Additional Charges:\n
 	50% surcharge between midnight and 6:00AM\n
 	RM3 for telephone bookings\n
@@ -277,9 +277,9 @@ Traffic Police: rmp@rmp.gov.my
 	OR\n
 	RM3 for first 3 minutes\n
 	10 cents for each additional 21 seconds\n\n
-	
+
 	http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf\n\n
-	
+
 	Additional Charges:\n
 	Double rate for executive taxi\n
 	50% surcharge between midnight and 6:00AM\n
@@ -287,11 +287,11 @@ Traffic Police: rmp@rmp.gov.my
 	RM1 for 3rd adult passenger (max 4) and/or baggage stored in boot\n
 	Actual road toll charges
 	</string>
-	
+
 	<string name="airports_fare_rate">
 	Taxis at airports operate on a pre-paid coupon system.
 	</string>
-	
+
 	<string name="gpl">
 Copyright (C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
 Report Malaysia Taxi is free software; you can redistribute it and/or modify
@@ -303,7 +303,7 @@ Report Malaysia Taxi is distributed in the hope that it will be useful,
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.\n\n
 You should have received a copy of the GNU General Public License
-    along with Report Malaysia Taxi; if not, see http://www.gnu.org/licenses/.  
-    </string>
+    along with Report Malaysia Taxi; if not, see http://www.gnu.org/licenses/.
+	</string>
 </resources>
 

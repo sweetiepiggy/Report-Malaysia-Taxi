@@ -29,8 +29,8 @@
 	<string name="offence">犯罪性质</string>
 
 	<string name="settings">选择</string>
-    <string name="about">关于</string>
-    <string name="language">语言</string>
+	<string name="about">关于</string>
+	<string name="language">语言</string>
 	<string name="resources">资源</string>
 	<string name="fare_rate">价率</string>
 	<string name="fare_calc">票价计算器</string>
@@ -59,11 +59,11 @@
 	<string name="cancel">删除</string>
 	<string name="youtube">优酷</string>
 	<string name="call">呼叫</string>
-	
+
 	<string name="missing_reg">输入的士登记号码</string>
 	<string name="missing_other">输入其他意见</string>
 	<string name="select_checkbox">请选择输送方法</string>
-	
+
 	<string name="send_youtube">上载至优酷</string>
 	<string name="send_tweet">啁啾 </string>
 	<string name="send_email">电子邮件</string>
@@ -106,21 +106,21 @@
 	<string name="done">完成</string>
 	<string name="details">详情</string>
 	<string-array name="email_choices">
-	    <item>SPAD</item>
-	    <item>其它政府部门</item>
-	    <item>消费群体</item>
-	    <item>政府部长</item>
-	    <item>新闻媒体</item>
-	    <item>交通警</item>
+		<item>SPAD</item>
+		<item>其它政府部门</item>
+		<item>消费群体</item>
+		<item>政府部长</item>
+		<item>新闻媒体</item>
+		<item>交通警</item>
 	</string-array>
 	<string-array name="contact_choices">
-	    <item>政府部门</item>
-	    <item>消费群体</item>
-	    <item>政府部长</item>
-	    <item>新闻媒体</item>
-	    <item>交通警</item>
+		<item>政府部门</item>
+		<item>消费群体</item>
+		<item>政府部长</item>
+		<item>新闻媒体</item>
+		<item>交通警</item>
 	</string-array>
-	
+
 	<string name="email_details">
 SPAD: 陆路运输部门\n\n
 其它政府部门： LPKP, JPJ, KPDNKK\n\n
@@ -129,7 +129,7 @@ SPAD: 陆路运输部门\n\n
 新闻媒体： The Star, Star Metro, Malay Mail, New Straits Times, New Straits Times Streets, The Sun, Malaysia Kini, The Malaysian Insider\n\n
 交通警： rmp@rmp.gov.my
 	</string>
-	
+
 	<string-array name="tel_number_names">
 		<item>LPKP: 商用车辆管辖部门</item>
 		<item>JPJ: 交通部</item>
@@ -206,9 +206,9 @@ SPAD: 陆路运输部门\n\n
 		http://twitter.com/myaduan\n
 	</string>
 	<string name="spad_chairman_contact">
-	    Syed Hamid Albar\n
-	    SPAD主席\n
-	    http://twitter.com/syedhamidalbar\n
+		Syed Hamid Albar\n
+		SPAD主席\n
+		http://twitter.com/syedhamidalbar\n
 	</string>
 	<string name="motransport_contact">
 		江作汉\n
@@ -262,7 +262,7 @@ SPAD: 陆路运输部门\n\n
 	马币十仙/接着每 二十一分钟\n\n
 
 	http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf\n\n
-	
+
 	附加费\n
 	另加总数的五十巴仙如果是在午夜十二点至凌晨六点\n
 	另加马币三零吉如果是电话预约\n
@@ -277,9 +277,9 @@ SPAD: 陆路运输部门\n\n
 	时间\n
 	马币三零吉/首三分钟\n
 	马币十仙/接着每 二十一分钟\n\n
-	
+
 	http://www.spad.gov.my/downloads/forms/Peninsular_Malaysia_Public_Transport_Fare_Rate_Table.pdf\n\n
-	
+
 	附加费\n
 	名贵出租车以双倍价格收价\n
 	另加总数的五十巴仙如果是在午夜十二点至凌晨六点\n
@@ -287,11 +287,11 @@ SPAD: 陆路运输部门\n\n
 	第三位乘客另加收费马币一零吉（最多四位乘客）以及马币一零吉收费若储存行李在后车箱。\n
 	通行费将依据真实价格收费
 	</string>
-	
+
 	<string name="airports_fare_rate">
 	在机场的出租车是以预付费的票据系统运作。
 	</string>
-	
+
 	<string name="gpl">
 版權所有(C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
 
@@ -300,5 +300,6 @@ SPAD: 陆路运输部门\n\n
 举报马来西亚的士是基於使用目的而加以發佈，然而不負任何擔保責任；亦無對適售性或特定目的適用性所爲的默示性擔保。詳情請參照GNU通用公共授權。\n\n
 
 您應已收到附隨於举报马来西亚的士的GNU通用公共授權的副本；如果沒有，請參照http://www.gnu.org/licenses/。
-    </string>
+	</string>
 </resources>
+
