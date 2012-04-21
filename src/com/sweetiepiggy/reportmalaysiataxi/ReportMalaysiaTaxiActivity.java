@@ -324,9 +324,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 	private void submit()
 	{
-		String date = String.format("%02d", mData.day) +
-			'/' + String.format("%02d", mData.month+1) +
-			'/' + mData.year;
+		String date = String.format("%02d/%02d/%04d", mData.day, mData.month+1, mData.year);
 		String time = format_time(mData.hour, mData.minute);
 		String loc = ((EditText) findViewById(R.id.location_entry)).getText().toString();
 		String reg = ((EditText) findViewById(R.id.reg_entry)).getText().toString();
@@ -730,7 +728,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		if (hour == 0) {
 			hour = 12;
 		}
-		return String.format("%d", hour) + ':' + String.format("%02d", minute) + am_pm;
+		return String.format("%d:%02d%s", hour, minute, am_pm);
 	}
 
 	@Override
