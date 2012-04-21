@@ -708,7 +708,11 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	private void update_date_label(int year, int month, int day)
 	{
 		Button date_button = (Button)findViewById(R.id.date_button);
-		String date = DateFormat.getMediumDateFormat(getApplicationContext()).format(new Date(year - 1900, month, day));
+		Date d = new Date(year - 1900, month, day);
+
+		/* TODO: translate day of week */
+		String date = DateFormat.format("EEEE", d) +
+			" " + DateFormat.getLongDateFormat(getApplicationContext()).format(d);
 		date_button.setText(date);
 	}
 
