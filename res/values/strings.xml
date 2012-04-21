@@ -88,6 +88,14 @@
 	<string name="passengers_hint">Enter number of passengers</string>
 	<string name="time_hint">Enter time in minutes</string>
 
+	<string name="monday">Monday</string>
+	<string name="tuesday">Tuesday</string>
+	<string name="wednesday">Wednesday</string>
+	<string name="thursday">Thursday</string>
+	<string name="friday">Friday</string>
+	<string name="saturday">Saturday</string>
+	<string name="sunday">Sunday</string>
+
 	<string name="spad">SPAD: Land Transport Commission</string>
 	<string name="lpkp">LPKP: Commercial Vehicle Licensing Board</string>
 	<string name="jpj">JPJ: Road Transport Department</string>

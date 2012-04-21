@@ -88,6 +88,14 @@
 	<string name="passengers_hint">Masukkan bilangan penumpang</string>
 	<string name="time_hint">Masukkan masa dalam minit</string>
 
+	<string name="monday">Isnin</string>
+	<string name="tuesday">Selasa</string>
+	<string name="wednesday">Rabu</string>
+	<string name="thursday">Khamis</string>
+	<string name="friday">Jumaat</string>
+	<string name="saturday">Sabtu</string>
+	<string name="sunday">Ahad</string>
+
 	<string name="spad">SPAD: Suruhanjaya Pengangkutan Awam Darat</string>
 	<string name="lpkp">LPKP: Lembaga Pelesenan Kenderaan Perdagangan</string>
 	<string name="jpj">JPJ: Jabatan Pengangkutan Jalan</string>

@@ -87,6 +87,14 @@
 	<string name="passengers_hint">输入旅客人数</string>
 	<string name="time_hint">输入分钟的时间</string>
 
+	<string name="monday">星期一</string>
+	<string name="tuesday">星期二</string>
+	<string name="wednesday">星期三</string>
+	<string name="thursday">星期四</string>
+	<string name="friday">星期五</string>
+	<string name="saturday">星期六</string>
+	<string name="sunday">星期日</string>
+
 	<string name="spad">SPAD: 陆路运输部门</string>
 	<string name="lpkp">LPKP: 商用车辆管辖部门</string>
 	<string name="jpj">JPJ: 交通部</string>
