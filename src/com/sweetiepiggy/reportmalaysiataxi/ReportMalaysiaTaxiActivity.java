@@ -104,9 +104,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		init_lang();
 		init_date_time_buttons();
 
-		/* request focus on layout so keyboard does not pop up */
-		((LinearLayout) findViewById(R.id.linear_layout)).requestFocus();
-
 		init_offence_spinner();
 		init_camera_recorder_buttons();
 		init_submit_button();
