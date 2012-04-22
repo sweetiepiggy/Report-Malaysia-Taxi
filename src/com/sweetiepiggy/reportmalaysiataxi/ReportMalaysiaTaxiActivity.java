@@ -37,12 +37,10 @@ import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.text.InputType;
 import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -51,6 +49,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -104,7 +103,10 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	{
 		init_lang();
 		init_date_time_buttons();
-		init_reg_entry();
+
+		/* request focus on layout so keyboard does not pop up */
+		((LinearLayout) findViewById(R.id.linear_layout)).requestFocus();
+
 		init_offence_spinner();
 		init_camera_recorder_buttons();
 		init_submit_button();
@@ -138,24 +140,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		time_button.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				showDialog(TIME_DIALOG_ID);
-			}
-		});
-	}
-
-	private void init_reg_entry()
-	{
-		EditText reg_entry = (EditText)findViewById(R.id.reg_entry);
-
-		/* prevent keyboard from popping up when app starts */
-		reg_entry.setInputType(InputType.TYPE_NULL);
-
-		/* enable keyboard when entry is touched */
-		reg_entry.setOnTouchListener(new View.OnTouchListener() {
-			public boolean onTouch(View v, MotionEvent event) {
-				EditText reg_entry = (EditText)findViewById(R.id.reg_entry);
-				reg_entry.setInputType(InputType.TYPE_CLASS_TEXT);
-				reg_entry.onTouchEvent(event);
-				return true;
 			}
 		});
 	}

@@ -24,6 +24,9 @@
 	android:layout_height="fill_parent" >
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 		android:orientation="vertical"
+		android:id="@+id/linear_layout"
+		android:focusable="true"
+		android:focusableInTouchMode="true"
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent">
 		<TextView
