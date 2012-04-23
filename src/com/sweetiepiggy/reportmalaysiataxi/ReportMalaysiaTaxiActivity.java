@@ -254,7 +254,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				String[] tel_number_names = getResources().getStringArray(R.array.tel_number_names);
 
 				AlertDialog.Builder builder = new AlertDialog.Builder(ReportMalaysiaTaxiActivity.this);
-				builder.setTitle(getResources().getString(R.string.place_call));
+				builder.setTitle(R.string.place_call);
 				builder.setItems(tel_number_names, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int item) {
 						String tel_number = Constants.TEL_NUMBERS[item];
@@ -373,14 +373,14 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		final String f_reg = reg;
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(ReportMalaysiaTaxiActivity.this);
-		builder.setTitle(getResources().getString(R.string.who_email));
-		builder.setMultiChoiceItems(getResources().getStringArray(R.array.email_choices),
+		builder.setTitle(R.string.who_email);
+		builder.setMultiChoiceItems(R.array.email_choices,
 				mData.selected, new DialogInterface.OnMultiChoiceClickListener() {
 			public void onClick(DialogInterface dialog, int which, boolean isChecked) {
 				mData.selected[which] = isChecked;
 			}
 		});
-		builder.setPositiveButton(getResources().getString(R.string.done), new OnClickListener() {
+		builder.setPositiveButton(R.string.done, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				String email_msg = format_email(f_msg);
@@ -435,7 +435,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		});
 
 		/* TODO: pressing neutral button should not close dialog */
-		builder.setNeutralButton(getResources().getString(R.string.details), new OnClickListener() {
+		builder.setNeutralButton(R.string.details, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
