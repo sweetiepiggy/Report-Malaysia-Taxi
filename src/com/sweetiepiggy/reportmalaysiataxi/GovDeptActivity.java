@@ -21,20 +21,28 @@ package com.sweetiepiggy.reportmalaysiataxi;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.database.MatrixCursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 public class GovDeptActivity extends ListActivity {
+
+	/** names of government departments */
+	private String[] gov_depts;
+
+	/** descriptions of government departments */
+	private String[] gov_descs;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		String[] gov_depts = new String[] {
+		gov_depts = new String[] {
 			getResources().getString(R.string.spad),
 			getResources().getString(R.string.lpkp),
 			getResources().getString(R.string.jpj),
@@ -44,16 +52,35 @@ public class GovDeptActivity extends ListActivity {
 			getResources().getString(R.string.pemudah),
 			getResources().getString(R.string.ttpm),
 		};
-		setListAdapter(new ArrayAdapter<String>(this,
-					android.R.layout.simple_list_item_1,
-					gov_depts));
+
+		gov_descs = new String[] {
+			getResources().getString(R.string.spad_desc),
+			getResources().getString(R.string.lpkp_desc),
+			getResources().getString(R.string.jpj_desc),
+			getResources().getString(R.string.kpdnkk_desc),
+			getResources().getString(R.string.motour_desc),
+			getResources().getString(R.string.pcb_desc),
+			getResources().getString(R.string.pemudah_desc),
+			getResources().getString(R.string.ttpm_desc),
+		};
+
+		MatrixCursor c = new MatrixCursor(new String[] {"_id", "name", "desc"});
+		for (int i=0; i < gov_depts.length; ++i) {
+			c.addRow(new Object[] {i, gov_depts[i], gov_descs[i]});
+		}
+
+		setListAdapter(new SimpleCursorAdapter(this,
+					android.R.layout.two_line_list_item,
+					c, new String[] {"name", "desc"},
+					new int[] {android.R.id.text1, android.R.id.text2}));
 
 		ListView lv = getListView();
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int pos, long id) {
-				CharSequence item = ((TextView) view).getText();
+//				CharSequence item = ((TextView) view).getText();
+				CharSequence item = gov_depts[pos];
 				/* TODO: refactor duplicate Intent and Bundle code */
 				if (item.equals(getResources().getString(R.string.spad))) {
 					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);

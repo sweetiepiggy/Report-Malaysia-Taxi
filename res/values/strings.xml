@@ -96,14 +96,23 @@
 	<string name="saturday">Saturday</string>
 	<string name="sunday">Sunday</string>
 
-	<string name="spad">SPAD: Land Transport Commission</string>
-	<string name="lpkp">LPKP: Commercial Vehicle Licensing Board</string>
-	<string name="jpj">JPJ: Road Transport Department</string>
-	<string name="kpdnkk">KPDNKK: Ministry of Domestic Trade, Cooperative and Consumerism</string>
+	<string name="spad">SPAD</string>
+	<string name="lpkp">LPKP</string>
+	<string name="jpj">JPJ</string>
+	<string name="kpdnkk">KPDNKK</string>
 	<string name="motour">Ministry of Tourism</string>
 	<string name="pcb">Public Complaints Bureau</string>
-	<string name="pemudah">PEMUDA: Entrepreneur and Cooperatives Development Ministry</string>
+	<string name="pemudah">PEMUDA</string>
 	<string name="ttpm">Tribunal for Consumer Claims</string>
+	<string name="spad_desc">Land Transport Commission</string>
+	<string name="lpkp_desc">Commercial Vehicle Licensing Board</string>
+	<string name="jpj_desc">Road Transport Department</string>
+	<string name="kpdnkk_desc">Ministry of Domestic Trade, Cooperative and Consumerism</string>
+	<string name="motour_desc"></string>
+	<string name="pcb_desc"></string>
+	<string name="pemudah_desc">Entrepreneur and Cooperatives Development Ministry</string>
+	<string name="ttpm_desc"></string>
+
 	<string name="transit">TRANSIT</string>
 	<string name="nccc">National Consumer Complaints Centre</string>
 	<string name="spad_chairman">Chairman of SPAD</string>

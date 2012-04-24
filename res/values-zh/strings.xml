@@ -95,14 +95,24 @@
 	<string name="saturday">星期六</string>
 	<string name="sunday">星期日</string>
 
-	<string name="spad">SPAD: 陆路运输部门</string>
-	<string name="lpkp">LPKP: 商用车辆管辖部门</string>
-	<string name="jpj">JPJ: 交通部</string>
-	<string name="kpdnkk">KPDNKK: 国内贸易，合作社和消费部</string>
+	<string name="spad">SPAD</string>
+	<string name="lpkp">LPKP</string>
+	<string name="jpj">JPJ</string>
+	<string name="kpdnkk">KPDNKK</string>
 	<string name="motour">旅游部</string>
 	<string name="pcb">公共投诉局</string>
 	<string name="pemudah">企业家和合作社发展部</string>
 	<string name="ttpm">消费者投诉部门</string>
+	
+	<string name="spad_desc">陆路运输部门</string>
+	<string name="lpkp_desc">商用车辆管辖部门</string>
+	<string name="jpj_desc">交通部</string>
+	<string name="kpdnkk_desc">国内贸易，合作社和消费部</string>
+	<string name="motour_desc"></string>
+	<string name="pcb_desc"></string>
+	<string name="pemudah_desc"></string>
+	<string name="ttpm_desc"></string>
+	
 	<string name="transit">TRANSIT</string>
 	<string name="nccc">全国消费者投诉中心</string>
 	<string name="spad_chairman">SPAD主席</string>

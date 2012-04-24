@@ -96,14 +96,24 @@
 	<string name="saturday">Sabtu</string>
 	<string name="sunday">Ahad</string>
 
-	<string name="spad">SPAD: Suruhanjaya Pengangkutan Awam Darat</string>
-	<string name="lpkp">LPKP: Lembaga Pelesenan Kenderaan Perdagangan</string>
-	<string name="jpj">JPJ: Jabatan Pengangkutan Jalan</string>
-	<string name="kpdnkk">KPDNKK: Kementerian Perdagangan Dalam Negeri, Koperasi dan Kepenggunaan</string>
+	<string name="spad">SPAD</string>
+	<string name="lpkp">LPKP</string>
+	<string name="jpj">JPJ</string>
+	<string name="kpdnkk">KPDNKK</string>
 	<string name="motour">Kementerian Pelancongan</string>
 	<string name="pcb">Biro Pengaduan Awam</string>
 	<string name="pemudah">PEMUDA</string>
 	<string name="ttpm">Tribunal Tuntutan Pengguna Malaysia</string>
+
+	<string name="spad_desc">Suruhanjaya Pengangkutan Awam Darat</string>
+	<string name="lpkp_desc">Lembaga Pelesenan Kenderaan Perdagangan</string>
+	<string name="jpj_desc">Jabatan Pengangkutan Jalan</string>
+	<string name="kpdnkk_desc">Kementerian Perdagangan Dalam Negeri, Koperasi dan Kepenggunaan</string>
+	<string name="motour_desc"></string>
+	<string name="pcb_desc"></string>
+	<string name="pemudah_desc"></string>
+	<string name="ttpm_desc"></string>
+
 	<string name="transit">TRANSIT</string>
 	<string name="nccc">Pusat Khidmat Aduan Pengguna Nasional</string>
 	<string name="spad_chairman">Pengerusi SPAD</string>
