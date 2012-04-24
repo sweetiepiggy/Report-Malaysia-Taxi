@@ -50,6 +50,7 @@
         <activity android:name="GovMinisterActivity"></activity>
         <activity android:name="TextViewActivity"></activity>
         <activity android:name="AllFareCalcActivity"></activity>
+        <activity android:name="ContactViewActivity"></activity>
     </application>
 
 </manifest>

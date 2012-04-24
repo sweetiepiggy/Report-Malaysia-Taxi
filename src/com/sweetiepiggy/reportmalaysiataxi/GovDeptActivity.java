@@ -28,7 +28,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-import android.widget.TextView;
 
 public class GovDeptActivity extends ListActivity {
 
@@ -83,9 +82,14 @@ public class GovDeptActivity extends ListActivity {
 				CharSequence item = gov_depts[pos];
 				/* TODO: refactor duplicate Intent and Bundle code */
 				if (item.equals(getResources().getString(R.string.spad))) {
-					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
-					b.putString("text", getResources().getString(R.string.spad_contact));
+
+					b.putString("name", getResources().getString(R.string.spad));
+					b.putString("desc", getResources().getString(R.string.spad_desc));
+					b.putString("email", Constants.SPAD_EMAIL);
+					b.putString("website", Constants.SPAD_WEBSITE);
+					b.putString("twitter", Constants.SPAD_TWITTER);
 					intent.putExtras(b);
 					startActivity(intent);
 

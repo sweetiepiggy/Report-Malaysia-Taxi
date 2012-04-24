@@ -104,6 +104,7 @@
 	<string name="pcb">Public Complaints Bureau</string>
 	<string name="pemudah">PEMUDA</string>
 	<string name="ttpm">Tribunal for Consumer Claims</string>
+
 	<string name="spad_desc">Land Transport Commission</string>
 	<string name="lpkp_desc">Commercial Vehicle Licensing Board</string>
 	<string name="jpj_desc">Road Transport Department</string>
@@ -154,13 +155,6 @@ Traffic Police: rmp@rmp.gov.my
 		<item>NCCC: National Consumer Complaints Centre</item>
 	</string-array>
 
-	<string name="spad_contact">
-		SPAD\n
-		Land Transport Commission\n
-		aduan@spad.gov.my\n
-		http://www.spad.gov.my\n
-		http://twitter.com/aduanSPAD\n
-	</string>
 	<string name="lpkp_contact">
 		LPKP\n
 		Commercial Vehicle Licensing Board\n

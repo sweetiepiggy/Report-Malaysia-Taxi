@@ -155,13 +155,6 @@ Trafik Polis: rmp@rmp.gov.my
 		<item>NCCC: Pusat Khidmat Aduan Pengguna Nasional</item>
 	</string-array>
 
-	<string name="spad_contact">
-		SPAD\n
-		Suruhanjaya Pengangkutan Awam Darat\n
-		aduan@spad.gov.my\n
-		http://www.spad.gov.my\n
-		http://twitter.com/aduanSPAD\n
-	</string>
 	<string name="lpkp_contact">
 		LPKP\n
 		Lembaga Pelesenan Kenderaan Perdagangan\n

@@ -89,5 +89,9 @@ public class Constants
 	static final String TWITTER_ADDRESS1 = "@aduanSPAD";
 	static final String TWITTER_ADDRESS2 = "@transitmy";
 	static final String TWITTER_ADDRESS3 = "@myAduan";
+
+	static final String SPAD_EMAIL = "aduan@spad.gov.my";
+	static final String SPAD_WEBSITE = "http://www.spad.gov.my";
+	static final String SPAD_TWITTER = "http://twitter.com/aduanSPAD";
 }
 

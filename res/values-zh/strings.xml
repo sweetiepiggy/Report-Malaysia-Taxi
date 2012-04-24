@@ -103,7 +103,7 @@
 	<string name="pcb">公共投诉局</string>
 	<string name="pemudah">企业家和合作社发展部</string>
 	<string name="ttpm">消费者投诉部门</string>
-	
+
 	<string name="spad_desc">陆路运输部门</string>
 	<string name="lpkp_desc">商用车辆管辖部门</string>
 	<string name="jpj_desc">交通部</string>
@@ -112,7 +112,7 @@
 	<string name="pcb_desc"></string>
 	<string name="pemudah_desc"></string>
 	<string name="ttpm_desc"></string>
-	
+
 	<string name="transit">TRANSIT</string>
 	<string name="nccc">全国消费者投诉中心</string>
 	<string name="spad_chairman">SPAD主席</string>
@@ -154,13 +154,6 @@ SPAD: 陆路运输部门\n\n
 		<item>NCCC: 全国消费者投诉中心</item>
 	</string-array>
 
-	<string name="spad_contact">
-		SPAD\n
-		陆路运输部门\n
-		aduan@spad.gov.my\n
-		http://www.spad.gov.my\n
-		http://twitter.com/aduanSPAD\n
-	</string>
 	<string name="lpkp_contact">
 		LPKP\n
 		商用车辆管辖部门\n
