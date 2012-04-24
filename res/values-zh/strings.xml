@@ -154,14 +154,6 @@ SPAD: 陆路运输部门\n\n
 		<item>NCCC: 全国消费者投诉中心</item>
 	</string-array>
 
-	<string name="lpkp_contact">
-		LPKP\n
-		商用车辆管辖部门\n
-		SMS ADUAN LPKP to 15888\n
-		1-800-88-96-00\n
-		aduan@lpkp.gov.my\n
-		http://www.lpkp.gov.my\n
-	</string>
 	<string name="jpj_contact">
 		JPJ\n
 		交通部\n

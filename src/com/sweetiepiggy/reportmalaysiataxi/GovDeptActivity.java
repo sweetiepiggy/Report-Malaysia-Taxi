@@ -90,13 +90,21 @@ public class GovDeptActivity extends ListActivity {
 					b.putString("email", Constants.SPAD_EMAIL);
 					b.putString("website", Constants.SPAD_WEBSITE);
 					b.putString("twitter", Constants.SPAD_TWITTER);
+
 					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.lpkp))) {
-					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
-					b.putString("text", getResources().getString(R.string.lpkp_contact));
+
+					b.putString("name", getResources().getString(R.string.lpkp));
+					b.putString("desc", getResources().getString(R.string.lpkp_desc));
+					b.putString("email", Constants.LPKP_EMAIL);
+					b.putString("website", Constants.LPKP_WEBSITE);
+					b.putString("sms", Constants.LPKP_SMS);
+					b.putString("phone", Constants.LPKP_PHONE);
+
 					intent.putExtras(b);
 					startActivity(intent);
 

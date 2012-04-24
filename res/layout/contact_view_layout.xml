@@ -19,6 +19,7 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/layout"
 	android:orientation="vertical"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent">
@@ -30,6 +31,16 @@
 		android:layout_height="wrap_content" />
 	<TextView xmlns:android="http://schemas.android.com/apk/res/android"
 		android:id="@+id/desc"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" />
+	<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/sms"
+		android:autoLink="phone"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" />
+	<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/phone"
+		android:autoLink="phone"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content" />
 	<TextView xmlns:android="http://schemas.android.com/apk/res/android"

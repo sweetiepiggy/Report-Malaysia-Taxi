@@ -155,14 +155,6 @@ Traffic Police: rmp@rmp.gov.my
 		<item>NCCC: National Consumer Complaints Centre</item>
 	</string-array>
 
-	<string name="lpkp_contact">
-		LPKP\n
-		Commercial Vehicle Licensing Board\n
-		SMS ADUAN LPKP to 15888\n
-		1-800-88-96-00\n
-		aduan@lpkp.gov.my\n
-		http://www.lpkp.gov.my\n
-	</string>
 	<string name="jpj_contact">
 		JPJ\n
 		Road Transport Department\n

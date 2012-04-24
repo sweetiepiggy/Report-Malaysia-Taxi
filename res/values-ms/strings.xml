@@ -155,14 +155,6 @@ Trafik Polis: rmp@rmp.gov.my
 		<item>NCCC: Pusat Khidmat Aduan Pengguna Nasional</item>
 	</string-array>
 
-	<string name="lpkp_contact">
-		LPKP\n
-		Lembaga Pelesenan Kenderaan Perdagangan\n
-		SMS ADUAN LPKP ke 15888\n
-		1-800-88-96-00\n
-		aduan@lpkp.gov.my\n
-		http://www.lpkp.gov.my\n
-	</string>
 	<string name="jpj_contact">
 		JPJ\n
 		Jabatan Pengangkutan Jalan\n

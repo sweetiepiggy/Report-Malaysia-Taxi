@@ -21,6 +21,7 @@ package com.sweetiepiggy.reportmalaysiataxi;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class ContactViewActivity extends Activity {
@@ -32,19 +33,69 @@ public class ContactViewActivity extends Activity {
 		setContentView(R.layout.contact_view_layout);
 
 		Bundle b = getIntent().getExtras();
+		if (b == null) {
+			b = new Bundle();
+		}
 
-		String name = (b == null) ? "" : b.getString("name");
-		String desc = (b == null) ? "" : b.getString("desc");
-		String email = (b == null) ? "" : b.getString("email");
-		String website = (b == null) ? "" : b.getString("website");
-		String twitter = (b == null) ? "" : b.getString("twitter");
+		String name = b.getString("name");
+		String desc = b.getString("desc");
+		String sms = b.getString("sms");
+		String phone = b.getString("phone");
+		String email = b.getString("email");
+		String website = b.getString("website");
+		String twitter = b.getString("twitter");
 
-		((TextView) findViewById(R.id.name)).setText(name);
-		((TextView) findViewById(R.id.desc)).setText(desc);
-		((TextView) findViewById(R.id.email)).setText(email);
-		((TextView) findViewById(R.id.website)).setText(website);
-		((TextView) findViewById(R.id.twitter)).setText(twitter);
+		TextView name_v = (TextView) findViewById(R.id.name);
+		TextView desc_v = (TextView) findViewById(R.id.desc);
+		TextView sms_v = (TextView) findViewById(R.id.sms);
+		TextView phone_v = (TextView) findViewById(R.id.phone);
+		TextView email_v = (TextView) findViewById(R.id.email);
+		TextView website_v = (TextView) findViewById(R.id.website);
+		TextView twitter_v = (TextView) findViewById(R.id.twitter);
 
+		LinearLayout layout = (LinearLayout) findViewById(R.id.layout);
+
+		if (name == null) {
+			layout.removeView(name_v);
+		} else {
+			name_v.setText(name);
+		}
+
+		if (desc == null) {
+			layout.removeView(desc_v);
+		} else {
+			desc_v.setText(desc);
+		}
+
+		if (sms == null) {
+			layout.removeView(sms_v);
+		} else {
+			sms_v.setText(sms);
+		}
+
+		if (phone == null) {
+			layout.removeView(phone_v);
+		} else {
+			phone_v.setText(phone);
+		}
+
+		if (email == null) {
+			layout.removeView(email_v);
+		} else {
+			email_v.setText(email);
+		}
+
+		if (website == null) {
+			layout.removeView(website_v);
+		} else {
+			website_v.setText(website);
+		}
+
+		if (twitter == null) {
+			layout.removeView(twitter_v);
+		} else {
+			twitter_v.setText(twitter);
+		}
 	}
 
 }
