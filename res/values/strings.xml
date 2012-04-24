@@ -142,7 +142,7 @@
 
 	<string name="email_details">
 SPAD: Land Transport Commission\n\n
-Government Departments: LPKP, JPJ, KPDNKK\n\n
+Government Departments: LPKP, JPJ, KPDNKK, Ministry of Tourism, PEMUDAH, Public Complaints Bureau\n\n
 Consumer Groups: TRANSIT, NCCC\n\n
 Government Ministers: Minister of Transport, Minister of Tourism, Prime Minister\n\n
 News Media: The Star, Star Metro, Malay Mail, New Straits Times, New Straits Times Streets, The Sun, Malaysia Kini, The Malaysian Insider\n\n
@@ -186,6 +186,7 @@ Traffic Police: rmp@rmp.gov.my
 	<string name="pcb_contact">
 		Public Complaints Bureau\n
 		03 8872 5777\n
+		unitpro@pcb.gov.my\n
 		http://www.pcb.gov.my\n
 		http://apps1.pcb.gov.my/eApps/bpaia/ducmpl/AduCmplPublic/add.do?aplCode=en\n
 	</string>
