@@ -27,9 +27,10 @@ public class Constants
 	static final int RESULT_SET_CHINESE = Activity.RESULT_FIRST_USER + 1;
 	static final int RESULT_SET_MALAY = Activity.RESULT_FIRST_USER + 2;
 
-	public enum Lang_t {
-		LANG_DEFAULT, LANG_ENGLISH, LANG_CHINESE, LANG_MALAY
-	}
+	static final int LANG_DEFAULT = 0;
+	static final int LANG_ENGLISH = 1;
+	static final int LANG_CHINESE = 2;
+	static final int LANG_MALAY = 3;
 
 	static final String COMPLAINT_EMAIL_MALAY = "Aduan Teksi";
 	static final String COMPLAINT_MALAY = "ADUAN LPKP";

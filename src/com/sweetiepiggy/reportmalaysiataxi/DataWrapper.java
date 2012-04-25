@@ -23,8 +23,6 @@ import java.util.ArrayList;
 
 import android.net.Uri;
 
-import com.sweetiepiggy.reportmalaysiataxi.Constants.Lang_t;
-
 public class DataWrapper
 {
 	public int year;
@@ -37,7 +35,7 @@ public class DataWrapper
 
 	public boolean[] selected;
 
-	public Lang_t lang = Constants.Lang_t.LANG_DEFAULT;
+	public int lang = Constants.LANG_DEFAULT;
 
 	public ArrayList<Uri> photoUris;
 	public ArrayList<Uri> recordingUris;
@@ -47,5 +45,14 @@ public class DataWrapper
 	public boolean email_sent;
 	public boolean tweet_sent;
 	public boolean sms_sent;
+
+	public String loc;
+	public String reg;
+	public String other;
+
+	public boolean sms_checked;
+	public boolean email_checked;
+	public boolean tweet_checked;
+	public boolean youtube_checked;
 }
 

@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Locale;
 
 import android.app.Activity;
@@ -76,18 +77,102 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		mData = (DataWrapper) getLastNonConfigurationInstance();
-		if (mData == null) {
+
+		if (savedInstanceState == null) {
+			mData = (DataWrapper) getLastNonConfigurationInstance();
+			if (mData == null) {
+				mData = new DataWrapper();
+				init_vars(mData);
+			}
+		} else {
 			mData = new DataWrapper();
-			init_vars(mData);
-			init_entries();
+			restore_saved_state(savedInstanceState);
 		}
+
+		init_entries(mData);
 		init();
+	}
+
+	@Override
+	public void onSaveInstanceState(Bundle savedInstanceState)
+	{
+		savedInstanceState.putInt("year", mData.year);
+		savedInstanceState.putInt("month", mData.month);
+		savedInstanceState.putInt("day", mData.day);
+		savedInstanceState.putInt("hour", mData.hour);
+		savedInstanceState.putInt("minute", mData.minute);
+
+		savedInstanceState.putInt("lang", mData.lang);
+
+		savedInstanceState.putBooleanArray("selected", mData.selected);
+
+		savedInstanceState.putString("loc", ((EditText) findViewById(R.id.location_entry)).getText().toString());
+		savedInstanceState.putString("reg", ((EditText) findViewById(R.id.reg_entry)).getText().toString());
+		savedInstanceState.putString("other", ((EditText) findViewById(R.id.other_entry)).getText().toString());
+
+		savedInstanceState.putString("offence", mData.offence);
+		savedInstanceState.putString("offence_malay", mData.offenceMalay);
+
+		savedInstanceState.putBoolean("sms_checked", ((CheckBox) findViewById(R.id.sms_checkbox)).isChecked());
+		savedInstanceState.putBoolean("email_checked", ((CheckBox) findViewById(R.id.email_checkbox)).isChecked());
+		savedInstanceState.putBoolean("tweet_checked", ((CheckBox) findViewById(R.id.tweet_checkbox)).isChecked());
+		savedInstanceState.putBoolean("youtube_checked", ((CheckBox) findViewById(R.id.youtube_checkbox)).isChecked());
+
+		savedInstanceState.putStringArrayList("photo_uris", uriarr2strarr(mData.photoUris));
+		savedInstanceState.putStringArrayList("recording_uris", uriarr2strarr(mData.recordingUris));
+		savedInstanceState.putStringArrayList("video_uris", uriarr2strarr(mData.videoUris));
+
+		super.onSaveInstanceState(savedInstanceState);
+	}
+
+	@Override
+	public void onRestoreInstanceState(Bundle savedInstanceState)
+	{
+		super.onRestoreInstanceState(savedInstanceState);
+		restore_saved_state(savedInstanceState);
+	}
+
+	private void restore_saved_state(Bundle savedInstanceState)
+	{
+		mData.year = savedInstanceState.getInt("year");
+		mData.month = savedInstanceState.getInt("month");
+		mData.day = savedInstanceState.getInt("day");
+		mData.hour = savedInstanceState.getInt("hour");
+		mData.minute = savedInstanceState.getInt("minute");
+
+		mData.lang = savedInstanceState.getInt("lang");
+
+		mData.selected = savedInstanceState.getBooleanArray("selected");
+
+		mData.offence = savedInstanceState.getString("offence");
+		mData.offenceMalay = savedInstanceState.getString("offence_malay");
+
+		mData.loc = savedInstanceState.getString("loc");
+		mData.reg = savedInstanceState.getString("reg");
+		mData.other = savedInstanceState.getString("other");
+
+		mData.sms_checked = savedInstanceState.getBoolean("sms_checked");
+		mData.email_checked = savedInstanceState.getBoolean("email_checked");
+		mData.tweet_checked = savedInstanceState.getBoolean("tweet_checked");
+		mData.youtube_checked = savedInstanceState.getBoolean("youtube_checked");
+
+		mData.photoUris = strarr2uriarr(savedInstanceState.getStringArrayList("photo_uris"));
+		mData.recordingUris = strarr2uriarr(savedInstanceState.getStringArrayList("recording_uris"));
+		mData.videoUris = strarr2uriarr(savedInstanceState.getStringArrayList("video_uris"));
 	}
 
 	@Override
 	public Object onRetainNonConfigurationInstance()
 	{
+		mData.loc = ((EditText) findViewById(R.id.location_entry)).getText().toString();
+		mData.reg = ((EditText) findViewById(R.id.reg_entry)).getText().toString();
+		mData.other = ((EditText) findViewById(R.id.other_entry)).getText().toString();
+
+		mData.sms_checked = ((CheckBox) findViewById(R.id.sms_checkbox)).isChecked();
+		mData.email_checked = ((CheckBox) findViewById(R.id.email_checkbox)).isChecked();
+		mData.tweet_checked = ((CheckBox) findViewById(R.id.tweet_checkbox)).isChecked();
+		mData.youtube_checked = ((CheckBox) findViewById(R.id.youtube_checkbox)).isChecked();
+
 		return mData;
 	}
 
@@ -95,12 +180,12 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	public void onConfigurationChanged(Configuration new_config)
 	{
 		super.onConfigurationChanged(new_config);
-		init_lang();
+		set_lang(mData.lang);
 	}
 
 	private void init()
 	{
-		init_lang();
+		set_lang(mData.lang);
 		init_date_time_buttons();
 
 		init_offence_spinner();
@@ -112,15 +197,14 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		update_time_label(mData.hour, mData.minute);
 	}
 
-	/* FIXME: retaining language configuration is not working */
-	private void init_lang()
+	private void set_lang(int lang)
 	{
-		if (mData.lang == Constants.Lang_t.LANG_ENGLISH) {
-			change_lang("en");
-		} else if (mData.lang == Constants.Lang_t.LANG_CHINESE) {
-			change_lang("zh");
-		} else if (mData.lang == Constants.Lang_t.LANG_MALAY) {
-			change_lang("ms");
+		if (lang == Constants.LANG_ENGLISH) {
+			set_lang("en");
+		} else if (lang == Constants.LANG_CHINESE) {
+			set_lang("zh");
+		} else if (lang == Constants.LANG_MALAY) {
+			set_lang("ms");
 		}
 	}
 
@@ -187,19 +271,20 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		((TextView)findViewById(R.id.recorder_label)).setText(recording_size);
 	}
 
-	private void init_entries()
+	/* TODO: init offence spinner choice */
+	private void init_entries(DataWrapper data)
 	{
-		((CheckBox) findViewById(R.id.sms_checkbox)).setChecked(true);
-		((CheckBox) findViewById(R.id.email_checkbox)).setChecked(true);
-		((CheckBox) findViewById(R.id.tweet_checkbox)).setChecked(true);
-		((CheckBox) findViewById(R.id.youtube_checkbox)).setChecked(false);
+		((CheckBox) findViewById(R.id.sms_checkbox)).setChecked(data.sms_checked);
+		((CheckBox) findViewById(R.id.email_checkbox)).setChecked(data.email_checked);
+		((CheckBox) findViewById(R.id.tweet_checkbox)).setChecked(data.tweet_checked);
+		((CheckBox) findViewById(R.id.youtube_checkbox)).setChecked(data.youtube_checked);
 
-		((EditText) findViewById(R.id.location_entry)).setText("");
-		((EditText) findViewById(R.id.reg_entry)).setText("");
-		((EditText) findViewById(R.id.other_entry)).setText("");
-		((TextView) findViewById(R.id.camera_label)).setText("");
-		((TextView) findViewById(R.id.recorder_label)).setText("");
-		((TextView) findViewById(R.id.video_label)).setText("");
+		((EditText) findViewById(R.id.location_entry)).setText(data.loc);
+		((EditText) findViewById(R.id.reg_entry)).setText(data.reg);
+		((EditText) findViewById(R.id.other_entry)).setText(data.other);
+		((TextView) findViewById(R.id.camera_label)).setText(Integer.toString(data.photoUris.size()));
+		((TextView) findViewById(R.id.recorder_label)).setText(Integer.toString(data.recordingUris.size()));
+		((TextView) findViewById(R.id.video_label)).setText(Integer.toString(data.videoUris.size()));
 	}
 
 	private void init_submit_button()
@@ -238,7 +323,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			public void onClick(View v) {
 				init_date_time_buttons();
 				init_vars(mData);
-				init_entries();
+				init_entries(mData);
 				update_date_label(mData.year, mData.month, mData.day);
 				update_time_label(mData.hour, mData.minute);
 			}
@@ -289,9 +374,19 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		data.email_sent = false;
 		data.tweet_sent = false;
 		data.sms_sent = false;
+
+		data.loc = "";
+		data.reg = "";
+		data.other = "";
+
+		data.sms_checked = true;
+		data.email_checked = true;
+		data.tweet_checked = true;
+		data.youtube_checked = false;
+
 	}
 
-	private void change_lang(String lang_code)
+	private void set_lang(String lang_code)
 	{
 		Locale locale = new Locale(lang_code);
 		Locale.setDefault(locale);
@@ -797,13 +892,13 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			break;
 		case ACTIVITY_UPDATE_SETTINGS:
 			if (resultCode == Constants.RESULT_SET_ENGLISH) {
-				mData.lang = Constants.Lang_t.LANG_ENGLISH;
+				mData.lang = Constants.LANG_ENGLISH;
 				refresh_activity();
 			} else if (resultCode == Constants.RESULT_SET_CHINESE) {
-				mData.lang = Constants.Lang_t.LANG_CHINESE;
+				mData.lang = Constants.LANG_CHINESE;
 				refresh_activity();
 			} else if (resultCode == Constants.RESULT_SET_MALAY) {
-				mData.lang = Constants.Lang_t.LANG_MALAY;
+				mData.lang = Constants.LANG_MALAY;
 				refresh_activity();
 			}
 			break;
@@ -857,6 +952,26 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		default:
 			return super.onOptionsItemSelected(item);
 		}
+	}
+
+	private ArrayList<Uri> strarr2uriarr(ArrayList<String> str_arr)
+	{
+		ArrayList<Uri> ret = new ArrayList<Uri>();
+		Iterator<String> itr = str_arr.iterator();
+		while (itr.hasNext()) {
+			ret.add(Uri.parse(itr.next()));
+		}
+		return ret;
+	}
+
+	private ArrayList<String> uriarr2strarr(ArrayList<Uri> uri_arr)
+	{
+		ArrayList<String> ret = new ArrayList<String>();
+		Iterator<Uri> itr = uri_arr.iterator();
+		while (itr.hasNext()) {
+			ret.add(itr.next().toString());
+		}
+		return ret;
 	}
 }
 
