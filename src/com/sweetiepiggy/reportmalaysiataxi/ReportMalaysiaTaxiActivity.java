@@ -83,13 +83,15 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			if (mData == null) {
 				mData = new DataWrapper();
 				init_vars(mData);
+				update_date_label(mData.year, mData.month, mData.day);
+				update_time_label(mData.hour, mData.minute);
 			}
 		} else {
 			mData = new DataWrapper();
 			restore_saved_state(savedInstanceState);
+			set_lang(mData.lang);
 		}
 
-		init_entries(mData);
 		init();
 	}
 
@@ -106,17 +108,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 		savedInstanceState.putBooleanArray("selected", mData.selected);
 
-		savedInstanceState.putString("loc", ((EditText) findViewById(R.id.location_entry)).getText().toString());
-		savedInstanceState.putString("reg", ((EditText) findViewById(R.id.reg_entry)).getText().toString());
-		savedInstanceState.putString("other", ((EditText) findViewById(R.id.other_entry)).getText().toString());
-
 		savedInstanceState.putString("offence", mData.offence);
 		savedInstanceState.putString("offence_malay", mData.offenceMalay);
-
-		savedInstanceState.putBoolean("sms_checked", ((CheckBox) findViewById(R.id.sms_checkbox)).isChecked());
-		savedInstanceState.putBoolean("email_checked", ((CheckBox) findViewById(R.id.email_checkbox)).isChecked());
-		savedInstanceState.putBoolean("tweet_checked", ((CheckBox) findViewById(R.id.tweet_checkbox)).isChecked());
-		savedInstanceState.putBoolean("youtube_checked", ((CheckBox) findViewById(R.id.youtube_checkbox)).isChecked());
 
 		savedInstanceState.putStringArrayList("photo_uris", uriarr2strarr(mData.photoUris));
 		savedInstanceState.putStringArrayList("recording_uris", uriarr2strarr(mData.recordingUris));
@@ -147,15 +140,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		mData.offence = savedInstanceState.getString("offence");
 		mData.offenceMalay = savedInstanceState.getString("offence_malay");
 
-		mData.loc = savedInstanceState.getString("loc");
-		mData.reg = savedInstanceState.getString("reg");
-		mData.other = savedInstanceState.getString("other");
-
-		mData.sms_checked = savedInstanceState.getBoolean("sms_checked");
-		mData.email_checked = savedInstanceState.getBoolean("email_checked");
-		mData.tweet_checked = savedInstanceState.getBoolean("tweet_checked");
-		mData.youtube_checked = savedInstanceState.getBoolean("youtube_checked");
-
 		mData.photoUris = strarr2uriarr(savedInstanceState.getStringArrayList("photo_uris"));
 		mData.recordingUris = strarr2uriarr(savedInstanceState.getStringArrayList("recording_uris"));
 		mData.videoUris = strarr2uriarr(savedInstanceState.getStringArrayList("video_uris"));
@@ -164,15 +148,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	@Override
 	public Object onRetainNonConfigurationInstance()
 	{
-		mData.loc = ((EditText) findViewById(R.id.location_entry)).getText().toString();
-		mData.reg = ((EditText) findViewById(R.id.reg_entry)).getText().toString();
-		mData.other = ((EditText) findViewById(R.id.other_entry)).getText().toString();
-
-		mData.sms_checked = ((CheckBox) findViewById(R.id.sms_checkbox)).isChecked();
-		mData.email_checked = ((CheckBox) findViewById(R.id.email_checkbox)).isChecked();
-		mData.tweet_checked = ((CheckBox) findViewById(R.id.tweet_checkbox)).isChecked();
-		mData.youtube_checked = ((CheckBox) findViewById(R.id.youtube_checkbox)).isChecked();
-
 		return mData;
 	}
 
@@ -185,7 +160,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 	private void init()
 	{
-		set_lang(mData.lang);
 		init_date_time_buttons();
 
 		init_offence_spinner();
@@ -193,8 +167,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		init_submit_button();
 		init_cancel_button();
 		init_call_button();
-		update_date_label(mData.year, mData.month, mData.day);
-		update_time_label(mData.hour, mData.minute);
 	}
 
 	private void set_lang(int lang)
@@ -272,19 +244,19 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	}
 
 	/* TODO: init offence spinner choice */
-	private void init_entries(DataWrapper data)
+	private void init_entries()
 	{
-		((CheckBox) findViewById(R.id.sms_checkbox)).setChecked(data.sms_checked);
-		((CheckBox) findViewById(R.id.email_checkbox)).setChecked(data.email_checked);
-		((CheckBox) findViewById(R.id.tweet_checkbox)).setChecked(data.tweet_checked);
-		((CheckBox) findViewById(R.id.youtube_checkbox)).setChecked(data.youtube_checked);
+		((CheckBox) findViewById(R.id.sms_checkbox)).setChecked(true);
+		((CheckBox) findViewById(R.id.email_checkbox)).setChecked(true);
+		((CheckBox) findViewById(R.id.tweet_checkbox)).setChecked(true);
+		((CheckBox) findViewById(R.id.youtube_checkbox)).setChecked(false);
 
-		((EditText) findViewById(R.id.location_entry)).setText(data.loc);
-		((EditText) findViewById(R.id.reg_entry)).setText(data.reg);
-		((EditText) findViewById(R.id.other_entry)).setText(data.other);
-		((TextView) findViewById(R.id.camera_label)).setText(Integer.toString(data.photoUris.size()));
-		((TextView) findViewById(R.id.recorder_label)).setText(Integer.toString(data.recordingUris.size()));
-		((TextView) findViewById(R.id.video_label)).setText(Integer.toString(data.videoUris.size()));
+		((EditText) findViewById(R.id.location_entry)).setText("");
+		((EditText) findViewById(R.id.reg_entry)).setText("");
+		((EditText) findViewById(R.id.other_entry)).setText("");
+		((TextView) findViewById(R.id.camera_label)).setText("");
+		((TextView) findViewById(R.id.recorder_label)).setText("");
+		((TextView) findViewById(R.id.video_label)).setText("");
 	}
 
 	private void init_submit_button()
@@ -323,7 +295,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			public void onClick(View v) {
 				init_date_time_buttons();
 				init_vars(mData);
-				init_entries(mData);
+				init_entries();
 				update_date_label(mData.year, mData.month, mData.day);
 				update_time_label(mData.hour, mData.minute);
 			}
@@ -374,15 +346,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		data.email_sent = false;
 		data.tweet_sent = false;
 		data.sms_sent = false;
-
-		data.loc = "";
-		data.reg = "";
-		data.other = "";
-
-		data.sms_checked = true;
-		data.email_checked = true;
-		data.tweet_checked = true;
-		data.youtube_checked = false;
 
 	}
 
