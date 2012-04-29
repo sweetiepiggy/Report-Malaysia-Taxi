@@ -78,8 +78,7 @@ public class GovDeptActivity extends ListActivity {
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int pos, long id) {
-//				CharSequence item = ((TextView) view).getText();
-				CharSequence item = gov_depts[pos];
+				CharSequence item = gov_depts[(int) id];
 				/* TODO: refactor duplicate Intent and Bundle code */
 				if (item.equals(getResources().getString(R.string.spad))) {
 					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
@@ -109,44 +108,78 @@ public class GovDeptActivity extends ListActivity {
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.jpj))) {
-					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
-					b.putString("text", getResources().getString(R.string.jpj_contact));
+
+					b.putString("name", getResources().getString(R.string.jpj));
+					b.putString("desc", getResources().getString(R.string.jpj_desc));
+					b.putString("email", Constants.JPJ_EMAIL);
+					b.putString("website", Constants.JPJ_WEBSITE);
+					b.putString("phone", Constants.JPJ_PHONE);
+
 					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.kpdnkk))) {
-					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
-					b.putString("text", getResources().getString(R.string.kpdnkk_contact));
+
+					b.putString("name", getResources().getString(R.string.kpdnkk));
+					b.putString("desc", getResources().getString(R.string.kpdnkk_desc));
+					b.putString("email", Constants.KPDNKK_EMAIL);
+					b.putString("website", Constants.KPDNKK_WEBSITE);
+
 					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.motour))) {
-					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
-					b.putString("text", getResources().getString(R.string.motour_contact));
+
+					b.putString("name", getResources().getString(R.string.motour));
+					b.putString("email", Constants.MOTOUR_EMAIL);
+					b.putString("website", Constants.MOTOUR_WEBSITE);
+					b.putString("form", getResources().getString(R.string.motour_form));
+					b.putString("phone", Constants.MOTOUR_PHONE);
+
 					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.pcb))) {
-					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
-					b.putString("text", getResources().getString(R.string.pcb_contact));
+
+					b.putString("name", getResources().getString(R.string.pcb));
+					b.putString("phone", Constants.PCB_PHONE);
+					b.putString("email", Constants.PCB_EMAIL);
+					b.putString("website", Constants.PCB_WEBSITE);
+					b.putString("form", getResources().getString(R.string.pcb_form));
+
 					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.pemudah))) {
-					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
-					b.putString("text", getResources().getString(R.string.pemudah_contact));
+
+					b.putString("name", getResources().getString(R.string.pemudah));
+					b.putString("desc", getResources().getString(R.string.pemudah_desc));
+					b.putString("phone", Constants.PEMUDAH_PHONE);
+					b.putString("email", Constants.PEMUDAH_EMAIL);
+					b.putString("website", Constants.PEMUDAH_WEBSITE);
+					b.putString("form", getResources().getString(R.string.pemudah_form));
+
 					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.ttpm))) {
-					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
-					b.putString("text", getResources().getString(R.string.ttpm_contact));
+
+					b.putString("name", getResources().getString(R.string.ttpm));
+					b.putString("phone", Constants.TTPM_PHONE);
+					b.putString("website", Constants.TTPM_WEBSITE);
+
 					intent.putExtras(b);
 					startActivity(intent);
 				}

@@ -115,7 +115,9 @@
 	<string name="ttpm_desc"></string>
 
 	<string name="transit">TRANSIT</string>
-	<string name="nccc">Pusat Khidmat Aduan Pengguna Nasional</string>
+	<string name="transit_desc"></string>
+	<string name="nccc">NCCC</string>
+	<string name="nccc_desc">Pusat Khidmat Aduan Pengguna Nasional</string>
 	<string name="spad_chairman">Pengerusi SPAD</string>
 	<string name="mo_transport">Menteri Pengangkutan</string>
 	<string name="mo_tourism">Menteri Pelancongan</string>
@@ -155,87 +157,18 @@ Trafik Polis: rmp@rmp.gov.my
 		<item>NCCC: Pusat Khidmat Aduan Pengguna Nasional</item>
 	</string-array>
 
-	<string name="jpj_contact">
-		JPJ\n
-		Jabatan Pengangkutan Jalan\n
-		0388884244\n
-		aduantrafik@jpj.gov.my\n
-		http://portal.jpj.gov.my\n
+	<string name="motour_form">
+		http://motour.gov.my/bm/hubungi-kami/maklum-balas/aduan-awam.html
 	</string>
-	<string name="kpdnkk_contact">
-		KPDNKK\n
-		Kementerian Perdagangan Dalam Negeri, Koperasi dan Kepenggunaan\n
-		e-aduan@kpdnkk.gov.my\n
-		http://eaduan.kpdnkk.gov.my\n
+	<string name="pcb_form">
+		http://apps1.pcb.gov.my/eApps/bpaiaducmpl/AduCmplPublic/add.do?aplCode=ms
 	</string>
-	<string name="motour_contact">
-		Kementerian Pelancongan\n
-		03 8891 7000\n
-		info@motour.gov.my\n
-		http://motour.gov.my/bm.html\n
-		http://motour.gov.my/bm/hubungi-kami/maklum-balas/aduan-awam.html\n
+	<string name="pemudah_form">
+		http://pemudah.bpa.jpm.my/eApps/sdmscasepool/SdmsCasePool/add.do?aplCode=ms
 	</string>
-	<string name="pcb_contact">
-		Biro Pengaduan Awam\n
-		03 8872 5777\n
-		http://www.pcb.gov.my\n
-		http://apps1.pcb.gov.my/eApps/bpaia/ducmpl/AduCmplPublic/add.do\n
-	</string>
-	<string name="pemudah_contact">
-		PEMUDAH\n
-		03 6200 0185\n
-		bahria@miti.gov.my\n
-		http://www.pemudah.gov.my\n
-		http://www.pemudah.gov.my/web/guest/hubungi\n
-	</string>
-	<string name="ttpm_contact">
-		Tribunal Tuntutan Pengguna Malaysia\n
-		1 800 88 9811 atau 03 8882 5822\n
-		http://ttpm.kpdnkk.gov.my\n
-	</string>
-	<string name="transit_contact">
-		TRANSIT\n
-		klangvalley.transit@gmail.com\n
-		http://transitmy.org\n
-		http://twitter.com/transitmy\n
-	</string>
-	<string name="nccc_contact">
-		NCCC\n
-		Pusat Khidmat Aduan Pengguna Nasional\n
-		03 7877 9000\n
-		nccc@nccc.org.my
-		http://www.nccc.org.my\n
-		http://www.nccc.org.my/v2/index.php/e-aduan\n
-		http://twitter.com/myaduan\n
-	</string>
-	<string name="spad_chairman_contact">
-		Syed Hamid Albar\n
-		Pengerusi SPAD\n
-		http://twitter.com/syedhamidalbar\n
-	</string>
-	<string name="motransport_contact">
-		YB Dato Seri Kong Cho Ha\n
-		Menteri Pengangkutan\n
-		menteri@mot.gov.my\n
-		http://twitter.com/kongchoha\n
-	</string>
-	<string name="motourism_contact">
-		YB Dato Sri Dr. Ng Yen Yen\n
-		Menteri Pelancongan\n
-		yenyenng@motour.gov.my\n
-		http://twitter.com/DrYenYen\n
-	</string>
-	<string name="prime_minister_contact">
-		Dato Sri Haji Mohammad Najib bin Tun Haji Abdul Razak\n
-		Perdana Menteri\n
-		najib@1malaysia.com.my\n
-		http://twitter.com/NajibRazak\n
-	</string>
-	<string name="traffic_police_contact">
-		Trafik Polis\n
-		rmp@rmp.gov.my\n
-		http://www.rmp.gov.my\n
-	</string>
+	<string name="mo_transport_name">YB Dato Seri Kong Cho Ha</string>
+	<string name="mo_tourism_name">YB Dato Sri Dr. Ng Yen Yen</string>
+	<string name="traffic_police_contact">Trafik Polis</string>
 	<string name="news_media_contact">
 		The Star\n
 		editor@thestar.com.my\n\n

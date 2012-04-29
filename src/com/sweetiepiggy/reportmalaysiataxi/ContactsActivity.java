@@ -69,9 +69,13 @@ public class ContactsActivity extends ListActivity {
 					startActivity(intent);
 
 				} else if (item.equals(contact_choices[4])) {
-					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
-					b.putString("text", getResources().getString(R.string.traffic_police_contact));
+
+					b.putString("name", getResources().getString(R.string.traffic_police));
+					b.putString("email", Constants.TRAFFIC_POLICE_EMAIL);
+					b.putString("website", Constants.TRAFFIC_POLICE_WEBSITE);
+
 					intent.putExtras(b);
 					startActivity(intent);
 				}

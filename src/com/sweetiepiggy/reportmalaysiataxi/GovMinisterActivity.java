@@ -51,29 +51,48 @@ public class GovMinisterActivity extends ListActivity {
 					int pos, long id) {
 				CharSequence item = ((TextView) view).getText();
 				if (item.equals(getResources().getString(R.string.spad_chairman))) {
-					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
-					b.putString("text", getResources().getString(R.string.spad_chairman_contact));
+
+					b.putString("name", Constants.SPAD_CHAIRMAN_NAME);
+					b.putString("desc", getResources().getString(R.string.spad_chairman));
+					b.putString("twitter", Constants.SPAD_CHAIRMAN_TWITTER);
+
 					intent.putExtras(b);
 					startActivity(intent);
 				} else if (item.equals(getResources().getString(R.string.mo_transport))) {
-					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
-					b.putString("text", getResources().getString(R.string.motransport_contact));
+
+					b.putString("name", getResources().getString(R.string.mo_transport_name));
+					b.putString("desc", getResources().getString(R.string.mo_transport));
+					b.putString("email", Constants.MO_TRANSPORT_EMAIL);
+					b.putString("twitter", Constants.MO_TRANSPORT_TWITTER);
+
 					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.mo_tourism))) {
-					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
-					b.putString("text", getResources().getString(R.string.motourism_contact));
+
+					b.putString("name", getResources().getString(R.string.mo_tourism_name));
+					b.putString("desc", getResources().getString(R.string.mo_tourism));
+					b.putString("email", Constants.MO_TOURISM_EMAIL);
+					b.putString("twitter", Constants.MO_TOURISM_TWITTER);
+
 					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.prime_minister))) {
-					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
-					b.putString("text", getResources().getString(R.string.prime_minister_contact));
+
+					b.putString("name", Constants.PRIME_MINISTER_NAME);
+					b.putString("desc", getResources().getString(R.string.prime_minister));
+					b.putString("email", Constants.PRIME_MINISTER_EMAIL);
+					b.putString("twitter", Constants.PRIME_MINISTER_TWITTER);
+
 					intent.putExtras(b);
 					startActivity(intent);
 				}

@@ -115,7 +115,9 @@
 	<string name="ttpm_desc"></string>
 
 	<string name="transit">TRANSIT</string>
-	<string name="nccc">National Consumer Complaints Centre</string>
+	<string name="transit_desc">A group of concerned citizens for the improvement of mass transit</string>
+	<string name="nccc">NCCC</string>
+	<string name="nccc_desc">National Consumer Complaints Centre</string>
 	<string name="spad_chairman">Chairman of SPAD</string>
 	<string name="mo_transport">Minister of Transport</string>
 	<string name="mo_tourism">Minister of Tourism</string>
@@ -155,90 +157,18 @@ Traffic Police: rmp@rmp.gov.my
 		<item>NCCC: National Consumer Complaints Centre</item>
 	</string-array>
 
-	<string name="jpj_contact">
-		JPJ\n
-		Road Transport Department\n
-		03 8888 4244\n
-		aduantrafik@jpj.gov.my\n
-		http://portal.jpj.gov.my\n
+	<string name="motour_form">
+		http://www.motour.gov.my/en/contact-us/feedback/public-complaints.html
 	</string>
-	<string name="kpdnkk_contact">
-		KPDNKK\n
-		Ministry of Domestic Trade, Cooperative and Consumerism\n
-		e-aduan@kpdnkk.gov.my\n
-		http://eaduan.kpdnkk.gov.my\n
+	<string name="pcb_form">
+		http://apps1.pcb.gov.my/eApps/bpaiaducmpl/AduCmplPublic/add.do?aplCode=en
 	</string>
-	<string name="motour_contact">
-		Ministry of Tourism\n
-		03 8891 7000\n
-		info@motour.gov.my\n
-		http://www.motour.gov.my\n
-		http://www.motour.gov.my/en/contact-us/feedback/public-complaints.html\n
+	<string name="pemudah_form">
+		http://pemudah.bpa.jpm.my/eApps/sdmscasepool/SdmsCasePool/add.do?aplCode=en
 	</string>
-	<string name="pcb_contact">
-		Public Complaints Bureau\n
-		03 8872 5777\n
-		unitpro@pcb.gov.my\n
-		http://www.pcb.gov.my\n
-		http://apps1.pcb.gov.my/eApps/bpaia/ducmpl/AduCmplPublic/add.do?aplCode=en\n
-	</string>
-	<string name="pemudah_contact">
-		PEMUDAH\n
-		Entrepreneur and Cooperatives Development Ministry\n
-		03 6200 0185\n
-		bahria@miti.gov.my\n
-		http://www.pemudah.gov.my\n
-		http://www.pemudah.gov.my/web/guest/hubungi\n
-	</string>
-	<string name="ttpm_contact">
-		Tribunal for Consumer Claims Malaysia\n
-		1 800 88 9811 or 03 8882 5822\n
-		http://ttpm.kpdnkk.gov.my\n
-	</string>
-	<string name="transit_contact">
-		TRANSIT\n
-		A group of concerned citizens for the improvement of mass transit\n
-		klangvalley.transit@gmail.com\n
-		http://transitmy.org\n
-		http://twitter.com/transitmy\n
-	</string>
-	<string name="nccc_contact">
-		NCCC\n
-		National Consumer Complaints Centre\n
-		03 7877 9000\n
-		nccc@nccc.org.my
-		http://www.nccc.org.my\n
-		http://www.nccc.org.my/v2/index.php/e-aduan\n
-		http://twitter.com/myaduan\n
-	</string>
-	<string name="spad_chairman_contact">
-		Syed Hamid Albar\n
-		Chairman of SPAD\n
-		http://twitter.com/syedhamidalbar\n
-	</string>
-	<string name="motransport_contact">
-		YB Dato Seri Kong Cho Ha\n
-		Minister of Transport\n
-		menteri@mot.gov.my\n
-		http://twitter.com/kongchoha\n
-	</string>
-	<string name="motourism_contact">
-		YB Dato Sri Dr. Ng Yen Yen\n
-		Minister of Tourism\n
-		yenyenng@motour.gov.my\n
-		http://twitter.com/DrYenYen\n
-	</string>
-	<string name="prime_minister_contact">
-		Dato Sri Haji Mohammad Najib bin Tun Haji Abdul Razak\n
-		Prime Minister\n
-		najib@1malaysia.com.my\n
-		http://twitter.com/NajibRazak\n
-	</string>
-	<string name="traffic_police_contact">
-		Traffic Police\n
-		rmp@rmp.gov.my\n
-		http://www.rmp.gov.my\n
-	</string>
+	<string name="mo_transport_name">YB Dato Seri Kong Cho Ha</string>
+	<string name="mo_tourism_name">YB Dato Sri Dr. Ng Yen Yen</string>
+	<string name="traffic_police">Traffic Police</string>
 	<string name="news_media_contact">
 		The Star\n
 		editor@thestar.com.my\n\n

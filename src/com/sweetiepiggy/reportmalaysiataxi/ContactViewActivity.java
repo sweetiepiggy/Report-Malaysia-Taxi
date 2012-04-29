@@ -43,6 +43,7 @@ public class ContactViewActivity extends Activity {
 		String phone = b.getString("phone");
 		String email = b.getString("email");
 		String website = b.getString("website");
+		String form = b.getString("form");
 		String twitter = b.getString("twitter");
 
 		TextView name_v = (TextView) findViewById(R.id.name);
@@ -51,6 +52,7 @@ public class ContactViewActivity extends Activity {
 		TextView phone_v = (TextView) findViewById(R.id.phone);
 		TextView email_v = (TextView) findViewById(R.id.email);
 		TextView website_v = (TextView) findViewById(R.id.website);
+		TextView form_v = (TextView) findViewById(R.id.form);
 		TextView twitter_v = (TextView) findViewById(R.id.twitter);
 
 		LinearLayout layout = (LinearLayout) findViewById(R.id.layout);
@@ -89,6 +91,12 @@ public class ContactViewActivity extends Activity {
 			layout.removeView(website_v);
 		} else {
 			website_v.setText(website);
+		}
+
+		if (form == null) {
+			layout.removeView(form_v);
+		} else {
+			form_v.setText(form);
 		}
 
 		if (twitter == null) {
