@@ -45,5 +45,14 @@ public class DataWrapper
 	public boolean email_sent;
 	public boolean tweet_sent;
 	public boolean sms_sent;
+
+	public String loc;
+	public String reg;
+	public String other;
+
+	public boolean sms_checked;
+	public boolean email_checked;
+	public boolean tweet_checked;
+	public boolean youtube_checked;
 }
 
