@@ -262,7 +262,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		});
 	}
 
-	/* TODO: init offence spinner choice */
+	/* TODO: init offence spinner choice? */
 	private void init_entries(DataWrapper data)
 	{
 		update_date_label(mData.year, mData.month, mData.day);
@@ -322,6 +322,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			public void onClick(View v) {
 				init_date_time_buttons();
 				init_vars(mData);
+				init_offence_spinner();
 				init_entries(mData);
 			}
 		});
