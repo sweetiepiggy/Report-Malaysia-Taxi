@@ -530,7 +530,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				Bundle b = new Bundle();
 				b.putString("text", getResources().getString(R.string.email_details));
 				intent.putExtras(b);
-				startActivity(intent);
+				startActivityForResult(intent, ACTIVITY_SUBMIT);
 			}
 		});
 		AlertDialog alert = builder.create();
