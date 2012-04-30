@@ -79,12 +79,6 @@ public class Constants
 		"rmp@rmp.gov.my; "
 	};
 
-	static final String[] TEL_NUMBERS = {
-		"1800889600",
-		"0388884244",
-		"0378779000"
-	};
-
 	static final String SMS_NUMBER = "15888";
 
 	static final String TWITTER_ADDRESS1 = "@aduanSPAD";
@@ -98,7 +92,7 @@ public class Constants
 	static final String LPKP_EMAIL = "aduan@lpkp.gov.my";
 	static final String LPKP_WEBSITE = "http://www.lpkp.gov.my";
 	static final String LPKP_SMS = "15888";
-	static final String LPKP_PHONE = "1-800-88-96-00";
+	static final String LPKP_PHONE = "1 800 88 96 00";
 
 	static final String JPJ_EMAIL = "aduantrafik@jpj.gov.my";
 	static final String JPJ_WEBSITE = "http://portal.jpj.gov.my";

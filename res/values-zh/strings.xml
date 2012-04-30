@@ -150,12 +150,6 @@ SPAD: 陆路运输部门\n\n
 交通警： rmp@rmp.gov.my
 	</string>
 
-	<string-array name="tel_number_names">
-		<item>LPKP: 商用车辆管辖部门</item>
-		<item>JPJ: 交通部</item>
-		<item>NCCC: 全国消费者投诉中心</item>
-	</string-array>
-
 	<string name="motour_form">
 		http://www.motour.gov.my/en/contact-us/feedback/public-complaints.html
 	</string>

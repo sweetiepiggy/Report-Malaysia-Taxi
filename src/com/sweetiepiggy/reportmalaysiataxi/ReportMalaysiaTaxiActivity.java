@@ -332,20 +332,11 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		Button call_button = (Button)findViewById(R.id.call_button);
 		call_button.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				String[] tel_number_names = getResources().getStringArray(R.array.tel_number_names);
-
-				AlertDialog.Builder builder = new AlertDialog.Builder(ReportMalaysiaTaxiActivity.this);
-				builder.setTitle(R.string.place_call);
-				builder.setItems(tel_number_names, new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int item) {
-						String tel_number = Constants.TEL_NUMBERS[item];
-						Intent call_intent = new Intent(Intent.ACTION_DIAL);
-						call_intent.setData(Uri.parse("tel:" + tel_number));
-						startActivity(call_intent);
-					}
-				});
-				AlertDialog alert = builder.create();
-				alert.show();
+				String tel_number = Constants.LPKP_PHONE;
+				tel_number += " (" + getResources().getString(R.string.lpkp) + ")";
+				Intent call_intent = new Intent(Intent.ACTION_DIAL);
+				call_intent.setData(Uri.parse("tel:" + tel_number));
+				startActivity(call_intent);
 			}
 		});
 	}

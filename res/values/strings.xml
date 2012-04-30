@@ -151,12 +151,6 @@ News Media: The Star, Star Metro, Malay Mail, New Straits Times, New Straits Tim
 Traffic Police: rmp@rmp.gov.my
 	</string>
 
-	<string-array name="tel_number_names">
-		<item>LPKP: Commercial Vehicle Licensing Board</item>
-		<item>JPJ: Road Transport Department</item>
-		<item>NCCC: National Consumer Complaints Centre</item>
-	</string-array>
-
 	<string name="motour_form">
 		http://www.motour.gov.my/en/contact-us/feedback/public-complaints.html
 	</string>

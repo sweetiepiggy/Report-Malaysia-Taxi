@@ -151,12 +151,6 @@ Berita Media: The Star, Star Metro, Malay Mail, New Straits Times, New Straits T
 Trafik Polis: rmp@rmp.gov.my
 	</string>
 
-	<string-array name="tel_number_names">
-		<item>LPKP: Lembaga Pelesenan Kenderaan Perdagangan</item>
-		<item>JPJ: Jabatan Pengangkutan Jalan</item>
-		<item>NCCC: Pusat Khidmat Aduan Pengguna Nasional</item>
-	</string-array>
-
 	<string name="motour_form">
 		http://motour.gov.my/bm/hubungi-kami/maklum-balas/aduan-awam.html
 	</string>
