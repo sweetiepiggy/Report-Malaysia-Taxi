@@ -458,11 +458,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				ACTIVITY_SUBMIT);
 	}
 
-	private void send_email(String msg, String reg)
+	private void send_email(final String msg, final String reg)
 	{
-		final String f_msg = msg;
-		final String f_reg = reg;
-
 		AlertDialog.Builder builder = new AlertDialog.Builder(ReportMalaysiaTaxiActivity.this);
 		builder.setTitle(R.string.who_email);
 		builder.setMultiChoiceItems(R.array.email_choices,
@@ -474,7 +471,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		builder.setPositiveButton(R.string.done, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				String email_msg = format_email(f_msg);
+				String email_msg = format_email(msg);
 
 				String email_addresses = "";
 
@@ -498,7 +495,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				email_intent.putExtra(Intent.EXTRA_EMAIL, new String[] {
 						email_addresses} );
 				email_intent.putExtra(Intent.EXTRA_SUBJECT,
-						Constants.COMPLAINT_EMAIL_MALAY + ' ' + f_reg);
+						Constants.COMPLAINT_EMAIL_MALAY + ' ' + reg);
 				email_intent.putExtra(Intent.EXTRA_TEXT, email_msg);
 
 				if (uris.size() == 1) {
