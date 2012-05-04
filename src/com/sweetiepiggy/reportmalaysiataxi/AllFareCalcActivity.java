@@ -142,7 +142,7 @@ public class AllFareCalcActivity extends Activity {
 			fare *= 2;
 		}
 		if (telbooking) {
-			fare += 3;
+			fare += 2;
 		}
 		if (passengers > 2) {
 			fare += 1;
@@ -164,7 +164,7 @@ public class AllFareCalcActivity extends Activity {
 			fare *= 2;
 		}
 		if (telbooking) {
-			fare += 3;
+			fare += 2;
 		}
 		if (passengers > 2) {
 			fare += 1;
