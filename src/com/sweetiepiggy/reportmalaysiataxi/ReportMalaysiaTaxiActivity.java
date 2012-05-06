@@ -81,6 +81,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			if (mData == null) {
 				mData = new DataWrapper();
 				init_vars(mData);
+				init_selected(mData);
 			}
 		} else {
 			mData = new DataWrapper();
@@ -304,6 +305,13 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		});
 	}
 
+	private void init_selected(DataWrapper data)
+	{
+		/* TODO: selected defaults should not be hard coded here */
+		data.who_selected = new boolean[] {true, true, true, false, false, false};
+		data.submit_selected = new boolean[] {false, true, true, false};
+	}
+
 	private void init_vars(DataWrapper data)
 	{
 		final Calendar c = Calendar.getInstance();
@@ -315,9 +323,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 		data.offence = "";
 		data.offenceMalay = "";
-		/* TODO: selected defaults should not be hard coded here */
-		data.who_selected = new boolean[] {true, true, true, false, false, false};
-		data.submit_selected = new boolean[] {false, true, true, false};
 
 		data.photoUris = new ArrayList<Uri>();
 		data.recordingUris = new ArrayList<Uri>();
