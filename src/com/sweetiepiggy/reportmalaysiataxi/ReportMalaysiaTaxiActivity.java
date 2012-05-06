@@ -450,7 +450,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				mData.who_selected[which] = is_checked;
 			}
 		});
-		builder.setPositiveButton(R.string.done, new OnClickListener() {
+		builder.setPositiveButton(R.string.ok, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				String email_msg = format_email(msg);
@@ -515,6 +515,13 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				startActivityForResult(intent, ACTIVITY_SUBMIT);
 			}
 		});
+
+		builder.setNegativeButton(R.string.cancel, new OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+			}
+		});
+
 		AlertDialog alert = builder.create();
 		ListView list = alert.getListView();
 		for (int i=0; i < mData.who_selected.length; ++i) {

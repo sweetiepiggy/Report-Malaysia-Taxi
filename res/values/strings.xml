@@ -127,7 +127,6 @@
 	<string name="prime_minister">Prime Minister</string>
 
 	<string name="who_email">Select Who to Email</string>
-	<string name="done">Done</string>
 	<string name="details">Details</string>
 	<string-array name="email_choices">
 		<item>SPAD</item>

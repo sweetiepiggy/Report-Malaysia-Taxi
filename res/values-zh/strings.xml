@@ -127,7 +127,6 @@
 	<string name="prime_minister">首相</string>
 
 	<string name="who_email">选择谁电子邮件</string>
-	<string name="done">完成</string>
 	<string name="details">详情</string>
 	<string-array name="email_choices">
 		<item>SPAD</item>
