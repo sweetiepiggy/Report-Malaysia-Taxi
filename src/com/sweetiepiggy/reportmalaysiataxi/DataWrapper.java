@@ -33,7 +33,8 @@ public class DataWrapper
 	public String offence;
 	public String offenceMalay;
 
-	public boolean[] selected;
+	public boolean[] who_selected;
+	public boolean[] submit_selected;
 
 	public ArrayList<Uri> photoUris;
 	public ArrayList<Uri> recordingUris;

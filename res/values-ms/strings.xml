@@ -34,10 +34,11 @@
 	<string name="fare_rate">Kadar Tambang</string>
 	<string name="fare_calc">Kalkulator Tambang</string>
 	<string name="contacts">Hubungi Informasi</string>
+	<string name="record">Rekod</string>
 
 	<string name="location_hint">Masukkan lokasi kejadian</string>
-	<string name="registration_hint">Masuk nombor plat kereta, cth HWA9999</string>
-	<string name="other_hint">Masukkan butiran tambahan dalam aduan (pilihan)</string>
+	<string name="registration_hint">Masuk nombor plat, cth HWA9999</string>
+	<string name="other_hint">Masukkan butiran tambahan</string>
 
 	<string-array name="offence_array">
 		<item>Enggan menggunakan meter</item>
@@ -55,18 +56,21 @@
 	<string name="tweet">tweet</string>
 	<string name="email">emel</string>
 	<string name="submit">hantar</string>
-	<string name="cancel">batal</string>
-	<!--<string name="youtube">youtube</string>-->
-	<string name="youtube"></string>
+	<string name="clear">batal</string>
+	<string name="youtube">youtube</string>
 	<string name="call">panggil</string>
+
+	<string name="ok">Ya</string>
+	<string name="cancel">Membatalkan</string>
 
 	<string name="missing_reg">masukkan nombor pendaftaran</string>
 	<string name="missing_other">masukkan komen lain</string>
 	<string name="select_checkbox">mark check box</string>
 
+	<string name="select_submit">Memilih Kaedah</string>
 	<string name="send_youtube">Upload ke YouTube</string>
 	<string name="send_tweet">Menghantar tweet</string>
-	<string name="send_email">Hantar e-mel</string>
+	<string name="send_email">Hantar emel</string>
 	<string name="place_call">Hubungi</string>
 
 	<string name="lk_jb_kt_m">Kuala Lumpur, Johor Baru, Kuala Terengganu, Melaka</string>

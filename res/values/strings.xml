@@ -34,10 +34,11 @@
 	<string name="fare_rate">Fare Rate</string>
 	<string name="fare_calc">Fare Calculator</string>
 	<string name="contacts">Contact Info</string>
+	<string name="record">Record</string>
 
 	<string name="location_hint">Enter location of incident</string>
-	<string name="registration_hint">Enter car plate number, e.g. HWA9999</string>
-	<string name="other_hint">Enter additional details to include in complaint (optional)</string>
+	<string name="registration_hint">Enter plate number, e.g. HWA9999</string>
+	<string name="other_hint">Enter additional details</string>
 
 	<string-array name="offence_array">
 		<item>Refused to use meter</item>
@@ -55,15 +56,18 @@
 	<string name="tweet">tweet</string>
 	<string name="email">email</string>
 	<string name="submit">submit</string>
-	<string name="cancel">clear</string>
-	<!--<string name="youtube">youtube</string>-->
-	<string name="youtube"></string>
+	<string name="clear">clear</string>
+	<string name="youtube">youtube</string>
 	<string name="call">call</string>
+
+	<string name="ok">OK</string>
+	<string name="cancel">cancel</string>
 
 	<string name="missing_reg">enter registration number</string>
 	<string name="missing_other">enter other comments</string>
 	<string name="select_checkbox">select a checkbox</string>
 
+	<string name="select_submit">Select Method</string>
 	<string name="send_youtube">Upload to YouTube</string>
 	<string name="send_tweet">Send tweet</string>
 	<string name="send_email">Send email</string>

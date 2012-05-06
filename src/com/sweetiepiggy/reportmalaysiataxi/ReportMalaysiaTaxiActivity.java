@@ -47,7 +47,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -100,7 +99,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		savedInstanceState.putInt("hour", mData.hour);
 		savedInstanceState.putInt("minute", mData.minute);
 
-		savedInstanceState.putBooleanArray("selected", mData.selected);
+		savedInstanceState.putBooleanArray("who_selected", mData.who_selected);
+		savedInstanceState.putBooleanArray("submit_selected", mData.submit_selected);
 
 		savedInstanceState.putString("loc", ((EditText) findViewById(R.id.location_entry)).getText().toString());
 		savedInstanceState.putString("reg", ((EditText) findViewById(R.id.reg_entry)).getText().toString());
@@ -108,11 +108,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 		savedInstanceState.putString("offence", mData.offence);
 		savedInstanceState.putString("offence_malay", mData.offenceMalay);
-
-		savedInstanceState.putBoolean("sms_checked", ((CheckBox) findViewById(R.id.sms_checkbox)).isChecked());
-		savedInstanceState.putBoolean("email_checked", ((CheckBox) findViewById(R.id.email_checkbox)).isChecked());
-		savedInstanceState.putBoolean("tweet_checked", ((CheckBox) findViewById(R.id.tweet_checkbox)).isChecked());
-		savedInstanceState.putBoolean("youtube_checked", ((CheckBox) findViewById(R.id.youtube_checkbox)).isChecked());
 
 		savedInstanceState.putStringArrayList("photo_uris", uriarr2strarr(mData.photoUris));
 		savedInstanceState.putStringArrayList("recording_uris", uriarr2strarr(mData.recordingUris));
@@ -136,7 +131,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		mData.hour = savedInstanceState.getInt("hour");
 		mData.minute = savedInstanceState.getInt("minute");
 
-		mData.selected = savedInstanceState.getBooleanArray("selected");
+		mData.who_selected = savedInstanceState.getBooleanArray("who_selected");
+		mData.submit_selected = savedInstanceState.getBooleanArray("submit_selected");
 
 		mData.offence = savedInstanceState.getString("offence");
 		mData.offenceMalay = savedInstanceState.getString("offence_malay");
@@ -161,11 +157,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		mData.loc = ((EditText) findViewById(R.id.location_entry)).getText().toString();
 		mData.reg = ((EditText) findViewById(R.id.reg_entry)).getText().toString();
 		mData.other = ((EditText) findViewById(R.id.other_entry)).getText().toString();
-
-		mData.sms_checked = ((CheckBox) findViewById(R.id.sms_checkbox)).isChecked();
-		mData.email_checked = ((CheckBox) findViewById(R.id.email_checkbox)).isChecked();
-		mData.tweet_checked = ((CheckBox) findViewById(R.id.tweet_checkbox)).isChecked();
-		mData.youtube_checked = ((CheckBox) findViewById(R.id.youtube_checkbox)).isChecked();
 
 		return mData;
 	}
@@ -244,11 +235,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		update_date_label(mData.year, mData.month, mData.day);
 		update_time_label(mData.hour, mData.minute);
 
-		((CheckBox) findViewById(R.id.sms_checkbox)).setChecked(data.sms_checked);
-		((CheckBox) findViewById(R.id.email_checkbox)).setChecked(data.email_checked);
-		((CheckBox) findViewById(R.id.tweet_checkbox)).setChecked(data.tweet_checked);
-		((CheckBox) findViewById(R.id.youtube_checkbox)).setChecked(data.youtube_checked);
-
 		((EditText) findViewById(R.id.location_entry)).setText(data.loc);
 		((EditText) findViewById(R.id.reg_entry)).setText(data.reg);
 		((EditText) findViewById(R.id.other_entry)).setText(data.other);
@@ -282,7 +268,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				}
 
 				if (results_complete) {
-					submit();
+					submit_menu();
 				} else {
 					Toast.makeText(getApplicationContext(), incomplete_msg,
 							Toast.LENGTH_SHORT).show();
@@ -329,7 +315,9 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 		data.offence = "";
 		data.offenceMalay = "";
-		data.selected = new boolean[] {true, true, true, false, false, false};
+		/* TODO: selected defaults should not be hard coded here */
+		data.who_selected = new boolean[] {true, true, true, false, false, false};
+		data.submit_selected = new boolean[] {false, true, true, false};
 
 		data.photoUris = new ArrayList<Uri>();
 		data.recordingUris = new ArrayList<Uri>();
@@ -351,6 +339,44 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 	}
 
+	private void submit_menu()
+	{
+		final String[] submit_choices = new String[] {
+			getResources().getString(R.string.sms),
+			getResources().getString(R.string.email),
+			getResources().getString(R.string.tweet),
+			getResources().getString(R.string.youtube),
+		};
+
+		AlertDialog.Builder builder = new AlertDialog.Builder(ReportMalaysiaTaxiActivity.this);
+		builder.setTitle(R.string.select_submit);
+		builder.setMultiChoiceItems(submit_choices,
+				mData.submit_selected, new DialogInterface.OnMultiChoiceClickListener() {
+			public void onClick(DialogInterface dialog, int which, boolean is_checked) {
+				mData.submit_selected[which] = is_checked;
+			}
+		});
+		builder.setPositiveButton(R.string.ok, new OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				submit();
+			}
+		});
+		builder.setNegativeButton(R.string.cancel, new OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+			}
+		});
+
+		AlertDialog alert = builder.create();
+		ListView list = alert.getListView();
+		for (int i=0; i < mData.submit_selected.length; ++i) {
+			list.setItemChecked(i, mData.submit_selected[i]);
+		}
+
+		alert.show();
+	}
+
 	private void submit()
 	{
 		String date = String.format("%02d/%02d/%04d", mData.day, mData.month+1, mData.year);
@@ -359,17 +385,11 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		String reg = ((EditText) findViewById(R.id.reg_entry)).getText().toString();
 		String other = ((EditText) findViewById(R.id.other_entry)).getText().toString();
 
-		boolean sms_checked = ((CheckBox) findViewById(R.id.sms_checkbox)).isChecked();
-		boolean email_checked = ((CheckBox) findViewById(R.id.email_checkbox)).isChecked();
-		boolean tweet_checked = ((CheckBox) findViewById(R.id.tweet_checkbox)).isChecked();
-		boolean youtube_checked = ((CheckBox) findViewById(R.id.youtube_checkbox)).isChecked();
-
-		if (!sms_checked && !email_checked && !tweet_checked &&
-				!youtube_checked) {
-			Toast.makeText(getApplicationContext(),
-					getResources().getString(R.string.missing_other),
-					Toast.LENGTH_SHORT).show();
-		}
+		/* TODO: order of index shouldn't be hard coded like this */
+		boolean sms_checked = mData.submit_selected[0];
+		boolean email_checked = mData.submit_selected[1];
+		boolean tweet_checked = mData.submit_selected[2];
+		boolean youtube_checked = mData.submit_selected[3];
 
 		String msg = format_msg(date, time, loc, reg, mData.offenceMalay, other);
 
@@ -377,10 +397,10 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			until all checked are sent */
 		if (sms_checked && !mData.sms_sent) {
 			send_sms(msg);
-		} else if (tweet_checked && !mData.tweet_sent) {
-			send_tweet(date, time, loc, reg, other);
 		} else if (email_checked && !mData.email_sent) {
 			send_email(msg, reg);
+		} else if (tweet_checked && !mData.tweet_sent) {
+			send_tweet(date, time, loc, reg, other);
 		} else if (youtube_checked && !mData.youtube_sent) {
 			send_youtube(msg);
 
@@ -420,9 +440,9 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		AlertDialog.Builder builder = new AlertDialog.Builder(ReportMalaysiaTaxiActivity.this);
 		builder.setTitle(R.string.who_email);
 		builder.setMultiChoiceItems(R.array.email_choices,
-				mData.selected, new DialogInterface.OnMultiChoiceClickListener() {
-			public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-				mData.selected[which] = isChecked;
+				mData.who_selected, new DialogInterface.OnMultiChoiceClickListener() {
+			public void onClick(DialogInterface dialog, int which, boolean is_checked) {
+				mData.who_selected[which] = is_checked;
 			}
 		});
 		builder.setPositiveButton(R.string.done, new OnClickListener() {
@@ -432,10 +452,10 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 				String email_addresses = "";
 
-				/* TODO: selected and EMAIL_ADDRESSES need to be better linked,
+				/* TODO: who_selected and EMAIL_ADDRESSES need to be better linked,
 					possible problem if their lengths are not equal */
-				for (int i=0; i < mData.selected.length; ++i) {
-					if (mData.selected[i]) {
+				for (int i=0; i < mData.who_selected.length; ++i) {
+					if (mData.who_selected[i]) {
 						email_addresses += Constants.EMAIL_ADDRESSES[i];
 					}
 				}
@@ -492,8 +512,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		});
 		AlertDialog alert = builder.create();
 		ListView list = alert.getListView();
-		for (int i=0; i < mData.selected.length; ++i) {
-			list.setItemChecked(i, mData.selected[i]);
+		for (int i=0; i < mData.who_selected.length; ++i) {
+			list.setItemChecked(i, mData.who_selected[i]);
 		}
 
 		alert.show();
@@ -832,7 +852,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			if (resultCode == RESULT_OK) {
 				mData.videoUris.add(data.getData());
 				((TextView)findViewById(R.id.video_label)).setText(Integer.toString(mData.videoUris.size()));
-				((CheckBox) findViewById(R.id.youtube_checkbox)).setChecked(true);
+				mData.submit_selected[3] = true;
 			}
 			break;
 		case ACTIVITY_RECORD_SOUND:
