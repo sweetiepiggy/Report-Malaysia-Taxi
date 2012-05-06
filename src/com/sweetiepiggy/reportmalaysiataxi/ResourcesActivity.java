@@ -38,6 +38,7 @@ public class ResourcesActivity extends ListActivity {
 			getResources().getString(R.string.fare_rate),
 			getResources().getString(R.string.fare_calc),
 			getResources().getString(R.string.contacts),
+			getResources().getString(R.string.about),
 		};
 		setListAdapter(new ArrayAdapter<String>(this,
 					android.R.layout.simple_list_item_1,
@@ -59,6 +60,10 @@ public class ResourcesActivity extends ListActivity {
 				} else if (item.equals(getResources().getString(R.string.contacts))) {
 					Intent contacts_intent = new Intent(getApplicationContext(), ContactsActivity.class);
 					startActivity(contacts_intent);
+
+				} else if (item.equals(getResources().getString(R.string.about))) {
+					Intent about_intent = new Intent(getApplicationContext(), AboutActivity.class);
+					startActivity(about_intent);
 				}
 			}
 		});

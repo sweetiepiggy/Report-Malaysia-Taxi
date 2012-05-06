@@ -35,8 +35,6 @@ public class DataWrapper
 
 	public boolean[] selected;
 
-	public int lang = Constants.LANG_DEFAULT;
-
 	public ArrayList<Uri> photoUris;
 	public ArrayList<Uri> recordingUris;
 	public ArrayList<Uri> videoUris;

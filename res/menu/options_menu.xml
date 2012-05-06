@@ -24,8 +24,5 @@
 	<item android:id="@+id/resources"
 		android:icon="@android:drawable/ic_dialog_info"
 		android:title="@string/resources" />
-	<item android:id="@+id/settings"
-		android:icon="@android:drawable/ic_menu_preferences"
-		android:title="@string/settings" />
 </menu>
 

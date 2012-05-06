@@ -65,7 +65,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 	static final int ACTIVITY_TAKE_PHOTO = 0;
 	static final int ACTIVITY_RECORD_SOUND = 1;
-	static final int ACTIVITY_UPDATE_SETTINGS = 2;
 	static final int ACTIVITY_TAKE_VIDEO = 3;
 	static final int ACTIVITY_SUBMIT = 4;
 
@@ -100,8 +99,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		savedInstanceState.putInt("day", mData.day);
 		savedInstanceState.putInt("hour", mData.hour);
 		savedInstanceState.putInt("minute", mData.minute);
-
-		savedInstanceState.putInt("lang", mData.lang);
 
 		savedInstanceState.putBooleanArray("selected", mData.selected);
 
@@ -139,8 +136,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		mData.hour = savedInstanceState.getInt("hour");
 		mData.minute = savedInstanceState.getInt("minute");
 
-		mData.lang = savedInstanceState.getInt("lang");
-
 		mData.selected = savedInstanceState.getBooleanArray("selected");
 
 		mData.offence = savedInstanceState.getString("offence");
@@ -175,16 +170,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		return mData;
 	}
 
-	@Override
-	public void onConfigurationChanged(Configuration new_config)
-	{
-		super.onConfigurationChanged(new_config);
-		set_lang(mData.lang);
-	}
-
 	private void init()
 	{
-		set_lang(mData.lang);
 		init_date_time_buttons();
 		init_offence_spinner();
 		init_camera_recorder_buttons();
@@ -192,17 +179,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		init_cancel_button();
 		init_call_button();
 		init_entries(mData);
-	}
-
-	private void set_lang(int lang)
-	{
-		if (lang == Constants.LANG_ENGLISH) {
-			set_lang("en");
-		} else if (lang == Constants.LANG_CHINESE) {
-			set_lang("zh");
-		} else if (lang == Constants.LANG_MALAY) {
-			set_lang("ms");
-		}
 	}
 
 	private void init_date_time_buttons()
@@ -373,17 +349,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		data.tweet_checked = true;
 		data.youtube_checked = false;
 
-	}
-
-	private void set_lang(String lang_code)
-	{
-		Locale locale = new Locale(lang_code);
-		Locale.setDefault(locale);
-		Configuration config = new Configuration();
-		config.locale = locale;
-		getBaseContext().getResources().updateConfiguration(config,
-			getBaseContext().getResources().getDisplayMetrics());
-		refresh_activity();
 	}
 
 	private void submit()
@@ -876,30 +841,11 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				((TextView)findViewById(R.id.recorder_label)).setText(Integer.toString(mData.recordingUris.size()));
 			}
 			break;
-		case ACTIVITY_UPDATE_SETTINGS:
-			if (resultCode == Constants.RESULT_SET_ENGLISH) {
-				mData.lang = Constants.LANG_ENGLISH;
-				refresh_activity();
-			} else if (resultCode == Constants.RESULT_SET_CHINESE) {
-				mData.lang = Constants.LANG_CHINESE;
-				refresh_activity();
-			} else if (resultCode == Constants.RESULT_SET_MALAY) {
-				mData.lang = Constants.LANG_MALAY;
-				refresh_activity();
-			}
-			break;
 		case ACTIVITY_SUBMIT:
 			/* repeatedly submit until all send_*() functions have been called */
 			submit();
 			break;
 		}
-	}
-
-	public void refresh_activity()
-	{
-		Intent refresh = new Intent(this, ReportMalaysiaTaxiActivity.class);
-		startActivity(refresh);
-		finish();
 	}
 
 	public class OffenceOnItemSelectedListener implements OnItemSelectedListener
@@ -930,10 +876,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		case R.id.resources:
 			Intent resources_intent = new Intent(getApplicationContext(), ResourcesActivity.class);
 			startActivity(resources_intent);
-			return true;
-		case R.id.settings:
-			Intent settings_intent = new Intent(getApplicationContext(), SettingsActivity.class);
-			startActivityForResult(settings_intent, ACTIVITY_UPDATE_SETTINGS);
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);

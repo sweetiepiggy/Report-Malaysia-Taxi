@@ -23,15 +23,6 @@ import android.app.Activity;
 
 public class Constants
 {
-	static final int RESULT_SET_ENGLISH = Activity.RESULT_FIRST_USER;
-	static final int RESULT_SET_CHINESE = Activity.RESULT_FIRST_USER + 1;
-	static final int RESULT_SET_MALAY = Activity.RESULT_FIRST_USER + 2;
-
-	static final int LANG_DEFAULT = 0;
-	static final int LANG_ENGLISH = 1;
-	static final int LANG_CHINESE = 2;
-	static final int LANG_MALAY = 3;
-
 	static final String COMPLAINT_EMAIL_MALAY = "Aduan Teksi";
 	static final String COMPLAINT_MALAY = "ADUAN LPKP";
 	static final String COMPLAINT_HASHTAG = "#aduanteksi";
@@ -57,19 +48,8 @@ public class Constants
 		"Other"
 	};
 
-	static final String[] LANGUAGES = {
-		"English",
-		"中文",
-		"Bahasa Melayu"
-	};
-
-	static final String[] LANGUAGE_CODES = {
-		"en",
-		"zh",
-		"ms"
-	};
-
 	/* TODO: this is linked to email_choices, that should be made obvious somehow */
+	/* TODO: use already defined contants such as TRANSIT_EMAIL */
 	static final String[] EMAIL_ADDRESSES = {
 		"aduan@spad.gov.my; ",
 		"aduan@lpkp.gov.my; aduantrafik@jpj.gov.my; e-aduan@kpdnkk.gov.my; info@motour.gov.my; bahria@miti.gov.my; unitpro@pcb.gov.my; ",
