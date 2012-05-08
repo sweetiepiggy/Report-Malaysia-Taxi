@@ -79,6 +79,8 @@ public class GovMinisterActivity extends ListActivity {
 					b.putString("name", getResources().getString(R.string.mo_tourism_name));
 					b.putString("desc", getResources().getString(R.string.mo_tourism));
 					b.putString("email", Constants.MO_TOURISM_EMAIL);
+					b.putString("website", Constants.MO_TOURISM_WEBSITE);
+					b.putString("phone", Constants.MO_TOURISM_PHONE);
 					b.putString("twitter", Constants.MO_TOURISM_TWITTER);
 
 					intent.putExtras(b);
