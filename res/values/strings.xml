@@ -21,8 +21,7 @@
 -->
 
 <resources>
-
-	<string name="app_name">Report Malaysia Taxi</string>
+	<string name="app_name">Report Msia Taxi</string>
 	<string name="date_and_time">Date and Time of Incident</string>
 	<string name="location">Location</string>
 	<string name="registration">Registration Number of Taxi</string>
