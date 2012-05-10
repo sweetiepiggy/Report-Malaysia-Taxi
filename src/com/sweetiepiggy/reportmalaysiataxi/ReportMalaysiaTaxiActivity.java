@@ -364,6 +364,10 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		builder.setPositiveButton(R.string.ok, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
+				mData.youtube_sent = false;
+				mData.email_sent = false;
+				mData.tweet_sent = false;
+				mData.sms_sent = false;
 				submit();
 			}
 		});
@@ -408,13 +412,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			send_tweet(date, time, loc, reg, other);
 		} else if (youtube_checked && !mData.youtube_sent) {
 			send_youtube(msg);
-
-		/* done sending */
-		} else {
-			mData.youtube_sent = false;
-			mData.email_sent = false;
-			mData.tweet_sent = false;
-			mData.sms_sent = false;
 		}
 	}
 
@@ -498,13 +495,11 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				}
 
 				mData.email_sent = true;
-				startActivityForResult(Intent.createChooser(email_intent,
-							getResources().getString(R.string.send_email)),
-						ACTIVITY_SUBMIT);
+				/* don't createChooser() because AlertDialog will not close */
+				startActivityForResult(email_intent, ACTIVITY_SUBMIT);
 			}
 		});
 
-		/* TODO: pressing neutral button should not close dialog */
 		builder.setNeutralButton(R.string.details, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -519,6 +514,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		builder.setNegativeButton(R.string.cancel, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
+				mData.email_sent = true;
 			}
 		});
 
