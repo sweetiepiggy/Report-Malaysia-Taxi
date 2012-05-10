@@ -515,6 +515,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				mData.email_sent = true;
+				submit();
 			}
 		});
 
