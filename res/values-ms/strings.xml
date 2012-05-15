@@ -153,15 +153,11 @@ Berita Media: The Star, Star Metro, Malay Mail, New Straits Times, New Straits T
 Trafik Polis: rmp@rmp.gov.my
 	</string>
 
-	<string name="motour_form">
-		http://motour.gov.my/bm/hubungi-kami/maklum-balas/aduan-awam.html
-	</string>
-	<string name="pcb_form">
-		http://apps1.pcb.gov.my/eApps/bpaiaducmpl/AduCmplPublic/add.do?aplCode=ms
-	</string>
-	<string name="pemudah_form">
-		http://pemudah.bpa.jpm.my/eApps/sdmscasepool/SdmsCasePool/add.do?aplCode=ms
-	</string>
+	<string name="spad_website">http://www.spad.gov.my/ms</string>
+	<string name="spad_form">http://www.spad.gov.my/ms/hubungi-kami/maklumbalas</string>
+	<string name="motour_form">http://motour.gov.my/bm/hubungi-kami/maklum-balas/aduan-awam.html</string>
+	<string name="pcb_form">http://apps1.pcb.gov.my/eApps/bpaiaducmpl/AduCmplPublic/add.do?aplCode=ms</string>
+	<string name="pemudah_form">http://pemudah.bpa.jpm.my/eApps/sdmscasepool/SdmsCasePool/add.do?aplCode=ms</string>
 	<string name="mo_transport_name">YB Dato Seri Kong Cho Ha</string>
 	<string name="mo_tourism_name">YB Dato Sri Dr. Ng Yen Yen</string>
 	<string name="traffic_police">Trafik Polis</string>

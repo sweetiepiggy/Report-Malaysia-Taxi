@@ -87,8 +87,8 @@ public class GovDeptActivity extends ListActivity {
 					b.putString("name", getResources().getString(R.string.spad));
 					b.putString("desc", getResources().getString(R.string.spad_desc));
 					b.putString("email", Constants.SPAD_EMAIL);
-					b.putString("website", Constants.SPAD_WEBSITE);
-					b.putString("form", Constants.SPAD_FORM);
+					b.putString("website", getResources().getString(R.string.spad_website));
+					b.putString("form", getResources().getString(R.string.spad_form));
 					b.putString("twitter", Constants.SPAD_TWITTER);
 
 					intent.putExtras(b);

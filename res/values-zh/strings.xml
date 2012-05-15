@@ -153,15 +153,11 @@ SPAD: 陆路运输部门\n\n
 交通警： rmp@rmp.gov.my
 	</string>
 
-	<string name="motour_form">
-		http://www.motour.gov.my/en/contact-us/feedback/public-complaints.html
-	</string>
-	<string name="pcb_form">
-		http://apps1.pcb.gov.my/eApps/bpaiaducmpl/AduCmplPublic/add.do?aplCode=en
-	</string>
-	<string name="pemudah_form">
-		http://www.pemudah.gov.my/web/guest/hubungi\n
-	</string>
+	<string name="spad_website">http://www.spad.gov.my</string>
+	<string name="spad_form">http://www.spad.gov.my/contact-us/feedback</string>
+	<string name="motour_form">http://www.motour.gov.my/en/contact-us/feedback/public-complaints.html</string>
+	<string name="pcb_form">http://apps1.pcb.gov.my/eApps/bpaiaducmpl/AduCmplPublic/add.do?aplCode=en</string>
+	<string name="pemudah_form">http://www.pemudah.gov.my/web/guest/hubungi</string>
 	<string name="mo_transport_name">江作汉</string>
 	<string name="mo_tourism_name">黄燕燕</string>
 	<string name="traffic_police">交通警</string>
