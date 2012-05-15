@@ -67,6 +67,7 @@ public class Constants
 
 	static final String SPAD_EMAIL = "aduan@spad.gov.my";
 	static final String SPAD_WEBSITE = "http://www.spad.gov.my";
+	static final String SPAD_FORM = "http://www.spad.gov.my/contact-us/feedback";
 	static final String SPAD_TWITTER = "http://twitter.com/aduanSPAD";
 
 	static final String LPKP_EMAIL = "aduan@lpkp.gov.my";
