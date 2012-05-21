@@ -17,29 +17,22 @@
     along with Aduan SPAD; if not, see <http://www.gnu.org/licenses/>.
 */
 
-package com.sweetiepiggy.reportmalaysiataxi;
+package gov.spad.aduanspad;
 
-import android.app.Activity;
-import android.content.pm.PackageManager;
-import android.os.Bundle;
-import android.widget.TextView;
+public class Constants
+{
+	static final String COMPLAINT_EMAIL_MALAY = "Aduan Teksi";
+	static final String SMS_HEADER = "SPAD ADUAN";
 
-public class AboutActivity extends Activity {
+	static final String LOCATION_MALAY = "Lokasi";
+	static final String REGISTRATION_MALAY = "Nombor Teksi Pendaftaran";
+	static final String OFFENCE_MALAY = "Kesalahan";
 
-	/** Called when the activity is first created. */
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.about);
-		String version_name;
+	static final String TWITTER_ADDR = "@aduanSPAD";
 
-		try {
-			version_name = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
-		} catch (PackageManager.NameNotFoundException e) {
-			version_name = "";
-		}
-		((TextView) findViewById(R.id.app_name)).setText(getResources().getString(R.string.app_name) +
-			" v" + version_name + "\n");
-	}
-
+	static final String SPAD_EMAIL = "aduan@spad.gov.my";
+	static final String SPAD_TWITTER = "http://twitter.com/aduanSPAD";
+	static final String SPAD_PHONE = "1 800 88 96 00";
+	static final String SPAD_SMS = "15888";
 }
+

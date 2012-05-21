@@ -17,7 +17,7 @@
     along with Aduan SPAD; if not, see <http://www.gnu.org/licenses/>.
 */
 
-package com.sweetiepiggy.reportmalaysiataxi;
+package gov.spad.aduanspad;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -29,18 +29,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class FareCalcActivity extends ListActivity {
-	/* TODO: put starting fares in a Constants class */
-	private static final int KL_STARTING_FARE = 3;
-	private static final int PENANG_STARTING_FARE = 4;
-
+public class ResourcesActivity extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		String[] resources = new String[] {
-			getResources().getString(R.string.lk_jb_kt_m),
-			getResources().getString(R.string.penang),
+			getResources().getString(R.string.fare_rate),
+			getResources().getString(R.string.fare_calc),
+			getResources().getString(R.string.contacts),
+			getResources().getString(R.string.about),
 		};
 		setListAdapter(new ArrayAdapter<String>(this,
 					android.R.layout.simple_list_item_1,
@@ -52,23 +50,32 @@ public class FareCalcActivity extends ListActivity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int pos, long id) {
 				CharSequence item = ((TextView) view).getText();
-				if (item.equals(getResources().getString(R.string.penang))) {
-					Intent intent =
-						new Intent(getApplicationContext(),
-							AllFareCalcActivity.class);
+				if (item.equals(getResources().getString(R.string.fare_rate))) {
+					Intent fare_rate_intent = new Intent(getApplicationContext(), FareRateActivity.class);
+					startActivity(fare_rate_intent);
+				} else if (item.equals(getResources().getString(R.string.fare_calc))) {
+					Intent fare_calc_intent = new Intent(getApplicationContext(), FareCalcActivity.class);
+					startActivity(fare_calc_intent);
+
+				} else if (item.equals(getResources().getString(R.string.contacts))) {
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
-					b.putInt("starting_fare", PENANG_STARTING_FARE);
+
+					b.putString("name", getResources().getString(R.string.spad));
+					b.putString("desc", getResources().getString(R.string.spad_desc));
+					b.putString("email", Constants.SPAD_EMAIL);
+					b.putString("website", getResources().getString(R.string.spad_website));
+					b.putString("form", getResources().getString(R.string.spad_form));
+					b.putString("twitter", Constants.SPAD_TWITTER);
+					b.putString("phone", Constants.SPAD_PHONE);
+					b.putString("sms", Constants.SPAD_SMS);
+
 					intent.putExtras(b);
 					startActivity(intent);
 
-				} else if (item.equals(getResources().getString(R.string.lk_jb_kt_m))) {
-					Intent intent =
-						new Intent(getApplicationContext(),
-							AllFareCalcActivity.class);
-					Bundle b = new Bundle();
-					b.putInt("starting_fare", KL_STARTING_FARE);
-					intent.putExtras(b);
-					startActivity(intent);
+				} else if (item.equals(getResources().getString(R.string.about))) {
+					Intent about_intent = new Intent(getApplicationContext(), AboutActivity.class);
+					startActivity(about_intent);
 				}
 			}
 		});

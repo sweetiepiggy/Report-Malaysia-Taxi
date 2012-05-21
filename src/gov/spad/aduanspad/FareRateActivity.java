@@ -17,7 +17,7 @@
     along with Aduan SPAD; if not, see <http://www.gnu.org/licenses/>.
 */
 
-package com.sweetiepiggy.reportmalaysiataxi;
+package gov.spad.aduanspad;
 
 import android.app.ListActivity;
 import android.content.Intent;

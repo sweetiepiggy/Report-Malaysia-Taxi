@@ -17,23 +17,36 @@
     along with Aduan SPAD; if not, see <http://www.gnu.org/licenses/>.
 */
 
-package com.sweetiepiggy.reportmalaysiataxi;
+package gov.spad.aduanspad;
 
+import java.util.ArrayList;
 
-public class Constants
+import android.net.Uri;
+
+public class DataWrapper
 {
-	static final String COMPLAINT_EMAIL_MALAY = "Aduan Teksi";
-	static final String SMS_HEADER = "SPAD ADUAN";
+	public int year;
+	public int month;
+	public int day;
+	public int hour;
+	public int minute;
 
-	static final String LOCATION_MALAY = "Lokasi";
-	static final String REGISTRATION_MALAY = "Nombor Teksi Pendaftaran";
-	static final String OFFENCE_MALAY = "Kesalahan";
+	public boolean[] submit_selected;
 
-	static final String TWITTER_ADDR = "@aduanSPAD";
+	public ArrayList<Uri> photoUris;
+	public ArrayList<Uri> recordingUris;
+	public ArrayList<Uri> videoUris;
 
-	static final String SPAD_EMAIL = "aduan@spad.gov.my";
-	static final String SPAD_TWITTER = "http://twitter.com/aduanSPAD";
-	static final String SPAD_PHONE = "1 800 88 96 00";
-	static final String SPAD_SMS = "15888";
+	public boolean email_sent;
+	public boolean tweet_sent;
+	public boolean sms_sent;
+
+	public String loc;
+	public String reg;
+	public String details;
+
+	public boolean sms_checked;
+	public boolean email_checked;
+	public boolean tweet_checked;
 }
 
