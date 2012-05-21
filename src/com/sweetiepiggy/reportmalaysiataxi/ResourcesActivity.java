@@ -1,20 +1,20 @@
 /*
     Copyright (C) 2012 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
 
-    This file is part of Report Malaysia Taxi.
+    This file is part of Aduan SPAD.
 
-    Report Malaysia Taxi is free software; you can redistribute it and/or modify
+    Aduan SPAD is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 3 of the License, or
     (at your option) any later version.
 
-    Report Malaysia Taxi is distributed in the hope that it will be useful,
+    Aduan SPAD is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Report Malaysia Taxi; if not, see <http://www.gnu.org/licenses/>.
+    along with Aduan SPAD; if not, see <http://www.gnu.org/licenses/>.
 */
 
 package com.sweetiepiggy.reportmalaysiataxi;
@@ -58,8 +58,20 @@ public class ResourcesActivity extends ListActivity {
 					startActivity(fare_calc_intent);
 
 				} else if (item.equals(getResources().getString(R.string.contacts))) {
-					Intent contacts_intent = new Intent(getApplicationContext(), ContactsActivity.class);
-					startActivity(contacts_intent);
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
+					Bundle b = new Bundle();
+
+					b.putString("name", getResources().getString(R.string.spad));
+					b.putString("desc", getResources().getString(R.string.spad_desc));
+					b.putString("email", Constants.SPAD_EMAIL);
+					b.putString("website", getResources().getString(R.string.spad_website));
+					b.putString("form", getResources().getString(R.string.spad_form));
+					b.putString("twitter", Constants.SPAD_TWITTER);
+					b.putString("phone", Constants.SPAD_PHONE);
+					b.putString("sms", Constants.SPAD_SMS);
+
+					intent.putExtras(b);
+					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.about))) {
 					Intent about_intent = new Intent(getApplicationContext(), AboutActivity.class);

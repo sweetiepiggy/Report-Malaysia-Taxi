@@ -3,20 +3,20 @@
 <!--
     Copyright (C) 2012 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
 
-    This file is part of Report Malaysia Taxi.
+    This file is part of Aduan SPAD.
 
-    Report Malaysia Taxi is free software; you can redistribute it and/or modify
+    Aduan SPAD is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 3 of the License, or
     (at your option) any later version.
 
-    Report Malaysia Taxi is distributed in the hope that it will be useful,
+    Aduan SPAD is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Report Malaysia Taxi; if not, see <http://www.gnu.org/licenses/>.
+    along with Aduan SPAD; if not, see <http://www.gnu.org/licenses/>.
 -->
 
 <resources>
@@ -25,10 +25,8 @@
 	<string name="date_and_time">Tarikh dan Masa Kejadian</string>
 	<string name="location">Lokasi</string>
 	<string name="registration">Nombor Teksi Pendaftaran</string>
-	<string name="offence">Kesalahan</string>
 
 	<string name="about">Maklumat</string>
-	<string name="settings">Pilihan</string>
 	<string name="resources">Sumber Maklumat</string>
 	<string name="fare_rate">Kadar Tambang</string>
 	<string name="fare_calc">Kalkulator Tambang</string>
@@ -37,37 +35,22 @@
 
 	<string name="location_hint">Masukkan lokasi kejadian</string>
 	<string name="registration_hint">Masuk nombor plat, cth HWA9999</string>
-	<string name="other_hint">Masukkan butiran tambahan</string>
+	<string name="details_hint">Masukkan butiran tambahan</string>
 
-	<string-array name="offence_array">
-		<item>Enggan menggunakan meter</item>
-		<item>Enggan mengambil penumpang</item>
-		<item>Enggan memberi baki tumpang</item>
-		<item>Memandu dengan bahaya</item>
-		<item>Tawar benda yg menyalahi undang2</item>
-		<item>Gangguan</item>
-		<item>Merokok dalam teksi</item>
-		<item>Lain-lain</item>
-	</string-array>
-
-	<string name="other">Maklumat Lanjut</string>
+	<string name="details">Maklumat Lanjut</string>
 	<string name="sms">sms</string>
 	<string name="tweet">tweet</string>
 	<string name="email">emel</string>
 	<string name="submit">hantar</string>
 	<string name="clear">batal</string>
-	<string name="youtube">youtube</string>
 	<string name="call">panggil</string>
 
 	<string name="ok">Ya</string>
 	<string name="cancel">Membatalkan</string>
 
 	<string name="missing_reg">masukkan nombor pendaftaran</string>
-	<string name="missing_other">masukkan komen lain</string>
-	<string name="select_checkbox">mark check box</string>
 
 	<string name="select_submit">Memilih Kaedah</string>
-	<string name="send_youtube">Upload ke YouTube</string>
 	<string name="send_tweet">Menghantar tweet</string>
 	<string name="send_email">Hantar emel</string>
 	<string name="place_call">Hubungi</string>
@@ -99,86 +82,10 @@
 	<string name="sunday">Ahad</string>
 
 	<string name="spad">SPAD</string>
-	<string name="lpkp">LPKP</string>
-	<string name="jpj">JPJ</string>
-	<string name="kpdnkk">KPDNKK</string>
-	<string name="motour">Kementerian Pelancongan</string>
-	<string name="pcb">Biro Pengaduan Awam</string>
-	<string name="pemudah">PEMUDA</string>
-	<string name="ttpm">Tribunal Tuntutan Pengguna Malaysia</string>
-
 	<string name="spad_desc">Suruhanjaya Pengangkutan Awam Darat</string>
-	<string name="lpkp_desc">Lembaga Pelesenan Kenderaan Perdagangan</string>
-	<string name="jpj_desc">Jabatan Pengangkutan Jalan</string>
-	<string name="kpdnkk_desc">Kementerian Perdagangan Dalam Negeri, Koperasi dan Kepenggunaan</string>
-	<string name="motour_desc"></string>
-	<string name="pcb_desc"></string>
-	<string name="pemudah_desc"></string>
-	<string name="ttpm_desc"></string>
-
-	<string name="transit">TRANSIT</string>
-	<string name="transit_desc"></string>
-	<string name="nccc">NCCC</string>
-	<string name="nccc_desc">Pusat Khidmat Aduan Pengguna Nasional</string>
-	<string name="spad_chairman">Pengerusi SPAD</string>
-	<string name="mo_transport">Menteri Pengangkutan</string>
-	<string name="mo_tourism">Menteri Pelancongan</string>
-	<string name="prime_minister">Perdana Menteri</string>
-
-	<string name="who_email">Pilih Talian Untuk Menghantar E-mel</string>
-	<string name="details">Butir-butir</string>
-	<string-array name="email_choices">
-		<item>SPAD</item>
-		<item>Jabatan Kerajaan Lain</item>
-		<item>Pengguna Kumpulan</item>
-		<item>Kerajaan Menteri</item>
-		<item>Berita Media</item>
-		<item>Trafik Polis</item>
-	</string-array>
-	<string-array name="contact_choices">
-		<item>Jabatan Kerajaan</item>
-		<item>Pengguna Kumpulan</item>
-		<item>Kerajaan Menteri</item>
-		<item>Berita Media</item>
-		<item>Trafik Polis</item>
-	</string-array>
-
-	<string name="email_details">
-SPAD: Suruhanjaya Pengangkutan Awam Darat\n\n
-Jabatan Kerajaan Lain: LPKP, JPJ, KPDNKK, Kementerian Pelancongan, PEMUDA, Biro Pengaduan Awam\n\n
-Pengguna Kumpulan: TRANSIT, NCCC\n\n
-Kerajaan Menteri: Menteri Pengangkutan, Menteri Pelancongan, Perdana Menteri\n\n
-Berita Media: The Star, Star Metro, Malay Mail, New Straits Times, New Straits Times Streets, The Sun, Malaysia Kini, The Malaysian Insider\n\n
-Trafik Polis: rmp@rmp.gov.my
-	</string>
 
 	<string name="spad_website">http://www.spad.gov.my/ms</string>
 	<string name="spad_form">http://www.spad.gov.my/ms/hubungi-kami/maklumbalas</string>
-	<string name="motour_form">http://motour.gov.my/bm/hubungi-kami/maklum-balas/aduan-awam.html</string>
-	<string name="pcb_form">http://apps1.pcb.gov.my/eApps/bpaiaducmpl/AduCmplPublic/add.do?aplCode=ms</string>
-	<string name="pemudah_form">http://pemudah.bpa.jpm.my/eApps/sdmscasepool/SdmsCasePool/add.do?aplCode=ms</string>
-	<string name="mo_transport_name">YB Dato Seri Kong Cho Ha</string>
-	<string name="mo_tourism_name">YB Dato Sri Dr. Ng Yen Yen</string>
-	<string name="traffic_police">Trafik Polis</string>
-	<string name="news_media_contact">
-		The Star\n
-		editor@thestar.com.my\n\n
-		Star Metro\n
-		metro@thestar.com.my\n\n
-		Malay Mail\n
-		mmnews@mmail.com.my\n\n
-		New Straits Times\n
-		syedn@nst.com.my\n
-		letters@nst.com.my\n\n
-		New Straits Times Streets\n
-		streets@nst.com.my\n\n
-		The Sun\n
-		letters@thesundaily.com\n\n
-		Malaysia Kini\n
-		editor@malaysiakini.com.my\n\n
-		The Malaysian Insider\n
-		editor@themalaysianinsider.com\n\n
-	</string>
 
 	<string name="penang_fare_rate">
 	Jarak\n
@@ -221,16 +128,15 @@ Trafik Polis: rmp@rmp.gov.my
 
 	<string name="gpl">
 Copyright (C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
-Aduan Teksi adalah perisian bebas; anda boleh memaparkan dan / atau mengubah suai
+Aduan SPAD adalah perisian bebas; anda boleh memaparkan dan / atau mengubah suai
 	di bawah terma GNU Lesen Awam Am yang diterbitkan oleh Perisian Yayasan Percuma;
 	samada 3 versi Lesen, atau (atas pilihan anda) mana-mana versi selepas ini.\n\n
-Tujuan Aduan Teksi diterbit adalah untuk manfaat pengguna. Walaubagaimanapun, ia
+Tujuan Aduan SPAD diterbit adalah untuk manfaat pengguna. Walaubagaimanapun, ia
 	adalah produk yang tanpa sebarang waranti, tanpa jaminan terhadap sebarang
 	perdaganagan atau kegunaaan untuk tujuan tertentu. Sila merujuk GNU Lesen Awam
 	Am untuk maklumat lanjut.\n\n
-Anda akan menerima satu salinan GNU Lesen Awam Am bersama dengan Aduan Teksi;
+Anda akan menerima satu salinan GNU Lesen Awam Am bersama dengan Aduan SPAD;
 	jika tidak, sila lihat http://www.gnu.org/licenses/.
 	</string>
 </resources>
-
 

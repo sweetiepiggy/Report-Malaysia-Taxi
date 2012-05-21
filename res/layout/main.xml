@@ -3,20 +3,20 @@
 <!--
     Copyright (C) 2012 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
 
-    This file is part of Report Malaysia Taxi.
+    This file is part of Aduan SPAD.
 
-    Report Malaysia Taxi is free software; you can redistribute it and/or modify
+    Aduan SPAD is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 3 of the License, or
     (at your option) any later version.
 
-    Report Malaysia Taxi is distributed in the hope that it will be useful,
+    Aduan SPAD is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Report Malaysia Taxi; if not, see <http://www.gnu.org/licenses/>.
+    along with Aduan SPAD; if not, see <http://www.gnu.org/licenses/>.
 -->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -55,7 +55,7 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:textStyle="bold"
-			android:text="Vehicle Plate Number" />
+			android:text="@string/registration" />
 		<EditText
 			android:id="@+id/reg_entry"
 			android:layout_width="fill_parent"
@@ -115,43 +115,19 @@
 			android:hint="Enter your telephone number"
 			android:background="@android:drawable/editbox_background"/>
 
-		<!--<TextView
-			android:id="@+id/category_label"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:textStyle="bold"
-			android:text="Category" />
-		<Spinner
-			android:id="@+id/category_spinner"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:prompt="@string/offence"/>
-
 		<TextView
-			android:id="@+id/offence_label"
+			android:id="@+id/details_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:textStyle="bold"
-			android:text="@string/offence" />
-		<Spinner
-			android:id="@+id/offence_spinner"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:prompt="@string/offence"/>-->
-
-		<TextView
-			android:id="@+id/other_label"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:textStyle="bold"
-			android:text="@string/other" />
+			android:text="@string/details" />
 
 		<EditText
-			android:id="@+id/other_entry"
+			android:id="@+id/details_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
 			android:layout_weight="1"
-			android:hint="@string/other_hint"
+			android:hint="@string/details_hint"
 			android:background="@android:drawable/editbox_background" />
 
 		<TextView
