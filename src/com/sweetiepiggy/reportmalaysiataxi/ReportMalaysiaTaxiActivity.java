@@ -611,7 +611,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		map.put("twitter_address1", true);
 		map.put("twitter_address2", false);
 		map.put("twitter_address3", false);
-		map.put("complaint_hashtag", true);
 		map.put("date", false);
 		map.put("time", false);
 		map.put("reg", reg.length() != 0);
@@ -686,13 +685,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 		if (map.get("twitter_address1")) {
 			res += Constants.TWITTER_ADDRESS1;
-		}
-
-		if (map.get("complaint_hashtag")) {
-			if (res.length() != 0) {
-				res += ' ';
-			}
-			res += Constants.COMPLAINT_HASHTAG;
 		}
 
 		if (map.get("date")) {

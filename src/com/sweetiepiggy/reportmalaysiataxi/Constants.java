@@ -25,7 +25,6 @@ public class Constants
 {
 	static final String COMPLAINT_EMAIL_MALAY = "Aduan Teksi";
 	static final String COMPLAINT_MALAY = "ADUAN LPKP";
-	static final String COMPLAINT_HASHTAG = "#aduanteksi";
 
 	static final String LOCATION_MALAY = "Lokasi";
 	static final String REGISTRATION_MALAY = "Nombor Teksi Pendaftaran";
