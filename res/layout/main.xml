@@ -55,7 +55,7 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:textStyle="bold"
-			android:text="@string/registration" />
+			android:text="Vehicle Plate Number" />
 		<EditText
 			android:id="@+id/reg_entry"
 			android:layout_width="fill_parent"
@@ -76,6 +76,56 @@
 			android:hint="@string/location_hint"
 			android:background="@android:drawable/editbox_background"/>
 
+		<TextView
+			android:id="@+id/name_label"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:textStyle="bold"
+			android:text="Name" />
+		<EditText
+			android:id="@+id/name_entry"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:hint="Enter your name"
+			android:background="@android:drawable/editbox_background"/>
+
+		<TextView
+			android:id="@+id/ic_label"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:textStyle="bold"
+			android:text="IC Number" />
+		<EditText
+			android:id="@+id/name_entry"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:hint="Enter your NRIC or Passport number"
+			android:background="@android:drawable/editbox_background"/>
+
+		<TextView
+			android:id="@+id/tel_label"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:textStyle="bold"
+			android:text="Telephone Number" />
+		<EditText
+			android:id="@+id/name_entry"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:hint="Enter your telephone number"
+			android:background="@android:drawable/editbox_background"/>
+
+		<!--<TextView
+			android:id="@+id/category_label"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:textStyle="bold"
+			android:text="Category" />
+		<Spinner
+			android:id="@+id/category_spinner"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:prompt="@string/offence"/>
 
 		<TextView
 			android:id="@+id/offence_label"
@@ -87,7 +137,7 @@
 			android:id="@+id/offence_spinner"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:prompt="@string/offence"/>
+			android:prompt="@string/offence"/>-->
 
 		<TextView
 			android:id="@+id/other_label"

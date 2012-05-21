@@ -20,7 +20,7 @@
 -->
 
 <resources>
-	<string name="app_name">Report M\'sia Taxi</string>
+	<string name="app_name">Aduan SPAD</string>
 	<string name="date_and_time">Date and Time of Incident</string>
 	<string name="location">Location</string>
 	<string name="registration">Registration Number of Taxi</string>
@@ -37,6 +37,11 @@
 	<string name="location_hint">Enter location of incident</string>
 	<string name="registration_hint">Enter plate number, e.g. HWA9999</string>
 	<string name="other_hint">Enter additional details</string>
+
+	<string-array name="category_array">
+		<item>Taxi</item>
+		<item>Bus</item>
+	</string-array>
 
 	<string-array name="offence_array">
 		<item>Refused to use meter</item>

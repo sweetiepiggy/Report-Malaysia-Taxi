@@ -50,7 +50,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Spinner;
+//import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -165,7 +165,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	private void init()
 	{
 		init_date_time_buttons();
-		init_offence_spinner();
+		//init_category_spinner();
+		//init_offence_spinner();
 		init_camera_recorder_buttons();
 		init_submit_button();
 		init_cancel_button();
@@ -189,15 +190,25 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		});
 	}
 
-	private void init_offence_spinner()
-	{
-		Spinner offence_spinner = (Spinner) findViewById(R.id.offence_spinner);
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-			this, R.array.offence_array, android.R.layout.simple_spinner_item);
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		offence_spinner.setAdapter(adapter);
-		offence_spinner.setOnItemSelectedListener(new OffenceOnItemSelectedListener());
-	}
+//	private void init_category_spinner()
+//	{
+//		Spinner category_spinner = (Spinner) findViewById(R.id.category_spinner);
+//		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+//			this, R.array.category_array, android.R.layout.simple_spinner_item);
+//		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//		category_spinner.setAdapter(adapter);
+//		category_spinner.setOnItemSelectedListener(new OffenceOnItemSelectedListener());
+//	}
+//
+//	private void init_offence_spinner()
+//	{
+//		Spinner offence_spinner = (Spinner) findViewById(R.id.offence_spinner);
+//		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+//			this, R.array.offence_array, android.R.layout.simple_spinner_item);
+//		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//		offence_spinner.setAdapter(adapter);
+//		offence_spinner.setOnItemSelectedListener(new OffenceOnItemSelectedListener());
+//	}
 
 	/* TODO: disable recorder buttons if not supported by device */
 	private void init_camera_recorder_buttons()
@@ -285,7 +296,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			public void onClick(View v) {
 				init_date_time_buttons();
 				init_vars(mData);
-				init_offence_spinner();
+				//init_offence_spinner();
 				init_entries(mData);
 			}
 		});
