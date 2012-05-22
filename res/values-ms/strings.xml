@@ -35,9 +35,9 @@
 
 	<string name="location_hint">Masukkan lokasi kejadian</string>
 	<string name="registration_hint">Masuk nombor plat, cth HWA9999</string>
-	<string name="details_hint">Masukkan butiran tambahan</string>
+	<string name="details_hint">Masukkan butiran kejadian</string>
 
-	<string name="details">Maklumat Lanjut</string>
+	<string name="details">Butiran</string>
 	<string name="sms">sms</string>
 	<string name="tweet">tweet</string>
 	<string name="email">emel</string>
