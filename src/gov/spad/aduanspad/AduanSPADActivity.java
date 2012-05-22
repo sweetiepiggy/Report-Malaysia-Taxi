@@ -300,7 +300,7 @@ public class AduanSPADActivity extends Activity
 			getResources().getString(R.string.tweet),
 		};
 
-		AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+		AlertDialog.Builder builder = new AlertDialog.Builder(AduanSPADActivity.this);
 		builder.setTitle(R.string.select_submit);
 		builder.setMultiChoiceItems(submit_choices,
 				mData.submit_selected, new DialogInterface.OnMultiChoiceClickListener() {
