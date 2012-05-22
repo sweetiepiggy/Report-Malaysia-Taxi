@@ -247,9 +247,9 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 				/* TODO: don't hardcode "Other" */
 				} else if (mData.offenceMalay.equals("Other") &&
-						((EditText) findViewById(R.id.other_entry)).getText().toString().length() == 0) {
+						((EditText) findViewById(R.id.details_entry)).getText().toString().length() == 0) {
 					results_complete = false;
-					incomplete_msg = getResources().getString(R.string.missing_other);
+					incomplete_msg = getResources().getString(R.string.missing_details);
 				}
 
 				if (results_complete) {
@@ -319,7 +319,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 		((EditText) findViewById(R.id.location_entry)).setText("");
 		((EditText) findViewById(R.id.reg_entry)).setText("");
-		((EditText) findViewById(R.id.other_entry)).setText("");
+		((EditText) findViewById(R.id.details_entry)).setText("");
 
 		data.sms_checked = true;
 		data.email_checked = true;
@@ -376,7 +376,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		String time = format_time(mData.hour, mData.minute);
 		String loc = ((EditText) findViewById(R.id.location_entry)).getText().toString();
 		String reg = ((EditText) findViewById(R.id.reg_entry)).getText().toString();
-		String other = ((EditText) findViewById(R.id.other_entry)).getText().toString();
+		String details = ((EditText) findViewById(R.id.details_entry)).getText().toString();
 
 		/* TODO: order of index shouldn't be hard coded like this */
 		boolean sms_checked = mData.submit_selected[0];
@@ -384,7 +384,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		boolean tweet_checked = mData.submit_selected[2];
 		boolean youtube_checked = mData.submit_selected[3];
 
-		String msg = format_msg(date, time, loc, reg, mData.offenceMalay, other);
+		String msg = format_msg(date, time, loc, reg, mData.offenceMalay, details);
 
 		/* send one at a time, repeated call submit()
 			until all checked are sent */
@@ -393,7 +393,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		} else if (email_checked && !mData.email_sent) {
 			send_email(msg, reg);
 		} else if (tweet_checked && !mData.tweet_sent) {
-			send_tweet(date, time, loc, reg, other);
+			send_tweet(date, time, loc, reg, details);
 		} else if (youtube_checked && !mData.youtube_sent) {
 			send_youtube(msg);
 		}
@@ -484,7 +484,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			}
 		});
 
-		builder.setNeutralButton(R.string.details, new OnClickListener() {
+		builder.setNeutralButton(R.string.email_details, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
@@ -513,9 +513,9 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	}
 
 	private void send_tweet(String date, String time, String loc,
-			String reg, String other)
+			String reg, String details)
 	{
-		String tweet_msg = format_tweet(date, time, loc, reg, mData.offence, other);
+		String tweet_msg = format_tweet(date, time, loc, reg, mData.offence, details);
 		Intent tweet_intent = new Intent(Intent.ACTION_SEND);
 		tweet_intent.putExtra(Intent.EXTRA_TEXT, tweet_msg);
 		if (!mData.photoUris.isEmpty()) {
@@ -547,7 +547,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	}
 
 	private String format_msg(String date, String time, String location,
-			String reg, String offence, String other)
+			String reg, String offence, String details)
 	{
 		String message = "";
 		if (date.length() != 0) {
@@ -563,14 +563,15 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		if (location.length() != 0) {
 				message += '\n' + Constants.LOCATION_MALAY + ": " + location;
 		}
+		/* TODO: don't hardcode "Other" */
 		if (offence.length() != 0 && !offence.equals("Other")) {
 				message += '\n' + Constants.OFFENCE_MALAY + ": " + offence;
 		}
-		if (other.length() != 0) {
+		if (details.length() != 0) {
 			if (offence.length() != 0 && !offence.equals("Other")) {
-				message += '\n' + other;
+				message += '\n' + details;
 			} else {
-				message += '\n' + Constants.OFFENCE_MALAY + ": " + other;
+				message += '\n' + Constants.OFFENCE_MALAY + ": " + details;
 			}
 		}
 		return message;
@@ -587,7 +588,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	}
 
 	private String format_tweet(String date, String time, String loc,
-			String reg, String offence, String other)
+			String reg, String offence, String details)
 	{
 		/** map to keep track of which info should be printed and
 			which should be dropped to keep tweet under 140 characters */
@@ -601,53 +602,53 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		map.put("loc", false);
 		map.put("offence", false);
 
-		map.put("other", true);
-		if (other.length() == 0 || build_tweet(map, date, time,
-					loc, reg, offence, other).length() >
+		map.put("details", true);
+		if (details.length() == 0 || build_tweet(map, date, time,
+					loc, reg, offence, details).length() >
 				MAX_TWEET_LENGTH) {
-			map.put("other", false);
+			map.put("details", false);
 		}
 
 		map.put("offence", true);
 		/* TODO: don't hard code Other */
 		if (offence.length() == 0 || offence.equals("Other") ||
 				build_tweet(map, date, time, loc, reg,
-					offence, other).length() >
+					offence, details).length() >
 				MAX_TWEET_LENGTH) {
 			map.put("offence", false);
 		}
 
 		map.put("loc", true);
 		if (loc.length() == 0 || build_tweet(map, date, time,
-					loc, reg, offence, other).length() >
+					loc, reg, offence, details).length() >
 				MAX_TWEET_LENGTH) {
 			map.put("loc", false);
 		}
 
 		map.put("twitter_address2", true);
 		if (build_tweet(map, date, time, loc, reg,
-					offence, other).length() >
+					offence, details).length() >
 				MAX_TWEET_LENGTH) {
 			map.put("twitter_address2", false);
 		}
 
 		map.put("date", true);
 		if (date.length() == 0 || build_tweet(map, date, time,
-					loc, reg, offence, other).length() >
+					loc, reg, offence, details).length() >
 				MAX_TWEET_LENGTH) {
 			map.put("date", false);
 		}
 
 		map.put("time", true);
 		if (time.length() == 0 || build_tweet(map, date, time,
-					loc, reg, offence, other).length() >
+					loc, reg, offence, details).length() >
 				MAX_TWEET_LENGTH) {
 			map.put("time", false);
 		}
 
 		map.put("twitter_address3", true);
 		if (build_tweet(map, date, time, loc, reg,
-					offence, other).length() >
+					offence, details).length() >
 				MAX_TWEET_LENGTH) {
 			map.put("twitter_address3", false);
 		}
@@ -655,15 +656,15 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		/* always include additional details, but wait until here to
 			set true to avoid cutting down other fields if user
 			description won't fit anyway */
-		if (other.length() != 0) {
-			map.put("other", true);
+		if (details.length() != 0) {
+			map.put("details", true);
 		}
 
-		return build_tweet(map, date, time, loc, reg, offence, other);
+		return build_tweet(map, date, time, loc, reg, offence, details);
 	}
 
 	private String build_tweet(HashMap<String, Boolean> map, String date,
-			String time, String loc, String reg, String offence, String other)
+			String time, String loc, String reg, String offence, String details)
 	{
 		String res = "";
 
@@ -709,14 +710,14 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			res += offence.toLowerCase();
 		}
 
-		if (map.get("other")) {
+		if (map.get("details")) {
 			if (map.get("loc") || map.get("offence")) {
 				res += ',';
 			}
 			if (res.length() != 0) {
 				res += ' ';
 			}
-			res += other;
+			res += details;
 		}
 
 		if (map.get("twitter_address2")) {

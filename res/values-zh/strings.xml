@@ -36,7 +36,7 @@
 
 	<string name="location_hint">输入事件发生的地点</string>
 	<string name="registration_hint">输入车牌号码，例如HWA9999</string>
-	<string name="other_hint">输入其他详细信息，包括投诉</string>
+	<string name="details_hint">输入其他详细信息，包括投诉</string>
 
 	<string-array name="offence_array">
 		<item>拒绝使用计程表</item>
@@ -49,7 +49,7 @@
 		<item>其他</item>
 	</string-array>
 
-	<string name="other">详情</string>
+	<string name="details">详情</string>
 	<string name="sms">短信</string>
 	<string name="tweet">啁啾 </string>
 	<string name="email">电子邮件</string>
@@ -62,7 +62,7 @@
 	<string name="cancel">取消</string>
 
 	<string name="missing_reg">输入的士登记号码</string>
-	<string name="missing_other">输入其他意见</string>
+	<string name="missing_details">输入其他意见</string>
 	<string name="select_checkbox">请选择输送方法</string>
 
 	<string name="select_submit">选择方法</string>
@@ -125,7 +125,7 @@
 	<string name="prime_minister">首相</string>
 
 	<string name="who_email">选择谁电子邮件</string>
-	<string name="details">详情</string>
+	<string name="email_details">详情</string>
 	<string-array name="email_choices">
 		<item>SPAD</item>
 		<item>其它政府部门</item>

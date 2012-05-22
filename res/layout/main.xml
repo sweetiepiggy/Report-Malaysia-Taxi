@@ -90,18 +90,18 @@
 			android:prompt="@string/offence"/>
 
 		<TextView
-			android:id="@+id/other_label"
+			android:id="@+id/details_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:textStyle="bold"
-			android:text="@string/other" />
+			android:text="@string/details" />
 
 		<EditText
-			android:id="@+id/other_entry"
+			android:id="@+id/details_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
 			android:layout_weight="1"
-			android:hint="@string/other_hint"
+			android:hint="@string/details_hint"
 			android:background="@android:drawable/editbox_background" />
 
 		<TextView

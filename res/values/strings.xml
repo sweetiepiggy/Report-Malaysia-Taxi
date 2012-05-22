@@ -35,7 +35,7 @@
 
 	<string name="location_hint">Enter location of incident</string>
 	<string name="registration_hint">Enter plate number, e.g. HWA9999</string>
-	<string name="other_hint">Enter additional details</string>
+	<string name="details_hint">Enter additional details</string>
 
 	<string-array name="offence_array">
 		<item>Refused to use meter</item>
@@ -48,7 +48,7 @@
 		<item>Other</item>
 	</string-array>
 
-	<string name="other">Details</string>
+	<string name="details">Details</string>
 	<string name="sms">sms</string>
 	<string name="tweet">tweet</string>
 	<string name="email">email</string>
@@ -61,7 +61,7 @@
 	<string name="cancel">cancel</string>
 
 	<string name="missing_reg">enter registration number</string>
-	<string name="missing_other">enter other comments</string>
+	<string name="missing_details">enter additional details</string>
 	<string name="select_checkbox">select a checkbox</string>
 
 	<string name="select_submit">Select Method</string>
@@ -124,7 +124,7 @@
 	<string name="prime_minister">Prime Minister</string>
 
 	<string name="who_email">Select Who to Email</string>
-	<string name="details">Details</string>
+	<string name="email_details">Details</string>
 	<string-array name="email_choices">
 		<item>SPAD</item>
 		<item>Other Government Departments</item>
