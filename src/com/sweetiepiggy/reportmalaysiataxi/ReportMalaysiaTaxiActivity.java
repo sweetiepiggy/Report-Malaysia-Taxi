@@ -103,10 +103,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		savedInstanceState.putBooleanArray("who_selected", mData.who_selected);
 		savedInstanceState.putBooleanArray("submit_selected", mData.submit_selected);
 
-		savedInstanceState.putString("loc", ((EditText) findViewById(R.id.location_entry)).getText().toString());
-		savedInstanceState.putString("reg", ((EditText) findViewById(R.id.reg_entry)).getText().toString());
-		savedInstanceState.putString("other", ((EditText) findViewById(R.id.other_entry)).getText().toString());
-
 		savedInstanceState.putString("offence", mData.offence);
 		savedInstanceState.putString("offence_malay", mData.offenceMalay);
 
@@ -138,10 +134,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		mData.offence = savedInstanceState.getString("offence");
 		mData.offenceMalay = savedInstanceState.getString("offence_malay");
 
-		mData.loc = savedInstanceState.getString("loc");
-		mData.reg = savedInstanceState.getString("reg");
-		mData.other = savedInstanceState.getString("other");
-
 		mData.sms_checked = savedInstanceState.getBoolean("sms_checked");
 		mData.email_checked = savedInstanceState.getBoolean("email_checked");
 		mData.tweet_checked = savedInstanceState.getBoolean("tweet_checked");
@@ -155,10 +147,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	@Override
 	public Object onRetainNonConfigurationInstance()
 	{
-		mData.loc = ((EditText) findViewById(R.id.location_entry)).getText().toString();
-		mData.reg = ((EditText) findViewById(R.id.reg_entry)).getText().toString();
-		mData.other = ((EditText) findViewById(R.id.other_entry)).getText().toString();
-
 		return mData;
 	}
 
@@ -235,10 +223,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	{
 		update_date_label(mData.year, mData.month, mData.day);
 		update_time_label(mData.hour, mData.minute);
-
-		((EditText) findViewById(R.id.location_entry)).setText(data.loc);
-		((EditText) findViewById(R.id.reg_entry)).setText(data.reg);
-		((EditText) findViewById(R.id.other_entry)).setText(data.other);
 
 		String photo_size = data.photoUris.size() > 0 ? Integer.toString(data.photoUris.size()) : "";
 		String video_size = data.videoUris.size() > 0 ? Integer.toString(data.videoUris.size()) : "";
@@ -333,9 +317,9 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		data.tweet_sent = false;
 		data.sms_sent = false;
 
-		data.loc = "";
-		data.reg = "";
-		data.other = "";
+		((EditText) findViewById(R.id.location_entry)).setText("");
+		((EditText) findViewById(R.id.reg_entry)).setText("");
+		((EditText) findViewById(R.id.other_entry)).setText("");
 
 		data.sms_checked = true;
 		data.email_checked = true;
