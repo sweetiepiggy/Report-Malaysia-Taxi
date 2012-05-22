@@ -48,8 +48,6 @@
 	<string name="ok">确定</string>
 	<string name="cancel">取消</string>
 
-	<string name="missing_reg">输入的士登记号码</string>
-
 	<string name="select_submit">选择方法</string>
 	<string name="send_tweet">啁啾 </string>
 	<string name="send_email">电子邮件</string>

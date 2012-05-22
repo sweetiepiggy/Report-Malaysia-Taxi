@@ -27,6 +27,9 @@ public class Constants
 	static final String LOCATION_MALAY = "Lokasi";
 	static final String REGISTRATION_MALAY = "Nombor Teksi Pendaftaran";
 	static final String OFFENCE_MALAY = "Kesalahan";
+	static final String NAME_MALAY = "Nama";
+	static final String IC_MALAY = "No. Kad Pengenalan / Passport";
+	static final String TEL_MALAY = "Telefon";
 
 	static final String TWITTER_ADDR = "@aduanSPAD";
 

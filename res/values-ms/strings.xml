@@ -21,7 +21,7 @@
 
 <resources>
 
-	<string name="app_name">Aduan Teksi</string>
+	<string name="app_name">Aduan SPAD</string>
 	<string name="date_and_time">Tarikh dan Masa Kejadian</string>
 	<string name="location">Lokasi</string>
 	<string name="registration">Nombor Teksi Pendaftaran</string>
@@ -47,8 +47,6 @@
 
 	<string name="ok">Ya</string>
 	<string name="cancel">Membatalkan</string>
-
-	<string name="missing_reg">masukkan nombor pendaftaran</string>
 
 	<string name="select_submit">Memilih Kaedah</string>
 	<string name="send_tweet">Menghantar tweet</string>

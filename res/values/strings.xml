@@ -47,8 +47,6 @@
 	<string name="ok">OK</string>
 	<string name="cancel">cancel</string>
 
-	<string name="missing_reg">enter registration number</string>
-
 	<string name="select_submit">Select Method</string>
 	<string name="send_tweet">Send tweet</string>
 	<string name="send_email">Send email</string>

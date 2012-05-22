@@ -159,7 +159,7 @@
 			android:textStyle="bold"
 			android:text="IC Number" />
 		<EditText
-			android:id="@+id/name_entry"
+			android:id="@+id/ic_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:hint="Enter your NRIC or Passport number"
@@ -172,12 +172,11 @@
 			android:textStyle="bold"
 			android:text="Telephone Number" />
 		<EditText
-			android:id="@+id/name_entry"
+			android:id="@+id/tel_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:hint="Enter your telephone number"
 			android:background="@android:drawable/editbox_background"/>
-
 
 		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			android:orientation="horizontal"

@@ -216,10 +216,11 @@ public class AduanSPADActivity extends Activity
 
 				String incomplete_msg = "";
 
-				if (((EditText) findViewById(R.id.reg_entry)).getText().toString().length() == 0) {
-					results_complete = false;
-					incomplete_msg = getResources().getString(R.string.missing_reg);
-				}
+				/* TODO: mark results_complete as false if necessary entries are not complete */
+				//if (((EditText) findViewById(R.id.reg_entry)).getText().toString().length() == 0) {
+				//	results_complete = false;
+				//	incomplete_msg = getResources().getString(R.string.missing_reg);
+				//}
 
 				if (results_complete) {
 					submit_menu();
@@ -281,6 +282,9 @@ public class AduanSPADActivity extends Activity
 		((EditText) findViewById(R.id.location_entry)).setText("");
 		((EditText) findViewById(R.id.reg_entry)).setText("");
 		((EditText) findViewById(R.id.details_entry)).setText("");
+		((EditText) findViewById(R.id.name_entry)).setText("");
+		((EditText) findViewById(R.id.ic_entry)).setText("");
+		((EditText) findViewById(R.id.tel_entry)).setText("");
 
 		data.sms_checked = true;
 		data.email_checked = true;
@@ -335,13 +339,17 @@ public class AduanSPADActivity extends Activity
 		String loc = ((EditText) findViewById(R.id.location_entry)).getText().toString();
 		String reg = ((EditText) findViewById(R.id.reg_entry)).getText().toString();
 		String details = ((EditText) findViewById(R.id.details_entry)).getText().toString();
+		String name = ((EditText) findViewById(R.id.name_entry)).getText().toString();
+		String ic = ((EditText) findViewById(R.id.ic_entry)).getText().toString();
+		String tel = ((EditText) findViewById(R.id.tel_entry)).getText().toString();
 
 		/* TODO: order of index shouldn't be hard coded like this */
 		boolean sms_checked = mData.submit_selected[0];
 		boolean email_checked = mData.submit_selected[1];
 		boolean tweet_checked = mData.submit_selected[2];
 
-		String msg = format_msg(date, time, loc, reg, details);
+		String msg = format_msg(date, time, loc, reg, details, name,
+				ic, tel);
 
 		/* send one at a time, repeated call submit()
 			until all checked are sent */
@@ -429,9 +437,21 @@ public class AduanSPADActivity extends Activity
 	}
 
 	private String format_msg(String date, String time, String location,
-			String reg, String details)
+			String reg, String details, String name, String ic,
+			String tel)
 	{
 		String message = "";
+
+		if (name.length() != 0) {
+			message += '\n' + Constants.NAME_MALAY + ": " + name;
+		}
+		if (ic.length() != 0) {
+			message += '\n' + Constants.IC_MALAY + ": " + ic;
+		}
+		if (tel.length() != 0) {
+			message += '\n' + Constants.TEL_MALAY + ": " + tel;
+		}
+
 		if (date.length() != 0) {
 			message += '\n' + date;
 			if (time.length() != 0) {
@@ -448,6 +468,7 @@ public class AduanSPADActivity extends Activity
 		if (details.length() != 0) {
 			message += '\n' + Constants.OFFENCE_MALAY + ": " + details;
 		}
+
 		return message;
 	}
 
