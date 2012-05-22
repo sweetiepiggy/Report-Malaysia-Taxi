@@ -34,7 +34,7 @@
 
 	<string name="location_hint">Enter location of incident</string>
 	<string name="registration_hint">Enter plate number, e.g. HWA9999</string>
-	<string name="details_hint">Enter additional details</string>
+	<string name="details_hint">Enter details of incident</string>
 
 	<string name="details">Details</string>
 	<string name="sms">sms</string>

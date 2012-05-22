@@ -77,6 +77,21 @@
 			android:background="@android:drawable/editbox_background"/>
 
 		<TextView
+			android:id="@+id/details_label"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:textStyle="bold"
+			android:text="@string/details" />
+
+		<EditText
+			android:id="@+id/details_entry"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_weight="1"
+			android:hint="@string/details_hint"
+			android:background="@android:drawable/editbox_background" />
+
+		<TextView
 			android:id="@+id/name_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
@@ -114,21 +129,6 @@
 			android:layout_height="wrap_content"
 			android:hint="Enter your telephone number"
 			android:background="@android:drawable/editbox_background"/>
-
-		<TextView
-			android:id="@+id/details_label"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:textStyle="bold"
-			android:text="@string/details" />
-
-		<EditText
-			android:id="@+id/details_entry"
-			android:layout_width="fill_parent"
-			android:layout_height="fill_parent"
-			android:layout_weight="1"
-			android:hint="@string/details_hint"
-			android:background="@android:drawable/editbox_background" />
 
 		<TextView
 			android:id="@+id/record_label"
