@@ -26,7 +26,6 @@
 	<string name="registration">Registration Number of Taxi</string>
 	<string name="offence">Nature of Offence</string>
 
-	<string name="settings">Preferences</string>
 	<string name="about">About</string>
 	<string name="resources">Resources</string>
 	<string name="fare_rate">Fare Rate</string>
@@ -106,7 +105,7 @@
 	<string name="pemudah">PEMUDA</string>
 	<string name="ttpm">Tribunal for Consumer Claims</string>
 
-	<string name="spad_desc">Land Transport Commission</string>
+	<string name="spad_desc">Land Public Transport Commission</string>
 	<string name="lpkp_desc">Commercial Vehicle Licensing Board</string>
 	<string name="jpj_desc">Road Transport Department</string>
 	<string name="kpdnkk_desc">Ministry of Domestic Trade, Cooperative and Consumerism</string>
@@ -143,7 +142,7 @@
 	</string-array>
 
 	<string name="email_details">
-SPAD: Land Transport Commission\n\n
+SPAD: Land Public Transport Commission\n\n
 Government Departments: LPKP, JPJ, KPDNKK, Ministry of Tourism, PEMUDAH, Public Complaints Bureau\n\n
 Consumer Groups: TRANSIT, NCCC\n\n
 Government Ministers: Minister of Transport, Minister of Tourism, Prime Minister\n\n

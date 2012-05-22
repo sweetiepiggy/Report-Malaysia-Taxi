@@ -24,7 +24,7 @@ import android.app.Activity;
 public class Constants
 {
 	static final String COMPLAINT_EMAIL_MALAY = "Aduan Teksi";
-	static final String COMPLAINT_MALAY = "ADUAN LPKP";
+	static final String COMPLAINT_MALAY = "SPAD ADUAN";
 
 	static final String LOCATION_MALAY = "Lokasi";
 	static final String REGISTRATION_MALAY = "Nombor Teksi Pendaftaran";
@@ -66,11 +66,11 @@ public class Constants
 
 	static final String SPAD_EMAIL = "aduan@spad.gov.my";
 	static final String SPAD_TWITTER = "http://twitter.com/aduanSPAD";
+	static final String SPAD_SMS = "15888";
+	static final String SPAD_PHONE = "1 800 88 96 00";
 
 	static final String LPKP_EMAIL = "aduan@lpkp.gov.my";
 	static final String LPKP_WEBSITE = "http://www.lpkp.gov.my";
-	static final String LPKP_SMS = "15888";
-	static final String LPKP_PHONE = "1 800 88 96 00";
 
 	static final String JPJ_EMAIL = "aduantrafik@jpj.gov.my";
 	static final String JPJ_WEBSITE = "http://portal.jpj.gov.my";
@@ -111,7 +111,7 @@ public class Constants
 	static final String MO_TRANSPORT_TWITTER = "http://twitter.com/kongchoha";
 
 	static final String MO_TOURISM_EMAIL = "yenyenng@motour.gov.my";
-	static final String MO_TOURISM_WEBSITE = "http://www.drngyenyen.com/";
+	static final String MO_TOURISM_WEBSITE = "http://www.drngyenyen.com";
 	static final String MO_TOURISM_PHONE = "03 8891 7000";
 	static final String MO_TOURISM_TWITTER = "http://twitter.com/DrYenYen";
 

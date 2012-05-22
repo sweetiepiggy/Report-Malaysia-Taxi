@@ -90,6 +90,8 @@ public class GovDeptActivity extends ListActivity {
 					b.putString("website", getResources().getString(R.string.spad_website));
 					b.putString("form", getResources().getString(R.string.spad_form));
 					b.putString("twitter", Constants.SPAD_TWITTER);
+					b.putString("sms", Constants.SPAD_SMS);
+					b.putString("phone", Constants.SPAD_PHONE);
 
 					intent.putExtras(b);
 					startActivity(intent);
@@ -102,8 +104,6 @@ public class GovDeptActivity extends ListActivity {
 					b.putString("desc", getResources().getString(R.string.lpkp_desc));
 					b.putString("email", Constants.LPKP_EMAIL);
 					b.putString("website", Constants.LPKP_WEBSITE);
-					b.putString("sms", Constants.LPKP_SMS);
-					b.putString("phone", Constants.LPKP_PHONE);
 
 					intent.putExtras(b);
 					startActivity(intent);

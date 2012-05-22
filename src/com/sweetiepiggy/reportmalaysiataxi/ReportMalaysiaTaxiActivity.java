@@ -296,8 +296,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		Button call_button = (Button)findViewById(R.id.call_button);
 		call_button.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				String tel_number = Constants.LPKP_PHONE;
-				tel_number += " (" + getResources().getString(R.string.lpkp) + ")";
+				String tel_number = Constants.SPAD_PHONE;
+				tel_number += " (" + getResources().getString(R.string.spad) + ")";
 				Intent call_intent = new Intent(Intent.ACTION_DIAL);
 				call_intent.setData(Uri.parse("tel:" + tel_number));
 				startActivity(call_intent);
