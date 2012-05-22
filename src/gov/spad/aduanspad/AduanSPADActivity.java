@@ -6,7 +6,8 @@
     Aduan SPAD is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 3 of the License, or
-    (at your option) any later version.  
+    (at your option) any later version.
+
     Aduan SPAD is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -48,7 +49,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-public class ReportMalaysiaTaxiActivity extends Activity
+public class AduanSPADActivity extends Activity
 {
 	private DataWrapper mData;
 
@@ -311,7 +312,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			getResources().getString(R.string.tweet),
 		};
 
-		AlertDialog.Builder builder = new AlertDialog.Builder(ReportMalaysiaTaxiActivity.this);
+		AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
 		builder.setTitle(R.string.select_submit);
 		builder.setMultiChoiceItems(submit_choices,
 				mData.submit_selected, new DialogInterface.OnMultiChoiceClickListener() {
