@@ -41,10 +41,6 @@ public class DataWrapper
 	public boolean tweet_sent;
 	public boolean sms_sent;
 
-	public String loc;
-	public String reg;
-	public String details;
-
 	public boolean sms_checked;
 	public boolean email_checked;
 	public boolean tweet_checked;

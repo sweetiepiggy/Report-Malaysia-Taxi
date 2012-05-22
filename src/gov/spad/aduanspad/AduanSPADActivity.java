@@ -96,10 +96,6 @@ public class AduanSPADActivity extends Activity
 
 		savedInstanceState.putBooleanArray("submit_selected", mData.submit_selected);
 
-		savedInstanceState.putString("loc", ((EditText) findViewById(R.id.location_entry)).getText().toString());
-		savedInstanceState.putString("reg", ((EditText) findViewById(R.id.reg_entry)).getText().toString());
-		savedInstanceState.putString("details", ((EditText) findViewById(R.id.details_entry)).getText().toString());
-
 		savedInstanceState.putStringArrayList("photo_uris", uriarr2strarr(mData.photoUris));
 		savedInstanceState.putStringArrayList("recording_uris", uriarr2strarr(mData.recordingUris));
 		savedInstanceState.putStringArrayList("video_uris", uriarr2strarr(mData.videoUris));
@@ -124,10 +120,6 @@ public class AduanSPADActivity extends Activity
 
 		mData.submit_selected = savedInstanceState.getBooleanArray("submit_selected");
 
-		mData.loc = savedInstanceState.getString("loc");
-		mData.reg = savedInstanceState.getString("reg");
-		mData.details = savedInstanceState.getString("details");
-
 		mData.sms_checked = savedInstanceState.getBoolean("sms_checked");
 		mData.email_checked = savedInstanceState.getBoolean("email_checked");
 		mData.tweet_checked = savedInstanceState.getBoolean("tweet_checked");
@@ -140,10 +132,6 @@ public class AduanSPADActivity extends Activity
 	@Override
 	public Object onRetainNonConfigurationInstance()
 	{
-		mData.loc = ((EditText) findViewById(R.id.location_entry)).getText().toString();
-		mData.reg = ((EditText) findViewById(R.id.reg_entry)).getText().toString();
-		mData.details = ((EditText) findViewById(R.id.details_entry)).getText().toString();
-
 		return mData;
 	}
 
@@ -208,10 +196,6 @@ public class AduanSPADActivity extends Activity
 	{
 		update_date_label(mData.year, mData.month, mData.day);
 		update_time_label(mData.hour, mData.minute);
-
-		((EditText) findViewById(R.id.location_entry)).setText(data.loc);
-		((EditText) findViewById(R.id.reg_entry)).setText(data.reg);
-		((EditText) findViewById(R.id.details_entry)).setText(data.details);
 
 		String photo_size = data.photoUris.size() > 0 ? Integer.toString(data.photoUris.size()) : "";
 		String video_size = data.videoUris.size() > 0 ? Integer.toString(data.videoUris.size()) : "";
@@ -294,9 +278,9 @@ public class AduanSPADActivity extends Activity
 		data.tweet_sent = false;
 		data.sms_sent = false;
 
-		data.loc = "";
-		data.reg = "";
-		data.details = "";
+		((EditText) findViewById(R.id.location_entry)).setText("");
+		((EditText) findViewById(R.id.reg_entry)).setText("");
+		((EditText) findViewById(R.id.details_entry)).setText("");
 
 		data.sms_checked = true;
 		data.email_checked = true;
