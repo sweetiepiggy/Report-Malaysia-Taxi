@@ -27,9 +27,9 @@
 
 	<string name="about">About</string>
 	<string name="resources">Resources</string>
-	<string name="fare_rate">Fare Rate</string>
-	<string name="fare_calc">Fare Calculator</string>
-	<string name="contacts">Contact Info</string>
+	<string name="fare_rate">Taxi Fare Rate</string>
+	<string name="fare_calc">Taxi Fare Calculator</string>
+	<string name="contacts">Contact Us</string>
 	<string name="record">Record</string>
 
 	<string name="location_hint">Enter location of incident</string>
@@ -81,7 +81,7 @@
 	<string name="sunday">Sunday</string>
 
 	<string name="spad">SPAD</string>
-	<string name="spad_desc">Land Transport Commission</string>
+	<string name="spad_desc">Land Public Transport Commission</string>
 
 	<string name="spad_website">http://www.spad.gov.my</string>
 	<string name="spad_form">http://www.spad.gov.my/contact-us/feedback</string>
