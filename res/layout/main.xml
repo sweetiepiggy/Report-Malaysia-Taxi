@@ -92,45 +92,6 @@
 			android:background="@android:drawable/editbox_background" />
 
 		<TextView
-			android:id="@+id/name_label"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:textStyle="bold"
-			android:text="Name" />
-		<EditText
-			android:id="@+id/name_entry"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:hint="Enter your name"
-			android:background="@android:drawable/editbox_background"/>
-
-		<TextView
-			android:id="@+id/ic_label"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:textStyle="bold"
-			android:text="IC Number" />
-		<EditText
-			android:id="@+id/name_entry"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:hint="Enter your NRIC or Passport number"
-			android:background="@android:drawable/editbox_background"/>
-
-		<TextView
-			android:id="@+id/tel_label"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:textStyle="bold"
-			android:text="Telephone Number" />
-		<EditText
-			android:id="@+id/name_entry"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:hint="Enter your telephone number"
-			android:background="@android:drawable/editbox_background"/>
-
-		<TextView
 			android:id="@+id/record_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
@@ -178,6 +139,45 @@
 				android:background="@android:color/transparent"
 				android:drawableLeft="@android:drawable/ic_btn_speak_now"/>
 		</LinearLayout>
+		<TextView
+			android:id="@+id/name_label"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:textStyle="bold"
+			android:text="Name" />
+		<EditText
+			android:id="@+id/name_entry"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:hint="Enter your name"
+			android:background="@android:drawable/editbox_background"/>
+
+		<TextView
+			android:id="@+id/ic_label"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:textStyle="bold"
+			android:text="IC Number" />
+		<EditText
+			android:id="@+id/name_entry"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:hint="Enter your NRIC or Passport number"
+			android:background="@android:drawable/editbox_background"/>
+
+		<TextView
+			android:id="@+id/tel_label"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:textStyle="bold"
+			android:text="Telephone Number" />
+		<EditText
+			android:id="@+id/name_entry"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:hint="Enter your telephone number"
+			android:background="@android:drawable/editbox_background"/>
+
 
 		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			android:orientation="horizontal"
