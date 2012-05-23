@@ -484,7 +484,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			}
 		});
 
-		builder.setNeutralButton(R.string.email_details, new OnClickListener() {
+		builder.setNeutralButton(R.string.who_details, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);

@@ -125,7 +125,7 @@
 	<string name="prime_minister">Perdana Menteri</string>
 
 	<string name="who_email">Pilih Talian Untuk Menghantar E-mel</string>
-	<string name="email_details">Butir-butir</string>
+	<string name="who_details">Butir-butir</string>
 	<string-array name="email_choices">
 		<item>SPAD</item>
 		<item>Jabatan Kerajaan Lain</item>
