@@ -132,7 +132,10 @@ Aduan SPAD is distributed in the hope that it will be useful,
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.\n\n
 You should have received a copy of the GNU General Public License
-    along with Aduan SPAD; if not, see http://www.gnu.org/licenses/.
+    along with Aduan SPAD; if not, see http://www.gnu.org/licenses/.\n\n
+
+Aduan SPAD contains icons from the Nuove icon pack by Alexander Moore.
+    http://findicons.com/pack/2117/nuove
 	</string>
 </resources>
 
