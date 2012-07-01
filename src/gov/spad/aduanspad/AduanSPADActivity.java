@@ -33,6 +33,7 @@ import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -161,35 +162,51 @@ public class AduanSPADActivity extends Activity
 		});
 	}
 
-	/* TODO: disable recorder buttons if not supported by device */
 	private void init_camera_recorder_buttons()
 	{
 		Button camera_button = (Button) findViewById(R.id.camera_button);
-		camera_button.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent photo_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-				startActivityForResult(photo_intent, ACTIVITY_TAKE_PHOTO);
-			}
-		});
-
 		Button vidcam_button = (Button) findViewById(R.id.vidcam_button);
-		vidcam_button.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent video_intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-				startActivityForResult(video_intent, ACTIVITY_TAKE_VIDEO);
-			}
-		});
-
 		Button recorder_button = (Button) findViewById(R.id.recorder_button);
-		recorder_button.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent recorder_intent = new Intent(MediaStore.Audio.Media.RECORD_SOUND_ACTION);
-				startActivityForResult(recorder_intent, ACTIVITY_RECORD_SOUND);
-			}
-		});
+
+		boolean has_camera = getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA);
+		boolean has_microphone = getPackageManager().hasSystemFeature(PackageManager.FEATURE_MICROPHONE);
+
+		if (has_camera) {
+			camera_button.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Intent photo_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+					startActivityForResult(photo_intent, ACTIVITY_TAKE_PHOTO);
+				}
+			});
+
+			vidcam_button.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Intent video_intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+					startActivityForResult(video_intent, ACTIVITY_TAKE_VIDEO);
+				}
+			});
+		} else {
+			camera_button.setVisibility(View.GONE);
+			vidcam_button.setVisibility(View.GONE);
+		}
+
+		if (has_microphone) {
+			recorder_button.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Intent recorder_intent = new Intent(MediaStore.Audio.Media.RECORD_SOUND_ACTION);
+					startActivityForResult(recorder_intent, ACTIVITY_RECORD_SOUND);
+				}
+			});
+		} else {
+			recorder_button.setVisibility(View.GONE);
+		}
+
+		if (!has_camera && !has_microphone) {
+			((TextView) findViewById(R.id.record_label)).setVisibility(View.GONE);
+		}
 	}
 
 	private void init_entries(DataWrapper data)
