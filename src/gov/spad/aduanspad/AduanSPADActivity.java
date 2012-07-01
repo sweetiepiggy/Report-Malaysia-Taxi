@@ -176,7 +176,9 @@ public class AduanSPADActivity extends Activity
 				@Override
 				public void onClick(View v) {
 					Intent photo_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-					startActivityForResult(photo_intent, ACTIVITY_TAKE_PHOTO);
+					startActivityForResult(Intent.createChooser(photo_intent,
+							getResources().getString(R.string.take_photo)),
+						ACTIVITY_TAKE_PHOTO);
 				}
 			});
 
@@ -184,7 +186,9 @@ public class AduanSPADActivity extends Activity
 				@Override
 				public void onClick(View v) {
 					Intent video_intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-					startActivityForResult(video_intent, ACTIVITY_TAKE_VIDEO);
+					startActivityForResult(Intent.createChooser(video_intent,
+							getResources().getString(R.string.record_video)),
+						ACTIVITY_TAKE_VIDEO);
 				}
 			});
 		} else {
@@ -197,7 +201,9 @@ public class AduanSPADActivity extends Activity
 				@Override
 				public void onClick(View v) {
 					Intent recorder_intent = new Intent(MediaStore.Audio.Media.RECORD_SOUND_ACTION);
-					startActivityForResult(recorder_intent, ACTIVITY_RECORD_SOUND);
+					startActivityForResult(Intent.createChooser(recorder_intent,
+							getResources().getString(R.string.record_sound)),
+						ACTIVITY_RECORD_SOUND);
 				}
 			});
 		} else {

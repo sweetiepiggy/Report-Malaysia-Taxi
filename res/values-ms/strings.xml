@@ -52,6 +52,9 @@
 	<string name="send_tweet">Menghantar tweet</string>
 	<string name="send_email">Hantar emel</string>
 	<string name="place_call">Hubungi</string>
+	<string name="take_photo">Ambil gambar</string>
+	<string name="record_video">Merakamkan vedeo</string>
+	<string name="record_sound">Merakamkan suara</string>
 
 	<string name="lk_jb_kt_m">Kuala Lumpur, Johor Baru, Kuala Terengganu, Melaka</string>
 	<string name="penang">Pulau Pinang</string>
