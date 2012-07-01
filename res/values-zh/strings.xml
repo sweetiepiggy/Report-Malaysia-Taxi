@@ -70,6 +70,9 @@
 	<string name="send_tweet">啁啾 </string>
 	<string name="send_email">电子邮件</string>
 	<string name="place_call">致电</string>
+	<string name="take_photo">拍照</string>
+	<string name="record_video">记录影片</string>
+	<string name="record_sound">记录声音</string>
 
 	<string name="lk_jb_kt_m">吉隆坡， 柔佛， 瓜拉登嘉楼， 马六甲</string>
 	<string name="penang">槟城</string>

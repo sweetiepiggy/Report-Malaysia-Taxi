@@ -69,6 +69,9 @@
 	<string name="send_tweet">Send tweet</string>
 	<string name="send_email">Send email</string>
 	<string name="place_call">Place call</string>
+	<string name="take_photo">Take photo</string>
+	<string name="record_video">Record video</string>
+	<string name="record_sound">Record audio</string>
 
 	<string name="lk_jb_kt_m">Kuala Lumpur, Johor Baru, Kuala Terengganu, Melaka</string>
 	<string name="penang">Penang</string>
