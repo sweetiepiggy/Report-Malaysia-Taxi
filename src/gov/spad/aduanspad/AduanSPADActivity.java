@@ -168,8 +168,10 @@ public class AduanSPADActivity extends Activity
 		Button vidcam_button = (Button) findViewById(R.id.vidcam_button);
 		Button recorder_button = (Button) findViewById(R.id.recorder_button);
 
-		boolean has_camera = getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA);
-		boolean has_microphone = getPackageManager().hasSystemFeature(PackageManager.FEATURE_MICROPHONE);
+		//boolean has_camera = getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA);
+		//boolean has_microphone = getPackageManager().hasSystemFeature(PackageManager.FEATURE_MICROPHONE);
+		boolean has_camera = true;
+		boolean has_microphone = true;
 
 		if (has_camera) {
 			camera_button.setOnClickListener(new View.OnClickListener() {
