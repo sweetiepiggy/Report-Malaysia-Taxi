@@ -34,6 +34,9 @@
 	<string name="contacts">Hubungi Informasi</string>
 	<string name="record">Rekod</string>
 
+	<string name="view_source">Kedatangan Sumber</string>
+	<string name="open_browser">Melayari Web</string>
+
 	<string name="location_hint">Masukkan lokasi kejadian</string>
 	<string name="registration_hint">Masuk nombor plat, cth HWA9999</string>
 	<string name="details_hint">Masukkan butiran tambahan</string>

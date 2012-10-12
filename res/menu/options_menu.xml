@@ -23,5 +23,8 @@
 	<item android:id="@+id/resources"
 		android:icon="@android:drawable/ic_dialog_info"
 		android:title="@string/resources" />
+	<item android:id="@+id/source"
+		android:icon="@android:drawable/ic_menu_view"
+		android:title="@string/view_source" />
 </menu>
 

@@ -68,6 +68,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 	static final int MAX_TWEET_LENGTH = 140;
 
+	private static final String SOURCE_URL = "https://github.com/sweetiepiggy/Report-Malaysia-Taxi";
+
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState)
@@ -905,6 +907,11 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		case R.id.resources:
 			Intent resources_intent = new Intent(getApplicationContext(), ResourcesActivity.class);
 			startActivity(resources_intent);
+			return true;
+		case R.id.source:
+			Intent source_intent = new Intent(Intent.ACTION_VIEW);
+			source_intent.setDataAndType(Uri.parse(SOURCE_URL), "text/html");
+			startActivity(Intent.createChooser(source_intent, getResources().getString(R.string.open_browser)));
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);

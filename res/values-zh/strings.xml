@@ -34,6 +34,9 @@
 	<string name="contacts">联系信息</string>
 	<string name="record">记录</string>
 
+	<string name="view_source">代码来源</string>
+	<string name="open_browser">浏览网络</string>
+
 	<string name="location_hint">输入事件发生的地点</string>
 	<string name="registration_hint">输入车牌号码，例如HWA9999</string>
 	<string name="details_hint">输入其他详细信息，包括投诉</string>
