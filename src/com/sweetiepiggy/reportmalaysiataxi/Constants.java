@@ -51,7 +51,7 @@ public class Constants
 	/* TODO: use already defined contants such as TRANSIT_EMAIL */
 	static final String[] EMAIL_ADDRESSES = {
 		"aduan@spad.gov.my; ",
-		"aduan@lpkp.gov.my; aduantrafik@jpj.gov.my; e-aduan@kpdnkk.gov.my; info@motour.gov.my; bahria@miti.gov.my; unitpro@pcb.gov.my; ",
+		"aduantrafik@jpj.gov.my; e-aduan@kpdnkk.gov.my; info@motour.gov.my; bahria@miti.gov.my; unitpro@pcb.gov.my; ",
 		"klangvalley.transit@gmail.com; nccc@nccc.org.my; ",
 		"menteri@mot.gov.my; yenyenng@motour.gov.my; najib@1malaysia.com.my; ",
 		"editor@thestar.com.my; metro@thestar.com.my; mmnews@mmail.com.my; syedn@nst.com.my; letters@nst.com.my; streets@nst.com.my; letters@thesundaily.com, editor@malaysiakini.com.my; editor@themalaysianinsider.com; ",
