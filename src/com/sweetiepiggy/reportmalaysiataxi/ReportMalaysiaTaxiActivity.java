@@ -58,15 +58,15 @@ public class ReportMalaysiaTaxiActivity extends Activity
 {
 	private DataWrapper mData;
 
-	static final int DATE_DIALOG_ID = 0;
-	static final int TIME_DIALOG_ID = 1;
+	private static final int DATE_DIALOG_ID = 0;
+	private static final int TIME_DIALOG_ID = 1;
 
-	static final int ACTIVITY_TAKE_PHOTO = 0;
-	static final int ACTIVITY_RECORD_SOUND = 1;
-	static final int ACTIVITY_TAKE_VIDEO = 3;
-	static final int ACTIVITY_SUBMIT = 4;
+	private static final int ACTIVITY_TAKE_PHOTO = 0;
+	private static final int ACTIVITY_RECORD_SOUND = 1;
+	private static final int ACTIVITY_TAKE_VIDEO = 3;
+	private static final int ACTIVITY_SUBMIT = 4;
 
-	static final int MAX_TWEET_LENGTH = 140;
+	private static final int MAX_TWEET_LENGTH = 140;
 
 	private static final String SOURCE_URL = "https://github.com/sweetiepiggy/Report-Malaysia-Taxi";
 
