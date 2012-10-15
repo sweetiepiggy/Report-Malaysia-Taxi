@@ -362,7 +362,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			getResources().getString(R.string.youtube),
 		};
 
-		AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+		AlertDialog.Builder builder = new AlertDialog.Builder(ReportMalaysiaTaxiActivity.this);
 		builder.setTitle(R.string.select_submit);
 		builder.setMultiChoiceItems(submit_choices,
 				mData.submit_selected, new DialogInterface.OnMultiChoiceClickListener() {
@@ -448,7 +448,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 	private void send_email(final String msg, final String reg)
 	{
-		AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+		AlertDialog.Builder builder = new AlertDialog.Builder(ReportMalaysiaTaxiActivity.this);
 		builder.setTitle(R.string.who_email);
 		builder.setMultiChoiceItems(R.array.email_choices,
 				mData.who_selected, new DialogInterface.OnMultiChoiceClickListener() {
