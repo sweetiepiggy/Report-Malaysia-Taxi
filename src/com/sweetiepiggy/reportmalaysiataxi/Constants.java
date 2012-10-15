@@ -115,7 +115,7 @@ public class Constants
 	static final String MO_TOURISM_PHONE = "03 8891 7000";
 	static final String MO_TOURISM_TWITTER = "http://twitter.com/DrYenYen";
 
-	static final String PRIME_MINISTER_NAME = "Dato Sri Haji Mohammad Najib bin Tun Haji Abdul Razak";
+	static final String PRIME_MINISTER_NAME = "Najib Razak";
 	static final String PRIME_MINISTER_EMAIL = "najib@1malaysia.com.my";
 	static final String PRIME_MINISTER_TWITTER = "http://twitter.com/NajibRazak";
 
