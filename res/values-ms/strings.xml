@@ -61,9 +61,6 @@
 	<string name="youtube">youtube</string>
 	<string name="call">panggil</string>
 
-	<string name="ok">Ya</string>
-	<string name="cancel">Membatalkan</string>
-
 	<string name="missing_reg">masukkan nombor pendaftaran</string>
 	<string name="missing_details">masukkan komen lain</string>
 	<string name="select_checkbox">mark check box</string>

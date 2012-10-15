@@ -60,9 +60,6 @@
 	<string name="youtube">youtube</string>
 	<string name="call">call</string>
 
-	<string name="ok">OK</string>
-	<string name="cancel">cancel</string>
-
 	<string name="missing_reg">enter registration number</string>
 	<string name="missing_details">enter additional details</string>
 	<string name="select_checkbox">select a checkbox</string>

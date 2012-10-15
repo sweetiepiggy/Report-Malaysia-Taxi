@@ -370,7 +370,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				mData.submit_selected[which] = is_checked;
 			}
 		});
-		builder.setPositiveButton(R.string.ok, new OnClickListener() {
+		builder.setPositiveButton(android.R.string.ok, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				mData.youtube_sent = false;
@@ -380,7 +380,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				submit();
 			}
 		});
-		builder.setNegativeButton(R.string.cancel, new OnClickListener() {
+		builder.setNegativeButton(android.R.string.cancel, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 			}
@@ -456,7 +456,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				mData.who_selected[which] = is_checked;
 			}
 		});
-		builder.setPositiveButton(R.string.ok, new OnClickListener() {
+		builder.setPositiveButton(android.R.string.ok, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				String email_msg = format_email(msg);
@@ -525,7 +525,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			}
 		});
 
-		builder.setNegativeButton(R.string.cancel, new OnClickListener() {
+		builder.setNegativeButton(android.R.string.cancel, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				mData.email_sent = true;
