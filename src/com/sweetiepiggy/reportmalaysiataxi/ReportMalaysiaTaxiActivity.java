@@ -505,7 +505,12 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 				mData.email_sent = true;
 				/* don't createChooser() because AlertDialog will not close */
-				startActivityForResult(email_intent, ACTIVITY_SUBMIT);
+				//startActivityForResult(email_intent, ACTIVITY_SUBMIT);
+				/* do createChooser(), will not close
+					AlertDialog but at least string.send_email can be used */
+				startActivityForResult(Intent.createChooser(email_intent,
+							getResources().getString(R.string.send_email)),
+						ACTIVITY_SUBMIT);
 			}
 		});
 
