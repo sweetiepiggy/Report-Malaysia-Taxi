@@ -51,6 +51,17 @@
 		<item>Other</item>
 	</string-array>
 
+	<string-array name="email_offence_array">
+		<item>Refused to use meter</item>
+		<item>Refused to take passenger</item>
+		<item>Refused to give change</item>
+		<item>Reckless driving</item>
+		<item>Offered illegal services</item>
+		<item>Harrassment</item>
+		<item>Smoking in Taxi</item>
+		<item>Other</item>
+	</string-array>
+
 	<string name="details">Details</string>
 	<string name="sms">sms</string>
 	<string name="tweet">tweet</string>
@@ -217,6 +228,17 @@ Traffic Police: rmp@rmp.gov.my
 	<string name="airports_fare_rate">
 	Taxis at airports operate on a pre-paid coupon system.
 	</string>
+
+	<string name="email_intro">
+To Whom It May Concern:\n\n
+I\'m writing this email to inform you of an unpleasant incident which I
+experienced recently. The details are below. Please take appropriate action
+regarding my complaint.\n\n
+Thank you.\n
+	</string>
+	<string name="email_reg">Registration Number of Taxi</string>
+	<string name="email_loc">Location</string>
+	<string name="email_offence">Nature of Offence</string>
 
 	<string name="gpl">
 Copyright (C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n

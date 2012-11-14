@@ -105,7 +105,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		savedInstanceState.putBooleanArray("submit_selected", mData.submit_selected);
 
 		savedInstanceState.putString("offence", mData.offence);
-		savedInstanceState.putString("offence_malay", mData.offenceMalay);
+		savedInstanceState.putString("email_offence", mData.email_offence);
 
 		savedInstanceState.putStringArrayList("photo_uris", uriarr2strarr(mData.photoUris));
 		savedInstanceState.putStringArrayList("recording_uris", uriarr2strarr(mData.recordingUris));
@@ -133,7 +133,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		mData.submit_selected = savedInstanceState.getBooleanArray("submit_selected");
 
 		mData.offence = savedInstanceState.getString("offence");
-		mData.offenceMalay = savedInstanceState.getString("offence_malay");
+		mData.email_offence = savedInstanceState.getString("email_offence");
 
 		mData.sms_checked = savedInstanceState.getBoolean("sms_checked");
 		mData.email_checked = savedInstanceState.getBoolean("email_checked");
@@ -271,8 +271,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 					incomplete_msg = getResources().getString(R.string.missing_reg);
 
 				/* TODO: don't hardcode "Other" */
-				} else if (mData.offenceMalay.equals("Other") &&
-						((EditText) findViewById(R.id.details_entry)).getText().toString().length() == 0) {
+				} else if ((mData.email_offence.equals("Other") || mData.email_offence.equals("Lain-lain"))
+					&& ((EditText) findViewById(R.id.details_entry)).getText().toString().length() == 0) {
 					results_complete = false;
 					incomplete_msg = getResources().getString(R.string.missing_details);
 				}
@@ -331,7 +331,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		data.minute = c.get(Calendar.MINUTE);
 
 		data.offence = "";
-		data.offenceMalay = "";
+		data.email_offence = "";
 
 		data.photoUris = new ArrayList<Uri>();
 		data.recordingUris = new ArrayList<Uri>();
@@ -409,7 +409,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		boolean tweet_checked = mData.submit_selected[2];
 		boolean youtube_checked = mData.submit_selected[3];
 
-		String msg = format_msg(date, time, loc, reg, mData.offenceMalay, details);
+		String msg = format_msg(date, time, loc, reg, mData.offence, details);
 
 		/* send one at a time, repeated call submit()
 			until all checked are sent */
@@ -588,20 +588,20 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		}
 
 		if (reg.length() != 0) {
-				message += '\n' + Constants.REGISTRATION_MALAY + ": " + reg;
+				message += '\n' + getResources().getString(R.string.email_reg) + ": " + reg;
 		}
 		if (location.length() != 0) {
-				message += '\n' + Constants.LOCATION_MALAY + ": " + location;
+				message += '\n' + getResources().getString(R.string.email_loc) + ": " + location;
 		}
 		/* TODO: don't hardcode "Other" */
 		if (offence.length() != 0 && !offence.equals("Other")) {
-				message += '\n' + Constants.OFFENCE_MALAY + ": " + offence;
+				message += '\n' + getResources().getString(R.string.email_offence) + ": " + offence;
 		}
 		if (details.length() != 0) {
 			if (offence.length() != 0 && !offence.equals("Other")) {
 				message += '\n' + details;
 			} else {
-				message += '\n' + Constants.OFFENCE_MALAY + ": " + details;
+				message += '\n' + getResources().getString(R.string.email_offence) + ": " + details;
 			}
 		}
 		return message;
@@ -609,7 +609,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 
 	private String format_email(String msg)
 	{
-		return Constants.EMAIL_INTRO_MALAY + "\n" + msg;
+		return getResources().getString(R.string.email_intro) + "\n" + msg;
 	}
 
 	private String format_sms(String msg)
@@ -894,7 +894,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		public void onItemSelected(AdapterView<?> parent, View view, int pos,
 				long id) {
 			mData.offence = getResources().getStringArray(R.array.offence_array)[pos];
-			mData.offenceMalay = Constants.OFFENCE_MALAY_ARRAY[pos];
+			mData.email_offence = getResources().getStringArray(R.array.email_offence_array)[pos];
 		}
 
 		public void onNothingSelected(AdapterView<?> parent) {

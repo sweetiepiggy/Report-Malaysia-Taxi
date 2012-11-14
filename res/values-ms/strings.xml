@@ -52,6 +52,17 @@
 		<item>Lain-lain</item>
 	</string-array>
 
+	<string-array name="email_offence_array">
+		<item>Enggan menggunakan meter</item>
+		<item>Enggan mengambil penumpang</item>
+		<item>Enggan memberi baki tumpang</item>
+		<item>Memandu dengan bahaya</item>
+		<item>Tawar benda yg menyalahi undang2</item>
+		<item>Gangguan</item>
+		<item>Merokok dalam teksi</item>
+		<item>Lain-lain</item>
+	</string-array>
+
 	<string name="details">Butiran</string>
 	<string name="sms">sms</string>
 	<string name="tweet">tweet</string>
@@ -220,6 +231,23 @@ Trafik Polis: rmp@rmp.gov.my
 	<string name="airports_fare_rate">
 	Teksi bearada di lapangan terbang beroperasi dengan sistem kupon pra-bayar.
 	</string>
+
+	<string name="email_intro">
+To Whom It May Concern:\n\n
+I\'m writing this email to inform you of an unpleasant incident which I
+experienced recently. The details are below. Please take appropriate action
+regarding my complaint.\n\n
+Thank you.\n
+Pihak Berkuasa yang berkenan,\n\n
+Tujuan saya menulis emel ini adalah kerana sesuatu kejadian
+berlaku yang tidak menyenang hati. Perkara tersebut adalah
+dicatat seperti dibawah. Sila ambil tindakan yang sepatutnya
+terhadap aduan saya.\n\n
+Sekian.\n
+	</string>
+	<string name="email_reg">Nombor Teksi Pendaftaran</string>
+	<string name="email_loc">Lokasi</string>
+	<string name="email_offence">Kesalahan</string>
 
 	<string name="gpl">
 Copyright (C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n

@@ -26,27 +26,6 @@ public class Constants
 	static final String COMPLAINT_EMAIL_MALAY = "Aduan Teksi";
 	static final String COMPLAINT_MALAY = "SPAD ADUAN";
 
-	static final String LOCATION_MALAY = "Lokasi";
-	static final String REGISTRATION_MALAY = "Nombor Teksi Pendaftaran";
-	static final String OFFENCE_MALAY = "Kesalahan";
-	static final String EMAIL_INTRO_MALAY = "Pihak Berkuasa yang berkenan,\n\n" +
-		"Tujuan saya menulis emel ini adalah kerana sesuatu kejadian " +
-		"berlaku yang tidak menyenang hati. Perkara tersebut adalah " +
-		"dicatat seperti dibawah. Sila ambil tindakan yang sepatutnya " +
-		"terhadap aduan saya.\n\n" +
-		"Sekian.\n";
-
-	static final String[] OFFENCE_MALAY_ARRAY = {
-		"Enggan menggunakan meter",
-		"Enggan mengambil penumpang",
-		"Enggan memberi baki tumpang",
-		"Memandu dengan bahaya",
-		"Menawarkan perkhidmatan yang menyalahi undang-undang",
-		"Gangguan",
-		"Merokok dalam teksi",
-		"Other"
-	};
-
 	/* TODO: this is linked to email_choices, that should be made obvious somehow */
 	/* TODO: use already defined contants such as TRANSIT_EMAIL */
 	static final String[] EMAIL_ADDRESSES = {

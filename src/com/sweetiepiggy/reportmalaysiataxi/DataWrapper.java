@@ -31,7 +31,7 @@ public class DataWrapper
 	public int hour;
 	public int minute;
 	public String offence;
-	public String offenceMalay;
+	public String email_offence;
 
 	public boolean[] who_selected;
 	public boolean[] submit_selected;

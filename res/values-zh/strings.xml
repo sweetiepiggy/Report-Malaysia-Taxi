@@ -52,6 +52,17 @@
 		<item>其他</item>
 	</string-array>
 
+	<string-array name="email_offence_array">
+		<item>Refused to use meter</item>
+		<item>Refused to take passenger</item>
+		<item>Refused to give change</item>
+		<item>Reckless driving</item>
+		<item>Offered illegal services</item>
+		<item>Harrassment</item>
+		<item>Smoking in Taxi</item>
+		<item>Other</item>
+	</string-array>
+
 	<string name="details">详情</string>
 	<string name="sms">短信</string>
 	<string name="tweet">啁啾 </string>
@@ -220,6 +231,17 @@ SPAD: 陆路运输部门\n\n
 	<string name="airports_fare_rate">
 	在机场的出租车是以预付费的票据系统运作。
 	</string>
+
+	<string name="email_intro">
+To Whom It May Concern:\n\n
+I\'m writing this email to inform you of an unpleasant incident which I
+experienced recently. The details are below. Please take appropriate action
+regarding my complaint.\n\n
+Thank you.\n
+	</string>
+	<string name="email_reg">Registration Number of Taxi</string>
+	<string name="email_loc">Location</string>
+	<string name="email_offence">Nature of Offence</string>
 
 	<string name="gpl">
 版權所有(C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
