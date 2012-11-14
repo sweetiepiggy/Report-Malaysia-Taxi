@@ -137,7 +137,7 @@
 	<string name="mo_tourism">Minister of Tourism</string>
 	<string name="prime_minister">Prime Minister</string>
 
-	<string name="who_email">Select Who to Email</string>
+	<string name="who_email">Select who to email</string>
 	<string name="who_details">Details</string>
 	<string-array name="email_choices">
 		<item>SPAD</item>

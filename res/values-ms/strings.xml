@@ -138,7 +138,7 @@
 	<string name="mo_tourism">Menteri Pelancongan</string>
 	<string name="prime_minister">Perdana Menteri</string>
 
-	<string name="who_email">Pilih Siapa Untuk Menghantar Emel</string>
+	<string name="who_email">Pilih siapa untuk menghantar emel</string>
 	<string name="who_details">Butir-butir</string>
 	<string-array name="email_choices">
 		<item>SPAD</item>
