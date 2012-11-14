@@ -632,10 +632,15 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		map.put("loc", false);
 		map.put("offence", false);
 
+		int max_length = MAX_TWEET_LENGTH;
+		if (mData.photoUris.size() > 0) {
+			max_length -= 21;
+		}
+
 		map.put("details", true);
 		if (details.length() == 0 || build_tweet(map, date, time,
 					loc, reg, offence, details).length() >
-				MAX_TWEET_LENGTH) {
+				max_length) {
 			map.put("details", false);
 		}
 
@@ -644,42 +649,42 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		if (offence.length() == 0 || offence.equals("Other") ||
 				build_tweet(map, date, time, loc, reg,
 					offence, details).length() >
-				MAX_TWEET_LENGTH) {
+				max_length) {
 			map.put("offence", false);
 		}
 
 		map.put("loc", true);
 		if (loc.length() == 0 || build_tweet(map, date, time,
 					loc, reg, offence, details).length() >
-				MAX_TWEET_LENGTH) {
+				max_length) {
 			map.put("loc", false);
 		}
 
 		map.put("twitter_address2", true);
 		if (build_tweet(map, date, time, loc, reg,
 					offence, details).length() >
-				MAX_TWEET_LENGTH) {
+				max_length) {
 			map.put("twitter_address2", false);
 		}
 
 		map.put("date", true);
 		if (date.length() == 0 || build_tweet(map, date, time,
 					loc, reg, offence, details).length() >
-				MAX_TWEET_LENGTH) {
+				max_length) {
 			map.put("date", false);
 		}
 
 		map.put("time", true);
 		if (time.length() == 0 || build_tweet(map, date, time,
 					loc, reg, offence, details).length() >
-				MAX_TWEET_LENGTH) {
+				max_length) {
 			map.put("time", false);
 		}
 
 		map.put("twitter_address3", true);
 		if (build_tweet(map, date, time, loc, reg,
 					offence, details).length() >
-				MAX_TWEET_LENGTH) {
+				max_length) {
 			map.put("twitter_address3", false);
 		}
 
