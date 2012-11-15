@@ -318,7 +318,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	{
 		/* TODO: selected defaults should not be hard coded here */
 		data.who_selected = new boolean[] {true, true, true, false, false, false};
-		data.submit_selected = new boolean[] {false, true, true, false};
+		data.submit_selected = new boolean[] {false, true, false, false};
 	}
 
 	private void init_vars(DataWrapper data)
