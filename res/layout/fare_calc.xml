@@ -39,8 +39,7 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:inputType="numberDecimal"
-			android:hint="@string/distance_hint"
-			android:background="@android:drawable/editbox_background"/>
+			android:hint="@string/distance_hint" />
 
 		<TextView
 			android:id="@+id/time_label"
@@ -53,8 +52,7 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:inputType="number"
-			android:hint="@string/time_hint"
-			android:background="@android:drawable/editbox_background"/>
+			android:hint="@string/time_hint" />
 
 		<TextView
 			android:id="@+id/passengers_label"
@@ -67,8 +65,7 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:inputType="number"
-			android:hint="@string/passengers_hint"
-			android:background="@android:drawable/editbox_background"/>
+			android:hint="@string/passengers_hint" />
 
 		<CheckBox
 			android:id="@+id/midnight_checkbox"
@@ -96,8 +93,7 @@
 			android:id="@+id/calc_fare_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:inputType="none"
-			android:background="@android:drawable/editbox_background"/>
+			android:inputType="none" />
 	</LinearLayout>
 </ScrollView>
 

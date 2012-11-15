@@ -60,7 +60,8 @@
 			android:id="@+id/reg_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:hint="@string/registration_hint" />
+			android:hint="@string/registration_hint"
+			android:background="@android:drawable/editbox_background"/>
 
 		<TextView
 			android:id="@+id/location_label"
@@ -72,7 +73,9 @@
 			android:id="@+id/location_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:hint="@string/location_hint" />
+			android:hint="@string/location_hint"
+			android:background="@android:drawable/editbox_background"/>
+
 
 		<TextView
 			android:id="@+id/offence_label"
@@ -98,7 +101,8 @@
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
 			android:layout_weight="1"
-			android:hint="@string/details_hint" />
+			android:hint="@string/details_hint"
+			android:background="@android:drawable/editbox_background" />
 
 		<TextView
 			android:id="@+id/record_label"
