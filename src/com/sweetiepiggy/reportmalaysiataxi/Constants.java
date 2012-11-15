@@ -46,7 +46,7 @@ public class Constants
 	static final String SPAD_EMAIL = "aduan@spad.gov.my";
 	static final String SPAD_TWITTER = "http://twitter.com/aduanSPAD";
 	static final String SPAD_SMS = "15888";
-	static final String SPAD_PHONE = "1 800 88 96 00";
+	static final String SPAD_PHONE = "1 800 88 7723";
 
 	static final String LPKP_EMAIL = "aduan@lpkp.gov.my";
 	static final String LPKP_WEBSITE = "http://www.lpkp.gov.my";
