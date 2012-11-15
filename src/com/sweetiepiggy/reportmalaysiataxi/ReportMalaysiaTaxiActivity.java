@@ -409,7 +409,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		boolean tweet_checked = mData.submit_selected[2];
 		boolean youtube_checked = mData.submit_selected[3];
 
-		String msg = format_msg(date, time, loc, reg, mData.offence, details);
+		String msg = format_msg(date, time, loc, reg, mData.email_offence, details);
 
 		/* send one at a time, repeated call submit()
 			until all checked are sent */
