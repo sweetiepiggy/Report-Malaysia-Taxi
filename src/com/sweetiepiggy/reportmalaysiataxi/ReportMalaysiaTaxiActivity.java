@@ -479,17 +479,14 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				String action = uris.size() > 1 ?
 					Intent.ACTION_SEND_MULTIPLE : Intent.ACTION_SEND;
 
-				Intent email_intent = new Intent(action);
+				Intent email_intent = new Intent(Intent.ACTION_SEND_MULTIPLE);
 				email_intent.putExtra(Intent.EXTRA_EMAIL, new String[] {
 						email_addresses} );
 				email_intent.putExtra(Intent.EXTRA_SUBJECT,
 						Constants.COMPLAINT_EMAIL_MALAY + ' ' + reg);
 				email_intent.putExtra(Intent.EXTRA_TEXT, email_msg);
 
-				if (uris.size() == 1) {
-					email_intent.putExtra(Intent.EXTRA_STREAM,
-							uris.get(uris.size()-1));
-				} else if (uris.size() > 1) {
+				if (uris.size() > 0) {
 					email_intent.putExtra(Intent.EXTRA_STREAM, uris);
 				}
 
