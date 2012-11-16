@@ -91,6 +91,8 @@ public class AllFareCalcActivity extends Activity {
 				update_fare();
 			}
 		});
+
+		update_fare();
 	}
 
 	private void update_fare()

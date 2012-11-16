@@ -29,6 +29,21 @@
 		android:layout_height="fill_parent">
 
 		<TextView
+			android:id="@+id/fare_label"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			style="@android:style/TextAppearance.Large"
+			android:text="@string/fare" />
+		<EditText
+			android:id="@+id/calc_fare_entry"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			style="@android:style/TextAppearance.Large"
+			android:focusable="false"
+			android:editable="false"
+			android:inputType="none" />
+
+		<TextView
 			android:id="@+id/distance_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
@@ -82,19 +97,6 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="@string/telbooking" />
-
-		<TextView
-			android:id="@+id/fare_label"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:textStyle="bold"
-			android:text="@string/fare" />
-		<EditText
-			android:id="@+id/calc_fare_entry"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:editable="false"
-			android:inputType="none" />
 	</LinearLayout>
 </ScrollView>
 
