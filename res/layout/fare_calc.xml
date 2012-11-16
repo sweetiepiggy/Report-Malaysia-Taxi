@@ -93,6 +93,7 @@
 			android:id="@+id/calc_fare_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:editable="false"
 			android:inputType="none" />
 	</LinearLayout>
 </ScrollView>
