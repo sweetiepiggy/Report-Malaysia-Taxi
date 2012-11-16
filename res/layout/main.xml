@@ -60,6 +60,7 @@
 			android:id="@+id/reg_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:inputType="textNoSuggestions|textVisiblePassword"
 			android:hint="@string/registration_hint" />
 
 		<TextView
@@ -72,6 +73,7 @@
 			android:id="@+id/location_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:inputType="textCapWords"
 			android:hint="@string/location_hint" />
 
 		<TextView
@@ -98,6 +100,7 @@
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
 			android:layout_weight="1"
+			android:inputType="textCapSentences"
 			android:hint="@string/details_hint" />
 
 		<TextView
