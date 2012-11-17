@@ -918,7 +918,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		case R.id.source:
 			Intent source_intent = new Intent(Intent.ACTION_VIEW);
 			source_intent.setDataAndType(Uri.parse(SOURCE_URL), "text/html");
-			startActivity(Intent.createChooser(source_intent, getResources().getString(R.string.open_browser)));
+			startActivity(Intent.createChooser(source_intent, null));
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);

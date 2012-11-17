@@ -34,7 +34,6 @@
 	<string name="record">Record</string>
 
 	<string name="view_source">View Source</string>
-	<string name="open_browser">Open Web Browser</string>
 
 	<string name="location_hint">Enter location of incident</string>
 	<string name="registration_hint">Enter plate number, e.g. HWA9999</string>
