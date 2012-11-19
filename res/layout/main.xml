@@ -60,7 +60,7 @@
 			android:id="@+id/reg_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:inputType="textNoSuggestions|textVisiblePassword"
+			android:inputType="textVisiblePassword"
 			android:hint="@string/registration_hint" />
 
 		<TextView
