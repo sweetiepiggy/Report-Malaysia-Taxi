@@ -62,7 +62,10 @@ public class ResourcesActivity extends ListActivity {
 					startActivity(contacts_intent);
 
 				} else if (item.equals(getResources().getString(R.string.about))) {
-					Intent about_intent = new Intent(getApplicationContext(), AboutActivity.class);
+					Intent about_intent = new Intent(getApplicationContext(), TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString("text", getResources().getString(R.string.gpl));
+					about_intent.putExtras(b);
 					startActivity(about_intent);
 				}
 			}
