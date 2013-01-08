@@ -39,6 +39,7 @@ public class DataWrapper
 	public ArrayList<Uri> photoUris;
 	public ArrayList<Uri> recordingUris;
 	public ArrayList<Uri> videoUris;
+	public ArrayList<Uri> attachmentUris;
 
 	public boolean youtube_sent;
 	public boolean email_sent;

@@ -65,6 +65,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	private static final int ACTIVITY_RECORD_SOUND = 1;
 	private static final int ACTIVITY_TAKE_VIDEO = 3;
 	private static final int ACTIVITY_SUBMIT = 4;
+	private static final int ACTIVITY_GET_ATTACH = 5;
 
 	private static final int MAX_TWEET_LENGTH = 140;
 
@@ -110,6 +111,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		savedInstanceState.putStringArrayList("photo_uris", uriarr2strarr(mData.photoUris));
 		savedInstanceState.putStringArrayList("recording_uris", uriarr2strarr(mData.recordingUris));
 		savedInstanceState.putStringArrayList("video_uris", uriarr2strarr(mData.videoUris));
+		savedInstanceState.putStringArrayList("attachment_uris", uriarr2strarr(mData.attachmentUris));
 
 		super.onSaveInstanceState(savedInstanceState);
 	}
@@ -143,6 +145,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		mData.photoUris = strarr2uriarr(savedInstanceState.getStringArrayList("photo_uris"));
 		mData.recordingUris = strarr2uriarr(savedInstanceState.getStringArrayList("recording_uris"));
 		mData.videoUris = strarr2uriarr(savedInstanceState.getStringArrayList("video_uris"));
+		mData.attachmentUris = strarr2uriarr(savedInstanceState.getStringArrayList("attachment_uris"));
 	}
 
 	@Override
@@ -193,6 +196,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		Button camera_button = (Button) findViewById(R.id.camera_button);
 		Button vidcam_button = (Button) findViewById(R.id.vidcam_button);
 		Button recorder_button = (Button) findViewById(R.id.recorder_button);
+		Button attachment_button = (Button) findViewById(R.id.attachment_button);
 
 		//boolean has_camera = getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA);
 		//boolean has_microphone = getPackageManager().hasSystemFeature(PackageManager.FEATURE_MICROPHONE);
@@ -238,9 +242,14 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			recorder_button.setVisibility(View.GONE);
 		}
 
-		if (!has_camera && !has_microphone) {
-			((TextView) findViewById(R.id.record_label)).setVisibility(View.GONE);
-		}
+		attachment_button.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+				intent.setType("file/*");
+				startActivityForResult(intent, ACTIVITY_GET_ATTACH);
+			}
+		});
 	}
 
 	/* TODO: init offence spinner choice? */
@@ -252,10 +261,12 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		String photo_size = data.photoUris.size() > 0 ? Integer.toString(data.photoUris.size()) : "";
 		String video_size = data.videoUris.size() > 0 ? Integer.toString(data.videoUris.size()) : "";
 		String recording_size = data.recordingUris.size() > 0 ? Integer.toString(data.recordingUris.size()) : "";
+		String attachment_size = data.attachmentUris.size() > 0 ? Integer.toString(data.attachmentUris.size()) : "";
 
 		((TextView) findViewById(R.id.camera_label)).setText(photo_size);
 		((TextView) findViewById(R.id.recorder_label)).setText(recording_size);
 		((TextView) findViewById(R.id.video_label)).setText(video_size);
+		((TextView) findViewById(R.id.attachment_label)).setText(attachment_size);
 	}
 
 	private void init_submit_button()
@@ -336,6 +347,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		data.photoUris = new ArrayList<Uri>();
 		data.recordingUris = new ArrayList<Uri>();
 		data.videoUris = new ArrayList<Uri>();
+		data.attachmentUris = new ArrayList<Uri>();
 
 		data.youtube_sent = false;
 		data.email_sent = false;
@@ -475,6 +487,7 @@ public class ReportMalaysiaTaxiActivity extends Activity
 				uris.addAll(mData.photoUris);
 				uris.addAll(mData.recordingUris);
 				uris.addAll(mData.videoUris);
+				uris.addAll(mData.attachmentUris);
 
 				String action = uris.size() > 1 ?
 					Intent.ACTION_SEND_MULTIPLE : Intent.ACTION_SEND;
@@ -498,6 +511,8 @@ public class ReportMalaysiaTaxiActivity extends Activity
 					email_intent.setType("image/*");
 				} else if (mData.recordingUris.size() > 0) {
 					email_intent.setType("audio/*");
+				} else if (mData.attachmentUris.size() > 0) {
+					email_intent.setType("file/*");
 				}
 
 				mData.email_sent = true;
@@ -877,6 +892,12 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			if (resultCode == RESULT_OK) {
 				mData.recordingUris.add(data.getData());
 				((TextView)findViewById(R.id.recorder_label)).setText(Integer.toString(mData.recordingUris.size()));
+			}
+			break;
+		case ACTIVITY_GET_ATTACH:
+			if (resultCode == RESULT_OK) {
+				mData.attachmentUris.add(data.getData());
+				((TextView) findViewById(R.id.attachment_label)).setText(Integer.toString(mData.attachmentUris.size()));
 			}
 			break;
 		case ACTIVITY_SUBMIT:

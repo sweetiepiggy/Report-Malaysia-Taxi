@@ -154,6 +154,18 @@
 				android:layout_weight="1"
 				android:background="@android:color/transparent"
 				android:drawableLeft="@android:drawable/ic_btn_speak_now"/>
+			<TextView
+				android:id="@+id/attachment_label"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="" />
+			<Button
+				android:id="@+id/attachment_button"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="@android:color/transparent"
+				android:drawableLeft="@drawable/paperclip"/>
 		</LinearLayout>
 
 		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
