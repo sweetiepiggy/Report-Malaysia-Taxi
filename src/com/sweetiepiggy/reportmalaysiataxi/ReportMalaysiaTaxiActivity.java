@@ -247,7 +247,9 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			public void onClick(View v) {
 				Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
 				intent.setType("file/*");
-				startActivityForResult(intent, ACTIVITY_GET_ATTACH);
+				startActivityForResult(Intent.createChooser(intent,
+						getResources().getString(R.string.attach_file)),
+					ACTIVITY_GET_ATTACH);
 			}
 		});
 	}

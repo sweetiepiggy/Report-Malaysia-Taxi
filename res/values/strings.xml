@@ -82,6 +82,7 @@
 	<string name="take_photo">Take photo</string>
 	<string name="record_video">Record video</string>
 	<string name="record_sound">Record audio</string>
+	<string name="attach_file">Attach file</string>
 
 	<string name="lk_jb_kt_m">Kuala Lumpur, Johor Baru, Kuala Terengganu, Melaka</string>
 	<string name="penang">Penang</string>
