@@ -934,9 +934,24 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
 		switch (item.getItemId()) {
-		case R.id.resources:
-			Intent resources_intent = new Intent(getApplicationContext(), ResourcesActivity.class);
-			startActivity(resources_intent);
+		case R.id.fare_rate:
+			Intent fare_rate_intent = new Intent(getApplicationContext(), FareRateActivity.class);
+			startActivity(fare_rate_intent);
+			return true;
+		case R.id.fare_calc:
+			Intent fare_calc_intent = new Intent(getApplicationContext(), FareCalcActivity.class);
+			startActivity(fare_calc_intent);
+			return true;
+		case R.id.contacts:
+			Intent contacts_intent = new Intent(getApplicationContext(), ContactsActivity.class);
+			startActivity(contacts_intent);
+			return true;
+		case R.id.about:
+			Intent about_intent = new Intent(getApplicationContext(), TextViewActivity.class);
+			Bundle b = new Bundle();
+			b.putString("text", getResources().getString(R.string.gpl));
+			about_intent.putExtras(b);
+			startActivity(about_intent);
 			return true;
 		case R.id.source:
 			Intent source_intent = new Intent(Intent.ACTION_VIEW);
