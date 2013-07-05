@@ -37,7 +37,6 @@ public class GovMinisterActivity extends ListActivity {
 		String[] gov_ministers = new String[] {
 			getResources().getString(R.string.spad_chairman),
 			getResources().getString(R.string.mo_transport),
-			getResources().getString(R.string.mo_tourism),
 			getResources().getString(R.string.prime_minister),
 		};
 		setListAdapter(new ArrayAdapter<String>(this,
@@ -68,20 +67,6 @@ public class GovMinisterActivity extends ListActivity {
 					b.putString("desc", getResources().getString(R.string.mo_transport));
 					b.putString("email", Constants.MO_TRANSPORT_EMAIL);
 					b.putString("twitter", Constants.MO_TRANSPORT_TWITTER);
-
-					intent.putExtras(b);
-					startActivity(intent);
-
-				} else if (item.equals(getResources().getString(R.string.mo_tourism))) {
-					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
-					Bundle b = new Bundle();
-
-					b.putString("name", getResources().getString(R.string.mo_tourism_name));
-					b.putString("desc", getResources().getString(R.string.mo_tourism));
-					b.putString("email", Constants.MO_TOURISM_EMAIL);
-					b.putString("website", Constants.MO_TOURISM_WEBSITE);
-					b.putString("phone", Constants.MO_TOURISM_PHONE);
-					b.putString("twitter", Constants.MO_TOURISM_TWITTER);
 
 					intent.putExtras(b);
 					startActivity(intent);

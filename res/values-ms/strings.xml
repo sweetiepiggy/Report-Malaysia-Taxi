@@ -111,7 +111,6 @@
 	<string name="sunday">Ahad</string>
 
 	<string name="spad">SPAD</string>
-	<string name="lpkp">LPKP</string>
 	<string name="jpj">JPJ</string>
 	<string name="kpdnkk">KPDNKK</string>
 	<string name="motour">Kementerian Pelancongan</string>
@@ -120,7 +119,6 @@
 	<string name="ttpm">Tribunal Tuntutan Pengguna Malaysia</string>
 
 	<string name="spad_desc">Suruhanjaya Pengangkutan Awam Darat</string>
-	<string name="lpkp_desc">Lembaga Pelesenan Kenderaan Perdagangan</string>
 	<string name="jpj_desc">Jabatan Pengangkutan Jalan</string>
 	<string name="kpdnkk_desc">Kementerian Perdagangan Dalam Negeri, Koperasi dan Kepenggunaan</string>
 	<string name="motour_desc"></string>
@@ -134,7 +132,6 @@
 	<string name="nccc_desc">Pusat Khidmat Aduan Pengguna Nasional</string>
 	<string name="spad_chairman">Pengerusi SPAD</string>
 	<string name="mo_transport">Menteri Pengangkutan</string>
-	<string name="mo_tourism">Menteri Pelancongan</string>
 	<string name="prime_minister">Perdana Menteri</string>
 
 	<string name="who_email">Pilih siapa untuk menghantar emel</string>
@@ -159,18 +156,17 @@
 SPAD: Suruhanjaya Pengangkutan Awam Darat\n\n
 Jabatan Kerajaan Lain: JPJ, KPDNKK, Kementerian Pelancongan, PEMUDA, Biro Pengaduan Awam\n\n
 Pengguna Kumpulan: TRANSIT, NCCC\n\n
-Kerajaan Menteri: Menteri Pengangkutan, Menteri Pelancongan, Perdana Menteri\n\n
+Kerajaan Menteri: Menteri Pengangkutan, Perdana Menteri\n\n
 Berita Media: The Star, Star Metro, Malay Mail, New Straits Times, New Straits Times Streets, The Sun, Malaysia Kini, The Malaysian Insider\n\n
 Trafik Polis: rmp@rmp.gov.my
 	</string>
 
 	<string name="spad_website">http://www.spad.gov.my/ms</string>
 	<string name="spad_form">http://www.spad.gov.my/ms/hubungi-kami/maklumbalas</string>
-	<string name="motour_form">http://motour.gov.my/bm/hubungi-kami/maklum-balas/aduan-awam.html</string>
+	<string name="motour_form">http://motac.gov.my/bm/hubungi-kami/maklum-balas/aduan-awam.html</string>
 	<string name="pcb_form">http://apps1.pcb.gov.my/eApps/bpaiaducmpl/AduCmplPublic/add.do?aplCode=ms</string>
 	<string name="pemudah_form">http://pemudah.bpa.jpm.my/eApps/sdmscasepool/SdmsCasePool/add.do?aplCode=ms</string>
-	<string name="mo_transport_name">Kong Cho Ha</string>
-	<string name="mo_tourism_name">Dr. Ng Yen Yen</string>
+	<string name="mo_transport_name">Hishammuddin Bin Tun Hussein</string>
 	<string name="traffic_police">Trafik Polis</string>
 	<string name="news_media_contact">
 		The Star\n

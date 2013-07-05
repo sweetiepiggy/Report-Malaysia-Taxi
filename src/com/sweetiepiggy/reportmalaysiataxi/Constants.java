@@ -32,7 +32,7 @@ public class Constants
 		"aduan@spad.gov.my; ",
 		"aduantrafik@jpj.gov.my; e-aduan@kpdnkk.gov.my; info@motour.gov.my; bahria@miti.gov.my; unitpro@pcb.gov.my; ",
 		"klangvalley.transit@gmail.com; nccc@nccc.org.my; ",
-		"menteri@mot.gov.my; yenyenng@motour.gov.my; najib@1malaysia.com.my; ",
+		"menteri@mot.gov.my; najib@1malaysia.com.my; ",
 		"editor@thestar.com.my; metro@thestar.com.my; mmnews@mmail.com.my; syedn@nst.com.my; letters@nst.com.my; streets@nst.com.my; letters@thesundaily.com, editor@malaysiakini.com.my; editor@themalaysianinsider.com; ",
 		"rmp@rmp.gov.my; "
 	};
@@ -48,25 +48,23 @@ public class Constants
 	static final String SPAD_SMS = "15888";
 	static final String SPAD_PHONE = "1 800 88 7723";
 
-	static final String LPKP_EMAIL = "aduan@lpkp.gov.my";
-	static final String LPKP_WEBSITE = "http://www.lpkp.gov.my";
-
 	static final String JPJ_EMAIL = "aduantrafik@jpj.gov.my";
 	static final String JPJ_WEBSITE = "http://portal.jpj.gov.my";
 	static final String JPJ_PHONE = "03 8888 4244";
+	static final String JPJ_TWITTER = "https://twitter.com/KP_JPJ";
 
 	static final String KPDNKK_EMAIL = "e-aduan@kpdnkk.gov.my";
 	static final String KPDNKK_WEBSITE = "http://eaduan.kpdnkk.gov.my";
 
-	static final String MOTOUR_EMAIL = "info@motour.gov.my";
-	static final String MOTOUR_PHONE = "03 8891 7000";
-	static final String MOTOUR_WEBSITE = "http://www.motour.gov.my";
+	static final String MOTOUR_EMAIL = "info@motac.gov.my";
+	static final String MOTOUR_PHONE = "03 8000 8000";
+	static final String MOTOUR_WEBSITE = "http://www.motac.gov.my";
 
 	static final String PCB_PHONE = "03 8872 5777";
 	static final String PCB_EMAIL = "unitpro@pcb.gov.my";
 	static final String PCB_WEBSITE = "http://www.pcb.gov.my";
 
-	static final String PEMUDAH_PHONE = "03 6200 0185";
+	static final String PEMUDAH_PHONE = "03 6200 0184";
 	static final String PEMUDAH_EMAIL = "bahria@miti.gov.my";
 	static final String PEMUDAH_WEBSITE = "http://www.pemudah.gov.my";
 
@@ -74,7 +72,7 @@ public class Constants
 	static final String TTPM_WEBSITE = "http://ttpm.kpdnkk.gov.my";
 
 	static final String TRANSIT_EMAIL = "klangvalley.transit@gmail.com";
-	static final String TRANSIT_WEBSITE = "http://transitmy.org";
+	static final String TRANSIT_WEBSITE = "http://transitmy.com";
 	static final String TRANSIT_TWITTER = "http://twitter.com/transitmy";
 
 	static final String NCCC_PHONE = "03 7877 9000";
@@ -87,12 +85,7 @@ public class Constants
 	static final String SPAD_CHAIRMAN_TWITTER = "http://twitter.com/syedhamidalbar";
 
 	static final String MO_TRANSPORT_EMAIL = "menteri@mot.gov.my";
-	static final String MO_TRANSPORT_TWITTER = "http://twitter.com/kongchoha";
-
-	static final String MO_TOURISM_EMAIL = "yenyenng@motour.gov.my";
-	static final String MO_TOURISM_WEBSITE = "http://www.drngyenyen.com";
-	static final String MO_TOURISM_PHONE = "03 8891 7000";
-	static final String MO_TOURISM_TWITTER = "http://twitter.com/DrYenYen";
+	static final String MO_TRANSPORT_TWITTER = "http://twitter.com/HishammuddinH2O";
 
 	static final String PRIME_MINISTER_NAME = "Najib Razak";
 	static final String PRIME_MINISTER_EMAIL = "najib@1malaysia.com.my";

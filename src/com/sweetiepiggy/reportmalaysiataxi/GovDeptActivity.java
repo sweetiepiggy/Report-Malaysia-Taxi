@@ -43,7 +43,6 @@ public class GovDeptActivity extends ListActivity {
 
 		gov_depts = new String[] {
 			getResources().getString(R.string.spad),
-			getResources().getString(R.string.lpkp),
 			getResources().getString(R.string.jpj),
 			getResources().getString(R.string.kpdnkk),
 			getResources().getString(R.string.motour),
@@ -54,7 +53,6 @@ public class GovDeptActivity extends ListActivity {
 
 		gov_descs = new String[] {
 			getResources().getString(R.string.spad_desc),
-			getResources().getString(R.string.lpkp_desc),
 			getResources().getString(R.string.jpj_desc),
 			getResources().getString(R.string.kpdnkk_desc),
 			getResources().getString(R.string.motour_desc),
@@ -96,18 +94,6 @@ public class GovDeptActivity extends ListActivity {
 					intent.putExtras(b);
 					startActivity(intent);
 
-				} else if (item.equals(getResources().getString(R.string.lpkp))) {
-					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
-					Bundle b = new Bundle();
-
-					b.putString("name", getResources().getString(R.string.lpkp));
-					b.putString("desc", getResources().getString(R.string.lpkp_desc));
-					b.putString("email", Constants.LPKP_EMAIL);
-					b.putString("website", Constants.LPKP_WEBSITE);
-
-					intent.putExtras(b);
-					startActivity(intent);
-
 				} else if (item.equals(getResources().getString(R.string.jpj))) {
 					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
@@ -117,6 +103,7 @@ public class GovDeptActivity extends ListActivity {
 					b.putString("email", Constants.JPJ_EMAIL);
 					b.putString("website", Constants.JPJ_WEBSITE);
 					b.putString("phone", Constants.JPJ_PHONE);
+					b.putString("twitter", Constants.JPJ_TWITTER);
 
 					intent.putExtras(b);
 					startActivity(intent);

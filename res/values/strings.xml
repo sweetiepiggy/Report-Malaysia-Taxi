@@ -110,7 +110,6 @@
 	<string name="sunday">Sunday</string>
 
 	<string name="spad">SPAD</string>
-	<string name="lpkp">LPKP</string>
 	<string name="jpj">JPJ</string>
 	<string name="kpdnkk">KPDNKK</string>
 	<string name="motour">Ministry of Tourism</string>
@@ -119,7 +118,6 @@
 	<string name="ttpm">Tribunal for Consumer Claims</string>
 
 	<string name="spad_desc">Land Public Transport Commission</string>
-	<string name="lpkp_desc">Commercial Vehicle Licensing Board</string>
 	<string name="jpj_desc">Road Transport Department</string>
 	<string name="kpdnkk_desc">Ministry of Domestic Trade, Cooperative and Consumerism</string>
 	<string name="motour_desc"></string>
@@ -133,7 +131,6 @@
 	<string name="nccc_desc">National Consumer Complaints Centre</string>
 	<string name="spad_chairman">Chairman of SPAD</string>
 	<string name="mo_transport">Minister of Transport</string>
-	<string name="mo_tourism">Minister of Tourism</string>
 	<string name="prime_minister">Prime Minister</string>
 
 	<string name="who_email">Select who to email</string>
@@ -158,18 +155,17 @@
 SPAD: Land Public Transport Commission\n\n
 Government Departments: JPJ, KPDNKK, Ministry of Tourism, PEMUDAH, Public Complaints Bureau\n\n
 Consumer Groups: TRANSIT, NCCC\n\n
-Government Ministers: Minister of Transport, Minister of Tourism, Prime Minister\n\n
+Government Ministers: Minister of Transport, Prime Minister\n\n
 News Media: The Star, Star Metro, Malay Mail, New Straits Times, New Straits Times Streets, The Sun, Malaysia Kini, The Malaysian Insider\n\n
 Traffic Police: rmp@rmp.gov.my
 	</string>
 
 	<string name="spad_website">http://www.spad.gov.my</string>
 	<string name="spad_form">http://www.spad.gov.my/contact-us/feedback</string>
-	<string name="motour_form">http://www.motour.gov.my/en/contact-us/feedback/public-complaints.html</string>
+	<string name="motour_form">http://www.motac.gov.my/en/contact-us/feedback/public-complaints.html</string>
 	<string name="pcb_form">http://apps1.pcb.gov.my/eApps/bpaiaducmpl/AduCmplPublic/add.do?aplCode=en</string>
 	<string name="pemudah_form">http://pemudah.bpa.jpm.my/eApps/sdmscasepool/SdmsCasePool/add.do?aplCode=en</string>
-	<string name="mo_transport_name">Kong Cho Ha</string>
-	<string name="mo_tourism_name">Dr. Ng Yen Yen</string>
+	<string name="mo_transport_name">Hishammuddin Bin Tun Hussein</string>
 	<string name="traffic_police">Traffic Police</string>
 	<string name="news_media_contact">
 		The Star\n
