@@ -22,7 +22,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.sweetiepiggy.reportmalaysiataxi"
 	android:versionCode="27"
-	android:versionName="1.1.2-dev" >
+	android:versionName="1.1.2" >
 
 	<uses-sdk android:minSdkVersion="4"
 		android:targetSdkVersion="17" />
