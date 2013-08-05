@@ -183,7 +183,7 @@ public class ReportMalaysiaTaxiActivity extends Activity {
             message += '\n' + this.getResources().getString(R.string.email_loc)
                     + ": " + location;
         }
-        /* TODO: don't hardcode "Other" */
+
         if ((offence.length() != 0) && !offence.equals("Other")) {
             message += '\n'
                     + this.getResources().getString(R.string.email_offence)
@@ -246,7 +246,7 @@ public class ReportMalaysiaTaxiActivity extends Activity {
         }
 
         map.put("offence", true);
-        /* TODO: don't hard code Other */
+
         if ((offence.length() == 0)
                 || offence.equals("Other")
                 || (this.build_tweet(map, date, time, loc, reg, offence,
@@ -444,7 +444,6 @@ public class ReportMalaysiaTaxiActivity extends Activity {
         });
     }
 
-    /* TODO: init offence spinner choice? */
     private void init_entries(final DataWrapper data) {
         this.update_date_label(this.mData.year, this.mData.month,
                 this.mData.day);
@@ -480,7 +479,7 @@ public class ReportMalaysiaTaxiActivity extends Activity {
     }
 
     private void init_selected(final DataWrapper data) {
-        /* TODO: selected defaults should not be hard coded here */
+
         data.who_selected = new boolean[] { true, true, true, false, false,
                 false };
         data.submit_selected = new boolean[] { false, true, false, false };
@@ -502,7 +501,6 @@ public class ReportMalaysiaTaxiActivity extends Activity {
                     incomplete_msg = ReportMalaysiaTaxiActivity.this
                             .getResources().getString(R.string.missing_reg);
 
-                    /* TODO: don't hardcode "Other" */
                 } else if ((ReportMalaysiaTaxiActivity.this.mData.email_offence
                         .equals("Other") || ReportMalaysiaTaxiActivity.this.mData.email_offence
                         .equals("Lain-lain"))
@@ -801,10 +799,6 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 
                 String email_addresses = "";
 
-                /*
-                 * TODO: who_selected and EMAIL_ADDRESSES need to be better
-                 * linked, possible problem if their lengths are not equal
-                 */
                 for (int i = 0; i < ReportMalaysiaTaxiActivity.this.mData.who_selected.length; ++i) {
                     if (ReportMalaysiaTaxiActivity.this.mData.who_selected[i]) {
                         email_addresses += Constants.EMAIL_ADDRESSES[i];
@@ -900,7 +894,6 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 
         sms_intent.putExtra("address", Constants.SMS_NUMBER);
         sms_intent.putExtra("sms_body", sms_msg);
-        /* TODO: attach files to mms */
         sms_intent.setType("vnd.android-dir/mms-sms");
         this.mData.sms_sent = true;
         this.startActivityForResult(sms_intent,
@@ -970,7 +963,6 @@ public class ReportMalaysiaTaxiActivity extends Activity {
         final String details = ((EditText) this
                 .findViewById(R.id.details_entry)).getText().toString();
 
-        /* TODO: order of index shouldn't be hard coded like this */
         final boolean sms_checked = this.mData.submit_selected[0];
         final boolean email_checked = this.mData.submit_selected[1];
         final boolean tweet_checked = this.mData.submit_selected[2];
@@ -1086,5 +1078,21 @@ public class ReportMalaysiaTaxiActivity extends Activity {
             ret.add(itr.next().toString());
         }
         return ret;
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this).setTitle("Really Exit?")
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setMessage("Are you sure you want to exit?")
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new OnClickListener() {
+
+                    @Override
+                    public void onClick(final DialogInterface arg0,
+                            final int arg1) {
+                        ReportMalaysiaTaxiActivity.super.onBackPressed();
+                    }
+                }).create().show();
     }
 }
