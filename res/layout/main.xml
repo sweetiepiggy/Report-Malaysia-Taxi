@@ -31,9 +31,12 @@
 			android:id="@+id/date_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:paddingBpttom="6dip"
 			android:paddingLeft="6dip"
+			android:paddingTop="6dip"
 			android:text="@string/date_and_time"
-			android:textStyle="bold" />
+			android:textStyle="bold|italic"
+			android:typeface="serif" />
 		<LinearLayout
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
@@ -52,35 +55,48 @@
 			android:id="@+id/registration_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:paddingBpttom="6dip"
 			android:paddingLeft="6dip"
+			android:paddingTop="6dip"
 			android:text="@string/registration"
-			android:textStyle="bold" />
+			android:textStyle="bold|italic"
+			android:typeface="serif" />
 		<EditText
 			android:id="@+id/reg_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:hint="@string/registration_hint"
-			android:inputType="textVisiblePassword" />
+			android:inputType="textVisiblePassword"
+			android:textStyle="italic"
+			android:typeface="serif" />
 		<TextView
 			android:id="@+id/location_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:paddingBpttom="6dip"
 			android:paddingLeft="6dip"
+			android:paddingTop="6dip"
 			android:text="@string/location"
-			android:textStyle="bold" />
+			android:textStyle="bold|italic"
+			android:typeface="serif" />
 		<EditText
 			android:id="@+id/location_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:hint="@string/location_hint"
-			android:inputType="textCapWords" />
+			android:inputType="textCapWords"
+			android:textStyle="italic"
+			android:typeface="serif" />
 		<TextView
 			android:id="@+id/offence_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:paddingBpttom="6dip"
 			android:paddingLeft="6dip"
+			android:paddingTop="6dip"
 			android:text="@string/offence"
-			android:textStyle="bold" />
+			android:textStyle="bold|italic"
+			android:typeface="serif" />
 		<Spinner
 			android:id="@+id/offence_spinner"
 			android:layout_width="fill_parent"
@@ -90,23 +106,31 @@
 			android:id="@+id/details_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:paddingBpttom="6dip"
 			android:paddingLeft="6dip"
+			android:paddingTop="6dip"
 			android:text="@string/details"
-			android:textStyle="bold" />
+			android:textStyle="bold|italic"
+			android:typeface="serif" />
 		<EditText
 			android:id="@+id/details_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="0dp"
 			android:layout_weight="1"
 			android:hint="@string/details_hint"
-			android:inputType="textCapSentences" />
+			android:inputType="textCapSentences"
+			android:textStyle="italic"
+			android:typeface="serif" />
 		<TextView
 			android:id="@+id/record_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:paddingBpttom="6dip"
 			android:paddingLeft="6dip"
+			android:paddingTop="6dip"
 			android:text="@string/record"
-			android:textStyle="bold" />
+			android:textStyle="bold|italic"
+			android:typeface="serif" />
 		<LinearLayout
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
@@ -115,7 +139,9 @@
 				android:id="@+id/camera_label"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
+				android:paddingBpttom="6dip"
 				android:paddingLeft="6dip"
+				android:paddingTop="6dip"
 				android:text="" />
 			<Button
 				android:id="@+id/camera_button"
@@ -128,7 +154,9 @@
 				android:id="@+id/video_label"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
+				android:paddingBpttom="6dip"
 				android:paddingLeft="6dip"
+				android:paddingTop="6dip"
 				android:text="" />
 			<Button
 				android:id="@+id/vidcam_button"
@@ -141,7 +169,9 @@
 				android:id="@+id/recorder_label"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
+				android:paddingBpttom="6dip"
 				android:paddingLeft="6dip"
+				android:paddingTop="6dip"
 				android:text="" />
 			<Button
 				android:id="@+id/recorder_button"
@@ -154,7 +184,9 @@
 				android:id="@+id/attachment_label"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
+				android:paddingBpttom="6dip"
 				android:paddingLeft="6dip"
+				android:paddingTop="6dip"
 				android:text="" />
 			<Button
 				android:id="@+id/attachment_button"

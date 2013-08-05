@@ -30,7 +30,12 @@
 			style="@android:style/TextAppearance.Large"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:text="@string/fare" />
+			android:paddingBottom="6dp"
+			android:paddingLeft="6dp"
+			android:paddingTop="6dp"
+			android:text="@string/fare"
+			android:textStyle="normal|italic"
+			android:typeface="serif" />
 		<EditText
 			android:id="@+id/calc_fare_entry"
 			style="@android:style/TextAppearance.Large"
@@ -38,13 +43,19 @@
 			android:layout_height="wrap_content"
 			android:editable="false"
 			android:focusable="false"
-			android:inputType="none" />
+			android:inputType="none"
+			android:textStyle="normal|italic"
+			android:typeface="serif" />
 		<TextView
 			android:id="@+id/distance_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:paddingBottom="6dp"
+			android:paddingLeft="6dp"
+			android:paddingTop="6dp"
 			android:text="@string/distance"
-			android:textStyle="bold" />
+			android:textStyle="bold|italic"
+			android:typeface="serif" />
 		<EditText
 			android:id="@+id/distance_entry"
 			android:layout_width="fill_parent"
@@ -55,40 +66,67 @@
 			android:id="@+id/time_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:paddingBottom="6dp"
+			android:paddingLeft="6dp"
+			android:paddingTop="6dp"
 			android:text="@string/time"
-			android:textStyle="bold" />
+			android:textStyle="bold|italic"
+			android:typeface="serif" />
 		<EditText
 			android:id="@+id/time_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:hint="@string/time_hint"
-			android:inputType="number" />
+			android:inputType="number"
+			android:textStyle="italic"
+			android:typeface="serif" />
 		<TextView
 			android:id="@+id/passengers_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:paddingBottom="6dp"
+			android:paddingLeft="6dp"
+			android:paddingTop="6dp"
 			android:text="@string/passengers"
-			android:textStyle="bold" />
+			android:textStyle="bold|italic"
+			android:typeface="serif" />
 		<EditText
 			android:id="@+id/passengers_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:hint="@string/passengers_hint"
-			android:inputType="number" />
+			android:inputType="number"
+			android:textStyle="italic"
+			android:typeface="serif" />
 		<CheckBox
 			android:id="@+id/midnight_checkbox"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="@string/midnight" />
+			android:paddingBottom="6dp"
+			android:paddingLeft="6dp"
+			android:paddingTop="6dp"
+			android:text="@string/midnight"
+			android:textStyle="italic"
+			android:typeface="serif" />
 		<CheckBox
 			android:id="@+id/executive_checkbox"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="@string/executive" />
+			android:paddingBottom="6dp"
+			android:paddingLeft="6dp"
+			android:paddingTop="6dp"
+			android:text="@string/executive"
+			android:textStyle="italic"
+			android:typeface="serif" />
 		<CheckBox
 			android:id="@+id/telbooking_checkbox"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="@string/telbooking" />
+			android:paddingBottom="6dp"
+			android:paddingLeft="6dp"
+			android:paddingTop="6dp"
+			android:text="@string/telbooking"
+			android:textStyle="italic"
+			android:typeface="serif" />
 	</LinearLayout>
 </ScrollView>
