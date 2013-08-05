@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2012 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+    Copyright (C) 2013 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
 
     This file is part of Report Malaysia Taxi.
 
@@ -15,8 +15,7 @@
 
     You should have received a copy of the GNU General Public License
     along with Report Malaysia Taxi; if not, see <http://www.gnu.org/licenses/>.
-*/
-
+ */
 package com.sweetiepiggy.reportmalaysiataxi;
 
 import android.app.Activity;
@@ -24,16 +23,15 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class TextViewActivity extends Activity {
-
-	/** Called when the activity is first created. */
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.textview_layout);
-		Bundle b = getIntent().getExtras();
-		String text = (b == null) ? "" : b.getString("text");
-		((TextView) findViewById(R.id.text)).setText(text);
-	}
-
+    
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(final Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        this.setContentView(R.layout.textview_layout);
+        final Bundle b = this.getIntent().getExtras();
+        final String text = (b == null) ? "" : b.getString("text");
+        ((TextView) this.findViewById(R.id.text)).setText(text);
+    }
+    
 }
-

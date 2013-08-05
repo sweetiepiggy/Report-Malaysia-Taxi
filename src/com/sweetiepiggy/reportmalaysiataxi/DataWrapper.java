@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2012,2013 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+    Copyright (C) 2013 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
 
     This file is part of Report Malaysia Taxi.
 
@@ -15,7 +15,7 @@
 
     You should have received a copy of the GNU General Public License
     along with Report Malaysia Taxi; if not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 package com.sweetiepiggy.reportmalaysiataxi;
 
@@ -23,32 +23,30 @@ import java.util.ArrayList;
 
 import android.net.Uri;
 
-public class DataWrapper
-{
-	public int year;
-	public int month;
-	public int day;
-	public int hour;
-	public int minute;
-	public String offence;
-	public String email_offence;
-
-	public boolean[] who_selected;
-	public boolean[] submit_selected;
-
-	public ArrayList<Uri> photoUris;
-	public ArrayList<Uri> recordingUris;
-	public ArrayList<Uri> videoUris;
-	public ArrayList<Uri> attachmentUris;
-
-	public boolean youtube_sent;
-	public boolean email_sent;
-	public boolean tweet_sent;
-	public boolean sms_sent;
-
-	public boolean sms_checked;
-	public boolean email_checked;
-	public boolean tweet_checked;
-	public boolean youtube_checked;
+public class DataWrapper {
+    public ArrayList<Uri> attachmentUris;
+    public int            day;
+    public boolean        email_checked;
+    public String         email_offence;
+    public boolean        email_sent;
+    public int            hour;
+    public int            minute;
+    
+    public int            month;
+    public String         offence;
+    
+    public ArrayList<Uri> photoUris;
+    public ArrayList<Uri> recordingUris;
+    public boolean        sms_checked;
+    public boolean        sms_sent;
+    
+    public boolean[]      submit_selected;
+    public boolean        tweet_checked;
+    public boolean        tweet_sent;
+    public ArrayList<Uri> videoUris;
+    
+    public boolean[]      who_selected;
+    public int            year;
+    public boolean        youtube_checked;
+    public boolean        youtube_sent;
 }
-
