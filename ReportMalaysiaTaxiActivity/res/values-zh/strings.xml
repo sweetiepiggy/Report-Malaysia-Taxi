@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2012 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+
+    This file is part of Report Malaysia Taxi.
+
+    Report Malaysia Taxi is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 3 of the License, or
+    (at your option) any later version.
+
+    Report Malaysia Taxi is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Report Malaysia Taxi; if not, see <http://www.gnu.org/licenses/>.
+-->
+
+<resources>
+
+	<string name="app_name">举报马来西亚的士</string>
+	<string name="date_and_time">事件发生的日期和时间</string>
+	<string name="location">位置</string>
+	<string name="registration">的士登记号码</string>
+	<string name="offence">犯罪性质</string>
+
+	<string name="about">关于</string>
+	<string name="fare_rate">价率</string>
+	<string name="fare_calc">票价计算器</string>
+	<string name="contacts">联系信息</string>
+	<string name="record">记录</string>
+
+	<string name="view_source">代码来源</string>
+
+	<string name="location_hint">输入事件发生的地点</string>
+	<string name="registration_hint">输入车牌号码，例如HWA9999</string>
+	<string name="details_hint">输入其他详细信息，包括投诉</string>
+
+	<string-array name="offence_array">
+		<item>拒绝使用计程表</item>
+		<item>拒绝乘载乘客</item>
+		<item>拒绝找回余钱</item>
+		<item>鲁莽驾驶</item>
+		<item>提供非法服务</item>
+		<item>骚扰</item>
+		<item>在的士里吸烟</item>
+		<item>其他</item>
+	</string-array>
+
+	<string-array name="email_offence_array">
+		<item>Refused to use meter</item>
+		<item>Refused to take passenger</item>
+		<item>Refused to give change</item>
+		<item>Reckless driving</item>
+		<item>Offered illegal services</item>
+		<item>Harrassment</item>
+		<item>Smoking in Taxi</item>
+		<item>Other</item>
+	</string-array>
+
+	<string name="details">详情</string>
+	<string name="sms">短信</string>
+	<string name="tweet">啁啾 </string>
+	<string name="email">电子邮件</string>
+	<string name="submit">提交</string>
+	<string name="clear">删除</string>
+	<string name="youtube">优酷</string>
+	<string name="call">呼叫</string>
+
+	<string name="missing_reg">输入的士登记号码</string>
+	<string name="missing_details">输入其他意见</string>
+	<string name="select_checkbox">请选择输送方法</string>
+
+	<string name="select_submit">选择方法</string>
+	<string name="send_youtube">上载至优酷</string>
+	<string name="send_tweet">啁啾 </string>
+	<string name="send_email">电子邮件</string>
+	<string name="place_call">致电</string>
+	<string name="take_photo">拍照</string>
+	<string name="record_video">记录影片</string>
+	<string name="record_sound">记录声音</string>
+	<string name="attach_file">附加档案</string>
+
+	<string name="lk_jb_kt_m">吉隆坡， 柔佛， 瓜拉登嘉楼， 马六甲</string>
+	<string name="penang">槟城</string>
+	<string name="airports">机场</string>
+
+	<string name="km">公里</string>
+	<string name="minutes">分钟</string>
+	<string name="fare">车价(马币)</string>
+
+	<string name="distance">距离(公里)</string>
+	<string name="time">时间(分钟)</string>
+	<string name="executive">名贵出租车</string>
+	<string name="midnight">午夜(十二点至凌晨六点)</string>
+	<string name="passengers">乘客人数</string>
+	<string name="telbooking">电话预约</string>
+	<string name="distance_hint">输入公里的距离</string>
+	<string name="passengers_hint">输入旅客人数</string>
+	<string name="time_hint">输入分钟的时间</string>
+
+	<string name="monday">星期一</string>
+	<string name="tuesday">星期二</string>
+	<string name="wednesday">星期三</string>
+	<string name="thursday">星期四</string>
+	<string name="friday">星期五</string>
+	<string name="saturday">星期六</string>
+	<string name="sunday">星期日</string>
+
+	<string name="spad">SPAD</string>
+	<string name="jpj">JPJ</string>
+	<string name="kpdnkk">KPDNKK</string>
+	<string name="motour">旅游部</string>
+	<string name="pcb">公共投诉局</string>
+	<string name="pemudah">企业家和合作社发展部</string>
+	<string name="ttpm">消费者投诉部门</string>
+
+	<string name="spad_desc">陆路运输部门</string>
+	<string name="jpj_desc">交通部</string>
+	<string name="kpdnkk_desc">国内贸易，合作社和消费部</string>
+	<string name="motour_desc"></string>
+	<string name="pcb_desc"></string>
+	<string name="pemudah_desc"></string>
+	<string name="ttpm_desc"></string>
+
+	<string name="transit">TRANSIT</string>
+	<string name="transit_desc">消费者自愿团体</string>
+	<string name="nccc">NCCC</string>
+	<string name="nccc_desc">全国消费者投诉中心</string>
+	<string name="spad_chairman">SPAD主席</string>
+	<string name="mo_transport">交通部长</string>
+	<string name="prime_minister">首相</string>
+
+	<string name="who_email">选择谁电子邮件</string>
+	<string name="who_details">详情</string>
+	<string-array name="email_choices">
+		<item>SPAD</item>
+		<item>其它政府部门</item>
+		<item>消费群体</item>
+		<item>政府部长</item>
+		<item>新闻媒体</item>
+		<item>交通警</item>
+	</string-array>
+	<string-array name="contact_choices">
+		<item>政府部门</item>
+		<item>消费群体</item>
+		<item>政府部长</item>
+		<item>新闻媒体</item>
+		<item>交通警</item>
+	</string-array>
+
+	<string name="email_details">
+SPAD: 陆路运输部门\n\n
+其它政府部门： JPJ, KPDNKK, 旅游部长, 企业家和合作社发展部, 公共投诉局\n\n
+消费群体： TRANSIT, NCCC\n\n
+政府部长： 交通部长,首相\n\n
+新闻媒体： The Star, Star Metro, Malay Mail, New Straits Times, New Straits Times Streets, The Sun, Malaysia Kini, The Malaysian Insider\n\n
+交通警： rmp@rmp.gov.my
+	</string>
+
+	<string name="spad_website">http://www.spad.gov.my</string>
+	<string name="spad_form">http://www.spad.gov.my/contact-us/feedback</string>
+	<string name="motour_form">http://www.motac.gov.my/en/contact-us/feedback/public-complaints.html</string>
+	<string name="pcb_form">http://apps1.pcb.gov.my/eApps/bpaiaducmpl/AduCmplPublic/add.do?aplCode=en</string>
+	<string name="pemudah_form">http://www.pemudah.gov.my/web/guest/hubungi</string>
+	<string name="mo_transport_name">Hishammuddin Bin Tun Hussein</string>
+	<string name="traffic_police">交通警</string>
+	<string name="news_media_contact">
+		The Star\n
+		editor@thestar.com.my\n\n
+		Star Metro\n
+		metro@thestar.com.my\n\n
+		Malay Mail\n
+		mmnews@mmail.com.my\n\n
+		New Straits Times\n
+		syedn@nst.com.my\n
+		letters@nst.com.my\n\n
+		New Straits Times Streets\n
+		streets@nst.com.my\n\n
+		The Sun\n
+		letters@thesundaily.com\n\n
+		Malaysia Kini\n
+		editor@malaysiakini.com.my\n\n
+		The Malaysian Insider\n
+		editor@themalaysianinsider.com\n\n
+	</string>
+
+	<string name="penang_fare_rate">
+	距离\n
+	马币四零吉/第一公里\n
+	马币十仙/接着每一百一十五米\n
+	时间\n
+	马币四零吉/首三分钟\n
+	马币十仙/接着每 二十一分钟\n\n
+
+	http://www.spad.gov.my/fare-rate\n\n
+
+	附加费\n
+	另加总数的五十巴仙如果是在午夜十二点至凌晨六点\n
+	另加马币二零吉如果是电话预约\n
+	第三位乘客另加收费马币一零吉（最多四位乘客）以及马币一零吉收费若储存行李在后车箱。\n
+	通行费将依据真实价格收费
+	</string>
+
+	<string name="kl_fare_rate">
+	距离\n
+	马币三零吉/第一公里\n
+	马币十仙/接着每一百一十五米\n
+	时间\n
+	马币三零吉/首三分钟\n
+	马币十仙/接着每 二十一分钟\n\n
+
+	http://www.spad.gov.my/fare-rate\n\n
+
+	附加费\n
+	名贵出租车以双倍价格收价\n
+	另加总数的五十巴仙如果是在午夜十二点至凌晨六点\n
+	另加马币二零吉如果是电话预约\n
+	第三位乘客另加收费马币一零吉（最多四位乘客）以及马币一零吉收费若储存行李在后车箱。\n
+	通行费将依据真实价格收费
+	</string>
+
+	<string name="airports_fare_rate">
+	在机场的出租车是以预付费的票据系统运作。
+	</string>
+
+	<string name="email_intro">
+To Whom It May Concern:\n\n
+I\'m writing this email to inform you of an unpleasant incident which I
+experienced recently. The details are below. Please take appropriate action
+regarding my complaint.\n\n
+Thank you.\n
+	</string>
+	<string name="email_reg">Registration Number of Taxi</string>
+	<string name="email_loc">Location</string>
+	<string name="email_offence">Nature of Offence</string>
+
+	<string name="gpl">
+版權所有(C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
+
+举报马来西亚的士爲自由軟體；您可依據自由軟體基金會所發表的GNU通用公共授權條款，對本程式再次發佈和/或修改；無論您依據的是本授權的第三版，或（您可選的）任一日後發行的版本。\n\n
+
+举报马来西亚的士是基於使用目的而加以發佈，然而不負任何擔保責任；亦無對適售性或特定目的適用性所爲的默示性擔保。詳情請參照GNU通用公共授權。\n\n
+
+您應已收到附隨於举报马来西亚的士的GNU通用公共授權的副本；如果沒有，請參照http://www.gnu.org/licenses/ 。\n\n
+
+举报马来西亚的士含有Alexander Moore的Nuove图标。
+    http://findicons.com/pack/2117/nuove
+	</string>
+</resources>
+

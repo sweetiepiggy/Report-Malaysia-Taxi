@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2012 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+
+    This file is part of Report Malaysia Taxi.
+
+    Report Malaysia Taxi is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 3 of the License, or
+    (at your option) any later version.
+
+    Report Malaysia Taxi is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Report Malaysia Taxi; if not, see <http://www.gnu.org/licenses/>.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent" >
+	<LinearLayout
+		android:id="@+id/linear_layout"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:focusable="true"
+		android:focusableInTouchMode="true"
+		android:orientation="vertical" >
+		<TextView
+			android:id="@+id/date_label"
+			style="@android:style/TextAppearance.Large"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/date_and_time"
+			android:textStyle="normal|italic"
+			android:typeface="serif" />
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:orientation="horizontal" >
+			<Button
+				android:id="@+id/date_button"
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent" />
+			<Button
+				android:id="@+id/time_button"
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent" />
+		</LinearLayout>
+		<TextView
+			android:id="@+id/registration_label"
+			style="@android:style/TextAppearance.Large"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingBottom="10dp"
+			android:paddingLeft="10dp"
+			android:paddingTop="10dp"
+			android:text="@string/registration"
+			android:textStyle="normal|italic"
+			android:typeface="serif" />
+		<EditText
+			android:id="@+id/reg_entry"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:hint="@string/registration_hint"
+			android:inputType="textVisiblePassword"
+			android:textStyle="italic"
+			android:typeface="serif" />
+		<TextView
+			android:id="@+id/location_label"
+			style="@android:style/TextAppearance.Large"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingBottom="10dp"
+			android:paddingLeft="10dp"
+			android:paddingTop="10dp"
+			android:text="@string/location"
+			android:textStyle="normal|italic"
+			android:typeface="serif" />
+		<EditText
+			android:id="@+id/location_entry"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:hint="@string/location_hint"
+			android:inputType="textCapWords"
+			android:textStyle="italic"
+			android:typeface="serif" />
+		<TextView
+			android:id="@+id/offence_label"
+			style="@android:style/TextAppearance.Large"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingBottom="10dp"
+			android:paddingLeft="10dp"
+			android:paddingTop="10dp"
+			android:text="@string/offence"
+			android:textStyle="normal|italic"
+			android:typeface="serif" />
+		<Spinner
+			android:id="@+id/offence_spinner"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:prompt="@string/offence" />
+		<TextView
+			android:id="@+id/details_label"
+			style="@android:style/TextAppearance.Large"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingBottom="10dp"
+			android:paddingLeft="10dp"
+			android:paddingTop="10dp"
+			android:text="@string/details"
+			android:textStyle="normal|italic"
+			android:typeface="serif" />
+		<EditText
+			android:id="@+id/details_entry"
+			android:layout_width="fill_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			android:hint="@string/details_hint"
+			android:inputType="textCapSentences"
+			android:textStyle="italic"
+			android:typeface="serif" />
+		<TextView
+			android:id="@+id/record_label"
+			style="@android:style/TextAppearance.Large"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingBottom="10dp"
+			android:paddingLeft="10dp"
+			android:paddingTop="10dp"
+			android:text="@string/record"
+			android:textStyle="normal|italic"
+			android:typeface="serif" />
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal" >
+			<TextView
+				android:id="@+id/camera_label"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="" />
+			<Button
+				android:id="@+id/camera_button"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="@android:color/transparent"
+				android:drawableLeft="@android:drawable/ic_menu_camera" />
+			<TextView
+				android:id="@+id/video_label"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="" />
+			<Button
+				android:id="@+id/vidcam_button"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="@android:color/transparent"
+				android:drawableLeft="@drawable/video_camera" />
+			<TextView
+				android:id="@+id/recorder_label"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="" />
+			<Button
+				android:id="@+id/recorder_button"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="@android:color/transparent"
+				android:drawableLeft="@android:drawable/ic_btn_speak_now" />
+			<TextView
+				android:id="@+id/attachment_label"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="" />
+			<Button
+				android:id="@+id/attachment_button"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="@android:color/transparent"
+				android:drawableLeft="@drawable/paperclip" />
+		</LinearLayout>
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:orientation="horizontal"
+			android:paddingBottom="10dp"
+			android:paddingLeft="10dp"
+			android:paddingTop="10dp" >
+			<Button
+				android:id="@+id/submit_button"
+				style="@android:style/TextAppearance.Large"
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:drawableLeft="@android:drawable/ic_menu_send"
+				android:text="@string/submit" />
+			<Button
+				android:id="@+id/call_button"
+				style="@android:style/TextAppearance.Large"
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:drawableLeft="@android:drawable/ic_menu_call"
+				android:text="@string/call" />
+			<Button
+				android:id="@+id/cancel_button"
+				style="@android:style/TextAppearance.Large"
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
+				android:text="@string/clear" />
+		</LinearLayout>
+	</LinearLayout>
+</ScrollView>
