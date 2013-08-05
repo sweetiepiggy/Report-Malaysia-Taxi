@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
     Copyright (C) 2012 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
 
@@ -18,108 +17,100 @@
     You should have received a copy of the GNU General Public License
     along with Report Malaysia Taxi; if not, see <http://www.gnu.org/licenses/>.
 -->
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent" >
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-		android:orientation="vertical"
+	<LinearLayout
 		android:id="@+id/linear_layout"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
 		android:focusable="true"
 		android:focusableInTouchMode="true"
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent">
+		android:orientation="vertical" >
 		<TextView
 			android:id="@+id/date_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:textStyle="bold"
 			android:paddingLeft="6dip"
-			android:text="@string/date_and_time" />
-		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			android:orientation="horizontal"
+			android:text="@string/date_and_time"
+			android:textStyle="bold" />
+		<LinearLayout
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent">
+			android:layout_height="fill_parent"
+			android:orientation="horizontal" >
 			<Button
 				android:id="@+id/date_button"
-				android:layout_width="wrap_content"
+				android:layout_width="0dp"
 				android:layout_height="fill_parent"
-				android:layout_weight="1"/>
+				android:layout_weight="1" />
 			<Button
 				android:id="@+id/time_button"
 				android:layout_width="wrap_content"
-				android:layout_height="fill_parent"/>
+				android:layout_height="fill_parent" />
 		</LinearLayout>
-
 		<TextView
 			android:id="@+id/registration_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:textStyle="bold"
 			android:paddingLeft="6dip"
-			android:text="@string/registration" />
+			android:text="@string/registration"
+			android:textStyle="bold" />
 		<EditText
 			android:id="@+id/reg_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:inputType="textVisiblePassword"
-			android:hint="@string/registration_hint" />
-
+			android:hint="@string/registration_hint"
+			android:inputType="textVisiblePassword" />
 		<TextView
 			android:id="@+id/location_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:textStyle="bold"
 			android:paddingLeft="6dip"
-			android:text="@string/location" />
+			android:text="@string/location"
+			android:textStyle="bold" />
 		<EditText
 			android:id="@+id/location_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:inputType="textCapWords"
-			android:hint="@string/location_hint" />
-
+			android:hint="@string/location_hint"
+			android:inputType="textCapWords" />
 		<TextView
 			android:id="@+id/offence_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:textStyle="bold"
 			android:paddingLeft="6dip"
-			android:text="@string/offence" />
+			android:text="@string/offence"
+			android:textStyle="bold" />
 		<Spinner
 			android:id="@+id/offence_spinner"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:prompt="@string/offence"/>
-
+			android:prompt="@string/offence" />
 		<TextView
 			android:id="@+id/details_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:textStyle="bold"
 			android:paddingLeft="6dip"
-			android:text="@string/details" />
-
+			android:text="@string/details"
+			android:textStyle="bold" />
 		<EditText
 			android:id="@+id/details_entry"
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent"
+			android:layout_height="0dp"
 			android:layout_weight="1"
-			android:inputType="textCapSentences"
-			android:hint="@string/details_hint" />
-
+			android:hint="@string/details_hint"
+			android:inputType="textCapSentences" />
 		<TextView
 			android:id="@+id/record_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:textStyle="bold"
 			android:paddingLeft="6dip"
-			android:text="@string/record" />
-
-		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			android:orientation="horizontal"
+			android:text="@string/record"
+			android:textStyle="bold" />
+		<LinearLayout
 			android:layout_width="fill_parent"
-			android:layout_height="wrap_content">
+			android:layout_height="wrap_content"
+			android:orientation="horizontal" >
 			<TextView
 				android:id="@+id/camera_label"
 				android:layout_width="wrap_content"
@@ -132,7 +123,7 @@
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
 				android:background="@android:color/transparent"
-				android:drawableLeft="@android:drawable/ic_menu_camera"/>
+				android:drawableLeft="@android:drawable/ic_menu_camera" />
 			<TextView
 				android:id="@+id/video_label"
 				android:layout_width="wrap_content"
@@ -145,7 +136,7 @@
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
 				android:background="@android:color/transparent"
-				android:drawableLeft="@drawable/video_camera"/>
+				android:drawableLeft="@drawable/video_camera" />
 			<TextView
 				android:id="@+id/recorder_label"
 				android:layout_width="wrap_content"
@@ -158,7 +149,7 @@
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
 				android:background="@android:color/transparent"
-				android:drawableLeft="@android:drawable/ic_btn_speak_now"/>
+				android:drawableLeft="@android:drawable/ic_btn_speak_now" />
 			<TextView
 				android:id="@+id/attachment_label"
 				android:layout_width="wrap_content"
@@ -171,13 +162,12 @@
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
 				android:background="@android:color/transparent"
-				android:drawableLeft="@drawable/paperclip"/>
+				android:drawableLeft="@drawable/paperclip" />
 		</LinearLayout>
-
-		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			android:orientation="horizontal"
+		<LinearLayout
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent">
+			android:layout_height="fill_parent"
+			android:orientation="horizontal" >
 			<Button
 				android:id="@+id/submit_button"
 				android:layout_width="wrap_content"
@@ -202,4 +192,3 @@
 		</LinearLayout>
 	</LinearLayout>
 </ScrollView>
-
