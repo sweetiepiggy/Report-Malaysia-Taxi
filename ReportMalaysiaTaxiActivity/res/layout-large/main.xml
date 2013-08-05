@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Copyright (C) 2012,2013 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+    Copyright (C) 2012 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
 
     This file is part of Report Malaysia Taxi.
 
@@ -29,13 +29,11 @@
 		android:orientation="vertical" >
 		<TextView
 			android:id="@+id/date_label"
+			style="@android:style/TextAppearance.Large"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:paddingBpttom="6dip"
-			android:paddingLeft="6dip"
-			android:paddingTop="6dip"
 			android:text="@string/date_and_time"
-			android:textStyle="bold|italic"
+			android:textStyle="normal|italic"
 			android:typeface="serif" />
 		<LinearLayout
 			android:layout_width="fill_parent"
@@ -43,9 +41,8 @@
 			android:orientation="horizontal" >
 			<Button
 				android:id="@+id/date_button"
-				android:layout_width="0dp"
-				android:layout_height="fill_parent"
-				android:layout_weight="1" />
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent" />
 			<Button
 				android:id="@+id/time_button"
 				android:layout_width="wrap_content"
@@ -53,13 +50,14 @@
 		</LinearLayout>
 		<TextView
 			android:id="@+id/registration_label"
+			style="@android:style/TextAppearance.Large"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:paddingBpttom="6dip"
-			android:paddingLeft="6dip"
-			android:paddingTop="6dip"
+			android:paddingBottom="10dp"
+			android:paddingLeft="10dp"
+			android:paddingTop="10dp"
 			android:text="@string/registration"
-			android:textStyle="bold|italic"
+			android:textStyle="normal|italic"
 			android:typeface="serif" />
 		<EditText
 			android:id="@+id/reg_entry"
@@ -71,13 +69,14 @@
 			android:typeface="serif" />
 		<TextView
 			android:id="@+id/location_label"
+			style="@android:style/TextAppearance.Large"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:paddingBpttom="6dip"
-			android:paddingLeft="6dip"
-			android:paddingTop="6dip"
+			android:paddingBottom="10dp"
+			android:paddingLeft="10dp"
+			android:paddingTop="10dp"
 			android:text="@string/location"
-			android:textStyle="bold|italic"
+			android:textStyle="normal|italic"
 			android:typeface="serif" />
 		<EditText
 			android:id="@+id/location_entry"
@@ -89,13 +88,14 @@
 			android:typeface="serif" />
 		<TextView
 			android:id="@+id/offence_label"
+			style="@android:style/TextAppearance.Large"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:paddingBpttom="6dip"
-			android:paddingLeft="6dip"
-			android:paddingTop="6dip"
+			android:paddingBottom="10dp"
+			android:paddingLeft="10dp"
+			android:paddingTop="10dp"
 			android:text="@string/offence"
-			android:textStyle="bold|italic"
+			android:textStyle="normal|italic"
 			android:typeface="serif" />
 		<Spinner
 			android:id="@+id/offence_spinner"
@@ -104,13 +104,14 @@
 			android:prompt="@string/offence" />
 		<TextView
 			android:id="@+id/details_label"
+			style="@android:style/TextAppearance.Large"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:paddingBpttom="6dip"
-			android:paddingLeft="6dip"
-			android:paddingTop="6dip"
+			android:paddingBottom="10dp"
+			android:paddingLeft="10dp"
+			android:paddingTop="10dp"
 			android:text="@string/details"
-			android:textStyle="bold|italic"
+			android:textStyle="normal|italic"
 			android:typeface="serif" />
 		<EditText
 			android:id="@+id/details_entry"
@@ -123,13 +124,14 @@
 			android:typeface="serif" />
 		<TextView
 			android:id="@+id/record_label"
+			style="@android:style/TextAppearance.Large"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:paddingBpttom="6dip"
-			android:paddingLeft="6dip"
-			android:paddingTop="6dip"
+			android:paddingBottom="10dp"
+			android:paddingLeft="10dp"
+			android:paddingTop="10dp"
 			android:text="@string/record"
-			android:textStyle="bold|italic"
+			android:textStyle="normal|italic"
 			android:typeface="serif" />
 		<LinearLayout
 			android:layout_width="fill_parent"
@@ -139,9 +141,6 @@
 				android:id="@+id/camera_label"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:paddingBpttom="6dip"
-				android:paddingLeft="6dip"
-				android:paddingTop="6dip"
 				android:text="" />
 			<Button
 				android:id="@+id/camera_button"
@@ -154,9 +153,6 @@
 				android:id="@+id/video_label"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:paddingBpttom="6dip"
-				android:paddingLeft="6dip"
-				android:paddingTop="6dip"
 				android:text="" />
 			<Button
 				android:id="@+id/vidcam_button"
@@ -169,9 +165,6 @@
 				android:id="@+id/recorder_label"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:paddingBpttom="6dip"
-				android:paddingLeft="6dip"
-				android:paddingTop="6dip"
 				android:text="" />
 			<Button
 				android:id="@+id/recorder_button"
@@ -184,9 +177,6 @@
 				android:id="@+id/attachment_label"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:paddingBpttom="6dip"
-				android:paddingLeft="6dip"
-				android:paddingTop="6dip"
 				android:text="" />
 			<Button
 				android:id="@+id/attachment_button"
@@ -199,9 +189,13 @@
 		<LinearLayout
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
-			android:orientation="horizontal" >
+			android:orientation="horizontal"
+			android:paddingBottom="10dp"
+			android:paddingLeft="10dp"
+			android:paddingTop="10dp" >
 			<Button
 				android:id="@+id/submit_button"
+				style="@android:style/TextAppearance.Large"
 				android:layout_width="wrap_content"
 				android:layout_height="fill_parent"
 				android:layout_weight="1"
@@ -209,6 +203,7 @@
 				android:text="@string/submit" />
 			<Button
 				android:id="@+id/call_button"
+				style="@android:style/TextAppearance.Large"
 				android:layout_width="wrap_content"
 				android:layout_height="fill_parent"
 				android:layout_weight="1"
@@ -216,6 +211,7 @@
 				android:text="@string/call" />
 			<Button
 				android:id="@+id/cancel_button"
+				style="@android:style/TextAppearance.Large"
 				android:layout_width="wrap_content"
 				android:layout_height="fill_parent"
 				android:layout_weight="1"
