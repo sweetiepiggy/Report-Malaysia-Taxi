@@ -19,7 +19,10 @@
 -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
-	android:layout_height="fill_parent" >
+	android:layout_height="fill_parent"
+	android:padding="6dp"
+	android:paddingBottom="6dp"
+	android:paddingLeft="6dp" >
 	<LinearLayout
 		android:id="@+id/linear_layout"
 		android:layout_width="fill_parent"
@@ -45,11 +48,15 @@
 				android:id="@+id/date_button"
 				android:layout_width="0dp"
 				android:layout_height="fill_parent"
-				android:layout_weight="1" />
+				android:layout_weight="1"
+				android:textStyle="italic"
+				android:typeface="serif" />
 			<Button
 				android:id="@+id/time_button"
 				android:layout_width="wrap_content"
-				android:layout_height="fill_parent" />
+				android:layout_height="fill_parent"
+				android:textStyle="italic"
+				android:typeface="serif" />
 		</LinearLayout>
 		<TextView
 			android:id="@+id/registration_label"
@@ -206,21 +213,27 @@
 				android:layout_height="fill_parent"
 				android:layout_weight="1"
 				android:drawableLeft="@android:drawable/ic_menu_send"
-				android:text="@string/submit" />
+				android:text="@string/submit"
+				android:textStyle="italic"
+				android:typeface="serif" />
 			<Button
 				android:id="@+id/call_button"
 				android:layout_width="wrap_content"
 				android:layout_height="fill_parent"
 				android:layout_weight="1"
 				android:drawableLeft="@android:drawable/ic_menu_call"
-				android:text="@string/call" />
+				android:text="@string/call"
+				android:textStyle="italic"
+				android:typeface="serif" />
 			<Button
 				android:id="@+id/cancel_button"
 				android:layout_width="wrap_content"
 				android:layout_height="fill_parent"
 				android:layout_weight="1"
 				android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
-				android:text="@string/clear" />
+				android:text="@string/clear"
+				android:textStyle="italic"
+				android:typeface="serif" />
 		</LinearLayout>
 	</LinearLayout>
 </ScrollView>
