@@ -24,29 +24,29 @@ import java.util.ArrayList;
 import android.net.Uri;
 
 public class DataWrapper {
-    public ArrayList<Uri> attachmentUris;
-    public int            day;
-    public boolean        email_checked;
-    public String         email_offence;
-    public boolean        email_sent;
-    public int            hour;
-    public int            minute;
-    
-    public int            month;
-    public String         offence;
-    
-    public ArrayList<Uri> photoUris;
-    public ArrayList<Uri> recordingUris;
-    public boolean        sms_checked;
-    public boolean        sms_sent;
-    
-    public boolean[]      submit_selected;
-    public boolean        tweet_checked;
-    public boolean        tweet_sent;
-    public ArrayList<Uri> videoUris;
-    
-    public boolean[]      who_selected;
-    public int            year;
-    public boolean        youtube_checked;
-    public boolean        youtube_sent;
+	public ArrayList<Uri> attachmentUris;
+	public int day;
+	public boolean email_checked;
+	public String email_offence;
+	public boolean email_sent;
+	public int hour;
+	public int minute;
+
+	public int month;
+	public String offence;
+
+	public ArrayList<Uri> photoUris;
+	public ArrayList<Uri> recordingUris;
+	public boolean sms_checked;
+	public boolean sms_sent;
+
+	public boolean[] submit_selected;
+	public boolean tweet_checked;
+	public boolean tweet_sent;
+	public ArrayList<Uri> videoUris;
+
+	public boolean[] who_selected;
+	public int year;
+	public boolean youtube_checked;
+	public boolean youtube_sent;
 }

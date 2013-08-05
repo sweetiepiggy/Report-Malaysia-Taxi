@@ -23,15 +23,15 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class TextViewActivity extends Activity {
-    
-    /** Called when the activity is first created. */
-    @Override
-    public void onCreate(final Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.textview_layout);
-        final Bundle b = this.getIntent().getExtras();
-        final String text = (b == null) ? "" : b.getString("text");
-        ((TextView) this.findViewById(R.id.text)).setText(text);
-    }
-    
+
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(final Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		this.setContentView(R.layout.textview_layout);
+		final Bundle b = this.getIntent().getExtras();
+		final String text = (b == null) ? "" : b.getString("text");
+		((TextView) this.findViewById(R.id.text)).setText(text);
+	}
+
 }

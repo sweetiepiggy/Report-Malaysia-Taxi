@@ -30,57 +30,57 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class FareRateActivity extends ListActivity {
-    @Override
-    public void onCreate(final Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        
-        final String[] resources = new String[] {
-                this.getResources().getString(R.string.lk_jb_kt_m),
-                this.getResources().getString(R.string.penang),
-                this.getResources().getString(R.string.airports), };
-        this.setListAdapter(new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, resources));
-        
-        final ListView lv = this.getListView();
-        
-        lv.setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onItemClick(final AdapterView<?> parent,
-                    final View view, final int pos, final long id) {
-                final CharSequence item = ((TextView) view).getText();
-                /* TODO: refactor duplicate code */
-                if (item.equals(FareRateActivity.this.getResources().getString(
-                        R.string.penang))) {
-                    final Intent intent = new Intent(FareRateActivity.this
-                            .getApplicationContext(), TextViewActivity.class);
-                    final Bundle b = new Bundle();
-                    b.putString("text", FareRateActivity.this.getResources()
-                            .getString(R.string.penang_fare_rate));
-                    intent.putExtras(b);
-                    FareRateActivity.this.startActivity(intent);
-                    
-                } else if (item.equals(FareRateActivity.this.getResources()
-                        .getString(R.string.lk_jb_kt_m))) {
-                    final Intent intent = new Intent(FareRateActivity.this
-                            .getApplicationContext(), TextViewActivity.class);
-                    final Bundle b = new Bundle();
-                    b.putString("text", FareRateActivity.this.getResources()
-                            .getString(R.string.kl_fare_rate));
-                    intent.putExtras(b);
-                    FareRateActivity.this.startActivity(intent);
-                    
-                } else if (item.equals(FareRateActivity.this.getResources()
-                        .getString(R.string.airports))) {
-                    final Intent intent = new Intent(FareRateActivity.this
-                            .getApplicationContext(), TextViewActivity.class);
-                    final Bundle b = new Bundle();
-                    b.putString("text", FareRateActivity.this.getResources()
-                            .getString(R.string.airports_fare_rate));
-                    intent.putExtras(b);
-                    FareRateActivity.this.startActivity(intent);
-                }
-            }
-        });
-        
-    }
+	@Override
+	public void onCreate(final Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		final String[] resources = new String[] {
+				this.getResources().getString(R.string.lk_jb_kt_m),
+				this.getResources().getString(R.string.penang),
+				this.getResources().getString(R.string.airports), };
+		this.setListAdapter(new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1, resources));
+
+		final ListView lv = this.getListView();
+
+		lv.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(final AdapterView<?> parent,
+					final View view, final int pos, final long id) {
+				final CharSequence item = ((TextView) view).getText();
+				/* TODO: refactor duplicate code */
+				if (item.equals(FareRateActivity.this.getResources().getString(
+						R.string.penang))) {
+					final Intent intent = new Intent(FareRateActivity.this
+							.getApplicationContext(), TextViewActivity.class);
+					final Bundle b = new Bundle();
+					b.putString("text", FareRateActivity.this.getResources()
+							.getString(R.string.penang_fare_rate));
+					intent.putExtras(b);
+					FareRateActivity.this.startActivity(intent);
+
+				} else if (item.equals(FareRateActivity.this.getResources()
+						.getString(R.string.lk_jb_kt_m))) {
+					final Intent intent = new Intent(FareRateActivity.this
+							.getApplicationContext(), TextViewActivity.class);
+					final Bundle b = new Bundle();
+					b.putString("text", FareRateActivity.this.getResources()
+							.getString(R.string.kl_fare_rate));
+					intent.putExtras(b);
+					FareRateActivity.this.startActivity(intent);
+
+				} else if (item.equals(FareRateActivity.this.getResources()
+						.getString(R.string.airports))) {
+					final Intent intent = new Intent(FareRateActivity.this
+							.getApplicationContext(), TextViewActivity.class);
+					final Bundle b = new Bundle();
+					b.putString("text", FareRateActivity.this.getResources()
+							.getString(R.string.airports_fare_rate));
+					intent.putExtras(b);
+					FareRateActivity.this.startActivity(intent);
+				}
+			}
+		});
+
+	}
 }

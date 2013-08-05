@@ -30,61 +30,61 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class ConsumerGroupActivity extends ListActivity {
-    @Override
-    public void onCreate(final Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        
-        final String[] gov_depts = new String[] {
-                this.getResources().getString(R.string.transit),
-                this.getResources().getString(R.string.nccc_desc), };
-        this.setListAdapter(new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, gov_depts));
-        
-        final ListView lv = this.getListView();
-        
-        lv.setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onItemClick(final AdapterView<?> parent,
-                    final View view, final int pos, final long id) {
-                final CharSequence item = ((TextView) view).getText();
-                if (item.equals(ConsumerGroupActivity.this.getResources()
-                        .getString(R.string.transit))) {
-                    final Intent intent = new Intent(ConsumerGroupActivity.this
-                            .getApplicationContext(), ContactViewActivity.class);
-                    final Bundle b = new Bundle();
-                    
-                    b.putString("name", ConsumerGroupActivity.this
-                            .getResources().getString(R.string.transit));
-                    b.putString("desc", ConsumerGroupActivity.this
-                            .getResources().getString(R.string.transit_desc));
-                    b.putString("email", Constants.TRANSIT_EMAIL);
-                    b.putString("website", Constants.TRANSIT_WEBSITE);
-                    b.putString("twitter", Constants.TRANSIT_TWITTER);
-                    
-                    intent.putExtras(b);
-                    ConsumerGroupActivity.this.startActivity(intent);
-                    
-                } else if (item.equals(ConsumerGroupActivity.this
-                        .getResources().getString(R.string.nccc_desc))) {
-                    final Intent intent = new Intent(ConsumerGroupActivity.this
-                            .getApplicationContext(), ContactViewActivity.class);
-                    final Bundle b = new Bundle();
-                    
-                    b.putString("name", ConsumerGroupActivity.this
-                            .getResources().getString(R.string.nccc));
-                    b.putString("desc", ConsumerGroupActivity.this
-                            .getResources().getString(R.string.nccc_desc));
-                    b.putString("phone", Constants.NCCC_PHONE);
-                    b.putString("email", Constants.NCCC_EMAIL);
-                    b.putString("website", Constants.NCCC_WEBSITE);
-                    b.putString("form", Constants.NCCC_FORM);
-                    b.putString("twitter", Constants.NCCC_TWITTER);
-                    
-                    intent.putExtras(b);
-                    ConsumerGroupActivity.this.startActivity(intent);
-                }
-            }
-        });
-        
-    }
+	@Override
+	public void onCreate(final Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		final String[] gov_depts = new String[] {
+				this.getResources().getString(R.string.transit),
+				this.getResources().getString(R.string.nccc_desc), };
+		this.setListAdapter(new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1, gov_depts));
+
+		final ListView lv = this.getListView();
+
+		lv.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(final AdapterView<?> parent,
+					final View view, final int pos, final long id) {
+				final CharSequence item = ((TextView) view).getText();
+				if (item.equals(ConsumerGroupActivity.this.getResources()
+						.getString(R.string.transit))) {
+					final Intent intent = new Intent(ConsumerGroupActivity.this
+							.getApplicationContext(), ContactViewActivity.class);
+					final Bundle b = new Bundle();
+
+					b.putString("name", ConsumerGroupActivity.this
+							.getResources().getString(R.string.transit));
+					b.putString("desc", ConsumerGroupActivity.this
+							.getResources().getString(R.string.transit_desc));
+					b.putString("email", Constants.TRANSIT_EMAIL);
+					b.putString("website", Constants.TRANSIT_WEBSITE);
+					b.putString("twitter", Constants.TRANSIT_TWITTER);
+
+					intent.putExtras(b);
+					ConsumerGroupActivity.this.startActivity(intent);
+
+				} else if (item.equals(ConsumerGroupActivity.this
+						.getResources().getString(R.string.nccc_desc))) {
+					final Intent intent = new Intent(ConsumerGroupActivity.this
+							.getApplicationContext(), ContactViewActivity.class);
+					final Bundle b = new Bundle();
+
+					b.putString("name", ConsumerGroupActivity.this
+							.getResources().getString(R.string.nccc));
+					b.putString("desc", ConsumerGroupActivity.this
+							.getResources().getString(R.string.nccc_desc));
+					b.putString("phone", Constants.NCCC_PHONE);
+					b.putString("email", Constants.NCCC_EMAIL);
+					b.putString("website", Constants.NCCC_WEBSITE);
+					b.putString("form", Constants.NCCC_FORM);
+					b.putString("twitter", Constants.NCCC_TWITTER);
+
+					intent.putExtras(b);
+					ConsumerGroupActivity.this.startActivity(intent);
+				}
+			}
+		});
+
+	}
 }

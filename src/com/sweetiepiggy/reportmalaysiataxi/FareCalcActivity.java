@@ -30,48 +30,48 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class FareCalcActivity extends ListActivity {
-    /* TODO: put starting fares in a Constants class */
-    private static final int KL_STARTING_FARE     = 3;
-    private static final int PENANG_STARTING_FARE = 4;
-    
-    @Override
-    public void onCreate(final Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        
-        final String[] resources = new String[] {
-                this.getResources().getString(R.string.lk_jb_kt_m),
-                this.getResources().getString(R.string.penang), };
-        this.setListAdapter(new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, resources));
-        
-        final ListView lv = this.getListView();
-        
-        lv.setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onItemClick(final AdapterView<?> parent,
-                    final View view, final int pos, final long id) {
-                final CharSequence item = ((TextView) view).getText();
-                if (item.equals(FareCalcActivity.this.getResources().getString(
-                        R.string.penang))) {
-                    final Intent intent = new Intent(FareCalcActivity.this
-                            .getApplicationContext(), AllFareCalcActivity.class);
-                    final Bundle b = new Bundle();
-                    b.putInt("starting_fare",
-                            FareCalcActivity.PENANG_STARTING_FARE);
-                    intent.putExtras(b);
-                    FareCalcActivity.this.startActivity(intent);
-                    
-                } else if (item.equals(FareCalcActivity.this.getResources()
-                        .getString(R.string.lk_jb_kt_m))) {
-                    final Intent intent = new Intent(FareCalcActivity.this
-                            .getApplicationContext(), AllFareCalcActivity.class);
-                    final Bundle b = new Bundle();
-                    b.putInt("starting_fare", FareCalcActivity.KL_STARTING_FARE);
-                    intent.putExtras(b);
-                    FareCalcActivity.this.startActivity(intent);
-                }
-            }
-        });
-        
-    }
+	/* TODO: put starting fares in a Constants class */
+	private static final int KL_STARTING_FARE = 3;
+	private static final int PENANG_STARTING_FARE = 4;
+
+	@Override
+	public void onCreate(final Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		final String[] resources = new String[] {
+				this.getResources().getString(R.string.lk_jb_kt_m),
+				this.getResources().getString(R.string.penang), };
+		this.setListAdapter(new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1, resources));
+
+		final ListView lv = this.getListView();
+
+		lv.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(final AdapterView<?> parent,
+					final View view, final int pos, final long id) {
+				final CharSequence item = ((TextView) view).getText();
+				if (item.equals(FareCalcActivity.this.getResources().getString(
+						R.string.penang))) {
+					final Intent intent = new Intent(FareCalcActivity.this
+							.getApplicationContext(), AllFareCalcActivity.class);
+					final Bundle b = new Bundle();
+					b.putInt("starting_fare",
+							FareCalcActivity.PENANG_STARTING_FARE);
+					intent.putExtras(b);
+					FareCalcActivity.this.startActivity(intent);
+
+				} else if (item.equals(FareCalcActivity.this.getResources()
+						.getString(R.string.lk_jb_kt_m))) {
+					final Intent intent = new Intent(FareCalcActivity.this
+							.getApplicationContext(), AllFareCalcActivity.class);
+					final Bundle b = new Bundle();
+					b.putInt("starting_fare", FareCalcActivity.KL_STARTING_FARE);
+					intent.putExtras(b);
+					FareCalcActivity.this.startActivity(intent);
+				}
+			}
+		});
+
+	}
 }
