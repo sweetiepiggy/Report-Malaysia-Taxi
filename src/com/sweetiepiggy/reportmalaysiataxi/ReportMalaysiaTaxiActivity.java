@@ -607,6 +607,22 @@ public class ReportMalaysiaTaxiActivity extends Activity {
         }
     }
     
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this).setTitle("Really Exit?")
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setMessage("Are you sure you want to exit?")
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new OnClickListener() {
+                    
+                    @Override
+                    public void onClick(final DialogInterface arg0,
+                            final int arg1) {
+                        ReportMalaysiaTaxiActivity.super.onBackPressed();
+                    }
+                }).create().show();
+    }
+    
     /** Called when the activity is first created. */
     @Override
     public void onCreate(final Bundle savedInstanceState) {
