@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2012 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+    Copyright (C) 2013 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
 
     This file is part of Report Malaysia Taxi.
 
@@ -15,7 +15,7 @@
 
     You should have received a copy of the GNU General Public License
     along with Report Malaysia Taxi; if not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 package com.sweetiepiggy.reportmalaysiataxi;
 
@@ -31,42 +31,49 @@ import android.widget.TextView;
 
 public class ConsumerGroupActivity extends ListActivity {
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
+	public void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		String[] gov_depts = new String[] {
-			getResources().getString(R.string.transit),
-			getResources().getString(R.string.nccc_desc),
-		};
-		setListAdapter(new ArrayAdapter<String>(this,
-					android.R.layout.simple_list_item_1,
-					gov_depts));
+		final String[] gov_depts = new String[] {
+				this.getResources().getString(R.string.transit),
+				this.getResources().getString(R.string.nccc_desc), };
+		this.setListAdapter(new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1, gov_depts));
 
-		ListView lv = getListView();
+		final ListView lv = this.getListView();
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
-			public void onItemClick(AdapterView<?> parent, View view,
-					int pos, long id) {
-				CharSequence item = ((TextView) view).getText();
-				if (item.equals(getResources().getString(R.string.transit))) {
-					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
-					Bundle b = new Bundle();
+			@Override
+			public void onItemClick(final AdapterView<?> parent,
+					final View view, final int pos, final long id) {
+				final CharSequence item = ((TextView) view).getText();
+				if (item.equals(ConsumerGroupActivity.this.getResources()
+						.getString(R.string.transit))) {
+					final Intent intent = new Intent(ConsumerGroupActivity.this
+							.getApplicationContext(), ContactViewActivity.class);
+					final Bundle b = new Bundle();
 
-					b.putString("name", getResources().getString(R.string.transit));
-					b.putString("desc", getResources().getString(R.string.transit_desc));
+					b.putString("name", ConsumerGroupActivity.this
+							.getResources().getString(R.string.transit));
+					b.putString("desc", ConsumerGroupActivity.this
+							.getResources().getString(R.string.transit_desc));
 					b.putString("email", Constants.TRANSIT_EMAIL);
 					b.putString("website", Constants.TRANSIT_WEBSITE);
 					b.putString("twitter", Constants.TRANSIT_TWITTER);
 
 					intent.putExtras(b);
-					startActivity(intent);
+					ConsumerGroupActivity.this.startActivity(intent);
 
-				} else if (item.equals(getResources().getString(R.string.nccc_desc))) {
-					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
-					Bundle b = new Bundle();
+				} else if (item.equals(ConsumerGroupActivity.this
+						.getResources().getString(R.string.nccc_desc))) {
+					final Intent intent = new Intent(ConsumerGroupActivity.this
+							.getApplicationContext(), ContactViewActivity.class);
+					final Bundle b = new Bundle();
 
-					b.putString("name", getResources().getString(R.string.nccc));
-					b.putString("desc", getResources().getString(R.string.nccc_desc));
+					b.putString("name", ConsumerGroupActivity.this
+							.getResources().getString(R.string.nccc));
+					b.putString("desc", ConsumerGroupActivity.this
+							.getResources().getString(R.string.nccc_desc));
 					b.putString("phone", Constants.NCCC_PHONE);
 					b.putString("email", Constants.NCCC_EMAIL);
 					b.putString("website", Constants.NCCC_WEBSITE);
@@ -74,13 +81,10 @@ public class ConsumerGroupActivity extends ListActivity {
 					b.putString("twitter", Constants.NCCC_TWITTER);
 
 					intent.putExtras(b);
-					startActivity(intent);
+					ConsumerGroupActivity.this.startActivity(intent);
 				}
 			}
 		});
 
 	}
 }
-
-
-
