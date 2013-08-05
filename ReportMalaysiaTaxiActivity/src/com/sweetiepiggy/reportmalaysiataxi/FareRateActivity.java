@@ -48,7 +48,7 @@ public class FareRateActivity extends ListActivity {
             public void onItemClick(final AdapterView<?> parent,
                     final View view, final int pos, final long id) {
                 final CharSequence item = ((TextView) view).getText();
-                /* TODO: refactor duplicate code */
+
                 if (item.equals(FareRateActivity.this.getResources().getString(
                         R.string.penang))) {
                     final Intent intent = new Intent(FareRateActivity.this

@@ -30,7 +30,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class FareCalcActivity extends ListActivity {
-    /* TODO: put starting fares in a Constants class */
+
     private static final int KL_STARTING_FARE = 3;
     private static final int PENANG_STARTING_FARE = 4;
 

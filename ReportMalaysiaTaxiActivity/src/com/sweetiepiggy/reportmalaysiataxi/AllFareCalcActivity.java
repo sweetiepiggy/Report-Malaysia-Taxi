@@ -30,7 +30,6 @@ import android.widget.EditText;
 
 public class AllFareCalcActivity extends Activity {
 
-    /* TODO: define starting fare in a Constants class */
     private int m_starting_fare = 3;
 
     private double calc_fare_by_dist(final int starting_fare, double km,

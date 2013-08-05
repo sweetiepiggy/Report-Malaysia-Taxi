@@ -49,11 +49,6 @@ public class ContactsActivity extends ListActivity {
 
                 final CharSequence item = ((TextView) view).getText();
 
-                /* TODO: don't hard code contact_choices order */
-                /*
-                 * TODO: combine all below activities into one activity and pass
-                 * the appropriate info to it
-                 */
                 if (item.equals(contact_choices[0])) {
                     final Intent intent = new Intent(ContactsActivity.this
                             .getApplicationContext(), GovDeptActivity.class);

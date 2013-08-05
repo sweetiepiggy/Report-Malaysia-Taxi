@@ -77,7 +77,7 @@ public class GovDeptActivity extends ListActivity {
             public void onItemClick(final AdapterView<?> parent,
                     final View view, final int pos, final long id) {
                 final CharSequence item = GovDeptActivity.this.gov_depts[(int) id];
-                /* TODO: refactor duplicate Intent and Bundle code */
+
                 if (item.equals(GovDeptActivity.this.getResources().getString(
                         R.string.spad))) {
                     final Intent intent = new Intent(GovDeptActivity.this

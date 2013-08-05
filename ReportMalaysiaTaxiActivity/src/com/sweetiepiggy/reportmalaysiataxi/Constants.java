@@ -23,11 +23,6 @@ public class Constants {
     static final String COMPLAINT_EMAIL_MALAY = "Aduan Teksi";
     static final String COMPLAINT_MALAY = "SPAD ADUAN";
 
-    /*
-     * TODO: this is linked to email_choices, that should be made obvious
-     * somehow
-     */
-    /* TODO: use already defined contants such as TRANSIT_EMAIL */
     static final String[] EMAIL_ADDRESSES = {
             "aduan@spad.gov.my; ",
             "aduantrafik@jpj.gov.my; e-aduan@kpdnkk.gov.my; info@motour.gov.my; bahria@miti.gov.my; unitpro@pcb.gov.my; ",
