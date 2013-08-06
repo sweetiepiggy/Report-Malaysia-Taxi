@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2013 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+
+    This file is part of Report Malaysia Taxi.
+
+    Report Malaysia Taxi is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 3 of the License, or
+    (at your option) any later version.
+
+    Report Malaysia Taxi is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Report Malaysia Taxi; if not, see <http://www.gnu.org/licenses/>.
+-->
+
+<resources>
+	<string name="app_name">Report M\'sia Taxi</string>
+	<string name="date_and_time">Date and Time of Incident</string>
+	<string name="location">Location</string>
+	<string name="registration">Registration Number of Taxi</string>
+	<string name="offence">Nature of Offence</string>
+
+	<string name="about">About</string>
+	<string name="fare_rate">Fare Rate</string>
+	<string name="fare_calc">Fare Calculator</string>
+	<string name="contacts">Contact Info</string>
+	<string name="record">Record</string>
+
+	<string name="view_source">View Source</string>
+
+	<string name="location_hint">Enter location of incident</string>
+	<string name="registration_hint">Enter plate number, e.g. HWA9999</string>
+	<string name="details_hint">Enter additional details</string>
+
+	<string-array name="offence_array">
+		<item>Refused to use meter</item>
+		<item>Refused to take passenger</item>
+		<item>Refused to give change</item>
+		<item>Reckless driving</item>
+		<item>Offered illegal services</item>
+		<item>Harrassment</item>
+		<item>Smoking in Taxi</item>
+		<item>Other</item>
+	</string-array>
+
+	<string-array name="email_offence_array">
+		<item>Refused to use meter</item>
+		<item>Refused to take passenger</item>
+		<item>Refused to give change</item>
+		<item>Reckless driving</item>
+		<item>Offered illegal services</item>
+		<item>Harrassment</item>
+		<item>Smoking in Taxi</item>
+		<item>Other</item>
+	</string-array>
+
+	<string name="details">Details</string>
+	<string name="sms">sms</string>
+	<string name="tweet">tweet</string>
+	<string name="email">email</string>
+	<string name="submit">submit</string>
+	<string name="clear">clear</string>
+	<string name="youtube">youtube</string>
+	<string name="call">call</string>
+
+	<string name="missing_reg">enter registration number</string>
+	<string name="missing_details">enter additional details</string>
+	<string name="select_checkbox">select a checkbox</string>
+
+	<string name="select_submit">Select Method</string>
+	<string name="send_youtube">Upload to YouTube</string>
+	<string name="send_tweet">Send tweet</string>
+	<string name="send_email">Send email</string>
+	<string name="place_call">Place call</string>
+	<string name="take_photo">Take photo</string>
+	<string name="record_video">Record video</string>
+	<string name="record_sound">Record audio</string>
+	<string name="attach_file">Attach file</string>
+
+	<string name="lk_jb_kt_m">Kuala Lumpur, Johor Baru, Kuala Terengganu, Malacca</string>
+	<string name="penang">Penang</string>
+	<string name="airports">Airports</string>
+
+	<string name="km">km</string>
+	<string name="minutes">minutes</string>
+	<string name="fare">Fare (RM)</string>
+
+	<string name="distance">Distance (km)</string>
+	<string name="time">Time (minutes)</string>
+	<string name="executive">Executive taxi</string>
+	<string name="midnight">Midnight charge (12AM to 6AM)</string>
+	<string name="passengers">Number of Passengers</string>
+	<string name="telbooking">Telephone booking</string>
+	<string name="distance_hint">Enter distance in km</string>
+	<string name="passengers_hint">Enter number of passengers</string>
+	<string name="time_hint">Enter time in minutes</string>
+
+	<string name="monday">Monday</string>
+	<string name="tuesday">Tuesday</string>
+	<string name="wednesday">Wednesday</string>
+	<string name="thursday">Thursday</string>
+	<string name="friday">Friday</string>
+	<string name="saturday">Saturday</string>
+	<string name="sunday">Sunday</string>
+
+	<string name="spad">SPAD</string>
+	<string name="jpj">JPJ</string>
+	<string name="kpdnkk">KPDNKK</string>
+	<string name="motour">Ministry of Tourism</string>
+	<string name="pcb">Public Complaints Bureau</string>
+	<string name="pemudah">PEMUDA</string>
+	<string name="ttpm">Tribunal for Consumer Claims</string>
+
+	<string name="spad_desc">Land Public Transport Commission</string>
+	<string name="jpj_desc">Road Transport Department</string>
+	<string name="kpdnkk_desc">Ministry of Domestic Trade, Cooperative and Consumerism</string>
+	<string name="motour_desc">Ministry of Tourism and Culture Malaysia</string>
+	<string name="pcb_desc">Inland Revenue Board Malaysia</string>
+	<string name="pemudah_desc">Entrepreneur and Cooperatives Development Ministry</string>
+	<string name="ttpm_desc">Tribunal for Consumer Claims Malaysia</string>
+
+	<string name="transit">TRANSIT</string>
+	<string name="transit_desc">A group of concerned citizens for the improvement of mass transit</string>
+	<string name="nccc">NCCC</string>
+	<string name="nccc_desc">National Consumer Complaints Centre</string>
+	<string name="spad_chairman">Chairman of SPAD</string>
+	<string name="mo_transport">Minister of Transport</string>
+	<string name="prime_minister">Prime Minister</string>
+
+	<string name="who_email">Select who to email</string>
+	<string name="who_details">Details</string>
+	<string-array name="email_choices">
+		<item>SPAD</item>
+		<item>Other Government Departments</item>
+		<item>Consumer Groups</item>
+		<item>Government Ministers</item>
+		<item>News Media</item>
+		<item>Traffic Police</item>
+	</string-array>
+	<string-array name="contact_choices">
+		<item>Government Departments</item>
+		<item>Consumer Groups</item>
+		<item>Government Ministers</item>
+		<item>News Media</item>
+		<item>Traffic Police</item>
+	</string-array>
+
+	<string name="email_details">
+SPAD: Land Public Transport Commission\n\n
+Government Departments: JPJ, KPDNKK, Ministry of Tourism, PEMUDAH, Public Complaints Bureau\n\n
+Consumer Groups: TRANSIT, NCCC\n\n
+Government Ministers: Minister of Transport, Prime Minister\n\n
+News Media: The Star, Star Metro, Malay Mail, New Straits Times, New Straits Times Streets, The Sun, Malaysia Kini, The Malaysian Insider\n\n
+Traffic Police: rmp@rmp.gov.my
+	</string>
+
+	<string name="spad_website">http://www.spad.gov.my</string>
+	<string name="spad_form">http://www.spad.gov.my/contact-us/feedback</string>
+	<string name="motour_form">http://www.motac.gov.my/en/contact-us/feedback/public-complaints.html</string>
+	<string name="pcb_form">http://apps1.pcb.gov.my/eApps/bpaiaducmpl/AduCmplPublic/add.do?aplCode=en</string>
+	<string name="pemudah_form">http://pemudah.bpa.jpm.my/eApps/sdmscasepool/SdmsCasePool/add.do?aplCode=en</string>
+	<string name="mo_transport_name">Hishammuddin Bin Tun Hussein</string>
+	<string name="traffic_police">Traffic Police</string>
+	<string name="news_media_contact">
+		The Star\n
+		editor@thestar.com.my\n\n
+		Star Metro\n
+		metro@thestar.com.my\n\n
+		Malay Mail\n
+		mmnews@mmail.com.my\n\n
+		New Straits Times\n
+		syedn@nst.com.my\n
+		letters@nst.com.my\n\n
+		New Straits Times Streets\n
+		streets@nst.com.my\n\n
+		The Sun\n
+		letters@thesundaily.com\n\n
+		Malaysia Kini\n
+		editor@malaysiakini.com.my\n\n
+		The Malaysian Insider\n
+		editor@themalaysianinsider.com\n\n
+	</string>
+
+	<string name="penang_fare_rate">
+	RM4 for first km\n
+	10 cents for each additional 115 meters\n
+	OR\n
+	RM4 for first 3 minutes\n
+	10 cents for each additional 21 seconds\n\n
+
+	http://www.spad.gov.my/fare-rate\n\n
+
+	Additional Charges:\n
+	50% surcharge between midnight and 6:00AM\n
+	RM2 for telephone bookings\n
+	RM1 for 3rd adult passenger (max 4) and/or baggage stored in boot\n
+	Actual road toll charges
+	</string>
+
+	<string name="kl_fare_rate">
+	RM3 for first km\n
+	10 cents for each additional 115 meters\n
+	OR\n
+	RM3 for first 3 minutes\n
+	10 cents for each additional 21 seconds\n\n
+
+	http://www.spad.gov.my/fare-rate\n\n
+
+	Additional Charges:\n
+	Double rate for executive taxi\n
+	50% surcharge between midnight and 6:00AM\n
+	RM2 for telephone bookings\n
+	RM1 for 3rd adult passenger (max 4) and/or baggage stored in boot\n
+	Actual road toll charges
+	</string>
+
+	<string name="airports_fare_rate">
+	Taxis at airports operate on a pre-paid coupon system.
+	</string>
+
+	<string name="email_intro">
+To Whom It May Concern:\n\n
+I\'m writing this email to inform you of an unpleasant incident which I
+experienced recently. The details are below. Please take appropriate action
+regarding my complaint.\n\n
+Thank you.\n
+	</string>
+	<string name="email_reg">Registration Number of Taxi</string>
+	<string name="email_loc">Location</string>
+	<string name="email_offence">Nature of Offence</string>
+
+	<string name="gpl">
+Copyright &#169; 2013 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
+\nReport Malaysia Taxi is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.\n\n
+\nReport Malaysia Taxi is distributed in the hope that it will be useful,but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n\n
+\nYou should have received a copy of the GNU General Public License along with Report Malaysia Taxi; if not, see \nhttp://www.gnu.org/licenses\n\n
+
+\nReport Malaysia Taxi contains icons from the Nuove icon pack by Alexander Moore.\
+\nhttp://findicons.com/pack/2117/nuove
+	</string>
+</resources>
+
