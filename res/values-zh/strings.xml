@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
-    Copyright (C) 2012,2013 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+    Copyright (C) 2013 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
 
     This file is part of Report Malaysia Taxi.
 
@@ -239,7 +238,7 @@ Thank you.\n
 	<string name="email_offence">Nature of Offence</string>
 
 	<string name="gpl">
-版權所有(C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
+版權所有&#169; 2013 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
 
 举报马来西亚的士爲自由軟體；您可依據自由軟體基金會所發表的GNU通用公共授權條款，對本程式再次發佈和/或修改；無論您依據的是本授權的第三版，或（您可選的）任一日後發行的版本。\n\n
 
@@ -248,7 +247,7 @@ Thank you.\n
 您應已收到附隨於举报马来西亚的士的GNU通用公共授權的副本；如果沒有，請參照http://www.gnu.org/licenses/ 。\n\n
 
 举报马来西亚的士含有Alexander Moore的Nuove图标。
-    http://findicons.com/pack/2117/nuove
+\nhttp://findicons.com/pack/2117/nuove
 	</string>
 </resources>
 
