@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
-    Copyright (C) 2012,2013 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+    Copyright (C) 2013 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
 
     This file is part of Report Malaysia Taxi.
 
@@ -23,10 +22,10 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 >
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	<LinearLayout
 		android:orientation="vertical"
 		android:layout_width="fill_parent"
-		android:layout_height="fill_parent">
+		android:layout_height="wrap_content">
 
 		<TextView
 			android:id="@+id/fare_label"
@@ -48,6 +47,8 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:textStyle="bold"
+			android:paddingBottom="10dp"
+			android:paddingLeft="10dp"
 			android:paddingTop="10dp"
 			android:text="@string/distance" />
 		<EditText
@@ -62,6 +63,8 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:textStyle="bold"
+			android:paddingBottom="10dp"
+			android:paddingLeft="10dp"
 			android:paddingTop="10dp"
 			android:text="@string/time" />
 		<EditText
@@ -76,6 +79,8 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:textStyle="bold"
+			android:paddingBottom="10dp"
+			android:paddingLeft="10dp"
 			android:paddingTop="10dp"
 			android:text="@string/passengers" />
 		<EditText
@@ -89,6 +94,8 @@
 			android:id="@+id/midnight_checkbox"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
+			android:paddingBottom="10dp"
+			android:paddingLeft="10dp"
 			android:paddingTop="10dp"
 			android:text="@string/midnight" />
 		<CheckBox

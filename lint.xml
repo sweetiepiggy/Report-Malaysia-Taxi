@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<lint>
-    <issue id="Deprecated">
-        <ignore path="res/layout/fare_calc.xml" />
-    </issue>
-</lint>
