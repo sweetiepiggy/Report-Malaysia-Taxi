@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
-    Copyright (C) 2012,2013 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+    Copyright (C) 2012,2013
+    Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+    CyanogenMod-X <rdxperiaz@gmail.com>
 
     This file is part of Report Malaysia Taxi.
 
@@ -93,10 +94,10 @@
 
 	<string name="distance">Distance (km)</string>
 	<string name="time">Time (minutes)</string>
-	<string name="executive">executive taxi</string>
-	<string name="midnight">midnight charge (12AM to 6AM)</string>
+	<string name="executive">Executive taxi</string>
+	<string name="midnight">Midnight charge (12AM to 6AM)</string>
 	<string name="passengers">Number of Passengers</string>
-	<string name="telbooking">telephone booking</string>
+	<string name="telbooking">Telephone booking</string>
 	<string name="distance_hint">Enter distance in km</string>
 	<string name="passengers_hint">Enter number of passengers</string>
 	<string name="time_hint">Enter time in minutes</string>
@@ -120,10 +121,10 @@
 	<string name="spad_desc">Land Public Transport Commission</string>
 	<string name="jpj_desc">Road Transport Department</string>
 	<string name="kpdnkk_desc">Ministry of Domestic Trade, Cooperative and Consumerism</string>
-	<string name="motour_desc"></string>
-	<string name="pcb_desc"></string>
+	<string name="motour_desc">Ministry of Tourism and Culture Malaysia</string>
+	<string name="pcb_desc">Inland Revenue Board Malaysia</string>
 	<string name="pemudah_desc">Entrepreneur and Cooperatives Development Ministry</string>
-	<string name="ttpm_desc"></string>
+	<string name="ttpm_desc">Tribunal for Consumer Claims Malaysia</string>
 
 	<string name="transit">TRANSIT</string>
 	<string name="transit_desc">A group of concerned citizens for the improvement of mass transit</string>
@@ -224,6 +225,9 @@ Traffic Police: rmp@rmp.gov.my
 	Taxis at airports operate on a pre-paid coupon system.
 	</string>
 
+	<string name="exit_title">Really Exit?</string>
+	<string name="exit_prompt">Are you sure you want to exit?</string>
+
 	<string name="email_intro">
 To Whom It May Concern:\n\n
 I\'m writing this email to inform you of an unpleasant incident which I
@@ -236,20 +240,13 @@ Thank you.\n
 	<string name="email_offence">Nature of Offence</string>
 
 	<string name="gpl">
-Copyright (C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
-Report Malaysia Taxi is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 3 of the License, or
-    (at your option) any later version.\n\n
-Report Malaysia Taxi is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.\n\n
-You should have received a copy of the GNU General Public License
-    along with Report Malaysia Taxi; if not, see http://www.gnu.org/licenses/.\n\n
+Copyright &#169; 2013 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
+\nReport Malaysia Taxi is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.\n\n
+\nReport Malaysia Taxi is distributed in the hope that it will be useful,but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n\n
+\nYou should have received a copy of the GNU General Public License along with Report Malaysia Taxi; if not, see \nhttp://www.gnu.org/licenses\n\n
 
-Report Malaysia Taxi contains icons from the Nuove icon pack by Alexander Moore.
-    http://findicons.com/pack/2117/nuove
+\nReport Malaysia Taxi contains icons from the Nuove icon pack by Alexander Moore.\
+\nhttp://findicons.com/pack/2117/nuove
 	</string>
 </resources>
 
