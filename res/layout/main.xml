@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
-    Copyright (C) 2012,2013 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+    Copyright (C) 2012,2013
+    Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+    CyanogenMod-X <rdxperiaz@gmail.com>
 
     This file is part of Report Malaysia Taxi.
 
@@ -22,184 +23,242 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent" >
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-		android:orientation="vertical"
+	<LinearLayout
 		android:id="@+id/linear_layout"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
 		android:focusable="true"
 		android:focusableInTouchMode="true"
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent">
+		android:orientation="vertical" >
 		<TextView
 			android:id="@+id/date_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:textStyle="bold"
+			android:paddingBottom="6dip"
 			android:paddingLeft="6dip"
-			android:text="@string/date_and_time" />
-		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			android:orientation="horizontal"
+			android:paddingTop="6dip"
+			android:text="@string/date_and_time"
+			android:textStyle="bold|italic"
+			android:typeface="serif" />
+		<LinearLayout
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent">
-			<Button
-				android:id="@+id/date_button"
-				android:layout_width="wrap_content"
-				android:layout_height="fill_parent"
-				android:layout_weight="1"/>
-			<Button
-				android:id="@+id/time_button"
-				android:layout_width="wrap_content"
-				android:layout_height="fill_parent"/>
-		</LinearLayout>
+			android:layout_height="fill_parent"
+			android:orientation="horizontal" >
 
+			<Button
+			    android:id="@+id/date_button"
+			    android:layout_width="0dp"
+			    android:layout_height="fill_parent"
+			    android:layout_weight="1"
+			    android:textStyle="italic"
+			    android:typeface="serif" />
+
+			<Button
+			    android:id="@+id/time_button"
+			    android:layout_width="wrap_content"
+			    android:layout_height="fill_parent"
+			    android:textStyle="italic"
+			    android:typeface="serif" />
+
+		</LinearLayout>
 		<TextView
 			android:id="@+id/registration_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:textStyle="bold"
+			android:paddingBottom="6dip"
 			android:paddingLeft="6dip"
-			android:text="@string/registration" />
+			android:paddingTop="6dip"
+			android:text="@string/registration"
+			android:textStyle="bold|italic"
+			android:typeface="serif" />
 		<EditText
 			android:id="@+id/reg_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:hint="@string/registration_hint"
 			android:inputType="textVisiblePassword"
-			android:hint="@string/registration_hint" />
-
+			android:textStyle="italic"
+			android:typeface="serif" />
 		<TextView
 			android:id="@+id/location_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:textStyle="bold"
+			android:paddingBottom="6dip"
 			android:paddingLeft="6dip"
-			android:text="@string/location" />
+			android:paddingTop="6dip"
+			android:text="@string/location"
+			android:textStyle="bold|italic"
+			android:typeface="serif" />
 		<EditText
 			android:id="@+id/location_entry"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
+			android:hint="@string/location_hint"
 			android:inputType="textCapWords"
-			android:hint="@string/location_hint" />
-
+			android:textStyle="italic"
+			android:typeface="serif" />
 		<TextView
 			android:id="@+id/offence_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:textStyle="bold"
+			android:paddingBottom="6dip"
 			android:paddingLeft="6dip"
-			android:text="@string/offence" />
+			android:paddingTop="6dip"
+			android:text="@string/offence"
+			android:textStyle="bold|italic"
+			android:typeface="serif" />
 		<Spinner
 			android:id="@+id/offence_spinner"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:prompt="@string/offence"/>
-
+			android:prompt="@string/offence" />
 		<TextView
 			android:id="@+id/details_label"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:textStyle="bold"
+			android:paddingBottom="6dip"
 			android:paddingLeft="6dip"
-			android:text="@string/details" />
-
+			android:paddingTop="6dip"
+			android:text="@string/details"
+			android:textStyle="bold|italic"
+			android:typeface="serif" />
 		<EditText
 			android:id="@+id/details_entry"
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent"
+			android:layout_height="0dp"
 			android:layout_weight="1"
+			android:hint="@string/details_hint"
 			android:inputType="textCapSentences"
-			android:hint="@string/details_hint" />
+			android:textStyle="italic"
+			android:typeface="serif" />
 
 		<TextView
-			android:id="@+id/record_label"
+		    android:id="@+id/record_label"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:paddingBottom="10dp"
+		    android:paddingLeft="6dip"
+		    android:paddingTop="6dip"
+		    android:text="@string/record"
+		    android:textStyle="bold|italic"
+		    android:typeface="serif" />
+
+		<LinearLayout
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:textStyle="bold"
-			android:paddingLeft="6dip"
-			android:text="@string/record" />
-
-		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			android:orientation="horizontal"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content">
+			android:orientation="horizontal" >
 			<TextView
 				android:id="@+id/camera_label"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
+				android:paddingBottom="6dip"
 				android:paddingLeft="6dip"
+				android:paddingTop="6dip"
 				android:text="" />
+
 			<Button
-				android:id="@+id/camera_button"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:background="@android:color/transparent"
-				android:drawableLeft="@android:drawable/ic_menu_camera"/>
+			    android:id="@+id/camera_button"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_weight="3"
+			    android:background="@android:color/transparent"
+			    android:drawableLeft="@drawable/ic_camera"
+			    android:paddingBottom="15dp"
+			    android:paddingLeft="15dp" />
+
 			<TextView
 				android:id="@+id/video_label"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
+				android:paddingBottom="6dip"
 				android:paddingLeft="6dip"
+				android:paddingTop="6dip"
 				android:text="" />
+
 			<Button
-				android:id="@+id/vidcam_button"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:background="@android:color/transparent"
-				android:drawableLeft="@drawable/video_camera"/>
+			    android:id="@+id/vidcam_button"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_weight="3"
+			    android:background="@android:color/transparent"
+			    android:drawableLeft="@drawable/ic_video"
+			    android:paddingBottom="15dp"
+			    android:paddingLeft="15dp" />
+
 			<TextView
 				android:id="@+id/recorder_label"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
+				android:paddingBottom="6dip"
 				android:paddingLeft="6dip"
+				android:paddingTop="6dip"
 				android:text="" />
+
 			<Button
-				android:id="@+id/recorder_button"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:background="@android:color/transparent"
-				android:drawableLeft="@android:drawable/ic_btn_speak_now"/>
+			    android:id="@+id/recorder_button"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_weight="3"
+			    android:background="@android:color/transparent"
+			    android:drawableLeft="@drawable/ic_voice"
+			    android:paddingBottom="15dp"
+			    android:paddingLeft="15dp" />
+
 			<TextView
 				android:id="@+id/attachment_label"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
+				android:paddingBottom="6dip"
 				android:paddingLeft="6dip"
+				android:paddingTop="6dip"
 				android:text="" />
-			<Button
-				android:id="@+id/attachment_button"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:background="@android:color/transparent"
-				android:drawableLeft="@drawable/paperclip"/>
-		</LinearLayout>
 
-		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			android:orientation="horizontal"
+			<Button
+			    android:id="@+id/attachment_button"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_weight="3"
+			    android:background="@android:color/transparent"
+			    android:drawableLeft="@drawable/ic_attach"
+			    android:paddingBottom="15dp"
+			    android:paddingLeft="15dp" />
+
+		</LinearLayout>
+		<LinearLayout
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent">
+			android:layout_height="fill_parent"
+			android:orientation="horizontal" >
+
 			<Button
-				android:id="@+id/submit_button"
-				android:layout_width="wrap_content"
-				android:layout_height="fill_parent"
-				android:layout_weight="1"
-				android:drawableLeft="@android:drawable/ic_menu_send"
-				android:text="@string/submit" />
+			    android:id="@+id/submit_button"
+			    android:layout_width="wrap_content"
+			    android:layout_height="fill_parent"
+			    android:layout_weight="1"
+			    android:drawableLeft="@android:drawable/ic_menu_send"
+			    android:text="@string/submit"
+			    android:textStyle="italic"
+			    android:typeface="serif" />
+
 			<Button
-				android:id="@+id/call_button"
-				android:layout_width="wrap_content"
-				android:layout_height="fill_parent"
-				android:layout_weight="1"
-				android:drawableLeft="@android:drawable/ic_menu_call"
-				android:text="@string/call" />
+			    android:id="@+id/call_button"
+			    android:layout_width="wrap_content"
+			    android:layout_height="fill_parent"
+			    android:layout_weight="1"
+			    android:drawableLeft="@android:drawable/ic_menu_call"
+			    android:text="@string/call"
+			    android:textStyle="italic"
+			    android:typeface="serif" />
+
 			<Button
-				android:id="@+id/cancel_button"
-				android:layout_width="wrap_content"
-				android:layout_height="fill_parent"
-				android:layout_weight="1"
-				android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
-				android:text="@string/clear" />
+			    android:id="@+id/cancel_button"
+			    android:layout_width="wrap_content"
+			    android:layout_height="fill_parent"
+			    android:layout_weight="1"
+			    android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
+			    android:text="@string/clear"
+			    android:textStyle="italic"
+			    android:typeface="serif" />
+
 		</LinearLayout>
 	</LinearLayout>
 </ScrollView>
-
