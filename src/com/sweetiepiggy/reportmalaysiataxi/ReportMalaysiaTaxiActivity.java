@@ -410,7 +410,6 @@ public class ReportMalaysiaTaxiActivity extends Activity
 						ReportMalaysiaTaxiActivity.super.onBackPressed();
 					}
 				}).create().show();
-	}
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(ReportMalaysiaTaxiActivity.this);
 		builder.setTitle(R.string.select_submit);
