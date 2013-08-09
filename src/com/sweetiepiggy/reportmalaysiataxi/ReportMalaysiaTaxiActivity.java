@@ -1045,7 +1045,10 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 		ArrayList<String> ret = new ArrayList<String>();
 		Iterator<Uri> itr = uri_arr.iterator();
 		while (itr.hasNext()) {
-			ret.add(itr.next().toString());
+			final Uri next = itr.next();
+			if (next != null) {
+				ret.add(next.toString());
+			}
 		}
 		return ret;
 	}
