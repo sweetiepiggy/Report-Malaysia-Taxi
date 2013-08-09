@@ -1,5 +1,7 @@
 /*
-    Copyright (C) 2012,2013 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+    Copyright (C) 2012,2013
+    Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+    CyanogenMod-X <rdxperiaz@gmail.com>
 
     This file is part of Report Malaysia Taxi.
 
@@ -16,7 +18,6 @@
     You should have received a copy of the GNU General Public License
     along with Report Malaysia Taxi; if not, see <http://www.gnu.org/licenses/>.
  */
-
 package com.sweetiepiggy.reportmalaysiataxi;
 
 public class Constants {

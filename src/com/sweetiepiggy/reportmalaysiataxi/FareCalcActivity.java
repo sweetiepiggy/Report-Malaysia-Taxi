@@ -1,5 +1,7 @@
 /*
-    Copyright (C) 2012 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+    Copyright (C) 2012,2013
+    Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+    CyanogenMod-X <rdxperiaz@gmail.com>
 
     This file is part of Report Malaysia Taxi.
 
