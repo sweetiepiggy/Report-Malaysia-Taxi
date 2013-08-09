@@ -15,7 +15,7 @@
 
     You should have received a copy of the GNU General Public License
     along with Report Malaysia Taxi; if not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 package com.sweetiepiggy.reportmalaysiataxi;
 
@@ -39,31 +39,29 @@ public class FareCalcActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 
 		String[] resources = new String[] {
-			getResources().getString(R.string.lk_jb_kt_m),
-			getResources().getString(R.string.penang),
-		};
+				getResources().getString(R.string.lk_jb_kt_m),
+				getResources().getString(R.string.penang), };
 		setListAdapter(new ArrayAdapter<String>(this,
-					android.R.layout.simple_list_item_1,
-					resources));
+				android.R.layout.simple_list_item_1, resources));
 
 		ListView lv = getListView();
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
-			public void onItemClick(AdapterView<?> parent, View view,
-					int pos, long id) {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int pos,
+					long id) {
 				CharSequence item = ((TextView) view).getText();
 				if (item.equals(getResources().getString(R.string.penang))) {
-					Intent intent =
-						new Intent(getApplicationContext(),
+					Intent intent = new Intent(getApplicationContext(),
 							AllFareCalcActivity.class);
 					Bundle b = new Bundle();
 					b.putInt("starting_fare", PENANG_STARTING_FARE);
 					intent.putExtras(b);
 					startActivity(intent);
 
-				} else if (item.equals(getResources().getString(R.string.lk_jb_kt_m))) {
-					Intent intent =
-						new Intent(getApplicationContext(),
+				} else if (item.equals(getResources().getString(
+						R.string.lk_jb_kt_m))) {
+					Intent intent = new Intent(getApplicationContext(),
 							AllFareCalcActivity.class);
 					Bundle b = new Bundle();
 					b.putInt("starting_fare", KL_STARTING_FARE);
@@ -75,4 +73,3 @@ public class FareCalcActivity extends ListActivity {
 
 	}
 }
-

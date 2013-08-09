@@ -15,7 +15,7 @@
 
     You should have received a copy of the GNU General Public License
     along with Report Malaysia Taxi; if not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 package com.sweetiepiggy.reportmalaysiataxi;
 
@@ -35,25 +35,27 @@ public class ConsumerGroupActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 
 		String[] gov_depts = new String[] {
-			getResources().getString(R.string.transit),
-			getResources().getString(R.string.nccc_desc),
-		};
+				getResources().getString(R.string.transit),
+				getResources().getString(R.string.nccc_desc), };
 		setListAdapter(new ArrayAdapter<String>(this,
-					android.R.layout.simple_list_item_1,
-					gov_depts));
+				android.R.layout.simple_list_item_1, gov_depts));
 
 		ListView lv = getListView();
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
-			public void onItemClick(AdapterView<?> parent, View view,
-					int pos, long id) {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int pos,
+					long id) {
 				CharSequence item = ((TextView) view).getText();
 				if (item.equals(getResources().getString(R.string.transit))) {
-					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
+					Intent intent = new Intent(getApplicationContext(),
+							ContactViewActivity.class);
 					Bundle b = new Bundle();
 
-					b.putString("name", getResources().getString(R.string.transit));
-					b.putString("desc", getResources().getString(R.string.transit_desc));
+					b.putString("name",
+							getResources().getString(R.string.transit));
+					b.putString("desc",
+							getResources().getString(R.string.transit_desc));
 					b.putString("email", Constants.TRANSIT_EMAIL);
 					b.putString("website", Constants.TRANSIT_WEBSITE);
 					b.putString("twitter", Constants.TRANSIT_TWITTER);
@@ -61,12 +63,15 @@ public class ConsumerGroupActivity extends ListActivity {
 					intent.putExtras(b);
 					startActivity(intent);
 
-				} else if (item.equals(getResources().getString(R.string.nccc_desc))) {
-					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
+				} else if (item.equals(getResources().getString(
+						R.string.nccc_desc))) {
+					Intent intent = new Intent(getApplicationContext(),
+							ContactViewActivity.class);
 					Bundle b = new Bundle();
 
 					b.putString("name", getResources().getString(R.string.nccc));
-					b.putString("desc", getResources().getString(R.string.nccc_desc));
+					b.putString("desc",
+							getResources().getString(R.string.nccc_desc));
 					b.putString("phone", Constants.NCCC_PHONE);
 					b.putString("email", Constants.NCCC_EMAIL);
 					b.putString("website", Constants.NCCC_WEBSITE);
@@ -81,6 +86,3 @@ public class ConsumerGroupActivity extends ListActivity {
 
 	}
 }
-
-
-

@@ -15,7 +15,7 @@
 
     You should have received a copy of the GNU General Public License
     along with Report Malaysia Taxi; if not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 package com.sweetiepiggy.reportmalaysiataxi;
 
@@ -23,8 +23,7 @@ import java.util.ArrayList;
 
 import android.net.Uri;
 
-public class DataWrapper
-{
+public class DataWrapper {
 	public int year;
 	public int month;
 	public int day;
@@ -51,4 +50,3 @@ public class DataWrapper
 	public boolean tweet_checked;
 	public boolean youtube_checked;
 }
-

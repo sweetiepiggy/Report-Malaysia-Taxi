@@ -15,27 +15,26 @@
 
     You should have received a copy of the GNU General Public License
     along with Report Malaysia Taxi; if not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 package com.sweetiepiggy.reportmalaysiataxi;
 
-import android.app.Activity;
-
-public class Constants
-{
+public class Constants {
 	static final String COMPLAINT_EMAIL_MALAY = "Aduan Teksi";
 	static final String COMPLAINT_MALAY = "SPAD ADUAN";
 
-	/* TODO: this is linked to email_choices, that should be made obvious somehow */
+	/*
+	 * TODO: this is linked to email_choices, that should be made obvious
+	 * somehow
+	 */
 	/* TODO: use already defined contants such as TRANSIT_EMAIL */
 	static final String[] EMAIL_ADDRESSES = {
-		"aduan@spad.gov.my; ",
-		"aduantrafik@jpj.gov.my; e-aduan@kpdnkk.gov.my; info@motour.gov.my; bahria@miti.gov.my; unitpro@pcb.gov.my; ",
-		"klangvalley.transit@gmail.com; nccc@nccc.org.my; ",
-		"menteri@mot.gov.my; najib@1malaysia.com.my; ",
-		"editor@thestar.com.my; metro@thestar.com.my; mmnews@mmail.com.my; syedn@nst.com.my; letters@nst.com.my; streets@nst.com.my; letters@thesundaily.com, editor@malaysiakini.com.my; editor@themalaysianinsider.com; ",
-		"rmp@rmp.gov.my; "
-	};
+			"aduan@spad.gov.my; ",
+			"aduantrafik@jpj.gov.my; e-aduan@kpdnkk.gov.my; info@motour.gov.my; bahria@miti.gov.my; unitpro@pcb.gov.my; ",
+			"klangvalley.transit@gmail.com; nccc@nccc.org.my; ",
+			"menteri@mot.gov.my; najib@1malaysia.com.my; ",
+			"editor@thestar.com.my; metro@thestar.com.my; mmnews@mmail.com.my; syedn@nst.com.my; letters@nst.com.my; streets@nst.com.my; letters@thesundaily.com, editor@malaysiakini.com.my; editor@themalaysianinsider.com; ",
+			"rmp@rmp.gov.my; " };
 
 	static final String SMS_NUMBER = "15888";
 
@@ -94,4 +93,3 @@ public class Constants
 	static final String TRAFFIC_POLICE_EMAIL = "rmp@rmp.gov.my";
 	static final String TRAFFIC_POLICE_WEBSITE = "http://www.rmp.gov.my";
 }
-
