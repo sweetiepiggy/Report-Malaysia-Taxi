@@ -21,34 +21,34 @@
 
 package com.sweetiepiggy.reportmalaysiataxi;
 
-import java.util.ArrayList;
-
 import android.net.Uri;
 
+import java.util.ArrayList;
+
 public class DataWrapper {
-	public ArrayList<Uri> attachmentUris;
+	public int year;
+	public int month;
 	public int day;
-	public boolean email_checked;
-	public String email_offence;
-	public boolean email_sent;
 	public int hour;
 	public int minute;
-
-	public int month;
 	public String offence;
+	public String email_offence;
+
+	public boolean[] who_selected;
+	public boolean[] submit_selected;
 
 	public ArrayList<Uri> photoUris;
 	public ArrayList<Uri> recordingUris;
-	public boolean sms_checked;
-
-	public boolean sms_sent;
-	public boolean[] submit_selected;
-	public boolean tweet_checked;
-	public boolean tweet_sent;
 	public ArrayList<Uri> videoUris;
+	public ArrayList<Uri> attachmentUris;
 
-	public boolean[] who_selected;
-	public int year;
-	public boolean youtube_checked;
 	public boolean youtube_sent;
+	public boolean email_sent;
+	public boolean tweet_sent;
+	public boolean sms_sent;
+
+	public boolean sms_checked;
+	public boolean email_checked;
+	public boolean tweet_checked;
+	public boolean youtube_checked;
 }

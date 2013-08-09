@@ -33,23 +33,23 @@ import android.widget.TextView;
 
 public class ContactsActivity extends ListActivity {
 	@Override
-	public void onCreate(final Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		this.setListAdapter(new ArrayAdapter<String>(this,
-				android.R.layout.simple_list_item_1, this.getResources()
+		setListAdapter(new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1, getResources()
 						.getStringArray(R.array.contact_choices)));
 
-		final ListView lv = this.getListView();
+		ListView lv = getListView();
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			@Override
-			public void onItemClick(final AdapterView<?> parent,
-					final View view, final int pos, final long id) {
-				final String[] contact_choices = ContactsActivity.this
-						.getResources().getStringArray(R.array.contact_choices);
+			public void onItemClick(AdapterView<?> parent, View view, int pos,
+					long id) {
+				String[] contact_choices = getResources().getStringArray(
+						R.array.contact_choices);
 
-				final CharSequence item = ((TextView) view).getText();
+				CharSequence item = ((TextView) view).getText();
 
 				/* TODO: don't hard code contact_choices order */
 				/*
@@ -57,42 +57,43 @@ public class ContactsActivity extends ListActivity {
 				 * the appropriate info to it
 				 */
 				if (item.equals(contact_choices[0])) {
-					final Intent intent = new Intent(ContactsActivity.this
-							.getApplicationContext(), GovDeptActivity.class);
-					ContactsActivity.this.startActivity(intent);
+					Intent intent = new Intent(getApplicationContext(),
+							GovDeptActivity.class);
+					startActivity(intent);
 
 				} else if (item.equals(contact_choices[1])) {
-					final Intent intent = new Intent(ContactsActivity.this
-							.getApplicationContext(),
+					Intent intent = new Intent(getApplicationContext(),
 							ConsumerGroupActivity.class);
-					ContactsActivity.this.startActivity(intent);
+					startActivity(intent);
 
 				} else if (item.equals(contact_choices[2])) {
-					final Intent intent = new Intent(ContactsActivity.this
-							.getApplicationContext(), GovMinisterActivity.class);
-					ContactsActivity.this.startActivity(intent);
+					Intent intent = new Intent(getApplicationContext(),
+							GovMinisterActivity.class);
+					startActivity(intent);
 
 				} else if (item.equals(contact_choices[3])) {
-					final Intent intent = new Intent(ContactsActivity.this
-							.getApplicationContext(), TextViewActivity.class);
-					final Bundle b = new Bundle();
-					b.putString("text", ContactsActivity.this.getResources()
-							.getString(R.string.news_media_contact));
+					Intent intent = new Intent(getApplicationContext(),
+							TextViewActivity.class);
+					Bundle b = new Bundle();
+					b.putString(
+							"text",
+							getResources().getString(
+									R.string.news_media_contact));
 					intent.putExtras(b);
-					ContactsActivity.this.startActivity(intent);
+					startActivity(intent);
 
 				} else if (item.equals(contact_choices[4])) {
-					final Intent intent = new Intent(ContactsActivity.this
-							.getApplicationContext(), ContactViewActivity.class);
-					final Bundle b = new Bundle();
+					Intent intent = new Intent(getApplicationContext(),
+							ContactViewActivity.class);
+					Bundle b = new Bundle();
 
-					b.putString("name", ContactsActivity.this.getResources()
-							.getString(R.string.traffic_police));
+					b.putString("name",
+							getResources().getString(R.string.traffic_police));
 					b.putString("email", Constants.TRAFFIC_POLICE_EMAIL);
 					b.putString("website", Constants.TRAFFIC_POLICE_WEBSITE);
 
 					intent.putExtras(b);
-					ContactsActivity.this.startActivity(intent);
+					startActivity(intent);
 				}
 			}
 		});

@@ -18,7 +18,7 @@
     You should have received a copy of the GNU General Public License
     along with Report Malaysia Taxi; if not, see <http://www.gnu.org/licenses/>.
  */
- 
+
 package com.sweetiepiggy.reportmalaysiataxi;
 
 import android.app.Activity;
@@ -29,12 +29,12 @@ public class TextViewActivity extends Activity {
 
 	/** Called when the activity is first created. */
 	@Override
-	public void onCreate(final Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		this.setContentView(R.layout.textview_layout);
-		final Bundle b = this.getIntent().getExtras();
-		final String text = (b == null) ? "" : b.getString("text");
-		((TextView) this.findViewById(R.id.text)).setText(text);
+		setContentView(R.layout.textview_layout);
+		Bundle b = getIntent().getExtras();
+		String text = (b == null) ? "" : b.getString("text");
+		((TextView) findViewById(R.id.text)).setText(text);
 	}
 
 }

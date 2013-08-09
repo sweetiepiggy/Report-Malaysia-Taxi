@@ -37,40 +37,38 @@ public class FareCalcActivity extends ListActivity {
 	private static final int PENANG_STARTING_FARE = 4;
 
 	@Override
-	public void onCreate(final Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		final String[] resources = new String[] {
-				this.getResources().getString(R.string.lk_jb_kt_m),
-				this.getResources().getString(R.string.penang), };
-		this.setListAdapter(new ArrayAdapter<String>(this,
+		String[] resources = new String[] {
+				getResources().getString(R.string.lk_jb_kt_m),
+				getResources().getString(R.string.penang), };
+		setListAdapter(new ArrayAdapter<String>(this,
 				android.R.layout.simple_list_item_1, resources));
 
-		final ListView lv = this.getListView();
+		ListView lv = getListView();
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			@Override
-			public void onItemClick(final AdapterView<?> parent,
-					final View view, final int pos, final long id) {
-				final CharSequence item = ((TextView) view).getText();
-				if (item.equals(FareCalcActivity.this.getResources().getString(
-						R.string.penang))) {
-					final Intent intent = new Intent(FareCalcActivity.this
-							.getApplicationContext(), AllFareCalcActivity.class);
-					final Bundle b = new Bundle();
-					b.putInt("starting_fare",
-							FareCalcActivity.PENANG_STARTING_FARE);
+			public void onItemClick(AdapterView<?> parent, View view, int pos,
+					long id) {
+				CharSequence item = ((TextView) view).getText();
+				if (item.equals(getResources().getString(R.string.penang))) {
+					Intent intent = new Intent(getApplicationContext(),
+							AllFareCalcActivity.class);
+					Bundle b = new Bundle();
+					b.putInt("starting_fare", PENANG_STARTING_FARE);
 					intent.putExtras(b);
-					FareCalcActivity.this.startActivity(intent);
+					startActivity(intent);
 
-				} else if (item.equals(FareCalcActivity.this.getResources()
-						.getString(R.string.lk_jb_kt_m))) {
-					final Intent intent = new Intent(FareCalcActivity.this
-							.getApplicationContext(), AllFareCalcActivity.class);
-					final Bundle b = new Bundle();
-					b.putInt("starting_fare", FareCalcActivity.KL_STARTING_FARE);
+				} else if (item.equals(getResources().getString(
+						R.string.lk_jb_kt_m))) {
+					Intent intent = new Intent(getApplicationContext(),
+							AllFareCalcActivity.class);
+					Bundle b = new Bundle();
+					b.putInt("starting_fare", KL_STARTING_FARE);
 					intent.putExtras(b);
-					FareCalcActivity.this.startActivity(intent);
+					startActivity(intent);
 				}
 			}
 		});
