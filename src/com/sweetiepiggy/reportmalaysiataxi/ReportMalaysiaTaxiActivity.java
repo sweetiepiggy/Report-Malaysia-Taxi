@@ -549,6 +549,7 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 				uris.addAll(mData.videoUris);
 				uris.addAll(mData.attachmentUris);
 
+				@SuppressWarnings("unused")
 				String action = uris.size() > 1 ? Intent.ACTION_SEND_MULTIPLE
 						: Intent.ACTION_SEND;
 
