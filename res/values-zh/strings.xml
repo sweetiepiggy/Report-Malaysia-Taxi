@@ -228,6 +228,10 @@ SPAD: 陆路运输部门\n\n
 	在机场的出租车是以预付费的票据系统运作。
 	</string>
 
+	<string name="exit_title">真的要退出吗？</string>
+	<string name="exit_prompt">您确定要退出吗？</string>
+
+
 	<string name="email_intro">
 To Whom It May Concern:\n\n
 I\'m writing this email to inform you of an unpleasant incident which I

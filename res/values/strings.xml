@@ -225,6 +225,9 @@ Traffic Police: rmp@rmp.gov.my
 	Taxis at airports operate on a pre-paid coupon system.
 	</string>
 
+	<string name="exit_title">Really Exit?</string>
+	<string name="exit_prompt">Are you sure you want to exit?</string>
+
 	<string name="email_intro">
 To Whom It May Concern:\n\n
 I\'m writing this email to inform you of an unpleasant incident which I

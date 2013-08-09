@@ -396,6 +396,22 @@ public class ReportMalaysiaTaxiActivity extends Activity
 		        getResources().getString(R.string.youtube),
 		};
 
+		final String title = this.getResources().getString(R.string.exit_title);
+		final String msg = this.getResources().getString(R.string.exit_prompt);
+		new AlertDialog.Builder(this).setTitle(title)
+				.setIcon(android.R.drawable.ic_dialog_alert)
+				.setMessage(msg)
+				.setNegativeButton(android.R.string.no, null)
+				.setPositiveButton(android.R.string.yes, new OnClickListener() {
+
+					@Override
+					public void onClick(final DialogInterface arg0,
+							final int arg1) {
+						ReportMalaysiaTaxiActivity.super.onBackPressed();
+					}
+				}).create().show();
+	}
+
 		AlertDialog.Builder builder = new AlertDialog.Builder(ReportMalaysiaTaxiActivity.this);
 		builder.setTitle(R.string.select_submit);
 		builder.setMultiChoiceItems(submit_choices,

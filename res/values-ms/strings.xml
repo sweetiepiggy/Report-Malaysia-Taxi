@@ -228,6 +228,9 @@ Trafik Polis: rmp@rmp.gov.my
 	Teksi bearada di lapangan terbang beroperasi dengan sistem kupon pra-bayar.
 	</string>
 
+	<string name="exit_title">Kenal Pasti Keluar?</string>
+	<string name="exit_prompt">Pastikah anda mahu keluar?</string>
+
 	<string name="email_intro">
 Pihak Berkuasa yang berkenan,\n\n
 Tujuan saya menulis emel ini adalah kerana sesuatu kejadian
