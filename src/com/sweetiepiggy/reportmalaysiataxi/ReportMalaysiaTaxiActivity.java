@@ -92,31 +92,29 @@ public class ReportMalaysiaTaxiActivity extends Activity {
 		init();
 	}
 
-	@Override
-	public void onBackPressed() {
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage(R.string.exit_prompt)
-				.setCancelable(false)
-				.setPositiveButton("Yes",
-						new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog, int id) {
-								finish();
-							}
-						})
-				.setNegativeButton("No", new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int id) {
-						// Action for 'NO' Button
-						dialog.cancel();
-					}
-				});
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.exit_prompt)
+        .setPositiveButton("Yes",
+                new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                finish();
+            }
+        })
+        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                // Action for 'NO' Button
+                dialog.cancel();
+            }
+        });
 
-		AlertDialog alert = builder.create();
-		alert.setTitle(R.string.exit_title);
-		alert.show();
-		setContentView(R.layout.main);
-	}
+        AlertDialog alert = builder.create();
+        alert.setTitle(R.string.exit_title);
+        alert.show();
+    }
 
 	@Override
 	public void onSaveInstanceState(Bundle savedInstanceState) {
