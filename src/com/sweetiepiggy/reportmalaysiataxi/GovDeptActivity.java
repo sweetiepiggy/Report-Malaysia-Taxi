@@ -43,55 +43,52 @@ public class GovDeptActivity extends ListActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		gov_depts = new String[] { getResources().getString(R.string.spad),
-				getResources().getString(R.string.jpj),
-				getResources().getString(R.string.kpdnkk),
-				getResources().getString(R.string.motour),
-				getResources().getString(R.string.pcb),
-				getResources().getString(R.string.pemudah),
-				getResources().getString(R.string.ttpm), };
+		gov_depts = new String[] {
+			getResources().getString(R.string.spad),
+			getResources().getString(R.string.jpj),
+			getResources().getString(R.string.kpdnkk),
+			getResources().getString(R.string.motour),
+			getResources().getString(R.string.pcb),
+			getResources().getString(R.string.pemudah),
+			getResources().getString(R.string.ttpm),
+		};
 
 		gov_descs = new String[] {
-				getResources().getString(R.string.spad_desc),
-				getResources().getString(R.string.jpj_desc),
-				getResources().getString(R.string.kpdnkk_desc),
-				getResources().getString(R.string.motour_desc),
-				getResources().getString(R.string.pcb_desc),
-				getResources().getString(R.string.pemudah_desc),
-				getResources().getString(R.string.ttpm_desc), };
+			getResources().getString(R.string.spad_desc),
+			getResources().getString(R.string.jpj_desc),
+			getResources().getString(R.string.kpdnkk_desc),
+			getResources().getString(R.string.motour_desc),
+			getResources().getString(R.string.pcb_desc),
+			getResources().getString(R.string.pemudah_desc),
+			getResources().getString(R.string.ttpm_desc),
+		};
 
-		MatrixCursor c = new MatrixCursor(
-				new String[] { "_id", "name", "desc" });
-		for (int i = 0; i < gov_depts.length; ++i) {
-			c.addRow(new Object[] { i, gov_depts[i], gov_descs[i] });
+		MatrixCursor c = new MatrixCursor(new String[] {"_id", "name", "desc"});
+		for (int i=0; i < gov_depts.length; ++i) {
+			c.addRow(new Object[] {i, gov_depts[i], gov_descs[i]});
 		}
 
 		setListAdapter(new SimpleCursorAdapter(this,
-				android.R.layout.two_line_list_item, c, new String[] { "name",
-						"desc" }, new int[] { android.R.id.text1,
-						android.R.id.text2 }));
+					android.R.layout.two_line_list_item,
+					c, new String[] {"name", "desc"},
+					new int[] {android.R.id.text1, android.R.id.text2}));
 
 		ListView lv = getListView();
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int pos,
-					long id) {
+			public void onItemClick(AdapterView<?> parent, View view,
+					int pos, long id) {
 				CharSequence item = gov_depts[(int) id];
 				/* TODO: refactor duplicate Intent and Bundle code */
 				if (item.equals(getResources().getString(R.string.spad))) {
-					Intent intent = new Intent(getApplicationContext(),
-							ContactViewActivity.class);
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
 
 					b.putString("name", getResources().getString(R.string.spad));
-					b.putString("desc",
-							getResources().getString(R.string.spad_desc));
+					b.putString("desc", getResources().getString(R.string.spad_desc));
 					b.putString("email", Constants.SPAD_EMAIL);
-					b.putString("website",
-							getResources().getString(R.string.spad_website));
-					b.putString("form",
-							getResources().getString(R.string.spad_form));
+					b.putString("website", getResources().getString(R.string.spad_website));
+					b.putString("form", getResources().getString(R.string.spad_form));
 					b.putString("twitter", Constants.SPAD_TWITTER);
 					b.putString("sms", Constants.SPAD_SMS);
 					b.putString("phone", Constants.SPAD_PHONE);
@@ -100,13 +97,11 @@ public class GovDeptActivity extends ListActivity {
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.jpj))) {
-					Intent intent = new Intent(getApplicationContext(),
-							ContactViewActivity.class);
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
 
 					b.putString("name", getResources().getString(R.string.jpj));
-					b.putString("desc",
-							getResources().getString(R.string.jpj_desc));
+					b.putString("desc", getResources().getString(R.string.jpj_desc));
 					b.putString("email", Constants.JPJ_EMAIL);
 					b.putString("website", Constants.JPJ_WEBSITE);
 					b.putString("phone", Constants.JPJ_PHONE);
@@ -115,76 +110,60 @@ public class GovDeptActivity extends ListActivity {
 					intent.putExtras(b);
 					startActivity(intent);
 
-				} else if (item.equals(getResources()
-						.getString(R.string.kpdnkk))) {
-					Intent intent = new Intent(getApplicationContext(),
-							ContactViewActivity.class);
+				} else if (item.equals(getResources().getString(R.string.kpdnkk))) {
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
 
-					b.putString("name",
-							getResources().getString(R.string.kpdnkk));
-					b.putString("desc",
-							getResources().getString(R.string.kpdnkk_desc));
+					b.putString("name", getResources().getString(R.string.kpdnkk));
+					b.putString("desc", getResources().getString(R.string.kpdnkk_desc));
 					b.putString("email", Constants.KPDNKK_EMAIL);
 					b.putString("website", Constants.KPDNKK_WEBSITE);
 
 					intent.putExtras(b);
 					startActivity(intent);
 
-				} else if (item.equals(getResources()
-						.getString(R.string.motour))) {
-					Intent intent = new Intent(getApplicationContext(),
-							ContactViewActivity.class);
+				} else if (item.equals(getResources().getString(R.string.motour))) {
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
 
-					b.putString("name",
-							getResources().getString(R.string.motour));
+					b.putString("name", getResources().getString(R.string.motour));
 					b.putString("email", Constants.MOTOUR_EMAIL);
 					b.putString("website", Constants.MOTOUR_WEBSITE);
-					b.putString("form",
-							getResources().getString(R.string.motour_form));
+					b.putString("form", getResources().getString(R.string.motour_form));
 					b.putString("phone", Constants.MOTOUR_PHONE);
 
 					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.pcb))) {
-					Intent intent = new Intent(getApplicationContext(),
-							ContactViewActivity.class);
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
 
 					b.putString("name", getResources().getString(R.string.pcb));
 					b.putString("phone", Constants.PCB_PHONE);
 					b.putString("email", Constants.PCB_EMAIL);
 					b.putString("website", Constants.PCB_WEBSITE);
-					b.putString("form",
-							getResources().getString(R.string.pcb_form));
+					b.putString("form", getResources().getString(R.string.pcb_form));
 
 					intent.putExtras(b);
 					startActivity(intent);
 
-				} else if (item.equals(getResources().getString(
-						R.string.pemudah))) {
-					Intent intent = new Intent(getApplicationContext(),
-							ContactViewActivity.class);
+				} else if (item.equals(getResources().getString(R.string.pemudah))) {
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
 
-					b.putString("name",
-							getResources().getString(R.string.pemudah));
-					b.putString("desc",
-							getResources().getString(R.string.pemudah_desc));
+					b.putString("name", getResources().getString(R.string.pemudah));
+					b.putString("desc", getResources().getString(R.string.pemudah_desc));
 					b.putString("phone", Constants.PEMUDAH_PHONE);
 					b.putString("email", Constants.PEMUDAH_EMAIL);
 					b.putString("website", Constants.PEMUDAH_WEBSITE);
-					b.putString("form",
-							getResources().getString(R.string.pemudah_form));
+					b.putString("form", getResources().getString(R.string.pemudah_form));
 
 					intent.putExtras(b);
 					startActivity(intent);
 
 				} else if (item.equals(getResources().getString(R.string.ttpm))) {
-					Intent intent = new Intent(getApplicationContext(),
-							ContactViewActivity.class);
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
 
 					b.putString("name", getResources().getString(R.string.ttpm));
@@ -199,3 +178,5 @@ public class GovDeptActivity extends ListActivity {
 
 	}
 }
+
+

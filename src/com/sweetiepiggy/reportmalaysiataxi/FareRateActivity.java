@@ -37,48 +37,39 @@ public class FareRateActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 
 		String[] resources = new String[] {
-				getResources().getString(R.string.lk_jb_kt_m),
-				getResources().getString(R.string.penang),
-				getResources().getString(R.string.airports), };
+			getResources().getString(R.string.lk_jb_kt_m),
+			getResources().getString(R.string.penang),
+			getResources().getString(R.string.airports),
+		};
 		setListAdapter(new ArrayAdapter<String>(this,
-				android.R.layout.simple_list_item_1, resources));
+					android.R.layout.simple_list_item_1,
+					resources));
 
 		ListView lv = getListView();
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int pos,
-					long id) {
+			public void onItemClick(AdapterView<?> parent, View view,
+					int pos, long id) {
 				CharSequence item = ((TextView) view).getText();
 				/* TODO: refactor duplicate code */
 				if (item.equals(getResources().getString(R.string.penang))) {
-					Intent intent = new Intent(getApplicationContext(),
-							TextViewActivity.class);
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
 					Bundle b = new Bundle();
-					b.putString("text",
-							getResources().getString(R.string.penang_fare_rate));
+					b.putString("text", getResources().getString(R.string.penang_fare_rate));
 					intent.putExtras(b);
 					startActivity(intent);
 
-				} else if (item.equals(getResources().getString(
-						R.string.lk_jb_kt_m))) {
-					Intent intent = new Intent(getApplicationContext(),
-							TextViewActivity.class);
+				} else if (item.equals(getResources().getString(R.string.lk_jb_kt_m))) {
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
 					Bundle b = new Bundle();
-					b.putString("text",
-							getResources().getString(R.string.kl_fare_rate));
+					b.putString("text", getResources().getString(R.string.kl_fare_rate));
 					intent.putExtras(b);
 					startActivity(intent);
 
-				} else if (item.equals(getResources().getString(
-						R.string.airports))) {
-					Intent intent = new Intent(getApplicationContext(),
-							TextViewActivity.class);
+				} else if (item.equals(getResources().getString(R.string.airports))) {
+					Intent intent = new Intent(getApplicationContext(), TextViewActivity.class);
 					Bundle b = new Bundle();
-					b.putString(
-							"text",
-							getResources().getString(
-									R.string.airports_fare_rate));
+					b.putString("text", getResources().getString(R.string.airports_fare_rate));
 					intent.putExtras(b);
 					startActivity(intent);
 				}
@@ -87,3 +78,4 @@ public class FareRateActivity extends ListActivity {
 
 	}
 }
+

@@ -25,7 +25,8 @@ import java.util.ArrayList;
 
 import android.net.Uri;
 
-public class DataWrapper {
+public class DataWrapper
+{
 	public int year;
 	public int month;
 	public int day;
@@ -52,3 +53,4 @@ public class DataWrapper {
 	public boolean tweet_checked;
 	public boolean youtube_checked;
 }
+

@@ -37,58 +37,48 @@ public class GovMinisterActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 
 		String[] gov_ministers = new String[] {
-				getResources().getString(R.string.spad_chairman),
-				getResources().getString(R.string.mo_transport),
-				getResources().getString(R.string.prime_minister), };
+			getResources().getString(R.string.spad_chairman),
+			getResources().getString(R.string.mo_transport),
+			getResources().getString(R.string.prime_minister),
+		};
 		setListAdapter(new ArrayAdapter<String>(this,
-				android.R.layout.simple_list_item_1, gov_ministers));
+					android.R.layout.simple_list_item_1,
+					gov_ministers));
 
 		ListView lv = getListView();
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int pos,
-					long id) {
+			public void onItemClick(AdapterView<?> parent, View view,
+					int pos, long id) {
 				CharSequence item = ((TextView) view).getText();
-				if (item.equals(getResources()
-						.getString(R.string.spad_chairman))) {
-					Intent intent = new Intent(getApplicationContext(),
-							ContactViewActivity.class);
+				if (item.equals(getResources().getString(R.string.spad_chairman))) {
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
 
 					b.putString("name", Constants.SPAD_CHAIRMAN_NAME);
-					b.putString("desc",
-							getResources().getString(R.string.spad_chairman));
+					b.putString("desc", getResources().getString(R.string.spad_chairman));
 					b.putString("twitter", Constants.SPAD_CHAIRMAN_TWITTER);
 
 					intent.putExtras(b);
 					startActivity(intent);
-				} else if (item.equals(getResources().getString(
-						R.string.mo_transport))) {
-					Intent intent = new Intent(getApplicationContext(),
-							ContactViewActivity.class);
+				} else if (item.equals(getResources().getString(R.string.mo_transport))) {
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
 
-					b.putString("name",
-							getResources()
-									.getString(R.string.mo_transport_name));
-					b.putString("desc",
-							getResources().getString(R.string.mo_transport));
+					b.putString("name", getResources().getString(R.string.mo_transport_name));
+					b.putString("desc", getResources().getString(R.string.mo_transport));
 					b.putString("email", Constants.MO_TRANSPORT_EMAIL);
 					b.putString("twitter", Constants.MO_TRANSPORT_TWITTER);
 
 					intent.putExtras(b);
 					startActivity(intent);
 
-				} else if (item.equals(getResources().getString(
-						R.string.prime_minister))) {
-					Intent intent = new Intent(getApplicationContext(),
-							ContactViewActivity.class);
+				} else if (item.equals(getResources().getString(R.string.prime_minister))) {
+					Intent intent = new Intent(getApplicationContext(), ContactViewActivity.class);
 					Bundle b = new Bundle();
 
 					b.putString("name", Constants.PRIME_MINISTER_NAME);
-					b.putString("desc",
-							getResources().getString(R.string.prime_minister));
+					b.putString("desc", getResources().getString(R.string.prime_minister));
 					b.putString("email", Constants.PRIME_MINISTER_EMAIL);
 					b.putString("twitter", Constants.PRIME_MINISTER_TWITTER);
 
@@ -100,3 +90,6 @@ public class GovMinisterActivity extends ListActivity {
 
 	}
 }
+
+
+
