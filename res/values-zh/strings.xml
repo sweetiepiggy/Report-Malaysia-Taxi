@@ -24,6 +24,7 @@
 
 	<string name="app_name">举报马来西亚的士</string>
 	<string name="date_and_time">事件发生的日期和时间</string>
+	<string name="location_img_content_description">从GPS或网络位置的投诉</string>
 	<string name="location">位置</string>
 	<string name="registration">的士登记号码</string>
 	<string name="offence">犯罪性质</string>

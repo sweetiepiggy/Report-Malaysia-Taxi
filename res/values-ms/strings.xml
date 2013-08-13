@@ -25,6 +25,7 @@
 	<string name="app_name">Aduan Teksi</string>
 	<string name="date_and_time">Tarikh dan Masa Kejadian</string>
 	<string name="location">Lokasi</string>
+	<string name="location_img_content_description">Dapatkan lokasi aduan daripada gps atau rangkaian</string>
 	<string name="registration">Nombor Teksi Pendaftaran</string>
 	<string name="offence">Kesalahan</string>
 
