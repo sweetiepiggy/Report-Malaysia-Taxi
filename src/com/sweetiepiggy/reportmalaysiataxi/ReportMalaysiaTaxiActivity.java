@@ -21,11 +21,14 @@
 
 package com.sweetiepiggy.reportmalaysiataxi;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -33,13 +36,23 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Criteria;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -57,9 +70,9 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-@SuppressLint("DefaultLocale")
+@SuppressLint({ "DefaultLocale", "NewApi" })
 @SuppressWarnings("unused")
-public class ReportMalaysiaTaxiActivity extends Activity
+public class ReportMalaysiaTaxiActivity extends Activity implements android.view.View.OnClickListener
 {
 	private DataWrapper mData;
 
@@ -82,6 +95,9 @@ public class ReportMalaysiaTaxiActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		
+		//attach location listener to button
+		findViewById(R.id.location_button).setOnClickListener(this);
 
 		if (savedInstanceState == null) {
 			mData = (DataWrapper) getLastNonConfigurationInstance();
@@ -1014,6 +1030,90 @@ public class ReportMalaysiaTaxiActivity extends Activity
 			}
 		}
 		return ret;
+	}
+	
+	public void onClick(View arg0) {
+		//click listener for location button
+		
+	    
+		LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+		Criteria criteria = new Criteria();
+		criteria.setAccuracy(Criteria.ACCURACY_FINE);
+		criteria.setPowerRequirement(Criteria.POWER_HIGH);
+		//String provider = locationManager.getBestProvider(criteria, true);
+		
+		locationManager.requestSingleUpdate(criteria, new LocationListener(){
+			@SuppressLint("NewApi")
+			@Override
+			public void onLocationChanged(Location location) {
+				if (Build.VERSION.SDK_INT < Build.VERSION_CODES.ECLAIR)
+					createDialog();
+				else if(Geocoder.isPresent()) 
+		            (new ReverseGeocodingTask(getBaseContext())).execute(new Location[] {location});
+					// Invoking reverse geocoding in an AsyncTask. 
+			}
+			@Override public void onProviderDisabled(String provider) { }
+			@Override public void onProviderEnabled(String provider) { }
+			@Override public void onStatusChanged(String provider, int status, Bundle extras) { }
+			
+		}, null);
+		
+		
+		
+	}
+	
+	protected void createDialog() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	// AsyncTask encapsulating the reverse-geocoding API.  Since the geocoder API is blocked,
+	// we do not want to invoke it from the UI thread.
+	private class ReverseGeocodingTask extends AsyncTask<Location, Void, List<Address> >{
+	    Context mContext;
+
+	    public ReverseGeocodingTask(Context context) {
+	        super();
+	        mContext = context;
+	    }
+	    
+	    @Override
+	    protected List<Address> doInBackground(Location... params) {
+	        Geocoder geocoder = new Geocoder(mContext, Locale.getDefault());
+
+	        Location loc = params[0];
+	        List<Address> addresses = null;
+	        try {
+	            // Call the synchronous getFromLocation() method by passing in the lat/long values.
+	            addresses = geocoder.getFromLocation(loc.getLatitude(), loc.getLongitude(), 1);
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	        if (addresses != null && addresses.size() > 0) {
+	            //Address address = addresses.get(0);
+	            // Format the first line of address (if available), city, and country name.
+	            /*
+	            String addressText = String.format("%s, %s, %s",
+	                    address.getMaxAddressLineIndex() > 0 ? address.getAddressLine(0) : "",
+	                    address.getLocality(),
+	                    address.getCountryName()); */
+	        }
+	        return addresses;
+	    }
+	    
+	    protected void onPostExecute(List<Address> result){
+	    	
+	    	String address = "";
+	    	if (result != null){
+		    	for (int i = 0; i <= result.get(0).getMaxAddressLineIndex(); i++){
+		    		address += " " + result.get(0).getAddressLine(i);
+		    	}
+		    	address.trim();
+		    	
+	    	} else {address = "failed";}// if address == null, output 'failed', since dialogs don't work from here
+	    	
+	    	((EditText)findViewById(R.id.location_entry)).setText(address);
+	    }
 	}
 }
 

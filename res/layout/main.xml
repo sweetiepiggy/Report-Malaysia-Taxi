@@ -89,14 +89,36 @@
 			android:text="@string/location"
 			android:textStyle="bold|italic"
 			android:typeface="serif" />
+		
+		<LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal"
+		    android:paddingRight="8dp" >
+
 		<EditText
-			android:id="@+id/location_entry"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:hint="@string/location_hint"
-			android:inputType="textCapWords"
-			android:textStyle="italic"
-			android:typeface="serif" />
+		    android:id="@+id/location_entry"
+		    android:layout_width="0dp"
+		    android:layout_height="80dp"
+		    android:layout_marginRight="10dp"
+		    android:layout_weight="1"
+		    android:gravity="clip_vertical|clip_horizontal"
+		    android:hint="@string/location_hint"
+		    android:inputType="none"
+		    android:textStyle="italic"
+		    android:typeface="serif" />
+		
+		<ImageButton
+		    android:id="@+id/location_button"
+		    android:layout_width="48dp"
+		    android:layout_height="match_parent"
+		    android:contentDescription="@string/location_img_content_description"
+		    android:padding="0dp"
+		    android:scaleType="center"
+			android:background="@android:color/transparent"
+		    android:src="@drawable/icon_location" />
+   
+		</LinearLayout>
 		<TextView
 			android:id="@+id/offence_label"
 			android:layout_width="fill_parent"

@@ -25,6 +25,7 @@
 	<string name="app_name">Aduan Teksi</string>
 	<string name="date_and_time">Tarikh dan Masa Kejadian</string>
 	<string name="location">Lokasi</string>
+	<string name="location_img_content_description">Dapatkan lokasi aduan daripada gps atau rangkaian</string>
 	<string name="registration">Nombor Teksi Pendaftaran</string>
 	<string name="offence">Kesalahan</string>
 
@@ -244,7 +245,9 @@ Sekian.\n
 	<string name="email_offence">Kesalahan</string>
 
 	<string name="gpl">
-Copyright &#169; 2013 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
+Copyright &#169; 2012,2013\n
+\nSweetie Piggy Apps sweetiepiggyapps@gmail.com\n
+\nCyanogenMod-X rdxperiaz@gmail.com\n\n
 \nAduan Teksi adalah perisian bebas; anda boleh memaparkan dan / atau mengubahsuai di bawah terma GNU Lesen Awam Am yang diterbitkan oleh Perisian Yayasan Percuma;samada 3 versi Lesen, atau (atas pilihan anda) mana-mana versi selepas ini.\n\n
 \nTujuan Aduan Teksi diterbit adalah untuk manfaat pengguna. Walaubagaimanapun, ia adalah produk yang tanpa sebarang waranti, tanpa jaminan terhadap sebarang perdaganagan atau kegunaaan untuk tujuan tertentu. Sila merujuk GNU Lesen Awam Am untuk maklumat lanjut.\n\n
 \nda akan menerima satu salinan GNU Lesen Awam Am bersama dengan Aduan Teksi; jika tidak, sila lihat http://www.gnu.org/licenses/.\n\n
