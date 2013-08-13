@@ -1040,23 +1040,29 @@ public class ReportMalaysiaTaxiActivity extends Activity implements android.view
 		Criteria criteria = new Criteria();
 		criteria.setAccuracy(Criteria.ACCURACY_FINE);
 		criteria.setPowerRequirement(Criteria.POWER_HIGH);
-		//String provider = locationManager.getBestProvider(criteria, true);
+		String provider = locationManager.getBestProvider(criteria, true);
 		
-		locationManager.requestSingleUpdate(criteria, new LocationListener(){
-			@SuppressLint("NewApi")
-			@Override
-			public void onLocationChanged(Location location) {
-				if (Build.VERSION.SDK_INT < Build.VERSION_CODES.ECLAIR)
-					createDialog();
-				else if(Geocoder.isPresent()) 
-		            (new ReverseGeocodingTask(getBaseContext())).execute(new Location[] {location});
-					// Invoking reverse geocoding in an AsyncTask. 
-			}
-			@Override public void onProviderDisabled(String provider) { }
-			@Override public void onProviderEnabled(String provider) { }
-			@Override public void onStatusChanged(String provider, int status, Bundle extras) { }
-			
-		}, null);
+		if (provider == null) {
+			Toast.makeText(getApplicationContext(),
+					"enable location services to use this feature",
+					Toast.LENGTH_SHORT).show();
+		} else {
+			locationManager.requestSingleUpdate(criteria, new LocationListener(){
+				@SuppressLint("NewApi")
+				@Override
+				public void onLocationChanged(Location location) {
+					if (Build.VERSION.SDK_INT < Build.VERSION_CODES.ECLAIR)
+						createDialog();
+					else if(Geocoder.isPresent()) 
+				    (new ReverseGeocodingTask(getBaseContext())).execute(new Location[] {location});
+						// Invoking reverse geocoding in an AsyncTask. 
+				}
+				@Override public void onProviderDisabled(String provider) { }
+				@Override public void onProviderEnabled(String provider) { }
+				@Override public void onStatusChanged(String provider, int status, Bundle extras) { }
+				
+			}, null);
+		}
 		
 		
 		
