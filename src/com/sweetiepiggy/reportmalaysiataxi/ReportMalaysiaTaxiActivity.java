@@ -29,7 +29,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-
+import android.os.Bundle;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.widget.Toast;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -54,6 +59,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.format.DateFormat;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -95,7 +101,7 @@ public class ReportMalaysiaTaxiActivity extends Activity implements android.view
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		
+
 		//attach location listener to button
 		findViewById(R.id.location_button).setOnClickListener(this);
 
@@ -112,26 +118,56 @@ public class ReportMalaysiaTaxiActivity extends Activity implements android.view
 		}
 
 		init();
+
+		LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+			if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+				Toast toast = Toast.makeText(this, "GPS is already enabled in your device", Toast.LENGTH_SHORT);
+				toast.show();
+			}else{
+				showGPSDisabledAlertToUser();
+			}
+		}
+
+	private void showGPSDisabledAlertToUser(){
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		alertDialogBuilder.setMessage("Location Service is disabled in your device. Would you like to enable it?")
+		.setCancelable(false)
+		.setPositiveButton("Enable",
+				new DialogInterface.OnClickListener(){
+			public void onClick(DialogInterface dialog, int id){
+				Intent callGPSSettingIntent = new Intent(
+							android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+					startActivity(callGPSSettingIntent);
+				}
+			});
+			alertDialogBuilder.setNegativeButton("Cancel",
+				new DialogInterface.OnClickListener(){
+				public void onClick(DialogInterface dialog, int id){
+					dialog.cancel();
+				}
+			});
+			AlertDialog alert = alertDialogBuilder.create();
+			alert.show();
 	}
-	
+
     @Override
     public void onBackPressed() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(R.string.exit_prompt)
-        .setPositiveButton("Yes",
+        	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        	builder.setMessage(R.string.exit_prompt)
+        	.setPositiveButton("Yes",
                 new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int id) {
-                finish();
-            }
-        })
-        .setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int id) {
-                // Action for 'NO' Button
-                dialog.cancel();
-            }
-        });
+        		@Override
+        		public void onClick(DialogInterface dialog, int id) {
+        			finish();
+        		}
+        	})
+        	.setNegativeButton("No", new DialogInterface.OnClickListener() {
+        		@Override
+        		public void onClick(DialogInterface dialog, int id) {
+        			// Action for 'NO' Button
+        			dialog.cancel();
+        		}
+        	});
 
         AlertDialog alert = builder.create();
         alert.setTitle(R.string.exit_title);
@@ -1031,21 +1067,20 @@ public class ReportMalaysiaTaxiActivity extends Activity implements android.view
 		}
 		return ret;
 	}
-	
+
 	public void onClick(View arg0) {
 		//click listener for location button
-		
-	    
+
 		LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		Criteria criteria = new Criteria();
 		criteria.setAccuracy(Criteria.ACCURACY_FINE);
 		criteria.setPowerRequirement(Criteria.POWER_HIGH);
 		String provider = locationManager.getBestProvider(criteria, true);
-		
+
 		if (provider == null) {
-			Toast.makeText(getApplicationContext(),
-					"enable location services to use this feature",
-					Toast.LENGTH_SHORT).show();
+			//Toast.makeText(getApplicationContext(),
+					//"enable location services to use this feature",
+					//Toast.LENGTH_SHORT).show();
 		} else {
 			locationManager.requestSingleUpdate(criteria, new LocationListener(){
 				@SuppressLint("NewApi")
@@ -1063,14 +1098,12 @@ public class ReportMalaysiaTaxiActivity extends Activity implements android.view
 				
 			}, null);
 		}
-		
-		
-		
+
 	}
-	
+
 	protected void createDialog() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	// AsyncTask encapsulating the reverse-geocoding API.  Since the geocoder API is blocked,
@@ -1082,7 +1115,7 @@ public class ReportMalaysiaTaxiActivity extends Activity implements android.view
 	        super();
 	        mContext = context;
 	    }
-	    
+
 	    @Override
 	    protected List<Address> doInBackground(Location... params) {
 	        Geocoder geocoder = new Geocoder(mContext, Locale.getDefault());
@@ -1106,18 +1139,18 @@ public class ReportMalaysiaTaxiActivity extends Activity implements android.view
 	        }
 	        return addresses;
 	    }
-	    
+
 	    protected void onPostExecute(List<Address> result){
-	    	
+
 	    	String address = "";
 	    	if (result != null){
 		    	for (int i = 0; i <= result.get(0).getMaxAddressLineIndex(); i++){
 		    		address += " " + result.get(0).getAddressLine(i);
 		    	}
 		    	address.trim();
-		    	
-	    	} else {address = "failed";}// if address == null, output 'failed', since dialogs don't work from here
-	    	
+
+	    	} else {address = "Failed to retrieve address!!!";}// if address == null, output 'failed', since dialogs don't work from here
+
 	    	((EditText)findViewById(R.id.location_entry)).setText(address);
 	    }
 	}
