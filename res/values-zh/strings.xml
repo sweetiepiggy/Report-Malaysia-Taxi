@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
-    Copyright (C) 2012,2013 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+    Copyright (C) 2012,2013
+    Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+    CyanogenMod-X <rdxperiaz@gmail.com>
 
     This file is part of Report Malaysia Taxi.
 
@@ -23,6 +24,7 @@
 
 	<string name="app_name">举报马来西亚的士</string>
 	<string name="date_and_time">事件发生的日期和时间</string>
+	<string name="location_img_content_description">从GPS或网络位置的投诉</string>
 	<string name="location">位置</string>
 	<string name="registration">的士登记号码</string>
 	<string name="offence">犯罪性质</string>
@@ -166,7 +168,7 @@ SPAD: 陆路运输部门\n\n
 	<string name="motour_form">http://www.motac.gov.my/en/contact-us/feedback/public-complaints.html</string>
 	<string name="pcb_form">http://apps1.pcb.gov.my/eApps/bpaiaducmpl/AduCmplPublic/add.do?aplCode=en</string>
 	<string name="pemudah_form">http://www.pemudah.gov.my/web/guest/hubungi</string>
-	<string name="mo_transport_name">Hishammuddin Bin Tun Hussein</string>
+	<string name="mo_transport_name">Datuk Seri Panglima Hishammuddin bin Tun Hussein</string>
 	<string name="traffic_police">交通警</string>
 	<string name="news_media_contact">
 		The Star\n
@@ -227,6 +229,10 @@ SPAD: 陆路运输部门\n\n
 	在机场的出租车是以预付费的票据系统运作。
 	</string>
 
+	<string name="exit_title">真的要退出吗？</string>
+	<string name="exit_prompt">您确定要退出吗？</string>
+
+
 	<string name="email_intro">
 To Whom It May Concern:\n\n
 I\'m writing this email to inform you of an unpleasant incident which I
@@ -239,7 +245,9 @@ Thank you.\n
 	<string name="email_offence">Nature of Offence</string>
 
 	<string name="gpl">
-版權所有(C) 2012 Sweetie Piggy Apps sweetiepiggyapps@gmail.com\n\n
+版權所有&#169; 2012,2013\n
+\nSweetie Piggy Apps sweetiepiggyapps@gmail.com\n
+\nCyanogenMod-X rdxperiaz@gmail.com\n\n
 
 举报马来西亚的士爲自由軟體；您可依據自由軟體基金會所發表的GNU通用公共授權條款，對本程式再次發佈和/或修改；無論您依據的是本授權的第三版，或（您可選的）任一日後發行的版本。\n\n
 
@@ -248,7 +256,7 @@ Thank you.\n
 您應已收到附隨於举报马来西亚的士的GNU通用公共授權的副本；如果沒有，請參照http://www.gnu.org/licenses/ 。\n\n
 
 举报马来西亚的士含有Alexander Moore的Nuove图标。
-    http://findicons.com/pack/2117/nuove
+\nhttp://findicons.com/pack/2117/nuove
 	</string>
 </resources>
 

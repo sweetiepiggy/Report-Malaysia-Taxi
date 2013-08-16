@@ -1,5 +1,7 @@
 /*
-    Copyright (C) 2012,2013 Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+    Copyright (C) 2012,2013
+    Sweetie Piggy Apps <sweetiepiggyapps@gmail.com>
+    CyanogenMod-X <rdxperiaz@gmail.com>
 
     This file is part of Report Malaysia Taxi.
 
@@ -15,12 +17,13 @@
 
     You should have received a copy of the GNU General Public License
     along with Report Malaysia Taxi; if not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 package com.sweetiepiggy.reportmalaysiataxi;
 
 import android.app.Activity;
 
+@SuppressWarnings("unused")
 public class Constants
 {
 	static final String COMPLAINT_EMAIL_MALAY = "Aduan Teksi";
@@ -81,13 +84,13 @@ public class Constants
 	static final String NCCC_FORM = "http://www.nccc.org.my/v2/index.php/e-aduan";
 	static final String NCCC_TWITTER = "http://twitter.com/myaduan";
 
-	static final String SPAD_CHAIRMAN_NAME = "Syed Hamid Albar";
+	static final String SPAD_CHAIRMAN_NAME = "Tan Sri Syed Hamid bin Syed Jaafar Albar";
 	static final String SPAD_CHAIRMAN_TWITTER = "http://twitter.com/syedhamidalbar";
 
 	static final String MO_TRANSPORT_EMAIL = "menteri@mot.gov.my";
 	static final String MO_TRANSPORT_TWITTER = "http://twitter.com/HishammuddinH2O";
 
-	static final String PRIME_MINISTER_NAME = "Najib Razak";
+	static final String PRIME_MINISTER_NAME = "Dato'Sri Haji Mohammad Najib bin Tun Haji Abdul Razak";
 	static final String PRIME_MINISTER_EMAIL = "najib@1malaysia.com.my";
 	static final String PRIME_MINISTER_TWITTER = "http://twitter.com/NajibRazak";
 
