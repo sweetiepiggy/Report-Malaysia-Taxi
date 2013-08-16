@@ -24,7 +24,7 @@
 	<string name="app_name">Report M\'sia Taxi</string>
 	<string name="date_and_time">Date and Time of Incident</string>
 	<string name="location">Location</string>
-	<string name="location_img_content_description">Get location of complaint from gps or network</string>	
+	<string name="location_img_content_description">Get location of complaint from gps or network</string>
 	<string name="registration">Registration Number of Taxi</string>
 	<string name="offence">Nature of Offence</string>
 
