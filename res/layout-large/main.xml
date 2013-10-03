@@ -42,18 +42,18 @@
 			android:layout_height="fill_parent">
 
 			<Button
-			    android:id="@+id/date_button"
-			    android:layout_width="wrap_content"
-			    android:layout_height="fill_parent"
-			    android:textStyle="italic"
-			    android:typeface="serif" />
+				android:id="@+id/date_button"
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:textStyle="italic"
+				android:typeface="serif" />
 
 			<Button
-			    android:id="@+id/time_button"
-			    android:layout_width="wrap_content"
-			    android:layout_height="fill_parent"
-			    android:textStyle="italic"
-			    android:typeface="serif" />
+				android:id="@+id/time_button"
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:textStyle="italic"
+				android:typeface="serif" />
 
 		</LinearLayout>
 
@@ -143,14 +143,14 @@
 				android:text="" />
 
 			<Button
-			    android:id="@+id/camera_button"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:layout_weight="3"
-			    android:background="@android:color/transparent"
-			    android:drawableLeft="@drawable/ic_camera"
-			    android:paddingBottom="15dp"
-			    android:paddingLeft="15dp" />
+				android:id="@+id/camera_button"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="3"
+				android:background="@android:color/transparent"
+				android:drawableLeft="@drawable/ic_camera"
+				android:paddingBottom="15dp"
+				android:paddingLeft="15dp" />
 
 			<TextView
 				android:id="@+id/video_label"
@@ -159,14 +159,14 @@
 				android:text="" />
 
 			<Button
-			    android:id="@+id/vidcam_button"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:layout_weight="3"
-			    android:background="@android:color/transparent"
-			    android:drawableLeft="@drawable/ic_video"
-			    android:paddingBottom="15dp"
-			    android:paddingLeft="15dp" />
+				android:id="@+id/vidcam_button"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="3"
+				android:background="@android:color/transparent"
+				android:drawableLeft="@drawable/ic_video"
+				android:paddingBottom="15dp"
+				android:paddingLeft="15dp" />
 
 			<TextView
 				android:id="@+id/recorder_label"
@@ -175,14 +175,14 @@
 				android:text="" />
 
 			<Button
-			    android:id="@+id/recorder_button"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:layout_weight="3"
-			    android:background="@android:color/transparent"
-			    android:drawableLeft="@drawable/ic_voice"
-			    android:paddingBottom="15dp"
-			    android:paddingLeft="15dp" />
+				android:id="@+id/recorder_button"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="3"
+				android:background="@android:color/transparent"
+				android:drawableLeft="@drawable/ic_voice"
+				android:paddingBottom="15dp"
+				android:paddingLeft="15dp" />
 
 			<TextView
 				android:id="@+id/attachment_label"
@@ -191,14 +191,14 @@
 				android:text="" />
 
 			<Button
-			    android:id="@+id/attachment_button"
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:layout_weight="3"
-			    android:background="@android:color/transparent"
-			    android:drawableLeft="@drawable/ic_attach"
-			    android:paddingBottom="15dp"
-			    android:paddingLeft="15dp" />
+				android:id="@+id/attachment_button"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="3"
+				android:background="@android:color/transparent"
+				android:drawableLeft="@drawable/ic_attach"
+				android:paddingBottom="15dp"
+				android:paddingLeft="15dp" />
 
 		</LinearLayout>
 
@@ -209,37 +209,37 @@
 			android:layout_height="fill_parent">
 
 			<Button
-			    android:id="@+id/submit_button"
-			    style="@android:style/TextAppearance.Large"
-			    android:layout_width="wrap_content"
-			    android:layout_height="fill_parent"
-			    android:layout_weight="1"
-			    android:drawableLeft="@android:drawable/ic_menu_send"
-			    android:text="@string/submit"
-			    android:textStyle="normal|italic"
-			    android:typeface="serif" />
+				android:id="@+id/submit_button"
+				style="@android:style/TextAppearance.Large"
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:drawableLeft="@android:drawable/ic_menu_send"
+				android:text="@string/submit"
+				android:textStyle="normal|italic"
+				android:typeface="serif" />
 
 			<Button
-			    android:id="@+id/call_button"
-			    style="@android:style/TextAppearance.Large"
-			    android:layout_width="wrap_content"
-			    android:layout_height="fill_parent"
-			    android:layout_weight="1"
-			    android:drawableLeft="@android:drawable/ic_menu_call"
-			    android:text="@string/call"
-			    android:textStyle="normal|italic"
-			    android:typeface="serif" />
+				android:id="@+id/call_button"
+				style="@android:style/TextAppearance.Large"
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:drawableLeft="@android:drawable/ic_menu_call"
+				android:text="@string/call"
+				android:textStyle="normal|italic"
+				android:typeface="serif" />
 
 			<Button
-			    android:id="@+id/cancel_button"
-			    style="@android:style/TextAppearance.Large"
-			    android:layout_width="wrap_content"
-			    android:layout_height="fill_parent"
-			    android:layout_weight="1"
-			    android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
-			    android:text="@string/clear"
-			    android:textStyle="normal|italic"
-			    android:typeface="serif" />
+				android:id="@+id/cancel_button"
+				style="@android:style/TextAppearance.Large"
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:layout_weight="1"
+				android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
+				android:text="@string/clear"
+				android:textStyle="normal|italic"
+				android:typeface="serif" />
 
 		</LinearLayout>
 	</LinearLayout>

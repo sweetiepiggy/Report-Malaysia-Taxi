@@ -29,7 +29,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-
+import android.os.Bundle;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.widget.Toast;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -54,6 +59,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.format.DateFormat;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -95,7 +101,7 @@ public class ReportMalaysiaTaxiActivity extends Activity implements android.view
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		
+
 		//attach location listener to button
 		findViewById(R.id.location_button).setOnClickListener(this);
 
@@ -112,31 +118,62 @@ public class ReportMalaysiaTaxiActivity extends Activity implements android.view
 		}
 
 		init();
-	}
-	
-    @Override
-    public void onBackPressed() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(R.string.exit_prompt)
-        .setPositiveButton("Yes",
-                new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int id) {
-                finish();
-            }
-        })
-        .setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int id) {
-                // Action for 'NO' Button
-                dialog.cancel();
-            }
-        });
 
-        AlertDialog alert = builder.create();
-        alert.setTitle(R.string.exit_title);
-        alert.show();
-    }
+		LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+		if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+			Toast toast = Toast.makeText(this, "GPS is already enabled in your device", Toast.LENGTH_SHORT);
+			toast.show();
+		} else {
+			showGPSDisabledAlertToUser();
+		}
+	}
+
+	private void showGPSDisabledAlertToUser() {
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		alertDialogBuilder.setMessage("Location Service is disabled in your device. Would you like to enable it?")
+		.setCancelable(false)
+		.setPositiveButton("Enable",
+				new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+				Intent callGPSSettingIntent = new Intent(
+							android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+					startActivity(callGPSSettingIntent);
+				}
+			});
+			alertDialogBuilder.setNegativeButton("Cancel",
+				new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int id) {
+					dialog.cancel();
+				}
+			});
+			AlertDialog alert = alertDialogBuilder.create();
+			alert.show();
+	}
+
+	@Override
+	public void onBackPressed()
+	{
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage(R.string.exit_prompt)
+		.setPositiveButton("Yes",
+		new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int id) {
+				finish();
+			}
+		})
+		.setNegativeButton("No", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int id) {
+				// Action for 'NO' Button
+				dialog.cancel();
+			}
+		});
+
+		AlertDialog alert = builder.create();
+		alert.setTitle(R.string.exit_title);
+		alert.show();
+	}
 
 	@Override
 	public void onSaveInstanceState(Bundle savedInstanceState)
@@ -1031,21 +1068,21 @@ public class ReportMalaysiaTaxiActivity extends Activity implements android.view
 		}
 		return ret;
 	}
-	
-	public void onClick(View arg0) {
+
+	public void onClick(View arg0)
+	{
 		//click listener for location button
-		
-	    
+
 		LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		Criteria criteria = new Criteria();
 		criteria.setAccuracy(Criteria.ACCURACY_FINE);
 		criteria.setPowerRequirement(Criteria.POWER_HIGH);
 		String provider = locationManager.getBestProvider(criteria, true);
-		
+
 		if (provider == null) {
-			Toast.makeText(getApplicationContext(),
-					"enable location services to use this feature",
-					Toast.LENGTH_SHORT).show();
+			//Toast.makeText(getApplicationContext(),
+					//"enable location services to use this feature",
+					//Toast.LENGTH_SHORT).show();
 		} else {
 			locationManager.requestSingleUpdate(criteria, new LocationListener(){
 				@SuppressLint("NewApi")
@@ -1053,73 +1090,75 @@ public class ReportMalaysiaTaxiActivity extends Activity implements android.view
 				public void onLocationChanged(Location location) {
 					if (Build.VERSION.SDK_INT < Build.VERSION_CODES.ECLAIR)
 						createDialog();
-					else if(Geocoder.isPresent()) 
-				    (new ReverseGeocodingTask(getBaseContext())).execute(new Location[] {location});
-						// Invoking reverse geocoding in an AsyncTask. 
+					else if(Geocoder.isPresent())
+						(new ReverseGeocodingTask(getBaseContext())).execute(new Location[] {location});
+						// Invoking reverse geocoding in an AsyncTask.
 				}
 				@Override public void onProviderDisabled(String provider) { }
 				@Override public void onProviderEnabled(String provider) { }
 				@Override public void onStatusChanged(String provider, int status, Bundle extras) { }
-				
+
 			}, null);
 		}
-		
-		
-		
+
 	}
-	
-	protected void createDialog() {
+
+	protected void createDialog()
+	{
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	// AsyncTask encapsulating the reverse-geocoding API.  Since the geocoder API is blocked,
 	// we do not want to invoke it from the UI thread.
-	private class ReverseGeocodingTask extends AsyncTask<Location, Void, List<Address> >{
-	    Context mContext;
+	private class ReverseGeocodingTask extends AsyncTask<Location, Void, List<Address> >
+	{
+		Context mContext;
 
-	    public ReverseGeocodingTask(Context context) {
-	        super();
-	        mContext = context;
-	    }
-	    
-	    @Override
-	    protected List<Address> doInBackground(Location... params) {
-	        Geocoder geocoder = new Geocoder(mContext, Locale.getDefault());
+		public ReverseGeocodingTask(Context context) {
+			super();
+			mContext = context;
+		}
 
-	        Location loc = params[0];
-	        List<Address> addresses = null;
-	        try {
-	            // Call the synchronous getFromLocation() method by passing in the lat/long values.
-	            addresses = geocoder.getFromLocation(loc.getLatitude(), loc.getLongitude(), 1);
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
-	        if (addresses != null && addresses.size() > 0) {
-	            //Address address = addresses.get(0);
-	            // Format the first line of address (if available), city, and country name.
-	            /*
-	            String addressText = String.format("%s, %s, %s",
-	                    address.getMaxAddressLineIndex() > 0 ? address.getAddressLine(0) : "",
-	                    address.getLocality(),
-	                    address.getCountryName()); */
-	        }
-	        return addresses;
-	    }
-	    
-	    protected void onPostExecute(List<Address> result){
-	    	
-	    	String address = "";
-	    	if (result != null){
-		    	for (int i = 0; i <= result.get(0).getMaxAddressLineIndex(); i++){
-		    		address += " " + result.get(0).getAddressLine(i);
-		    	}
-		    	address.trim();
-		    	
-	    	} else {address = "failed";}// if address == null, output 'failed', since dialogs don't work from here
-	    	
-	    	((EditText)findViewById(R.id.location_entry)).setText(address);
-	    }
+		@Override
+		protected List<Address> doInBackground(Location... params) {
+			Geocoder geocoder = new Geocoder(mContext, Locale.getDefault());
+
+			Location loc = params[0];
+			List<Address> addresses = null;
+			try {
+				// Call the synchronous getFromLocation() method by passing in the lat/long values.
+				addresses = geocoder.getFromLocation(loc.getLatitude(), loc.getLongitude(), 1);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			if (addresses != null && addresses.size() > 0) {
+				//Address address = addresses.get(0);
+				// Format the first line of address (if available), city, and country name.
+				/*
+				String addressText = String.format("%s, %s, %s",
+				address.getMaxAddressLineIndex() > 0 ? address.getAddressLine(0) : "",
+				address.getLocality(),
+				address.getCountryName()); */
+			}
+			return addresses;
+		}
+
+		protected void onPostExecute(List<Address> result) {
+
+			String address = "";
+			if (result != null) {
+				for (int i = 0; i <= result.get(0).getMaxAddressLineIndex(); i++) {
+					address += " " + result.get(0).getAddressLine(i);
+				}
+				address.trim();
+
+			} else {
+				address = "Failed to retrieve address!!!";
+			} // if address == null, output 'failed', since dialogs don't work from here
+
+			((EditText)findViewById(R.id.location_entry)).setText(address);
+		}
 	}
 }
 
